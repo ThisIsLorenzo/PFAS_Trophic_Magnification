@@ -39,8 +39,10 @@ wide_data <- raw_data %>%
     names_glue = "{variable}_{.value}"
   )
 head(wide_data)
+```
 
-# Cara_2022
+## Cara_2022
+```{r}
 Cara_2022 <- wide_data %>% 
   filter(Study_ID == "S_052") %>%
   select_if(~ !all(is.na(.))) %>% 
@@ -50,51 +52,115 @@ Cara_2022 <- wide_data %>%
   mutate(group_id = gsub("^(\\w+\\s[^,]+)", "\\1,", group_id)) %>% 
   separate(group_id, into = c("PFAS", "species", "location"), sep = ",\\s*", extra = "drop")
 
-# Martin_2004
+Cara_2022_loc4 <- Cara_2022 %>% 
+  filter(location == "location 4")
+
+Cara_2022_loc4$PFOA_mean <- as.numeric(as.character(Cara_2022_loc4$PFOA_mean))
+Cara_2022_loc4$PFOA_sd <- as.numeric(as.character(Cara_2022_loc4$PFOA_sd))
+Cara_2022_loc4$TL_mean <- as.numeric(as.character(Cara_2022_loc4$TL_mean))
+
+#write.csv(Cara_2022_loc4, file = here("Rdata", "Cara_2022_loc4.csv"))
+
+Cara_2022_loc5 <- Cara_2022 %>% 
+  filter(location == "location 5")
+
+Cara_2022_loc5$PFOA_mean <- as.numeric(as.character(Cara_2022_loc5$PFOA_mean))
+Cara_2022_loc5$PFOA_sd <- as.numeric(as.character(Cara_2022_loc5$PFOA_sd))
+Cara_2022_loc5$PFUnDA_mean <- as.numeric(as.character(Cara_2022_loc5$PFUnDA_mean))
+Cara_2022_loc5$PFUnDA_sd <- as.numeric(as.character(Cara_2022_loc5$PFUnDA_sd))
+Cara_2022_loc5$TL_mean <- as.numeric(as.character(Cara_2022_loc5$TL_mean))
+
+#write.csv(Cara_2022_loc5, file = here("Rdata", "Cara_2022_loc5.csv"))
+
+Cara_2022_loc8 <- Cara_2022 %>% 
+  filter(location == "location 8")
+
+Cara_2022_loc8$PFOA_mean <- as.numeric(as.character(Cara_2022_loc8$PFOA_mean))
+Cara_2022_loc5$PFTrDA_mean <- as.numeric(as.character(Cara_2022_loc5$PFTrDA_mean))
+Cara_2022_loc8$TL_mean <- as.numeric(as.character(Cara_2022_loc8$TL_mean))
+
+#write.csv(Cara_2022_loc8, file = here("Rdata", "Cara_2022_loc8.csv"))
+```
+
+## Martin_2004
+```{r}
 Martin_2004 <- wide_data %>% 
   filter(Study_ID == "S_013") %>%
   select_if(~ !all(is.na(.)))
-# Koch_2020
+```
+
+## Koch_2020
+```{r}
 Koch_2020 <- wide_data %>% 
   filter(Study_ID == "S_053") %>%
   select_if(~ !all(is.na(.)))
-# Mazzoni_2020
+```
+
+## Mazzoni_2020
+```{r}
 Mazzoni_2020 <- wide_data %>% 
   filter(Study_ID == "S_004") %>%
   select_if(~ !all(is.na(.)))
-# Liu_2018
+```
+
+## Liu_2018
+```{r}
 Liu_2018 <- wide_data %>% 
   filter(Study_ID == "S_017") %>%
   select_if(~ !all(is.na(.)))
-# Gao_2020
+```
+
+## Gao_2020
+```{r}
 Gao_2020 <- wide_data %>% 
   filter(Study_ID == "S_019") %>%
   select_if(~ !all(is.na(.)))
-# Chen_2018
+```
+
+## Chen_2018
+```{r}
 Chen_2018 <- wide_data %>% 
   filter(Study_ID == "S_021") %>%
   select_if(~ !all(is.na(.)))
-# Du_2021
+```
+
+## Du_2021
+```{r}
 Du_2021 <- wide_data %>% 
   filter(Study_ID == "S_023") %>%
   select_if(~ !all(is.na(.)))
-# Ren_2022
+```
+
+## Ren_2022
+```{r}
 Ren_2022 <- wide_data %>% 
   filter(Study_ID == "S_035") %>%
   select_if(~ !all(is.na(.)))
-# Koch_2021
+```
+
+## Koch_2021
+```{r}
 Koch_2021 <- wide_data %>% 
   filter(Study_ID == "S_054") %>%
   select_if(~ !all(is.na(.)))
-# Li_2008
+```
+
+## Li_2008
+```{r}
 Li_2008 <- wide_data %>% 
   filter(Study_ID == "S_056") %>%
   select_if(~ !all(is.na(.)))
-# Pan_2010
+```
+
+## Pan_2010
+```{r}
 Pan_2010 <- wide_data %>% 
   filter(Study_ID == "S_057") %>%
   select_if(~ !all(is.na(.)))
-# Van de Vijver_2003
+```
+
+## Van de Vijver_2003
+```{r}
 Van_de_Vijver_2003 <- wide_data %>% 
   filter(Study_ID == "S_058") %>%
   select_if(~ !all(is.na(.)))
@@ -105,27 +171,14 @@ Van_de_Vijver_2003 <- wide_data %>%
 ##Cara_2022
 ```{r}
 # Location 4
-Cara_2022_loc4 <- Cara_2022 %>% 
-  filter(location == "location 4")
-
-Cara_2022_loc4$PFOA_mean <- as.numeric(as.character(Cara_2022_loc4$PFOA_mean))
-Cara_2022_loc4$PFOA_sd <- as.numeric(as.character(Cara_2022_loc4$PFOA_sd))
-Cara_2022_loc4$TL_mean <- as.numeric(as.character(Cara_2022_loc4$TL_mean))
-
+Cara_2022_loc4 <- read.csv(here("RData/Cara_2022_loc4.csv"))
 Cara_2022_loc4_PFOA_weights <- 1 / (Cara_2022_loc4$PFOA_sd^2)
 
 Cara_2022_loc4_lm_model_PFOA <- lm(PFOA_mean ~ TL_mean, data = Cara_2022_loc4, weights = Cara_2022_loc4_PFOA_weights)
 summary(Cara_2022_loc4_lm_model_PFOA)
 
 #Location 5
-Cara_2022_loc5 <- Cara_2022 %>% 
-  filter(location == "location 5")
-
-Cara_2022_loc5$PFOA_mean <- as.numeric(as.character(Cara_2022_loc5$PFOA_mean))
-Cara_2022_loc5$PFOA_sd <- as.numeric(as.character(Cara_2022_loc5$PFOA_sd))
-Cara_2022_loc5$PFUnDA_mean <- as.numeric(as.character(Cara_2022_loc5$PFUnDA_mean))
-Cara_2022_loc5$PFUnDA_sd <- as.numeric(as.character(Cara_2022_loc5$PFUnDA_sd))
-Cara_2022_loc5$TL_mean <- as.numeric(as.character(Cara_2022_loc5$TL_mean))
+Cara_2022_loc5 <- read.csv(here("RData/Cara_2022_loc5.csv"))
 
 Cara_2022_loc5_PFOA_weights <- 1 / (Cara_2022_loc5$PFOA_sd^2)
 Cara_2022_loc5_PFUnDA_weights <- 1 / (Cara_2022_loc5$PFUnDA_sd^2)
@@ -137,12 +190,9 @@ Cara_2022_loc5_lm_model_PFUnDA <- lm(PFUnDA_mean ~ TL_mean, data = Cara_2022_loc
 summary(Cara_2022_loc5_lm_model_PFUnDA)
 
 #Location 8
-Cara_2022_loc8 <- Cara_2022 %>% 
-  filter(location == "location 8")
+Cara_2022_loc8 <- read.csv(here("RData/Cara_2022_loc8.csv"))
 
-Cara_2022_loc8$PFOA_mean <- as.numeric(as.character(Cara_2022_loc8$PFOA_mean))
-Cara_2022_loc5$PFTrDA_mean <- as.numeric(as.character(Cara_2022_loc5$PFTrDA_mean))
-Cara_2022_loc8$TL_mean <- as.numeric(as.character(Cara_2022_loc8$TL_mean))
+
 
 Cara_2022_loc8_lm_model_PFOA <- lm(PFOA_mean ~ TL_mean, data = Cara_2022_loc8)
 summary(Cara_2022_loc8_lm_model_PFOA)
