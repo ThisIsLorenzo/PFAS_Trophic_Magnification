@@ -1,0 +1,12 @@
+"","PFAS","species","location","Study_ID","filename","error_type","plot_type","software","PFOA_mean","TL_mean","PFUnDA_mean","PFTrDA_mean","PFOA_sd","PFUnDA_sd","PFTrDA_sd"
+"1","PFOA","species1","location 8","S_052","Cara_2022_1.png","sd","mean_error","metaDigitise",1.571804246,2.615638767,NA,NA,"0.321154652",NA,NA
+"2","PFOA","species2","location 8","S_052","Cara_2022_1.png","sd","mean_error","metaDigitise",1.373758877,2.853524229,NA,NA,"0.224808257",NA,NA
+"3","PFOA","species3","location 8","S_052","Cara_2022_1.png","sd","mean_error","metaDigitise",0.961610406,2.899779736,NA,NA,"0.06423093",NA,NA
+"4","PFOA","species4","location 8","S_052","Cara_2022_1.png","sd","mean_error","metaDigitise",1.116835155,3.002202643,NA,NA,"0.192692791",NA,NA
+"5","PFOA","species5","location 8","S_052","Cara_2022_1.png","sd","mean_error","metaDigitise",1.015136182,3.197136564,NA,NA,"0.096346396",NA,NA
+"6","PFOA","species6","location 8","S_052","Cara_2022_1.png","sd","mean_error","metaDigitise",0.961610406,3.497797357,NA,NA,"0.080288663",NA,NA
+"7","PFTrDA","species1","location 8","S_052","Cara_2022_3.png","sd","mean_error","metaDigitise",NA,2.902985075,NA,"0.00960334",NA,NA,"0.003862213"
+"8","PFTrDA","species2","location 8","S_052","Cara_2022_3.png","sd","mean_error","metaDigitise",NA,3.002132196,NA,"0.012421712",NA,NA,"0.002400835"
+"9","PFTrDA","species3","location 8","S_052","Cara_2022_3.png","sd","mean_error","metaDigitise",NA,3.203624733,NA,"0.021294363",NA,NA,"0.001878914"
+"10","PFTrDA","species4","location 8","S_052","Cara_2022_3.png","sd","mean_error","metaDigitise",NA,3.299573561,NA,"0.03131524",NA,NA,"0.011586639"
+"11","PFTrDA","species5","location 8","S_052","Cara_2022_3.png","sd","mean_error","metaDigitise",NA,3.497867804,NA,"0.039561587",NA,NA,"0.003862213"
