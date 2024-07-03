@@ -1,0 +1,68 @@
+---
+title: "Slope calculations"
+output:
+  html_document:
+    code_folding: show
+    toc: yes
+    toc_float: yes
+    toc_collapsed: yes
+    toc_depth: 2
+    number_sections: no
+    theme: cerulean
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE}
+#devtools::install_github("EIvimeyCook/ShinyDigitise")
+library(tidyr)
+library(dplyr)
+library(here)
+library(data.table)
+```
+
+# Data analysis
+
+## Cara_2022
+### Location 4
+```{r}
+Cara_2022_loc4 <- read.csv(here("RData/Cara_2022_loc4.csv"))
+Cara_2022_loc4_PFOA_weights <- 1 / (Cara_2022_loc4$PFOA_sd^2)
+
+Cara_2022_loc4_lm_model_PFOA <- lm(PFOA_mean ~ TL_mean, data = Cara_2022_loc4, weights = Cara_2022_loc4_PFOA_weights)
+summary(Cara_2022_loc4_lm_model_PFOA)
+```
+
+### Location 5
+```{r}
+Cara_2022_loc5 <- read.csv(here("RData/Cara_2022_loc5.csv"))
+
+Cara_2022_loc5_PFOA_weights <- 1 / (Cara_2022_loc5$PFOA_sd^2)
+Cara_2022_loc5_PFUnDA_weights <- 1 / (Cara_2022_loc5$PFUnDA_sd^2)
+
+Cara_2022_loc5_lm_model_PFOA <- lm(PFOA_mean ~ TL_mean, data = Cara_2022_loc5, weights = Cara_2022_loc5_PFOA_weights)
+summary(Cara_2022_loc5_lm_model_PFOA)
+
+Cara_2022_loc5_lm_model_PFUnDA <- lm(PFUnDA_mean ~ TL_mean, data = Cara_2022_loc5, weights = Cara_2022_loc5_PFUnDA_weights)
+summary(Cara_2022_loc5_lm_model_PFUnDA)
+```
+
+### Location 8
+```{r}
+Cara_2022_loc8 <- read.csv(here("RData/Cara_2022_loc8.csv"))
+
+Cara_2022_loc8_PFOA_weights <- 1 / (Cara_2022_loc8$PFOA_sd^2)
+Cara_2022_loc8_PFTrDA_weights <- 1 / (Cara_2022_loc8$PFTrDA_sd^2)
+
+Cara_2022_loc8_lm_model_PFOA <- lm(PFOA_mean ~ TL_mean, data = Cara_2022_loc8, weights = Cara_2022_loc8_PFOA_weights)
+summary(Cara_2022_loc8_lm_model_PFOA)
+
+Cara_2022_loc5_lm_model_PFTrDA <- lm(PFTrDA_mean ~ TL_mean, data = Cara_2022_loc8, weights = Cara_2022_loc8_PFTrDA_weights)
+summary(Cara_2022_loc5_lm_model_PFTrDA)
+```
+
