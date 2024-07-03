@@ -1,0 +1,15 @@
+,filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+1,Ren_2022_1.png,PFHxS,PFHxS species 1,0.085585586,NA,NA,NA,0.004504505,se,mean_error
+2,Ren_2022_1.png,PFHxS,PFHxS species 2,0.468468468,NA,NA,NA,0.004504505,se,mean_error
+3,Ren_2022_1.png,PFHxS,PFHxS species 3,0.081081081,NA,NA,NA,0.022522523,se,mean_error
+4,Ren_2022_1.png,PFHxS,PFHxS species 4,0.067567568,NA,NA,NA,0.009009009,se,mean_error
+5,Ren_2022_1.png,PFHxS,PFHxS species 5,0.081081081,NA,NA,NA,0.009009009,se,mean_error
+6,Ren_2022_1.png,PFHxS,PFHxS species 6,1.238738739,NA,NA,NA,0.22972973,se,mean_error
+7,Ren_2022_1.png,PFHxS,PFHxS species 7,0.477477477,NA,NA,NA,0.153153153,se,mean_error
+,Ren_2022_1r.png,TL,PFHxS species 1,1.98510882,NA,NA,NA,NA,NA,mean_error
+,Ren_2022_1r.png,TL,PFHxS species 2,2.887743414,NA,NA,NA,NA,NA,mean_error
+,Ren_2022_1r.png,TL,PFHxS species 3,3.052691867,NA,NA,NA,NA,NA,mean_error
+,Ren_2022_1r.png,TL,PFHxS species 4,3.180985109,NA,NA,NA,NA,NA,mean_error
+,Ren_2022_1r.png,TL,PFHxS species 5,3.345933562,NA,NA,NA,NA,NA,mean_error
+,Ren_2022_1r.png,TL,PFHxS species 6,3.620847652,NA,NA,NA,NA,NA,mean_error
+,Ren_2022_1r.png,TL,PFHxS species 7,4.349369989,NA,NA,NA,NA,NA,mean_error

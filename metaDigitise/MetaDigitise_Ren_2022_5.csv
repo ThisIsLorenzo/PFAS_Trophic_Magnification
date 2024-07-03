@@ -1,0 +1,15 @@
+,filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+1,Ren_2022_5.png,PFDA,PFDA species 1,0.018604651,NA,NA,NA,0.027906977,se,mean_error
+2,Ren_2022_5.png,PFDA,PFDA species 2,0.269767442,NA,NA,NA,0,se,mean_error
+3,Ren_2022_5.png,PFDA,PFDA species 3,0.744186047,NA,NA,NA,0,se,mean_error
+4,Ren_2022_5.png,PFDA,PFDA species 4,0.939534884,NA,NA,NA,0,se,mean_error
+5,Ren_2022_5.png,PFDA,PFDA species 5,1.83255814,NA,NA,NA,0,se,mean_error
+6,Ren_2022_5.png,PFDA,PFDA species 6,1.665116279,NA,NA,NA,0,se,mean_error
+7,Ren_2022_5.png,PFDA,PFDA species 7,3.646511628,NA,NA,NA,1.786046512,se,mean_error
+,Ren_2022_5r.png,TL,PFDA species 1,1.987542469,NA,NA,NA,NA,NA,mean_error
+,Ren_2022_5r.png,TL,PFDA species 2,2.889014723,NA,NA,NA,NA,NA,mean_error
+,Ren_2022_5r.png,TL,PFDA species 3,3.061155153,NA,NA,NA,NA,NA,mean_error
+,Ren_2022_5r.png,TL,PFDA species 4,3.192525481,NA,NA,NA,NA,NA,mean_error
+,Ren_2022_5r.png,TL,PFDA species 5,3.364665912,NA,NA,NA,NA,NA,mean_error
+,Ren_2022_5r.png,TL,PFDA species 6,3.636466591,NA,NA,NA,NA,NA,mean_error
+,Ren_2022_5r.png,TL,PFDA species 7,4.347678369,NA,NA,NA,NA,NA,mean_error

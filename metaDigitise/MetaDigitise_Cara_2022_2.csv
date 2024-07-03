@@ -1,0 +1,11 @@
+,filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+1,1_Cara_2022_2.png,PFUnDA,"species1, location5",0.69527897,0.157725322,NA,NA,NA,sd,mean_error
+2,1_Cara_2022_2.png,PFUnDA,"species2, location5",0.762875536,0.222103004,NA,NA,NA,sd,mean_error
+3,1_Cara_2022_2.png,PFUnDA,"species3, location5",0.431330472,0.106223176,NA,NA,NA,sd,mean_error
+4,1_Cara_2022_2.png,PFUnDA,"species4, location5",0.473175966,0.090128755,NA,NA,NA,sd,mean_error
+5,1_Cara_2022_2.png,PFUnDA,"species5, location5",0.418454936,0.093347639,NA,NA,NA,sd,mean_error
+1,1_Cara_2022_2r.png,TL,"species1, location5",2.598039216,NA,NA,NA,NA,NA,mean_error
+2,1_Cara_2022_2r.png,TL,"species2, location5",2.647058824,NA,NA,NA,NA,NA,mean_error
+3,1_Cara_2022_2r.png,TL,"species3, location5",3.104575163,NA,NA,NA,NA,NA,mean_error
+4,1_Cara_2022_2r.png,TL,"species4, location5",3.303921569,NA,NA,NA,NA,NA,mean_error
+5,1_Cara_2022_2r.png,TL,"species5, location5",3.598039216,NA,NA,NA,NA,NA,mean_error

@@ -1,0 +1,97 @@
+---
+title: "split function"
+author: "Lorenzo Ricolfi"
+date: "2024-04-08"
+output: html_document
+---
+
+The following code was written by Coralie Williams.
+
+The following code randomly splits reference list for collaborative work between 2 collaborators and set proportions for each split.
+
+Arguments: 
+- x: data frame with reference list from Rayyan
+- k: number of splits (collaborators in screening)
+- p: vector of proportions of split, it must have two positive numerical values that sum to 1. 
+- fileName: provided desired suffix of split files
+- write: logical argument whether to save the pilot list as csv in current working directory.
+
+#Loading packages
+```{r}
+library(here)
+library(tidyverse)
+```
+
+#Writing the function
+```{r}
+random_split <- function(x, k, p, write=FALSE) {
+  
+  # check if input is valid
+  if (!is.data.frame(x)) stop("x must be a data frame")
+  if (k <= 0) stop("k must be a positive number")
+  if (k > nrow(x)) stop("k must be a number smaller than the total number of entries in the dataframe")
+  if (length(p) != k) stop("p must be a vector of length k")
+  if (abs(sum(p) - 1) > 1e-10) stop("p must sum to 1")
+  
+  # shuffle randomly rows of the input dataframe
+  x <- x[sample(nrow(x)), ]
+  
+  # initialize list where results will be stored
+  result <- vector("list", k)
+  
+  # split the dataframe into k parts according to the proportions in p
+  start_index <- 1
+  
+  for (i in 1:k) {
+    
+    # compute the number of rows for this split
+    n <- round(nrow(x) * p[i])
+    
+    # extract the rows for this split
+    result[[i]] <- x[start_index:(start_index + n - 1), ]
+    
+    # remove empty rows if paper list is not an even number
+    result[[i]] <- result[[i]][!apply(is.na(result[[i]]), 1, all),]
+    
+    # update the start index for the next split
+    start_index <- start_index + n
+    
+    if (write==T){
+      # save as dataframe 
+      split <- data.frame(result[[i]])
+      # save dataframe in working directory
+      write_csv(split, paste("split", i, ".csv", sep=""), na="")
+    }
+  }
+  
+  # return the result
+  return(result)
+  
+  # print out message
+  cat(paste(c("Reference list was randomly split into", k, "parts")))
+  
+}
+```
+
+#Loading data and applying the function
+```{r}
+articles <- read_csv(here("data/splitting","deduplicated_R+Rayyan.csv"), skip = 0)
+
+set.seed(123)
+# split
+rand_split_list <- random_split(articles, 6, p=c(1/6,1/6,1/6,1/6,1/6,1/6))
+split1 <- data.frame(rand_split_list[1])
+split2 <- data.frame(rand_split_list[2])
+split3 <- data.frame(rand_split_list[3])
+split4 <- data.frame(rand_split_list[4])
+split5 <- data.frame(rand_split_list[5])
+split6 <- data.frame(rand_split_list[6])
+
+# save files
+write_csv(split1, here("data/splitting/split1.csv", na=""))
+write_csv(split2, here("data/splitting/split2.csv", na=""))
+write_csv(split3, here("data/splitting/split3.csv", na=""))
+write_csv(split4, here("data/splitting/split4.csv", na=""))
+write_csv(split5, here("data/splitting/split5.csv", na=""))
+write_csv(split6, here("data/splitting/split6.csv", na=""))
+```

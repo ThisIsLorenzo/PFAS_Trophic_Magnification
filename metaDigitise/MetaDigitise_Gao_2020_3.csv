@@ -1,0 +1,11 @@
+,filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+1,Gao_2020_3.png,log PFBA,PFBA species 1,1.705592105,0.325657895,NA,NA,NA,sd,mean_error
+2,Gao_2020_3.png,log PFBA,PFBA species 2,3.121710526,0.518092105,NA,NA,NA,sd,mean_error
+3,Gao_2020_3.png,log PFBA,PFBA species 3,3.013157895,0.157894737,NA,NA,NA,sd,mean_error
+4,Gao_2020_3.png,log PFBA,PFBA species 4,2.203947368,0.463815789,NA,NA,NA,sd,mean_error
+5,Gao_2020_3.png,log PFBA,PFBA species 5,2.776315789,0.1875,NA,NA,NA,sd,mean_error
+,Gao_2020_3r.png,TL,PFBA species 1,1,0,NA,NA,NA,sd,mean_error
+,Gao_2020_3r.png,TL,PFBA species 2,1.650943396,0.141509434,NA,NA,NA,sd,mean_error
+,Gao_2020_3r.png,TL,PFBA species 3,2.347169811,0.067924528,NA,NA,NA,sd,mean_error
+,Gao_2020_3r.png,TL,PFBA species 4,3.083018868,0.152830189,NA,NA,NA,sd,mean_error
+,Gao_2020_3r.png,TL,PFBA species 5,3.433962264,0.067924528,NA,NA,NA,sd,mean_error

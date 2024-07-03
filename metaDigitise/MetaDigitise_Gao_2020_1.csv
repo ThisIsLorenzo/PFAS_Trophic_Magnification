@@ -1,0 +1,11 @@
+,filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+1,Gao_2020_1.png,log PFHxS,PFHxS species 1,1.658291457,0.175879397,NA,NA,NA,sd,mean_error
+2,Gao_2020_1.png,log PFHxS,PFHxS species 2,2.055276382,0.381909548,NA,NA,NA,sd,mean_error
+3,Gao_2020_1.png,log PFHxS,PFHxS species 3,2.291457286,0.326633166,NA,NA,NA,sd,mean_error
+4,Gao_2020_1.png,log PFHxS,PFHxS species 4,2.206030151,0.155778894,NA,NA,NA,sd,mean_error
+5,Gao_2020_1.png,log PFHxS,PFHxS species 5,2.618090452,0.190954774,NA,NA,NA,sd,mean_error
+,Gao_2020_1r.png,TL,PFHxS species 1,0.988636364,0,NA,NA,NA,sd,mean_error
+,Gao_2020_1r.png,TL,PFHxS species 2,1.636363636,0.142045455,NA,NA,NA,sd,mean_error
+,Gao_2020_1r.png,TL,PFHxS species 3,2.340909091,0.0625,NA,NA,NA,sd,mean_error
+,Gao_2020_1r.png,TL,PFHxS species 4,3.102272727,0.164772727,NA,NA,NA,sd,mean_error
+,Gao_2020_1r.png,TL,PFHxS species 5,3.426136364,0.056818182,NA,NA,NA,sd,mean_error
