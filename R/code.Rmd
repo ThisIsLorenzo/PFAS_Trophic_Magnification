@@ -46,7 +46,6 @@ head(wide_data)
 ```{r}
 Cara_2022 <- wide_data %>% 
   filter(Study_ID == "S_052") %>%
-  select_if(~ !all(is.na(.))) %>% 
   setDT() %>% 
   melt(id.vars = c("group_id"), na.rm = TRUE) %>% 
   dcast(group_id ~ variable, value.var = "value", fun.aggregate = max, na.rm = TRUE) %>% 
@@ -55,7 +54,10 @@ Cara_2022 <- wide_data %>%
 
 Cara_2022_loc4 <- Cara_2022 %>% 
   filter(location == "location 4") %>%
-  mutate(across(ends_with("mean") | ends_with("sd"), ~ as.numeric(as.character(.))))
+  mutate(across(ends_with("mean") | ends_with("sd"), ~ as.numeric(as.character(.)))) %>% 
+  mutate(log_PFOA_mean = log(PFOA_mean)) %>%
+  mutate(log_PFOA_sd = log((PFOA_mean^2)/(PFOA_mean - PFOA_sd^2))) %>%
+  select_if(~ !all(is.na(.)))
 
 #write.csv(Cara_2022_loc4, file = here("Rdata", "Cara_2022_loc4.csv"))
 
@@ -100,7 +102,12 @@ Martin_2004_benthic <- Martin_2004 %>%
 ```{r}
 Koch_2020 <- wide_data %>% 
   filter(Study_ID == "S_053") %>%
-  select_if(~ !all(is.na(.)))
+  select_if(~ !all(is.na(.))) %>% 
+  setDT() %>% 
+  melt(id.vars = c("group_id"), na.rm = TRUE) %>% 
+  dcast(group_id ~ variable, value.var = "value", fun.aggregate = max, na.rm = TRUE)
+
+#write.csv(Koch_2020, file = here("Rdata", "Koch_2020.csv"))
 ```
 
 ## Mazzoni_2020
@@ -178,18 +185,19 @@ Van_de_Vijver_2003 <- wide_data %>%
 ## Cara_2022
 ```{r}
 # Location 4
-Cara_2022_loc4 <- read.csv(here("RData/Cara_2022_loc4.csv"))
+Cara_2022_loc4 <- read.csv(here("RData", "Cara_2022_loc4.csv"))
 Cara_2022_loc4_PFOA_weights <- 1 / (Cara_2022_loc4$PFOA_sd^2)
 
 Cara_2022_loc4_lm_model_PFOA <- lm(PFOA_mean ~ TL_mean, 
                                    data = Cara_2022_loc4,
                                    weights = Cara_2022_loc4_PFOA_weights)
 
-Cara_2022_loc4_lm_model_PFOA_robust <- metafor::robust(Cara_2022_loc4_lm_model_PFOA)
-summary(Cara_2022_loc4_lm_model_PFOA)
+plot(residuals(Cara_2022_loc4_lm_model_PFOA))
+
+coeftest(Cara_2022_loc4_lm_model_PFOA, vcov. = vcovHC)
 
 #Location 5
-Cara_2022_loc5 <- read.csv(here("RData/Cara_2022_loc5.csv"))
+Cara_2022_loc5 <- read.csv(here("RData", "Cara_2022_loc5.csv"))
 
 Cara_2022_loc5_PFOA_weights <- 1 / (Cara_2022_loc5$PFOA_sd^2)
 Cara_2022_loc5_PFUnDA_weights <- 1 / (Cara_2022_loc5$PFUnDA_sd^2)
@@ -205,7 +213,7 @@ Cara_2022_loc5_lm_model_PFUnDA <- lm(PFUnDA_mean ~ TL_mean,
 summary(Cara_2022_loc5_lm_model_PFUnDA)
 
 #Location 8
-Cara_2022_loc8 <- read.csv(here("RData/Cara_2022_loc8.csv"))
+Cara_2022_loc8 <- read.csv(here("RData", "Cara_2022_loc8.csv"))
 
 Cara_2022_loc8_PFOA_weights <- 1 / (Cara_2022_loc8$PFOA_sd^2)
 Cara_2022_loc8_PFTrDA_weights <- 1 / (Cara_2022_loc8$PFTrDA_sd^2)
@@ -223,7 +231,7 @@ summary(Cara_2022_loc5_lm_model_PFTrDA)
 
 ## Martin_2004
 ```{r}
-Martin_2004_pelagic <- read.csv(here("RData/Martin_2004_pelagic.csv"))
+Martin_2004_pelagic <- read.csv(here("RData", "Martin_2004_pelagic.csv"))
 Martin_2004_pelagic_lm_model_PFOS <- lm(ln_PFOS_mean ~ TL_mean, 
                                    data = Martin_2004_pelagic)
 summary(Martin_2004_pelagic_lm_model_PFOS)
@@ -237,7 +245,8 @@ summary(Martin_2004_benthic_lm_model_PFOS)
 
 ## Koch_2020
 ```{r}
-
+Koch_2020 <- read.csv(here("Rdata", "Koch_2020.csv"))
+Koch_2020_lm_model_PFOS <- lm(PFOS_mean ~ )
 ```
 
 ## Mazzoni_2020
