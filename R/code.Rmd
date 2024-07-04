@@ -56,7 +56,6 @@ Cara_2022_loc4 <- Cara_2022 %>%
   filter(location == "location 4") %>%
   mutate(across(ends_with("mean") | ends_with("sd"), ~ as.numeric(as.character(.)))) %>% 
   mutate(log_PFOA_mean = log(PFOA_mean)) %>%
-  mutate(log_PFOA_sd = log((PFOA_mean^2)/(PFOA_mean - PFOA_sd^2))) %>%
   select_if(~ !all(is.na(.)))
 
 #write.csv(Cara_2022_loc4, file = here("Rdata", "Cara_2022_loc4.csv"))
