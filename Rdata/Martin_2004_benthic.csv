@@ -1,0 +1,17 @@
+"","PFAS","species","food_web","Study_ID","filename","se","error_type","plot_type","software","TL_mean","ln_PFOS_mean","ln_PFOA_mean","ln_PFNA_mean","ln_PFDA_mean","ln_PFUnDA_mean","ln_PFDoDA_mean","ln_PFTrDA_mean","ln_PFTeDA_mean"
+"1","PFDA","species1","benthic food web","S_013","Martin_2004_5.png","0.079365079","se","mean_error","metaDigitise",3.324396783,NA,NA,NA,-3.46031746,NA,NA,NA,NA
+"2","PFDA","species2","benthic food web","S_013","Martin_2004_5.png","0.301587302","se","mean_error","metaDigitise",4.085790885,NA,NA,NA,-3.587301587,NA,NA,NA,NA
+"3","PFNA","species1","benthic food web","S_013","Martin_2004_4.png","0.109589041","se","mean_error","metaDigitise",3.325827815,NA,NA,-2.849315068,NA,NA,NA,NA,NA
+"4","PFNA","species2","benthic food web","S_013","Martin_2004_4.png","1.232876712","se","mean_error","metaDigitise",4.086092715,NA,NA,-3.835616438,NA,NA,NA,NA,NA
+"5","PFOA","species1","benthic food web","S_013","Martin_2004_3.png","0.128686327","se","mean_error","metaDigitise",3.336525308,NA,-2.445040214,NA,NA,NA,NA,NA,NA
+"6","PFOA","species2","benthic food web","S_013","Martin_2004_3.png","0.300268097","se","mean_error","metaDigitise",4.088919289,NA,-3.174262735,NA,NA,NA,NA,NA,NA
+"7","PFOS","species1","benthic food web","S_013","Martin_2004_2.png","0.154929577","se","mean_error","metaDigitise",3.32388664,-1.295774648,NA,NA,NA,NA,NA,NA,NA
+"8","PFOS","species2","benthic food web","S_013","Martin_2004_2.png","0.211267606","se","mean_error","metaDigitise",4.082321188,-0.788732394,NA,NA,NA,NA,NA,NA,NA
+"9","PFTeDA","species1","benthic food web","S_013","Martin_2004_9.png","0.080213904","se","mean_error","metaDigitise",3.327421555,NA,NA,NA,NA,NA,NA,NA,-4.898395722
+"10","PFTeDA","species2","benthic food web","S_013","Martin_2004_9.png","0.272727273","se","mean_error","metaDigitise",4.085948158,NA,NA,NA,NA,NA,NA,NA,-5.540106952
+"11","PFTrDA","species1","benthic food web","S_013","Martin_2004_8.png","0.040650407","se","mean_error","metaDigitise",3.323570432,NA,NA,NA,NA,NA,NA,-4.20596206,NA
+"12","PFTrDA","species2","benthic food web","S_013","Martin_2004_8.png","0.243902439","se","mean_error","metaDigitise",4.085076709,NA,NA,NA,NA,NA,NA,-4.341463415,NA
+"13","PFUDoDA","species1","benthic food web","S_013","Martin_2004_7.png","0.081967213","se","mean_error","metaDigitise",3.332863188,NA,NA,NA,NA,NA,-4.256830601,NA,NA
+"14","PFUDoDA","species2","benthic food web","S_013","Martin_2004_7.png","0.204918033","se","mean_error","metaDigitise",4.086036671,NA,NA,NA,NA,NA,-4.243169399,NA,NA
+"15","PFUnDA","species1","benthic food web","S_013","Martin_2004_6.png","0.063157895","se","mean_error","metaDigitise",3.321088435,NA,NA,NA,NA,-3.178947368,NA,NA,NA
+"16","PFUnDA","species2","benthic food web","S_013","Martin_2004_6.png","0.210526316","se","mean_error","metaDigitise",4.088435374,NA,NA,NA,NA,-3.2,NA,NA,NA

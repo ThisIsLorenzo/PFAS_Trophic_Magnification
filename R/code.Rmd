@@ -16,9 +16,10 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyr)
 library(dplyr)
 library(here)
+library(sandwich)
 library(data.table)
 library(metaDigitise)
-library(shinyDigitise)
+#library(shinyDigitise)
 ```
 
 # Raw data extracion - MetaDigitise
@@ -53,31 +54,20 @@ Cara_2022 <- wide_data %>%
   separate(group_id, into = c("PFAS", "species", "location"), sep = ",\\s*", extra = "drop")
 
 Cara_2022_loc4 <- Cara_2022 %>% 
-  filter(location == "location 4")
-
-Cara_2022_loc4$PFOA_mean <- as.numeric(as.character(Cara_2022_loc4$PFOA_mean))
-Cara_2022_loc4$PFOA_sd <- as.numeric(as.character(Cara_2022_loc4$PFOA_sd))
-Cara_2022_loc4$TL_mean <- as.numeric(as.character(Cara_2022_loc4$TL_mean))
+  filter(location == "location 4") %>%
+  mutate(across(ends_with("mean") | ends_with("sd"), ~ as.numeric(as.character(.))))
 
 #write.csv(Cara_2022_loc4, file = here("Rdata", "Cara_2022_loc4.csv"))
 
 Cara_2022_loc5 <- Cara_2022 %>% 
-  filter(location == "location 5")
-
-Cara_2022_loc5$PFOA_mean <- as.numeric(as.character(Cara_2022_loc5$PFOA_mean))
-Cara_2022_loc5$PFOA_sd <- as.numeric(as.character(Cara_2022_loc5$PFOA_sd))
-Cara_2022_loc5$PFUnDA_mean <- as.numeric(as.character(Cara_2022_loc5$PFUnDA_mean))
-Cara_2022_loc5$PFUnDA_sd <- as.numeric(as.character(Cara_2022_loc5$PFUnDA_sd))
-Cara_2022_loc5$TL_mean <- as.numeric(as.character(Cara_2022_loc5$TL_mean))
+  filter(location == "location 5") %>%
+  mutate(across(ends_with("mean") | ends_with("sd"), ~ as.numeric(as.character(.))))
 
 #write.csv(Cara_2022_loc5, file = here("Rdata", "Cara_2022_loc5.csv"))
 
 Cara_2022_loc8 <- Cara_2022 %>% 
-  filter(location == "location 8")
-
-Cara_2022_loc8$PFOA_mean <- as.numeric(as.character(Cara_2022_loc8$PFOA_mean))
-Cara_2022_loc5$PFTrDA_mean <- as.numeric(as.character(Cara_2022_loc5$PFTrDA_mean))
-Cara_2022_loc8$TL_mean <- as.numeric(as.character(Cara_2022_loc8$TL_mean))
+  filter(location == "location 8") %>%
+  mutate(across(ends_with("mean") | ends_with("sd"), ~ as.numeric(as.character(.))))
 
 #write.csv(Cara_2022_loc8, file = here("Rdata", "Cara_2022_loc8.csv"))
 ```
@@ -86,7 +76,24 @@ Cara_2022_loc8$TL_mean <- as.numeric(as.character(Cara_2022_loc8$TL_mean))
 ```{r}
 Martin_2004 <- wide_data %>% 
   filter(Study_ID == "S_013") %>%
-  select_if(~ !all(is.na(.)))
+  select_if(~ !all(is.na(.))) %>% 
+  setDT() %>% 
+  melt(id.vars = c("group_id"), na.rm = TRUE) %>% 
+  dcast(group_id ~ variable, value.var = "value", fun.aggregate = max, na.rm = TRUE) %>% 
+  mutate(group_id = gsub("^(\\w+\\s[^,]+)", "\\1,", group_id)) %>% 
+  separate(group_id, into = c("PFAS", "species", "food_web"), sep = ",\\s*", extra = "drop")
+
+Martin_2004_pelagic <- Martin_2004 %>% 
+  filter(food_web == "pelagic food web") %>%
+  mutate(across(ends_with("mean") | ends_with("sd"), ~ as.numeric(as.character(.))))
+
+#write.csv(Martin_2004_pelagic, file = here("Rdata", "Martin_2004_pelagic.csv"))
+
+Martin_2004_benthic <- Martin_2004 %>% 
+  filter(food_web == "benthic food web") %>%
+  mutate(across(ends_with("mean") | ends_with("sd"), ~ as.numeric(as.character(.))))
+
+#write.csv(Martin_2004_benthic, file = here("Rdata", "Martin_2004_benthic.csv"))
 ```
 
 ## Koch_2020
@@ -166,15 +173,19 @@ Van_de_Vijver_2003 <- wide_data %>%
   select_if(~ !all(is.na(.)))
 ```
 
-#Data analysis
+# Regression analysis
 
-##Cara_2022
+## Cara_2022
 ```{r}
 # Location 4
 Cara_2022_loc4 <- read.csv(here("RData/Cara_2022_loc4.csv"))
 Cara_2022_loc4_PFOA_weights <- 1 / (Cara_2022_loc4$PFOA_sd^2)
 
-Cara_2022_loc4_lm_model_PFOA <- lm(PFOA_mean ~ TL_mean, data = Cara_2022_loc4, weights = Cara_2022_loc4_PFOA_weights)
+Cara_2022_loc4_lm_model_PFOA <- lm(PFOA_mean ~ TL_mean, 
+                                   data = Cara_2022_loc4,
+                                   weights = Cara_2022_loc4_PFOA_weights)
+
+Cara_2022_loc4_lm_model_PFOA_robust <- metafor::robust(Cara_2022_loc4_lm_model_PFOA)
 summary(Cara_2022_loc4_lm_model_PFOA)
 
 #Location 5
@@ -183,22 +194,98 @@ Cara_2022_loc5 <- read.csv(here("RData/Cara_2022_loc5.csv"))
 Cara_2022_loc5_PFOA_weights <- 1 / (Cara_2022_loc5$PFOA_sd^2)
 Cara_2022_loc5_PFUnDA_weights <- 1 / (Cara_2022_loc5$PFUnDA_sd^2)
 
-Cara_2022_loc5_lm_model_PFOA <- lm(PFOA_mean ~ TL_mean, data = Cara_2022_loc5, weights = Cara_2022_loc5_PFOA_weights)
+Cara_2022_loc5_lm_model_PFOA <- lm(PFOA_mean ~ TL_mean, 
+                                   data = Cara_2022_loc5,
+                                   weights = Cara_2022_loc5_PFOA_weights)
 summary(Cara_2022_loc5_lm_model_PFOA)
 
-Cara_2022_loc5_lm_model_PFUnDA <- lm(PFUnDA_mean ~ TL_mean, data = Cara_2022_loc5, , weights = Cara_2022_loc5_PFUnDA_weights)
+Cara_2022_loc5_lm_model_PFUnDA <- lm(PFUnDA_mean ~ TL_mean, 
+                                     data = Cara_2022_loc5, 
+                                     weights = Cara_2022_loc5_PFUnDA_weights)
 summary(Cara_2022_loc5_lm_model_PFUnDA)
 
 #Location 8
 Cara_2022_loc8 <- read.csv(here("RData/Cara_2022_loc8.csv"))
 
+Cara_2022_loc8_PFOA_weights <- 1 / (Cara_2022_loc8$PFOA_sd^2)
+Cara_2022_loc8_PFTrDA_weights <- 1 / (Cara_2022_loc8$PFTrDA_sd^2)
 
-
-Cara_2022_loc8_lm_model_PFOA <- lm(PFOA_mean ~ TL_mean, data = Cara_2022_loc8)
+Cara_2022_loc8_lm_model_PFOA <- lm(PFOA_mean ~ TL_mean, 
+                                   data = Cara_2022_loc8,
+                                   weights = Cara_2022_loc8_PFOA_weights)
 summary(Cara_2022_loc8_lm_model_PFOA)
 
-Cara_2022_loc5_lm_model_PFTrDA <- lm(PFTrDA_mean ~ TL_mean, data = Cara_2022_loc8)
+Cara_2022_loc5_lm_model_PFTrDA <- lm(PFTrDA_mean ~ TL_mean, 
+                                     data = Cara_2022_loc8, 
+                                     weights = Cara_2022_loc8_PFTrDA_weights)
 summary(Cara_2022_loc5_lm_model_PFTrDA)
 ```
 
-# 
+## Martin_2004
+```{r}
+Martin_2004_pelagic <- read.csv(here("RData/Martin_2004_pelagic.csv"))
+Martin_2004_pelagic_lm_model_PFOS <- lm(ln_PFOS_mean ~ TL_mean, 
+                                   data = Martin_2004_pelagic)
+summary(Martin_2004_pelagic_lm_model_PFOS)
+
+
+Martin_2004_benthic <- read.csv(here("RData/Martin_2004_benthic.csv"))
+Martin_2004_benthic_lm_model_PFOS <- lm(ln_PFOS_mean ~ TL_mean, 
+                                   data = Martin_2004_benthic)
+summary(Martin_2004_benthic_lm_model_PFOS)
+```
+
+## Koch_2020
+```{r}
+
+```
+
+## Mazzoni_2020
+```{r}
+
+```
+
+## Liu_2018
+```{r}
+
+```
+
+## Gao_2020
+```{r}
+
+```
+
+## Chen_2018
+```{r}
+
+```
+
+## Du_2021
+```{r}
+
+```
+
+## Ren_2022
+```{r}
+
+```
+
+## Koch_2021
+```{r}
+
+```
+
+## Li_2008
+```{r}
+
+```
+
+## Pan_2010
+```{r}
+
+```
+
+## Van de Vijver_2003
+```{r}
+
+```

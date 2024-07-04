@@ -59,90 +59,90 @@ S_013,Martin_2004_2.png,TL,"PFOS, species1, pelagic food web",3.569500675,NA,NA,
 S_013,Martin_2004_2.png,TL,"PFOS, species2, pelagic food web",4.090418354,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_2.png,TL,"PFOS, species3, pelagic food web",4.406207827,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_2.png,TL,"PFOS, species4, pelagic food web",4.940620783,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
-S_013,Martin_2004_2.png,ln PFOS,"PFOS, species1, benthic food web",-1.295774648,NA,NA,NA,0.154929577,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_2.png,ln PFOS,"PFOS, species2, benthic food web",-0.788732394,NA,NA,NA,0.211267606,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_2.png,ln PFOS,"PFOS, species1, pelagic food web",-4.366197183,NA,NA,NA,0.126760563,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_2.png,ln PFOS,"PFOS, species2, pelagic food web",-3.14084507,NA,NA,NA,0.352112676,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_2.png,ln PFOS,"PFOS, species3, pelagic food web",-2.323943662,NA,NA,NA,0.450704225,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_2.png,ln PFOS,"PFOS, species4, pelagic food web",-1.830985915,NA,NA,NA,0.394366197,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_3.png,ln PFOA,"PFOA, species1, benthic food web",-2.445040214,NA,NA,NA,0.128686327,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_3.png,ln PFOA,"PFOA, species2, benthic food web",-3.174262735,NA,NA,NA,0.300268097,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_3.png,ln PFOA,"PFOA, species1, pelagic food web",-6.069705094,NA,NA,NA,0.193029491,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_3.png,ln PFOA,"PFOA, species2, pelagic food web",-6.648793566,NA,NA,NA,0.643431635,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_3.png,ln PFOA,"PFOA, species3, pelagic food web",-6.434316354,NA,NA,NA,0.600536193,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_3.png,ln PFOA,"PFOA, species4, pelagic food web",-6.927613941,NA,NA,NA,0.064343164,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_2.png,ln_PFOS,"PFOS, species1, benthic food web",-1.295774648,NA,NA,NA,0.154929577,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_2.png,ln_PFOS,"PFOS, species2, benthic food web",-0.788732394,NA,NA,NA,0.211267606,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_2.png,ln_PFOS,"PFOS, species1, pelagic food web",-4.366197183,NA,NA,NA,0.126760563,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_2.png,ln_PFOS,"PFOS, species2, pelagic food web",-3.14084507,NA,NA,NA,0.352112676,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_2.png,ln_PFOS,"PFOS, species3, pelagic food web",-2.323943662,NA,NA,NA,0.450704225,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_2.png,ln_PFOS,"PFOS, species4, pelagic food web",-1.830985915,NA,NA,NA,0.394366197,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_3.png,ln_PFOA,"PFOA, species1, benthic food web",-2.445040214,NA,NA,NA,0.128686327,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_3.png,ln_PFOA,"PFOA, species2, benthic food web",-3.174262735,NA,NA,NA,0.300268097,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_3.png,ln_PFOA,"PFOA, species1, pelagic food web",-6.069705094,NA,NA,NA,0.193029491,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_3.png,ln_PFOA,"PFOA, species2, pelagic food web",-6.648793566,NA,NA,NA,0.643431635,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_3.png,ln_PFOA,"PFOA, species3, pelagic food web",-6.434316354,NA,NA,NA,0.600536193,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_3.png,ln_PFOA,"PFOA, species4, pelagic food web",-6.927613941,NA,NA,NA,0.064343164,se,mean_error,metaDigitise,NA
 S_013,Martin_2004_3.png,TL,"PFOA, species1, benthic food web",3.336525308,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_3.png,TL,"PFOA, species2, benthic food web",4.088919289,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_3.png,TL,"PFOA, species1, pelagic food web",3.577291382,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_3.png,TL,"PFOA, species2, pelagic food web",4.102599179,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_3.png,TL,"PFOA, species3, pelagic food web",4.411764706,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_3.png,TL,"PFOA, species4, pelagic food web",4.945280438,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
-S_013,Martin_2004_4.png,ln PFNA,"PFNA, species1, benthic food web",-2.849315068,NA,NA,NA,0.109589041,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_4.png,ln PFNA,"PFNA, species2, benthic food web",-3.835616438,NA,NA,NA,1.232876712,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_4.png,ln PFNA,"PFNA, species1, pelagic food web",-5.917808219,NA,NA,NA,0.109589041,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_4.png,ln PFNA,"PFNA, species2, pelagic food web",-7.726027397,NA,NA,NA,1.123287671,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_4.png,ln PFNA,"PFNA, species3, pelagic food web",-5.205479452,NA,NA,NA,0.657534247,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_4.png,ln PFNA,"PFNA, species4, pelagic food web",-5.726027397,NA,NA,NA,0.794520548,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_4.png,ln_PFNA,"PFNA, species1, benthic food web",-2.849315068,NA,NA,NA,0.109589041,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_4.png,ln_PFNA,"PFNA, species2, benthic food web",-3.835616438,NA,NA,NA,1.232876712,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_4.png,ln_PFNA,"PFNA, species1, pelagic food web",-5.917808219,NA,NA,NA,0.109589041,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_4.png,ln_PFNA,"PFNA, species2, pelagic food web",-7.726027397,NA,NA,NA,1.123287671,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_4.png,ln_PFNA,"PFNA, species3, pelagic food web",-5.205479452,NA,NA,NA,0.657534247,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_4.png,ln_PFNA,"PFNA, species4, pelagic food web",-5.726027397,NA,NA,NA,0.794520548,se,mean_error,metaDigitise,NA
 S_013,Martin_2004_4.png,TL,"PFNA, species1, benthic food web",3.325827815,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_4.png,TL,"PFNA, species2, benthic food web",4.086092715,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_4.png,TL,"PFNA, species1, pelagic food web",3.58013245,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_4.png,TL,"PFNA, species2, pelagic food web",4.096688742,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_4.png,TL,"PFNA, species3, pelagic food web",4.406622517,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_4.png,TL,"PFNA, species4, pelagic food web",4.933774834,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
-S_013,Martin_2004_5.png,ln PFDA,"PFDA, species1, benthic food web",-3.46031746,NA,NA,NA,0.079365079,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_5.png,ln PFDA,"PFDA, species2, benthic food web",-3.587301587,NA,NA,NA,0.301587302,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_5.png,ln PFDA,"PFDA, species1, pelagic food web",-6.714285714,NA,NA,NA,0.079365079,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_5.png,ln PFDA,"PFDA, species2, pelagic food web",-6.873015873,NA,NA,NA,0.73015873,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_5.png,ln PFDA,"PFDA, species3, pelagic food web",-5.222222222,NA,NA,NA,0.507936508,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_5.png,ln PFDA,"PFDA, species4, pelagic food web",-5.285714286,NA,NA,NA,0.634920635,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_5.png,ln_PFDA,"PFDA, species1, benthic food web",-3.46031746,NA,NA,NA,0.079365079,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_5.png,ln_PFDA,"PFDA, species2, benthic food web",-3.587301587,NA,NA,NA,0.301587302,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_5.png,ln_PFDA,"PFDA, species1, pelagic food web",-6.714285714,NA,NA,NA,0.079365079,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_5.png,ln_PFDA,"PFDA, species2, pelagic food web",-6.873015873,NA,NA,NA,0.73015873,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_5.png,ln_PFDA,"PFDA, species3, pelagic food web",-5.222222222,NA,NA,NA,0.507936508,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_5.png,ln_PFDA,"PFDA, species4, pelagic food web",-5.285714286,NA,NA,NA,0.634920635,se,mean_error,metaDigitise,NA
 S_013,Martin_2004_5.png,TL,"PFDA, species1, benthic food web",3.324396783,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_5.png,TL,"PFDA, species2, benthic food web",4.085790885,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_5.png,TL,"PFDA, species1, pelagic food web",3.579088472,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_5.png,TL,"PFDA, species2, pelagic food web",4.09919571,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_5.png,TL,"PFDA, species3, pelagic food web",4.410187668,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_5.png,TL,"PFDA, species4, pelagic food web",4.941018767,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
-S_013,Martin_2004_6.png,ln PFUnDA,"PFUnDA, species1, benthic food web",-3.178947368,NA,NA,NA,0.063157895,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_6.png,ln PFUnDA,"PFUnDA, species2, benthic food web",-3.2,NA,NA,NA,0.210526316,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_6.png,ln PFUnDA,"PFUnDA, species1, pelagic food web",-6.673684211,NA,NA,NA,0.147368421,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_6.png,ln PFUnDA,"PFUnDA, species2, pelagic food web",-7.010526316,NA,NA,NA,0.863157895,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_6.png,ln PFUnDA,"PFUnDA, species3, pelagic food web",-5.094736842,NA,NA,NA,0.526315789,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_6.png,ln PFUnDA,"PFUnDA, species4, pelagic food web",-4.989473684,NA,NA,NA,0.736842105,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_6.png,ln_PFUnDA,"PFUnDA, species1, benthic food web",-3.178947368,NA,NA,NA,0.063157895,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_6.png,ln_PFUnDA,"PFUnDA, species2, benthic food web",-3.2,NA,NA,NA,0.210526316,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_6.png,ln_PFUnDA,"PFUnDA, species1, pelagic food web",-6.673684211,NA,NA,NA,0.147368421,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_6.png,ln_PFUnDA,"PFUnDA, species2, pelagic food web",-7.010526316,NA,NA,NA,0.863157895,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_6.png,ln_PFUnDA,"PFUnDA, species3, pelagic food web",-5.094736842,NA,NA,NA,0.526315789,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_6.png,ln_PFUnDA,"PFUnDA, species4, pelagic food web",-4.989473684,NA,NA,NA,0.736842105,se,mean_error,metaDigitise,NA
 S_013,Martin_2004_6.png,TL,"PFUnDA, species1, benthic food web",3.321088435,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_6.png,TL,"PFUnDA, species2, benthic food web",4.088435374,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_6.png,TL,"PFUnDA, species1, pelagic food web",3.57414966,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_6.png,TL,"PFUnDA, species2, pelagic food web",4.096598639,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_6.png,TL,"PFUnDA, species3, pelagic food web",4.40952381,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_6.png,TL,"PFUnDA, species4, pelagic food web",4.945578231,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
-S_013,Martin_2004_7.png,ln PFDoDA,"PFUDoDA, species1, benthic food web",-4.256830601,NA,NA,NA,0.081967213,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_7.png,ln PFDoDA,"PFUDoDA, species2, benthic food web",-4.243169399,NA,NA,NA,0.204918033,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_7.png,ln PFDoDA,"PFUDoDA, species1, pelagic food web",-6.37431694,NA,NA,NA,0.12295082,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_7.png,ln PFDoDA,"PFUDoDA, species2, pelagic food web",-6.524590164,NA,NA,NA,0.99726776,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_7.png,ln PFDoDA,"PFUDoDA, species3, pelagic food web",-5.595628415,NA,NA,NA,0.368852459,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_7.png,ln PFDoDA,"PFUDoDA, species4, pelagic food web",-5.745901639,NA,NA,NA,0.683060109,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_7.png,ln_PFDoDA,"PFUDoDA, species1, benthic food web",-4.256830601,NA,NA,NA,0.081967213,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_7.png,ln_PFDoDA,"PFUDoDA, species2, benthic food web",-4.243169399,NA,NA,NA,0.204918033,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_7.png,ln_PFDoDA,"PFUDoDA, species1, pelagic food web",-6.37431694,NA,NA,NA,0.12295082,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_7.png,ln_PFDoDA,"PFUDoDA, species2, pelagic food web",-6.524590164,NA,NA,NA,0.99726776,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_7.png,ln_PFDoDA,"PFUDoDA, species3, pelagic food web",-5.595628415,NA,NA,NA,0.368852459,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_7.png,ln_PFDoDA,"PFUDoDA, species4, pelagic food web",-5.745901639,NA,NA,NA,0.683060109,se,mean_error,metaDigitise,NA
 S_013,Martin_2004_7.png,TL,"PFUDoDA, species1, benthic food web",3.332863188,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_7.png,TL,"PFUDoDA, species2, benthic food web",4.086036671,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_7.png,TL,"PFUDoDA, species1, pelagic food web",3.575458392,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_7.png,TL,"PFUDoDA, species2, pelagic food web",4.094499295,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_7.png,TL,"PFUDoDA, species3, pelagic food web",4.410437236,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_7.png,TL,"PFUDoDA, species4, pelagic food web",4.935119887,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
-S_013,Martin_2004_8.png,ln PFTrDA,"PFTrDA, species1, benthic food web",-4.20596206,NA,NA,NA,0.040650407,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_8.png,ln PFTrDA,"PFTrDA, species2, benthic food web",-4.341463415,NA,NA,NA,0.243902439,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_8.png,ln PFTrDA,"PFTrDA, species1, pelagic food web",-6.509485095,NA,NA,NA,0.094850949,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_8.png,ln PFTrDA,"PFTrDA, species2, pelagic food web",-6.536585366,NA,NA,NA,0.203252033,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_8.png,ln PFTrDA,"PFTrDA, species3, pelagic food web",-5.628726287,NA,NA,NA,0.379403794,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_8.png,ln PFTrDA,"PFTrDA, species4, pelagic food web",-5.466124661,NA,NA,NA,0.501355014,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_8.png,ln_PFTrDA,"PFTrDA, species1, benthic food web",-4.20596206,NA,NA,NA,0.040650407,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_8.png,ln_PFTrDA,"PFTrDA, species2, benthic food web",-4.341463415,NA,NA,NA,0.243902439,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_8.png,ln_PFTrDA,"PFTrDA, species1, pelagic food web",-6.509485095,NA,NA,NA,0.094850949,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_8.png,ln_PFTrDA,"PFTrDA, species2, pelagic food web",-6.536585366,NA,NA,NA,0.203252033,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_8.png,ln_PFTrDA,"PFTrDA, species3, pelagic food web",-5.628726287,NA,NA,NA,0.379403794,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_8.png,ln_PFTrDA,"PFTrDA, species4, pelagic food web",-5.466124661,NA,NA,NA,0.501355014,se,mean_error,metaDigitise,NA
 S_013,Martin_2004_8.png,TL,"PFTrDA, species1, benthic food web",3.323570432,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_8.png,TL,"PFTrDA, species2, benthic food web",4.085076709,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_8.png,TL,"PFTrDA, species1, pelagic food web",3.574616457,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_8.png,TL,"PFTrDA, species2, pelagic food web",4.093444909,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_8.png,TL,"PFTrDA, species3, pelagic food web",4.411436541,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_8.png,TL,"PFTrDA, species4, pelagic food web",4.941422594,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
-S_013,Martin_2004_9.png,ln PFTeDA,"PFTeDA, species1, benthic food web",-4.898395722,NA,NA,NA,0.080213904,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_9.png,ln PFTeDA,"PFTeDA, species2, benthic food web",-5.540106952,NA,NA,NA,0.272727273,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_9.png,ln PFTeDA,"PFTeDA, species1, pelagic food web",-6.502673797,NA,NA,NA,0.096256684,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_9.png,ln PFTeDA,"PFTeDA, species2, pelagic food web",-8.267379679,NA,NA,NA,0.064171123,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_9.png,ln PFTeDA,"PFTeDA, species3, pelagic food web",-7.786096257,NA,NA,NA,0.754010695,se,mean_error,metaDigitise,NA
-S_013,Martin_2004_9.png,ln PFTeDA,"PFTeDA, species4, pelagic food web",-7.080213904,NA,NA,NA,1.07486631,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_9.png,ln_PFTeDA,"PFTeDA, species1, benthic food web",-4.898395722,NA,NA,NA,0.080213904,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_9.png,ln_PFTeDA,"PFTeDA, species2, benthic food web",-5.540106952,NA,NA,NA,0.272727273,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_9.png,ln_PFTeDA,"PFTeDA, species1, pelagic food web",-6.502673797,NA,NA,NA,0.096256684,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_9.png,ln_PFTeDA,"PFTeDA, species2, pelagic food web",-8.267379679,NA,NA,NA,0.064171123,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_9.png,ln_PFTeDA,"PFTeDA, species3, pelagic food web",-7.786096257,NA,NA,NA,0.754010695,se,mean_error,metaDigitise,NA
+S_013,Martin_2004_9.png,ln_PFTeDA,"PFTeDA, species4, pelagic food web",-7.080213904,NA,NA,NA,1.07486631,se,mean_error,metaDigitise,NA
 S_013,Martin_2004_9.png,TL,"PFTeDA, species1, benthic food web",3.327421555,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_9.png,TL,"PFTeDA, species2, benthic food web",4.085948158,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
 S_013,Martin_2004_9.png,TL,"PFTeDA, species1, pelagic food web",3.581173261,NA,NA,NA,NA,NA,mean_error,metaDigitise,NA
