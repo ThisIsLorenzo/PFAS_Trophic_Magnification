@@ -1,16 +1,31 @@
-"","group_id","Study_ID","filename","plot_type","software","PFOS_mean","delta 15N_mean"
-"1","species1","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser","5246.475213","5.549815498"
-"2","species10","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser","7908.221964","13.67527675"
-"3","species11","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser","6013.753008","13.36531365"
-"4","species12","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser","6590.591208","10.99630996"
-"5","species13","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser","5903.325044","11.79335793"
-"6","species14","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser","4933.576127","11.08487085"
-"7","species15","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser","4830.811808","13.78597786"
-"8","species2","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser","971.6304348","10"
-"9","species3","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser","6327.247714","8.162361624"
-"10","species4","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser","7105.167255","9.911439114"
-"11","species5","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser","7922.874218","9.84501845"
-"12","species6","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser","8505.350955","10.6199262"
-"13","species7","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser","9734.869645","12.1697417"
-"14","species8","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser","9264.091529","13.67527675"
-"15","species9","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser","9201.194048","14.60516605"
+"","PFAS","species","food_web","Study_ID","filename","plot_type","software","PFOS_mean","delta_15N_mean","log_PFOS_mean"
+"1","PFOS","species1","aquatic food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",1109.752496,5.531914894,7.01189229286683
+"2","PFOS","species1","riparian food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",19.30697729,0.740740741,2.96046654819567
+"3","PFOS","species10","aquatic food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",8703.591361,12.2212766,9.07149101957909
+"4","PFOS","species10","riparian food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",73.00524071,6.37037037,4.29053122911952
+"5","PFOS","species11","aquatic food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",7232.633896,13.65106383,8.88635854977951
+"6","PFOS","species11","riparian food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",127.5234525,7.802469136,4.84830028885985
+"7","PFOS","species12","aquatic food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",3783.462617,13.65106383,8.23839490555187
+"8","PFOS","species12","riparian food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",572.4848197,8.098765432,6.34998621926898
+"9","PFOS","species13","aquatic food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",1534.368409,13.39574468,7.33587411541358
+"10","PFOS","species13","riparian food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",442.5503952,9.135802469,6.09255434542093
+"11","PFOS","species14","aquatic food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",880.4883582,13.80425532,6.78047670604306
+"12","PFOS","species14","riparian food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",1986.719919,10.27160494,7.59424027589781
+"13","PFOS","species15","aquatic food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",6747.544053,14.6212766,8.81693387365929
+"14","PFOS","species15","riparian food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",3324.597932,10.51851852,8.10910402307145
+"15","PFOS","species2","aquatic food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",1762.914118,8.136170213,7.47472346765489
+"16","PFOS","species2","riparian food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",10.1440453,1.333333333,2.31688686337891
+"17","PFOS","species3","aquatic food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",148.2020706,9.974468085,4.9985766844243
+"18","PFOS","species3","riparian food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",623.7794396,4.049382716,6.43579684370746
+"19","PFOS","species4","aquatic food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",3783.462617,9.872340426,8.23839490555187
+"20","PFOS","species4","riparian food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",107.4127661,4.987654321,4.67667904000157
+"21","PFOS","species5","aquatic food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",2612.675226,9.872340426,7.86812996617694
+"22","PFOS","species5","riparian food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",145.0409659,5.925925926,4.97701622596662
+"23","PFOS","species6","aquatic food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",4880.251584,10.63829787,8.49295205161669
+"24","PFOS","species6","riparian food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",195.8508523,6.666666667,5.27735341190222
+"25","PFOS","species7","aquatic food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",2025.501939,10.99574468,7.61357281993678
+"26","PFOS","species7","riparian food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",14.29813862,4.444444444,2.66012936235991
+"27","PFOS","species8","aquatic food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",922.1978823,11.04680851,6.82675982341343
+"28","PFOS","species8","riparian food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",4.686055775,5.87654321,1.54459124249023
+"29","PFOS","species9","aquatic food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",1499.268433,11.81276596,7.31273255678711
+"30","PFOS","species9","riparian food web","S_053","Koch_2020_1","Scatter plot","Webplot Digitiser",15.57925134,6.074074074,2.74593998665646

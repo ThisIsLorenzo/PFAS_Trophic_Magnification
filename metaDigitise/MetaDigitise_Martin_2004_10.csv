@@ -1,0 +1,7 @@
+,filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type
+S_013,Martin_2004_10.png,ln_FOSA,"FOSA, species1, whole food web",-1.697560976,NA,NA,NA,0.136585366,se,mean_error
+S_013,Martin_2004_10.png,ln_FOSA,"FOSA, species2, whole food web",-2.068292683,NA,NA,NA,0.07804878,se,mean_error
+S_013,Martin_2004_10.png,ln_FOSA,"FOSA, species3, whole food web",-1.892682927,NA,NA,NA,0.03902439,se,mean_error
+S_013,Martin_2004_10.png,ln_FOSA,"FOSA, species4, whole food web",-5.892682927,NA,NA,NA,0.72195122,se,mean_error
+S_013,Martin_2004_10.png,ln_FOSA,"FOSA, species5, whole food web",-2.673170732,NA,NA,NA,0.331707317,se,mean_error
+S_013,Martin_2004_10.png,ln_FOSA,"FOSA, species6, whole food web",-4.468292683,NA,NA,NA,1.112195122,se,mean_error

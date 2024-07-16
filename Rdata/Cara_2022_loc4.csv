@@ -1,7 +1,7 @@
-"","PFAS","species","location","Study_ID","filename","error_type","plot_type","software","PFOA_mean","TL_mean","PFUnDA_mean","PFTrDA_mean","PFOA_sd","PFUnDA_sd","PFTrDA_sd"
-"1","PFOA","species1","location 4","S_052","Cara_2022_1.png","sd","mean_error","metaDigitise",1.577156823,2.70154185,NA,NA,0.385385583,NA,NA
-"2","PFOA","species2","location 4","S_052","Cara_2022_1.png","sd","mean_error","metaDigitise",2.021420759,2.737885463,NA,NA,0.824296941,NA,NA
-"3","PFOA","species3","location 4","S_052","Cara_2022_1.png","sd","mean_error","metaDigitise",1.534336203,2.969162996,NA,NA,0.594136107,NA,NA
-"4","PFOA","species4","location 4","S_052","Cara_2022_1.png","sd","mean_error","metaDigitise",1.218534128,3.200440529,NA,NA,0.251571144,NA,NA
-"5","PFOA","species5","location 4","S_052","Cara_2022_1.png","sd","mean_error","metaDigitise",0.961610406,3.398678414,NA,NA,0.04282062,NA,NA
-"6","PFOA","species6","location 4","S_052","Cara_2022_1.png","sd","mean_error","metaDigitise",0.934847519,3.702643172,NA,NA,0.04282062,NA,NA
+"","PFAS","species","location","Study_ID","filename","error_type","plot_type","software","PFOA_mean","TL_mean","PFOA_sd","log_PFOA_mean","log_PFOA_sd"
+"1","PFOA","species1","location 4","S_052","Cara_2022_1.png","sd","mean_error","metaDigitise",1.577156823,2.70154185,0.385385583,0.197874879110342,0.106121870483115
+"2","PFOA","species2","location 4","S_052","Cara_2022_1.png","sd","mean_error","metaDigitise",2.021420759,2.737885463,0.824296941,0.30565672137904,0.17709703006272
+"3","PFOA","species3","location 4","S_052","Cara_2022_1.png","sd","mean_error","metaDigitise",1.534336203,2.969162996,0.594136107,0.18592053243538,0.168170465029156
+"4","PFOA","species4","location 4","S_052","Cara_2022_1.png","sd","mean_error","metaDigitise",1.218534128,3.200440529,0.251571144,0.0858376971600693,0.089661797018859
+"5","PFOA","species5","location 4","S_052","Cara_2022_1.png","sd","mean_error","metaDigitise",0.961610406,3.398678414,0.04282062,-0.0170008456284341,0.0193391823358409
+"6","PFOA","species6","location 4","S_052","Cara_2022_1.png","sd","mean_error","metaDigitise",0.934847519,3.702643172,0.04282062,-0.0292592202047428,0.0198928259418914
