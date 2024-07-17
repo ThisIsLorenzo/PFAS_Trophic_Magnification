@@ -46,6 +46,10 @@ head(wide_data)
 ```
 
 ## S_052: Cara_2022
+- 3 food webs: location 4, 5, and 8.
+- [PFAS] regressed on the original scale. We log-transformed them before running linear model.
+- Standard deviations were log-scaled using the Delta method (Taylor approximation)
+- Data extracted from plots (Figure 6) using metaDigitise.
 ```{r}
 Cara_2022 <- wide_data %>% 
   filter(Study_ID == "S_052") %>%
@@ -61,7 +65,7 @@ Cara_2022_loc4 <- Cara_2022 %>%
   filter(location == "location 4") %>%
   mutate(across(ends_with("mean") | ends_with("sd"), ~ as.numeric(as.character(.)))) %>% 
   mutate(log_PFOA_mean = log10(PFOA_mean)) %>%
-  mutate(log_PFOA_sd = PFOA_sd/(PFOA_mean*log(10))) %>%
+  mutate(log_PFOA_sd = PFOA_sd/(PFOA_mean*log(10))) %>% #Delta method (Taylor aproximation)
   select_if(~ !all(is.na(.)))
 
 #write.csv(Cara_2022_loc4, file = here("Rdata", "Cara_2022_loc4.csv"))
@@ -90,6 +94,10 @@ Cara_2022_loc8 <- Cara_2022 %>%
 ```
 
 ## S_013: Martin_2004
+- 3 food webs: benthic, pelagic, and whole food web.
+- Benthic food web only has 2 trophic levels included in the regression. Standard error cannot be calculated.
+- [PFAS] already ln-tranformed.
+- Data extracted from plots (Figure 3) using metaDigitise.
 ```{r}
 Martin_2004 <- wide_data %>% 
   filter(Study_ID == "S_013") %>%
@@ -120,6 +128,10 @@ Martin_2004_whole <- Martin_2004 %>%
 ```
 
 ## S_053: Koch_2020
+- 2 food webs: aquatic and riparian
+- [PFAS] regressed on the original scale. We log-transformed them before running linear model.
+- Data extracted from plots (Figure 4) using Webplot Digitizer.
+- [PFAS] regressed against delta15N.
 ```{r}
 Koch_2020 <- wide_data %>% 
   filter(Study_ID == "S_053") %>%
@@ -130,7 +142,7 @@ Koch_2020 <- wide_data %>%
   mutate(group_id = gsub("^(\\w+\\s[^,]+)", "\\1,", group_id)) %>% 
   separate(group_id, into = c("PFAS", "species", "food_web"), sep = ",\\s*", extra = "drop") %>% 
   mutate(across(ends_with("mean") | ends_with("sd"), ~ as.numeric(as.character(.)))) %>% 
-  mutate(log_PFOS_mean = log(PFOS_mean))
+  mutate(log_PFOS_mean = log10(PFOS_mean))
 
 #write.csv(Koch_2020, file = here("Rdata", "Koch_2020.csv"))
 
@@ -148,6 +160,9 @@ Koch_2020_riparian <- Koch_2020 %>%
 ```
 
 ## S_004: Mazzoni_2020
+- 2 food webs: including and excluding zooplankton.
+- [PFAS] regressed on the original scale. We log-transformed them before running linear model.
+- Data extracted from tables (Table 1 and Table S5).
 ```{r}
 Mazzoni_2020 <- wide_data %>% 
   filter(Study_ID == "S_004") %>%
@@ -181,25 +196,32 @@ Mazzoni_2020_fw2 <- Mazzoni_2020 %>%
 ```
 
 ## S_017: Liu_2018
+- 1 food web.
+- [PFAS] regressed on the original scale. We ln-transformed them before running linear model.
+- Data extracted from tables (Table 1) and plots (Figure 4) using Webplot Digitizer.
 ```{r}
 Liu_2018 <- wide_data %>% 
   filter(Study_ID == "S_017") %>%
   setDT() %>% 
   separate(group_id, into = c("PFAS", "species"), sep = ",\\s*", extra = "drop") %>% 
   mutate(across(ends_with("mean"), ~ as.numeric(as.character(.)))) %>%
-  mutate(log_PFBA_mean = log10(PFBA_mean)) %>%
-  mutate(log_PFOA_mean = log10(PFOA_mean)) %>%
-  mutate(log_PFNA_mean = log10(PFNA_mean)) %>%
-  mutate(log_PFDA_mean = log10(PFDA_mean)) %>%
-  mutate(log_PFUnDA_mean = log10(PFUnDA_mean)) %>%
-  mutate(log_PFDoDA_mean = log10(PFDoDA_mean)) %>%
-  mutate(log_PFTrDA_mean = log10(PFTrDA_mean)) %>%
-  mutate(log_PFOS_mean = log10(PFOS_mean))
+  mutate(ln_PFBA_mean = log(PFBA_mean)) %>%
+  mutate(ln_PFOA_mean = log(PFOA_mean)) %>%
+  mutate(ln_PFNA_mean = log(PFNA_mean)) %>%
+  mutate(ln_PFDA_mean = log(PFDA_mean)) %>%
+  mutate(ln_PFUnDA_mean = log(PFUnDA_mean)) %>%
+  mutate(ln_PFDoDA_mean = log(PFDoDA_mean)) %>%
+  mutate(ln_PFTrDA_mean = log(PFTrDA_mean)) %>%
+  mutate(ln_PFOS_mean = log(PFOS_mean)) %>%
+  select_if(~ !all(is.na(.)))
 
 #write.csv(Liu_2018, file = here("Rdata", "Liu_2018.csv"))
 ```
 
 ## S_019: Gao_2020
+- 1 food web.
+- [PFAS] already log-tranformed.
+- Data extracted from plots (Figure 4) using metaDigitise.
 ```{r}
 Gao_2020 <- wide_data %>% 
   filter(Study_ID == "S_019") %>%
@@ -210,6 +232,9 @@ Gao_2020 <- wide_data %>%
 ```
 
 ## S_021: Chen_2018
+- 1 food web.
+- [PFAS] already ln-tranformed.
+- ata extracted from tables (Table 6).
 ```{r}
 Chen_2018 <- wide_data %>% 
   filter(Study_ID == "S_021") %>%
@@ -220,6 +245,9 @@ Chen_2018 <- wide_data %>%
 ```
 
 ## S_023: Du_2021
+- 1 food web.
+- [PFAS] already log-tranformed.
+- Data extracted from plots (Figure 4) using Webplot Digitizer.
 ```{r}
 Du_2021 <- wide_data %>% 
   filter(Study_ID == "S_023") %>%
@@ -230,6 +258,9 @@ Du_2021 <- wide_data %>%
 ```
 
 ## S_035: Ren_2022
+- 1 food web.
+- [PFAS] regressed on the original scale. We log-transformed them before running linear model.
+- Data extracted from tables (Table 1).
 ```{r}
 Ren_2022 <- wide_data %>% 
   filter(Study_ID == "S_035") %>%
@@ -253,32 +284,139 @@ Ren_2022 <- wide_data %>%
 ```
 
 ## S_054: Koch_2021
+- 2 food webs: freshwater and terrestrial.
+- [PFAS] already ln-tranformed.
+- [PFAS] regressed against delta15N.
+- Data extracted from plots (Figure S10) using Webplot Digitizer.
 ```{r}
 Koch_2021 <- wide_data %>% 
   filter(Study_ID == "S_054") %>%
-  select_if(~ !all(is.na(.)))
+  select_if(~ !all(is.na(.))) %>%
+  mutate(log_PFOS_mean = log10(PFOS_mean)) %>% 
+  separate(group_id, into = c("PFAS", "food_web", "species"), sep = ",\\s*", extra = "drop") %>% 
+  mutate(across(ends_with("mean"), ~ as.numeric(as.character(.))))
+# food web 1 - freshwater
+Koch_2021_freshwater <- Koch_2021 %>% 
+  filter(food_web == "food web 1")
+#write.csv(Koch_2021_freshwater, file = here("Rdata", "Koch_2021_freshwater.csv"))
+# food web 2 - terrestrial
+Koch_2021_terrestrial <- Koch_2021 %>% 
+  filter(food_web == "food web 2")
+#write.csv(Koch_2021_terrestrial, file = here("Rdata", "Koch_2021_terrestrial.csv"))
 ```
 
 ## S_056: Li_2008
+- 2 food webs: Tilapia included and excluded.
+- [PFAS] already ln-tranformed.
+- Data extracted from plots (Figure 3) using Webplot Digitizer.
 ```{r}
 Li_2008 <- wide_data %>% 
   filter(Study_ID == "S_056") %>%
-  select_if(~ !all(is.na(.)))
+  select_if(~ !all(is.na(.))) %>% 
+  separate(group_id, into = c("PFAS", "food_web", "species"), sep = ",\\s*", extra = "drop") %>% 
+  mutate(across(ends_with("mean"), ~ as.numeric(as.character(.))))
+# food web 1 - Tilapia excluded
+Li_2008_fw1 <- Li_2008 %>% 
+  filter(food_web == "food web 1")
+#write.csv(Li_2008_fw1, file = here("Rdata", "Li_2008_fw1.csv"))
+# food web 2 - Tilapia included
+Li_2008_fw2 <- Li_2008 %>% 
+  filter(food_web == "food web 2")
+#write.csv(Li_2008_fw2, file = here("Rdata", "Li_2008_fw2.csv"))
 ```
 
 ## S_057: Pan_2010
+- 1 food web.
+- [PFAS] regressed on the original scale. We log-transformed them before running linear model.
+- Data extracted from plots (Figure S1) using Webplot Digitizer.
 ```{r}
 Pan_2010 <- wide_data %>% 
   filter(Study_ID == "S_057") %>%
-  select_if(~ !all(is.na(.)))
+  select_if(~ !all(is.na(.))) %>%
+  mutate(log_PFCs_mean = log10(PFCs_mean)) %>% 
+  mutate(across(ends_with("mean"), ~ as.numeric(as.character(.))))
+
+#write.csv(Pan_2010, file = here("Rdata", "Pan_2010.csv"))
 ```
 
 ## S_058: Van de Vijver_2003
+- 1 food web.
+- [PFAS] regressed on the original scale. We log-transformed them before running linear model.
+- Data extracted from plots (Figure 3) using Webplot Digitizer.
 ```{r}
 Van_de_Vijver_2003 <- wide_data %>% 
   filter(Study_ID == "S_058") %>%
-  select_if(~ !all(is.na(.)))
+  select_if(~ !all(is.na(.))) %>%
+  mutate(log_PFOS_mean = log10(PFOS_mean)) %>% 
+  mutate(across(ends_with("mean"), ~ as.numeric(as.character(.))))
+
+#write.csv(Van_de_Vijver_2003, file = here("Rdata", "Van_de_Vijver_2003.csv"))
 ```
+
+## S_061: Barghi_2018
+- 1 food web.
+- [PFAS] regressed on the original scale. We log-transformed them before running linear model.
+- Data extracted from plots (Figure S2) using Webplot Digitizer.
+```{r}
+Barghi_2018 <- wide_data %>% 
+  filter(Study_ID == "S_061") %>% 
+  setDT() %>%
+  select_if(~ !all(is.na(.))) %>%
+  mutate(log_PFNA_mean = log10(PFNA_mean)) %>% 
+  mutate(across(ends_with("mean"), ~ as.numeric(as.character(.))))
+
+#write.csv(Barghi_2018, file = here("Rdata", "Barghi_2018.csv"))
+``` 
+
+## S_060: Kobayashi_2018
+- 1 food web.
+- [PFAS] on the original scale. We log-transformed them before running linear model.
+- Data extracted from tables (Table 1).
+- - Standard deviations were log-scaled using the Delta method (Taylor approximation)
+```{r}
+Kobayashi_2018 <- wide_data %>% 
+  filter(Study_ID == "S_060") %>% 
+  setDT() %>%
+  select_if(~ !all(is.na(.))) %>%
+  mutate(log_PFHxS_mean = log10(PFHxS_mean)) %>% 
+  mutate(log_PFHxS_sd = PFHxS_sd/(PFHxS_mean*log(10))) %>%
+  mutate(log_PFOS_mean = log10(PFOS_mean)) %>% 
+  mutate(log_PFOS_sd = PFOS_sd/(PFOS_mean*log(10))) %>%
+  mutate(log_PFPeA_mean = log10(PFPeA_mean)) %>% 
+  mutate(log_PFPeA_sd = PFPeA_sd/(PFPeA_mean*log(10))) %>%
+  mutate(log_PFHxA_mean = log10(PFHxA_mean)) %>% 
+  mutate(log_PFHxA_sd = PFHxA_sd/(PFHxA_mean*log(10))) %>%
+  mutate(log_PFHpA_mean = log10(PFHpA_mean)) %>% 
+  mutate(log_PFHpA_sd = PFHpA_sd/(PFHpA_mean*log(10))) %>%
+  mutate(log_PFOA_mean = log10(PFOA_mean)) %>% 
+  mutate(log_PFOA_sd = PFOA_sd/(PFOA_mean*log(10))) %>%
+  mutate(log_PFNA_mean = log10(PFNA_mean)) %>% 
+  mutate(log_PFNA_sd = PFNA_sd/(PFNA_mean*log(10))) %>%
+  mutate(log_PFDA_mean = log10(PFDA_mean)) %>% 
+  mutate(log_PFDA_sd = PFDA_sd/(PFDA_mean*log(10))) %>%
+  mutate(log_PFUnDA_mean = log10(PFUnDA_mean)) %>% 
+  mutate(log_PFUnDA_sd = PFUnDA_sd/(PFUnDA_mean*log(10))) %>%
+  mutate(across(ends_with("mean"), ~ as.numeric(as.character(.))))
+
+#write.csv(Kobayashi_2018, file = here("Rdata", "Kobayashi_2018.csv"))
+```
+
+## S_024: Li_2021
+
+## S_043: Lescord_2015
+
+## S_047: Heimstad_2024
+
+## S_051: Gallien_2021
+
+## S_059: Jiao_2023
+
+
+
+
+
+------------------------------------------------------
+------------------------------------------------------
 
 # Regression analysis
 
@@ -531,45 +669,46 @@ summary(Mazzoni_2020_fw2_lm_model_PFUnDA)
 
 ## S_017: Liu_2018 - DONE
 We do not have SD or SE values. Weights cannot be assigned.
+SLOPE VALUES DO NOT MATCH THOSE PROVIDED IN THE ARTICLE.
 ```{r}
 Liu_2018 <- read.csv(here("Rdata", "Liu_2018.csv"))
 # PFBA
-Liu_2018_lm_model_PFBA <- lm(log_PFBA_mean ~ TL_mean,
+Liu_2018_lm_model_PFBA <- lm(ln_PFBA_mean ~ TL_mean,
                              data = Liu_2018)
 
 summary(Liu_2018_lm_model_PFBA)
 # PFOA
-Liu_2018_lm_model_PFOA <- lm(log_PFOA_mean ~ TL_mean,
+Liu_2018_lm_model_PFOA <- lm(ln_PFOA_mean ~ TL_mean,
                              data = Liu_2018)
 
 summary(Liu_2018_lm_model_PFOA)
 # PFNA
-Liu_2018_lm_model_PFNA <- lm(log_PFNA_mean ~ TL_mean,
+Liu_2018_lm_model_PFNA <- lm(ln_PFNA_mean ~ TL_mean,
                              data = Liu_2018)
 
 summary(Liu_2018_lm_model_PFNA)
 # PFDA
-Liu_2018_lm_model_PFDA <- lm(log_PFDA_mean ~ TL_mean,
+Liu_2018_lm_model_PFDA <- lm(ln_PFDA_mean ~ TL_mean,
                              data = Liu_2018)
 
 summary(Liu_2018_lm_model_PFDA)
 # PFUnDA
-Liu_2018_lm_model_PFUnDA <- lm(log_PFUnDA_mean ~ TL_mean,
+Liu_2018_lm_model_PFUnDA <- lm(ln_PFUnDA_mean ~ TL_mean,
                              data = Liu_2018)
 
 summary(Liu_2018_lm_model_PFUnDA)
 # PFDoDA
-Liu_2018_lm_model_PFDoDA <- lm(log_PFDoDA_mean ~ TL_mean,
+Liu_2018_lm_model_PFDoDA <- lm(ln_PFDoDA_mean ~ TL_mean,
                              data = Liu_2018)
 
 summary(Liu_2018_lm_model_PFDoDA)
 # PFTrDA 
-Liu_2018_lm_model_PFTrDA <- lm(log_PFTrDA_mean ~ TL_mean,
+Liu_2018_lm_model_PFTrDA <- lm(ln_PFTrDA_mean ~ TL_mean,
                              data = Liu_2018)
 
 summary(Liu_2018_lm_model_PFTrDA)
 # PFOS
-Liu_2018_lm_model_PFOS <- lm(log_PFOS_mean ~ TL_mean,
+Liu_2018_lm_model_PFOS <- lm(ln_PFOS_mean ~ TL_mean,
                              data = Liu_2018)
 
 summary(Liu_2018_lm_model_PFOS)
@@ -683,7 +822,8 @@ summary(Du_2021_lm_model_PFOS)
 ```
 
 ## S_035: Ren_2022 - DONE
-Data from Port Austin (USA) food web including benthic organisms.
+Data from Port Austin (USA), food web including benthic organisms.
+We have SE values. Weights were assigned.
 ```{r}
 Ren_2022 <- read.csv(here("Rdata", "Ren_2022.csv"))
 
@@ -746,22 +886,132 @@ summary(Ren_2022_lm_model_PFTeDA)
 
 ```
 
-## S_054: Koch_2021
+## S_054: Koch_2021 - DONE
+We do not have SD or SE values. Weights cannot be assigned.
+### Food web 1 - freshwater
 ```{r}
+Koch_2021_freshwater <- read.csv(here("Rdata", "Koch_2021_freshwater.csv"))
+Koch_2021_freshwater_lm_model_PFOS <- lm(log_PFOS_mean ~ delta_15N_mean,
+                                         data = Koch_2021_freshwater)
 
+summary(Koch_2021_freshwater_lm_model_PFOS)
+```
+### Food web 2 - terrestrial
+```{r}
+Koch_2021_terrestrial <- read.csv(here("Rdata", "Koch_2021_terrestrial.csv"))
+Koch_2021_terrestrial_lm_model_PFOS <- lm(log_PFOS_mean ~ delta_15N_mean,
+                                         data = Koch_2021_terrestrial)
+
+summary(Koch_2021_terrestrial_lm_model_PFOS)
 ```
 
-## S_056: Li_2008
+## S_056: Li_2008 - DONE
+We do not have SD or SE values. Weights cannot be assigned.
+### Food web 1 - Tilapia excluded
 ```{r}
+Li_2008_fw1 <- read.csv(here("Rdata", "Li_2008_fw1.csv"))
+Li_2008_fw1_lm_model_PFOS <- lm(ln_PFOS_mean ~ TL_mean,
+                                data = Li_2008_fw1)
 
+summary(Li_2008_fw1_lm_model_PFOS)
+```
+### Food web 2 - Tilapia included
+```{r}
+Li_2008_fw2 <- read.csv(here("Rdata", "Li_2008_fw2.csv"))
+Li_2008_fw2_lm_model_PFOS <- lm(ln_PFOS_mean ~ TL_mean,
+                                data = Li_2008_fw2)
+
+summary(Li_2008_fw2_lm_model_PFOS)
 ```
 
-## S_057: Pan_2010
+## S_057: Pan_2010 - DONE
+We do not have SD or SE values. Weights cannot be assigned.
 ```{r}
+Pan_2010 <- read.csv(here("Rdata", "Pan_2010.csv"))
+Pan_2010_lm_model_PFOS <- lm(log_PFCs_mean ~ TL_mean,
+                                data = Pan_2010)
 
+summary(Pan_2010_lm_model_PFOS)
 ```
 
-## S_058: Van de Vijver_2003
+## S_058: Van de Vijver_2003 - DONE
 ```{r}
+Van_de_Vijver_2003 <- read.csv(here("Rdata", "Van_de_Vijver_2003.csv"))
+Van_de_Vijver_2003_lm_model_PFOS <- lm(log_PFOS_mean ~ delta_15N_mean,
+                                       data = Van_de_Vijver_2003)
 
+summary(Van_de_Vijver_2003_lm_model_PFOS)
 ```
+
+## S_061: Barghi_2018 - DONE
+```{r}
+Barghi_2018 <- read.csv(here("Rdata", "Barghi_2018.csv"))
+
+Barghi_2018_lm_model_PFNA <- lm(log_PFNA_mean ~ delta_15N_mean,
+                                       data = Barghi_2018)
+
+summary(Barghi_2018_lm_model_PFNA)
+```
+
+## S_060: Kobayashi_2018
+We only have some SD values. Weights were not assigned.
+```{r}
+Kobayashi_2018 <- read.csv(here("Rdata", "Kobayashi_2018.csv"))
+
+# PFHxS
+Kobayashi_2018_lm_model_PFHxS <- lm(log_PFHxS_mean ~ TL_mean,
+                                    data = Kobayashi_2018)
+
+summary(Kobayashi_2018_lm_model_PFHxS)
+
+# PFOS
+Kobayashi_2018_lm_model_PFOS <- lm(log_PFOS_mean ~ TL_mean,
+                                    data = Kobayashi_2018)
+
+summary(Kobayashi_2018_lm_model_PFOS)
+# PFPeA
+Kobayashi_2018_lm_model_PFPeA <- lm(log_PFPeA_mean ~ TL_mean,
+                                    data = Kobayashi_2018)
+
+summary(Kobayashi_2018_lm_model_PFPeA)
+# PFHxA
+Kobayashi_2018_lm_model_PFHxA <- lm(log_PFHxA_mean ~ TL_mean,
+                                    data = Kobayashi_2018)
+
+summary(Kobayashi_2018_lm_model_PFHxA)
+# PFHpA
+Kobayashi_2018_lm_model_PFHpA <- lm(log_PFHpA_mean ~ TL_mean,
+                                    data = Kobayashi_2018)
+
+summary(Kobayashi_2018_lm_model_PFHpA)
+# PFOA
+Kobayashi_2018_lm_model_PFOA <- lm(log_PFOA_mean ~ TL_mean,
+                                    data = Kobayashi_2018)
+
+summary(Kobayashi_2018_lm_model_PFOA)
+# PFNA
+Kobayashi_2018_lm_model_PFNA <- lm(log_PFNA_mean ~ TL_mean,
+                                    data = Kobayashi_2018)
+
+summary(Kobayashi_2018_lm_model_PFNA)
+# PFDA
+Kobayashi_2018_lm_model_PFDA <- lm(log_PFDA_mean ~ TL_mean,
+                                    data = Kobayashi_2018)
+
+summary(Kobayashi_2018_lm_model_PFDA)
+# PFUnDA
+Kobayashi_2018_lm_model_PFUnDA <- lm(log_PFUnDA_mean ~ TL_mean,
+                                    data = Kobayashi_2018)
+
+summary(Kobayashi_2018_lm_model_PFUnDA)
+```
+
+## S_024: Li_2021
+
+## S_047: Heimstad_2024
+
+## S_051: Gallien_2021
+
+## S_059: Jiao_2023
+
+## S_061: Barghi_2018

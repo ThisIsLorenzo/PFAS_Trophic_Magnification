@@ -1205,12 +1205,12 @@ S_054,Koch_2021,PFOS,"PFOS, food web 1, species 3",75.47553785,NA,NA,NA,NA,NA,Sc
 S_054,Koch_2021,PFOS,"PFOS, food web 1, species 4",147.6498196,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
 S_054,Koch_2021,PFOS,"PFOS, food web 1, species 5",97.19153635,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
 S_054,Koch_2021,PFOS,"PFOS, food web 1, species 6",143.7074796,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_054,Koch_2021,delta 15N,"PFOS, food web 1, species 1",8.495356037,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_054,Koch_2021,delta 15N,"PFOS, food web 1, species 2",9.377708978,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_054,Koch_2021,delta 15N,"PFOS, food web 1, species 3",9.69504644,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_054,Koch_2021,delta 15N,"PFOS, food web 1, species 4",10.41486068,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_054,Koch_2021,delta 15N,"PFOS, food web 1, species 5",10.57739938,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_054,Koch_2021,delta 15N,"PFOS, food web 1, species 6",11.99380805,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_054,Koch_2021,delta_15N,"PFOS, food web 1, species 1",8.495356037,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_054,Koch_2021,delta_15N,"PFOS, food web 1, species 2",9.377708978,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_054,Koch_2021,delta_15N,"PFOS, food web 1, species 3",9.69504644,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_054,Koch_2021,delta_15N,"PFOS, food web 1, species 4",10.41486068,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_054,Koch_2021,delta_15N,"PFOS, food web 1, species 5",10.57739938,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_054,Koch_2021,delta_15N,"PFOS, food web 1, species 6",11.99380805,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
 S_054,Koch_2021,PFOS,"PFOS, food web 2, species 1",258.7859425,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
 S_054,Koch_2021,PFOS,"PFOS, food web 2, species 2",514.3769968,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
 S_054,Koch_2021,PFOS,"PFOS, food web 2, species 3",306.7092652,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
@@ -1223,34 +1223,34 @@ S_054,Koch_2021,PFOS,"PFOS, food web 2, species 9",348.2428115,NA,NA,NA,NA,NA,Sc
 S_054,Koch_2021,PFOS,"PFOS, food web 2, species 10",472.8434505,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
 S_054,Koch_2021,PFOS,"PFOS, food web 2, species 11",638.9776358,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
 S_054,Koch_2021,PFOS,"PFOS, food web 2, species 12",619.8083067,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_054,Koch_2021,delta 15N,"PFOS, food web 2, species 1",0.208289361,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_054,Koch_2021,delta 15N,"PFOS, food web 2, species 2",0.500966177,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_054,Koch_2021,delta 15N,"PFOS, food web 2, species 3",0.534659477,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_054,Koch_2021,delta 15N,"PFOS, food web 2, species 4",2.136247765,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_054,Koch_2021,delta 15N,"PFOS, food web 2, species 5",2.464314111,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_054,Koch_2021,delta 15N,"PFOS, food web 2, species 6",4.128894222,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_054,Koch_2021,delta 15N,"PFOS, food web 2, species 7",4.230012674,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_054,Koch_2021,delta 15N,"PFOS, food web 2, species 8",4.309080132,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_054,Koch_2021,delta 15N,"PFOS, food web 2, species 9",5.180711164,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_054,Koch_2021,delta 15N,"PFOS, food web 2, species 10",5.327011021,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_054,Koch_2021,delta 15N,"PFOS, food web 2, species 11",6.535652157,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_054,Koch_2021,delta 15N,"PFOS, food web 2, species 12",6.957743628,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_056,Li_2008,ln PFOS,"PFOS, food web 1, species 1",1.433526012,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_056,Li_2008,ln PFOS,"PFOS, food web 1, species 2",2.560693642,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_056,Li_2008,ln PFOS,"PFOS, food web 1, species 3",2.12716763,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_056,Li_2008,ln PFOS,"PFOS, food web 1, species 4",3.463872832,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_056,Li_2008,ln PFOS,"PFOS, food web 1, species 5",4.171965318,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_054,Koch_2021,delta_15N,"PFOS, food web 2, species 1",0.208289361,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_054,Koch_2021,delta_15N,"PFOS, food web 2, species 2",0.500966177,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_054,Koch_2021,delta_15N,"PFOS, food web 2, species 3",0.534659477,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_054,Koch_2021,delta_15N,"PFOS, food web 2, species 4",2.136247765,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_054,Koch_2021,delta_15N,"PFOS, food web 2, species 5",2.464314111,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_054,Koch_2021,delta_15N,"PFOS, food web 2, species 6",4.128894222,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_054,Koch_2021,delta_15N,"PFOS, food web 2, species 7",4.230012674,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_054,Koch_2021,delta_15N,"PFOS, food web 2, species 8",4.309080132,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_054,Koch_2021,delta_15N,"PFOS, food web 2, species 9",5.180711164,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_054,Koch_2021,delta_15N,"PFOS, food web 2, species 10",5.327011021,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_054,Koch_2021,delta_15N,"PFOS, food web 2, species 11",6.535652157,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_054,Koch_2021,delta_15N,"PFOS, food web 2, species 12",6.957743628,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_056,Li_2008,ln_PFOS,"PFOS, food web 1, species 1",1.433526012,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_056,Li_2008,ln_PFOS,"PFOS, food web 1, species 2",2.560693642,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_056,Li_2008,ln_PFOS,"PFOS, food web 1, species 3",2.12716763,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_056,Li_2008,ln_PFOS,"PFOS, food web 1, species 4",3.463872832,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_056,Li_2008,ln_PFOS,"PFOS, food web 1, species 5",4.171965318,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
 S_056,Li_2008,TL,"PFOS, food web 1, species 1",1.9989639,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
 S_056,Li_2008,TL,"PFOS, food web 1, species 2",2.520285745,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
 S_056,Li_2008,TL,"PFOS, food web 1, species 3",2.593023594,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
 S_056,Li_2008,TL,"PFOS, food web 1, species 4",2.661620678,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
 S_056,Li_2008,TL,"PFOS, food web 1, species 5",3.441851165,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_056,Li_2008,ln PFOS,"PFOS, food web 2, species 1",1.433526012,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_056,Li_2008,ln PFOS,"PFOS, food web 2, species 2",2.560693642,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_056,Li_2008,ln PFOS,"PFOS, food web 2, species 3",2.12716763,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_056,Li_2008,ln PFOS,"PFOS, food web 2, species 4",3.463872832,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_056,Li_2008,ln PFOS,"PFOS, food web 2, species 5",4.171965318,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_056,Li_2008,ln PFOS,"PFOS, food web 2, species 6",1.715317919,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_056,Li_2008,ln_PFOS,"PFOS, food web 2, species 1",1.433526012,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_056,Li_2008,ln_PFOS,"PFOS, food web 2, species 2",2.560693642,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_056,Li_2008,ln_PFOS,"PFOS, food web 2, species 3",2.12716763,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_056,Li_2008,ln_PFOS,"PFOS, food web 2, species 4",3.463872832,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_056,Li_2008,ln_PFOS,"PFOS, food web 2, species 5",4.171965318,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_056,Li_2008,ln_PFOS,"PFOS, food web 2, species 6",1.715317919,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
 S_056,Li_2008,TL,"PFOS, food web 2, species 1",1.9989639,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
 S_056,Li_2008,TL,"PFOS, food web 2, species 2",2.520285745,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
 S_056,Li_2008,TL,"PFOS, food web 2, species 3",2.593023594,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
@@ -1355,77 +1355,179 @@ S_058,Van de Vijver_2003,PFOS,"PFOS, species 71",264.714715,NA,NA,NA,NA,NA,Scatt
 S_058,Van de Vijver_2003,PFOS,"PFOS, species 72",389.78979,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
 S_058,Van de Vijver_2003,PFOS,"PFOS, species 73",396.096096,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
 S_058,Van de Vijver_2003,PFOS,"PFOS, species 74",470.720721,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 1",11.056604,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 2",13.433962,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 3",13.647799,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 4",14.075472,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 5",14.138365,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 6",14.45283,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 7",14.754717,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 8",14.867925,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 9",15.018868,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 10",14.955975,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 11",15.144654,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 12",15.207547,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 13",15.308176,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 14",15.371069,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 15",15.622642,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 16",15.283019,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 17",15.207547,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 18",15.597484,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 19",15.861635,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 20",15.761006,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 21",16.075472,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 22",16.113208,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 23",16.440252,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 24",16.641509,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 25",16.779874,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 26",16.716981,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 27",16.477987,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 28",16.402516,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 29",16.150943,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 30",16.616352,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 31",16.955975,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 32",17.031447,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 33",17.157233,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 34",17.509434,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 35",17.685535,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 36",17.710692,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 37",17.18239,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 38",16.679245,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 39",16.566038,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 40",17.886792,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 41",18,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 42",18.528302,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 43",17.836478,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 44",17.081761,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 45",16.90566,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 46",17.333333,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 47",18.352201,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 48",18.754717,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 49",18.377358,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 50",19.509434,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 51",18.754717,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 52",18.981132,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 53",19.194969,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 54",19.333333,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 55",19.798742,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 56",19.509434,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 57",19.119497,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 58",19.018868,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 59",18.654088,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 60",19.119497,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 61",19.157233,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 62",19.421384,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 63",19.798742,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 64",19.924528,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 65",20.754717,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 66",20.691824,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 67",21.119497,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 68",20.704403,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 69",20.528302,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 70",21.383648,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 71",21.371069,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 72",19.924528,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 73",20.113208,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
-S_058,Van de Vijver_2003,delta 15N,"PFOS, species 74",21.18239,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 1",11.056604,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 2",13.433962,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 3",13.647799,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 4",14.075472,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 5",14.138365,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 6",14.45283,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 7",14.754717,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 8",14.867925,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 9",15.018868,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 10",14.955975,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 11",15.144654,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 12",15.207547,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 13",15.308176,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 14",15.371069,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 15",15.622642,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 16",15.283019,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 17",15.207547,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 18",15.597484,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 19",15.861635,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 20",15.761006,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 21",16.075472,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 22",16.113208,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 23",16.440252,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 24",16.641509,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 25",16.779874,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 26",16.716981,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 27",16.477987,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 28",16.402516,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 29",16.150943,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 30",16.616352,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 31",16.955975,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 32",17.031447,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 33",17.157233,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 34",17.509434,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 35",17.685535,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 36",17.710692,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 37",17.18239,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 38",16.679245,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 39",16.566038,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 40",17.886792,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 41",18,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 42",18.528302,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 43",17.836478,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 44",17.081761,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 45",16.90566,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 46",17.333333,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 47",18.352201,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 48",18.754717,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 49",18.377358,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 50",19.509434,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 51",18.754717,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 52",18.981132,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 53",19.194969,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 54",19.333333,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 55",19.798742,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 56",19.509434,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 57",19.119497,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 58",19.018868,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 59",18.654088,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 60",19.119497,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 61",19.157233,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 62",19.421384,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 63",19.798742,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 64",19.924528,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 65",20.754717,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 66",20.691824,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 67",21.119497,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 68",20.704403,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 69",20.528302,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 70",21.383648,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 71",21.371069,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 72",19.924528,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 73",20.113208,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_058,Van de Vijver_2003,delta_15N,"PFOS, species 74",21.18239,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_061,Barghi_2018,PFNA,"PFNA, species 1",0.4379,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_061,Barghi_2018,PFNA,"PFNA, species 2",0.9439,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_061,Barghi_2018,PFNA,"PFNA, species 3",1.1467,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_061,Barghi_2018,PFNA,"PFNA, species 4",1.2364,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_061,Barghi_2018,PFNA,"PFNA, species 5",2.28,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_061,Barghi_2018,PFNA,"PFNA, species 6",2.1526,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_061,Barghi_2018,delta_15N,"PFNA, species 1",5.9433,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_061,Barghi_2018,delta_15N,"PFNA, species 2",6.6508,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_061,Barghi_2018,delta_15N,"PFNA, species 3",7.7227,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_061,Barghi_2018,delta_15N,"PFNA, species 4",8.8147,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_061,Barghi_2018,delta_15N,"PFNA, species 5",10.0473,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_061,Barghi_2018,delta_15N,"PFNA, species 6",12.9159,NA,NA,NA,NA,NA,Scatter plot,Webplot Digitiser,NA
+S_060,Kobayashi_2018,PFHxS,"PFHxS, species 1",7.3,2.1,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFHxS,"PFHxS, species 2",0.544472222,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFHxS,"PFHxS, species 3",5.1,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFHxS,"PFHxS, species 4",12,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFHxS,"PFHxS, species 5",5.2,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFHxS, species 1",3.5,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFHxS, species 2",1.8,0.7,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFHxS, species 3",2.6,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFHxS, species 4",2.8,0.6,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFHxS, species 5",2,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFOS,"PFOS, species 1",1,0.59,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFOS,"PFOS, species 2",2.7,2.2,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFOS,"PFOS, species 3",1.5,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFOS,"PFOS, species 4",2.6,2.1,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFOS,"PFOS, species 5",0.007,0.011,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFOS, species 1",3.5,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFOS, species 2",1.8,0.7,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFOS, species 3",2.6,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFOS, species 4",2.8,0.6,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFOS, species 5",2,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFPeA,"PFPeA, species 1",1.5,1,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFPeA,"PFPeA, species 2",0.438406204,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFPeA,"PFPeA, species 3",2.2,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFPeA,"PFPeA, species 4",1.9,2.1,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFPeA,"PFPeA, species 5",1.2,0.7,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFPeA, species 1",3.5,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFPeA, species 2",1.8,0.7,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFPeA, species 3",2.6,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFPeA, species 4",2.8,0.6,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFPeA, species 5",2,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFHxA,"PFHxA, species 1",3.7,1.8,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFHxA,"PFHxA, species 2",0.176776695,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFHxA,"PFHxA, species 3",6.8,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFHxA,"PFHxA, species 4",2.8,2,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFHxA,"PFHxA, species 5",4.6,0.61,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFHxA, species 1",3.5,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFHxA, species 2",1.8,0.7,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFHxA, species 3",2.6,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFHxA, species 4",2.8,0.6,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFHxA, species 5",2,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFHpA,"PFHpA, species 1",0.7,0.087,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFHpA,"PFHpA, species 2",0.169705627,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFHpA,"PFHpA, species 3",1.6,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFHpA,"PFHpA, species 4",1,0.46,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFHpA,"PFHpA, species 5",0.31,0.2,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFHpA, species 1",3.5,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFHpA, species 2",1.8,0.7,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFHpA, species 3",2.6,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFHpA, species 4",2.8,0.6,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFHpA, species 5",2,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFOA,"PFOA, species 1",1,0.79,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFOA,"PFOA, species 2",1.3,0.62,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFOA,"PFOA, species 3",8.3,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFOA,"PFOA, species 4",0.53,0.12,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFOA,"PFOA, species 5",0.91,0.44,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFOA, species 1",3.5,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFOA, species 2",1.8,0.7,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFOA, species 3",2.6,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFOA, species 4",2.8,0.6,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFOA, species 5",2,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFNA,"PFNA, species 1",0.37,0.36,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFNA,"PFNA, species 2",0.88,0.46,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFNA,"PFNA, species 3",0.9,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFNA,"PFNA, species 4",0.75,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFNA,"PFNA, species 5",1.1,0.4,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFNA, species 1",3.5,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFNA, species 2",1.8,0.7,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFNA, species 3",2.6,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFNA, species 4",2.8,0.6,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFNA, species 5",2,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFDA,"PFDA, species 1",0.31,0.18,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFDA,"PFDA, species 2",0.62,0.16,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFDA,"PFDA, species 3",0.5,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFDA,"PFDA, species 4",0.41,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFDA,"PFDA, species 5",0.205060967,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFDA, species 1",3.5,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFDA, species 2",1.8,0.7,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFDA, species 3",2.6,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFDA, species 4",2.8,0.6,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFDA, species 5",2,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFUnDA,"PFUnDA, species 1",0.077781746,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFUnDA,"PFUnDA, species 2",0.67,0.32,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFUnDA,"PFUnDA, species 3",0.96,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFUnDA,"PFUnDA, species 4",0.41,0.17,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,PFUnDA,"PFUnDA, species 5",0.077781746,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFUnDA, species 1",3.5,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFUnDA, species 2",1.8,0.7,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFUnDA, species 3",2.6,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFUnDA, species 4",2.8,0.6,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_060,Kobayashi_2018,TL,"PFUnDA, species 5",2,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
