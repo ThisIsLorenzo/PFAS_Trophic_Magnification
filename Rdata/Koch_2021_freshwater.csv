@@ -1,4 +1,4 @@
-"","Study_ID","filename","PFAS","food_web","species","plot_type","software","PFOS_mean","delta 15N_mean","log_PFOS_mean"
+"","Study_ID","filename","PFAS","food_web","species","plot_type","software","PFOS_mean","delta_15N_mean","log_PFOS_mean"
 "1","S_054","Koch_2021","PFOS","food web 1","species 1","Scatter plot","Webplot Digitiser",59.89844412,8.495356037,1.77741554160677
 "2","S_054","Koch_2021","PFOS","food web 1","species 2","Scatter plot","Webplot Digitiser",114.8628503,9.377708978,2.06017958901465
 "3","S_054","Koch_2021","PFOS","food web 1","species 3","Scatter plot","Webplot Digitiser",75.47553785,9.69504644,1.87780621655376

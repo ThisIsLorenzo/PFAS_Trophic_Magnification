@@ -1,0 +1,117 @@
+"","Study_ID","filename","PFAS","tissue","species","software","ln_PFOS_mean","ln_PFDA_mean","ln_PFUnDA_mean","ln_PFDoDA_mean","ln_PFTrDA_mean","ln_FOSA_mean","delta_15N_mean","ln_62ClPFESA_mean","ln_82ClPFESA_mean","ln_102ClPFESA_mean","ln_103FTCA_mean"
+"1","S_059","Jiao_2023","PFDA","blood","species 1","Raw data extracted from Figure 4",NA,-1.066976436,NA,NA,NA,NA,7.888791146,NA,NA,NA,NA
+"2","S_059","Jiao_2023","PFDA","blood","species 2","Raw data extracted from Figure 4",NA,2.643494083,NA,NA,NA,NA,7.878189802,NA,NA,NA,NA
+"3","S_059","Jiao_2023","PFDA","blood","species 3","Raw data extracted from Figure 4",NA,0.372550789,NA,NA,NA,NA,11.39896393,NA,NA,NA,NA
+"4","S_059","Jiao_2023","PFDA","blood","species 4","Raw data extracted from Figure 4",NA,1.474789853,NA,NA,NA,NA,10.8243861,NA,NA,NA,NA
+"5","S_059","Jiao_2023","PFDA","blood","species 5","Raw data extracted from Figure 4",NA,1.633434084,NA,NA,NA,NA,10.96678997,NA,NA,NA,NA
+"6","S_059","Jiao_2023","PFDA","blood","species 6","Raw data extracted from Figure 4",NA,3.34483692,NA,NA,NA,NA,11.13332882,NA,NA,NA,NA
+"7","S_059","Jiao_2023","PFDA","blood","species 7","Raw data extracted from Figure 4",NA,4.167080194,NA,NA,NA,NA,12.35955098,NA,NA,NA,NA
+"8","S_059","Jiao_2023","PFDA","blood","species 8","Raw data extracted from Figure 4",NA,2.66544864,NA,NA,NA,NA,12.04955565,NA,NA,NA,NA
+"9","S_059","Jiao_2023","PFDA","blood","species 9","Raw data extracted from Figure 4",NA,2.191320431,NA,NA,NA,NA,11.96519601,NA,NA,NA,NA
+"10","S_059","Jiao_2023","PFDA","blood","species 10","Raw data extracted from Figure 4",NA,1.776289078,NA,NA,NA,NA,13.10923896,NA,NA,NA,NA
+"11","S_059","Jiao_2023","PFDA","blood","species 11","Raw data extracted from Figure 4",NA,1.301108254,NA,NA,NA,NA,12.82488233,NA,NA,NA,NA
+"12","S_059","Jiao_2023","PFUnDA","blood","species 1","Raw data extracted from Figure 4",NA,NA,-4.59592371,NA,NA,NA,8,NA,NA,NA,NA
+"13","S_059","Jiao_2023","PFUnDA","blood","species 2","Raw data extracted from Figure 4",NA,NA,-0.159124907,NA,NA,NA,5.571428571,NA,NA,NA,NA
+"14","S_059","Jiao_2023","PFUnDA","blood","species 3","Raw data extracted from Figure 4",NA,NA,2.786462229,NA,NA,NA,7.964285714,NA,NA,NA,NA
+"15","S_059","Jiao_2023","PFUnDA","blood","species 4","Raw data extracted from Figure 4",NA,NA,1.929319372,NA,NA,NA,11.67857143,NA,NA,NA,NA
+"16","S_059","Jiao_2023","PFUnDA","blood","species 5","Raw data extracted from Figure 4",NA,NA,1.951944652,NA,NA,NA,12.35714286,NA,NA,NA,NA
+"17","S_059","Jiao_2023","PFUnDA","blood","species 6","Raw data extracted from Figure 4",NA,NA,2.628272251,NA,NA,NA,13.17857143,NA,NA,NA,NA
+"18","S_059","Jiao_2023","PFUnDA","blood","species 7","Raw data extracted from Figure 4",NA,NA,1.916043381,NA,NA,NA,14.21428571,NA,NA,NA,NA
+"19","S_059","Jiao_2023","PFUnDA","blood","species 8","Raw data extracted from Figure 4",NA,NA,2.569184742,NA,NA,NA,14.46428571,NA,NA,NA,NA
+"20","S_059","Jiao_2023","PFUnDA","blood","species 9","Raw data extracted from Figure 4",NA,NA,4.903515333,NA,NA,NA,13.60714286,NA,NA,NA,NA
+"21","S_059","Jiao_2023","PFUnDA","blood","species 10","Raw data extracted from Figure 4",NA,NA,3.681002244,NA,NA,NA,12.10714286,NA,NA,NA,NA
+"22","S_059","Jiao_2023","PFUnDA","blood","species 11","Raw data extracted from Figure 4",NA,NA,2.556282723,NA,NA,NA,11.92857143,NA,NA,NA,NA
+"23","S_059","Jiao_2023","PFDoDA","blood","species 1","Raw data extracted from Figure 4",NA,NA,NA,-4.581151832,NA,NA,7.997846348,NA,NA,NA,NA
+"24","S_059","Jiao_2023","PFDoDA","blood","species 2","Raw data extracted from Figure 4",NA,NA,NA,-0.942408377,NA,NA,5.634863169,NA,NA,NA,NA
+"25","S_059","Jiao_2023","PFDoDA","blood","species 3","Raw data extracted from Figure 4",NA,NA,NA,-4.581151832,NA,NA,14.16805911,NA,NA,NA,NA
+"26","S_059","Jiao_2023","PFDoDA","blood","species 4","Raw data extracted from Figure 4",NA,NA,NA,0.445026178,NA,NA,12.3773718,NA,NA,NA,NA
+"27","S_059","Jiao_2023","PFDoDA","blood","species 5","Raw data extracted from Figure 4",NA,NA,NA,0.628272251,NA,NA,11.88156771,NA,NA,NA,NA
+"28","S_059","Jiao_2023","PFDoDA","blood","species 6","Raw data extracted from Figure 4",NA,NA,NA,0.392670157,NA,NA,11.70342728,NA,NA,NA,NA
+"29","S_059","Jiao_2023","PFDoDA","blood","species 7","Raw data extracted from Figure 4",NA,NA,NA,1.596858639,NA,NA,12.16869036,NA,NA,NA,NA
+"30","S_059","Jiao_2023","PFDoDA","blood","species 8","Raw data extracted from Figure 4",NA,NA,NA,1.544502618,NA,NA,13.05502952,NA,NA,NA,NA
+"31","S_059","Jiao_2023","PFDoDA","blood","species 9","Raw data extracted from Figure 4",NA,NA,NA,1.492146597,NA,NA,13.23214882,NA,NA,NA,NA
+"32","S_059","Jiao_2023","PFDoDA","blood","species 10","Raw data extracted from Figure 4",NA,NA,NA,3.403141361,NA,NA,13.59353533,NA,NA,NA,NA
+"33","S_059","Jiao_2023","PFDoDA","blood","species 11","Raw data extracted from Figure 4",NA,NA,NA,1.256544503,NA,NA,14.5079091,NA,NA,NA,NA
+"34","S_059","Jiao_2023","PFTrDA","blood","species 1",NA,NA,NA,NA,NA,-4.643497577,NA,7.975768322,NA,NA,NA,NA
+"35","S_059","Jiao_2023","PFTrDA","blood","species 2",NA,NA,NA,NA,NA,-4.670126932,NA,13.04866036,NA,NA,NA,NA
+"36","S_059","Jiao_2023","PFTrDA","blood","species 3",NA,NA,NA,NA,NA,1.881469899,NA,8.025019701,NA,NA,NA,NA
+"37","S_059","Jiao_2023","PFTrDA","blood","species 4",NA,NA,NA,NA,NA,3.76633698,NA,13.54117415,NA,NA,NA,NA
+"38","S_059","Jiao_2023","PFTrDA","blood","species 5",NA,NA,NA,NA,NA,2.044994819,NA,11.59574468,NA,NA,NA,NA
+"39","S_059","Jiao_2023","PFTrDA","blood","species 6",NA,NA,NA,NA,NA,2.025216706,NA,11.89125296,NA,NA,NA,NA
+"40","S_059","Jiao_2023","PFTrDA","blood","species 7",NA,NA,NA,NA,NA,2.279229724,NA,12.11288416,NA,NA,NA,NA
+"41","S_059","Jiao_2023","PFTrDA","blood","species 8",NA,NA,NA,NA,NA,1.945457911,NA,13.1964145,NA,NA,NA,NA
+"42","S_059","Jiao_2023","PFTrDA","blood","species 9",NA,NA,NA,NA,NA,2.357954369,NA,14.47695035,NA,NA,NA,NA
+"43","S_059","Jiao_2023","PFTrDA","blood","species 10",NA,NA,NA,NA,NA,1.101850301,NA,14.18144208,NA,NA,NA,NA
+"44","S_059","Jiao_2023","PFTrDA","blood","species 11",NA,NA,NA,NA,NA,0.96547181,NA,12.38376675,NA,NA,NA,NA
+"45","S_059","Jiao_2023","PFOS","blood","species 1",NA,0.833781047,NA,NA,NA,NA,NA,5.567874055,NA,NA,NA,NA
+"46","S_059","Jiao_2023","PFOS","blood","species 2",NA,1.379326296,NA,NA,NA,NA,NA,5.59031417,NA,NA,NA,NA
+"47","S_059","Jiao_2023","PFOS","blood","species 3",NA,1.576414344,NA,NA,NA,NA,NA,5.570178991,NA,NA,NA,NA
+"48","S_059","Jiao_2023","PFOS","blood","species 4",NA,5.676336248,NA,NA,NA,NA,NA,7.989543064,NA,NA,NA,NA
+"49","S_059","Jiao_2023","PFOS","blood","species 5",NA,1.205380687,NA,NA,NA,NA,NA,7.975666405,NA,NA,NA,NA
+"50","S_059","Jiao_2023","PFOS","blood","species 6",NA,2.586317647,NA,NA,NA,NA,NA,12.3990396,NA,NA,NA,NA
+"51","S_059","Jiao_2023","PFOS","blood","species 7",NA,3.512958483,NA,NA,NA,NA,NA,11.69652146,NA,NA,NA,NA
+"52","S_059","Jiao_2023","PFOS","blood","species 8",NA,4.315648922,NA,NA,NA,NA,NA,11.88573479,NA,NA,NA,NA
+"53","S_059","Jiao_2023","PFOS","blood","species 9",NA,4.936218434,NA,NA,NA,NA,NA,12.15737042,NA,NA,NA,NA
+"54","S_059","Jiao_2023","PFOS","blood","species 10",NA,5.160096369,NA,NA,NA,NA,NA,13.29914411,NA,NA,NA,NA
+"55","S_059","Jiao_2023","PFOS","blood","species 11",NA,3.766267562,NA,NA,NA,NA,NA,13.12884293,NA,NA,NA,NA
+"56","S_059","Jiao_2023","PFOS","blood","species 12",NA,3.596283838,NA,NA,NA,NA,NA,14.20715352,NA,NA,NA,NA
+"57","S_059","Jiao_2023","PFOS","blood","species 13",NA,4.550091883,NA,NA,NA,NA,NA,14.5420641,NA,NA,NA,NA
+"58","S_059","Jiao_2023","PFOS","blood","species 14",NA,6.310803801,NA,NA,NA,NA,NA,13.67615959,NA,NA,NA,NA
+"59","S_059","Jiao_2023","FOSA","blood","species 1",NA,NA,NA,NA,NA,NA,-4.574639748,5.65989943,NA,NA,NA,NA
+"60","S_059","Jiao_2023","FOSA","blood","species 2",NA,NA,NA,NA,NA,NA,-0.964049835,8.061392975,NA,NA,NA,NA
+"61","S_059","Jiao_2023","FOSA","blood","species 3",NA,NA,NA,NA,NA,NA,4.459246473,8.064395077,NA,NA,NA,NA
+"62","S_059","Jiao_2023","FOSA","blood","species 4",NA,NA,NA,NA,NA,NA,4.859088862,13.63460672,NA,NA,NA,NA
+"63","S_059","Jiao_2023","FOSA","blood","species 5",NA,NA,NA,NA,NA,NA,4.274992495,13.24039328,NA,NA,NA,NA
+"64","S_059","Jiao_2023","FOSA","blood","species 6",NA,NA,NA,NA,NA,NA,3.766511558,12.13749625,NA,NA,NA,NA
+"65","S_059","Jiao_2023","FOSA","blood","species 7",NA,NA,NA,NA,NA,NA,3.289177424,11.92134494,NA,NA,NA,NA
+"66","S_059","Jiao_2023","FOSA","blood","species 8",NA,NA,NA,NA,NA,NA,2.891398979,11.74121885,NA,NA,NA,NA
+"67","S_059","Jiao_2023","FOSA","blood","species 9",NA,NA,NA,NA,NA,NA,2.286663164,12.4461498,NA,NA,NA,NA
+"68","S_059","Jiao_2023","FOSA","blood","species 10",NA,NA,NA,NA,NA,NA,1.99939958,13.15333233,NA,NA,NA,NA
+"69","S_059","Jiao_2023","FOSA","blood","species 11",NA,NA,NA,NA,NA,NA,2.666429,14.22189282,NA,NA,NA,NA
+"70","S_059","Jiao_2023","FOSA","blood","species 12",NA,NA,NA,NA,NA,NA,2.35045782,14.50333984,NA,NA,NA,NA
+"71","S_059","Jiao_2023","62ClPFESA","blood","species 1",NA,NA,NA,NA,NA,NA,NA,5.585531575,-4.600816701,NA,NA,NA
+"72","S_059","Jiao_2023","62ClPFESA","blood","species 2",NA,NA,NA,NA,NA,NA,NA,5.560551559,-3.186075478,NA,NA,NA
+"73","S_059","Jiao_2023","62ClPFESA","blood","species 3",NA,NA,NA,NA,NA,NA,NA,5.610511591,-1.734987671,NA,NA,NA
+"74","S_059","Jiao_2023","62ClPFESA","blood","species 4",NA,NA,NA,NA,NA,NA,NA,8.008593125,0.512024243,NA,NA,NA
+"75","S_059","Jiao_2023","62ClPFESA","blood","species 5",NA,NA,NA,NA,NA,NA,NA,12.40507594,0.525505522,NA,NA,NA
+"76","S_059","Jiao_2023","62ClPFESA","blood","species 6",NA,NA,NA,NA,NA,NA,NA,11.70563549,2.531704795,NA,NA,NA
+"77","S_059","Jiao_2023","62ClPFESA","blood","species 7",NA,NA,NA,NA,NA,NA,NA,11.90547562,2.732734447,NA,NA,NA
+"78","S_059","Jiao_2023","62ClPFESA","blood","species 8",NA,NA,NA,NA,NA,NA,NA,14.22861711,2.573470324,NA,NA,NA
+"79","S_059","Jiao_2023","62ClPFESA","blood","species 9",NA,NA,NA,NA,NA,NA,NA,14.55335731,3.031040776,NA,NA,NA
+"80","S_059","Jiao_2023","62ClPFESA","blood","species 10",NA,NA,NA,NA,NA,NA,NA,13.05455635,3.718718147,NA,NA,NA
+"81","S_059","Jiao_2023","62ClPFESA","blood","species 11",NA,NA,NA,NA,NA,NA,NA,13.20443645,3.773039769,NA,NA,NA
+"82","S_059","Jiao_2023","62ClPFESA","blood","species 12",NA,NA,NA,NA,NA,NA,NA,12.10531575,3.833969861,NA,NA,NA
+"83","S_059","Jiao_2023","82ClPFESA","blood","species 1",NA,NA,NA,NA,NA,NA,NA,8.002512563,NA,-4.542961609,NA,NA
+"84","S_059","Jiao_2023","82ClPFESA","blood","species 2",NA,NA,NA,NA,NA,NA,NA,7.952261307,NA,3.665447898,NA,NA
+"85","S_059","Jiao_2023","82ClPFESA","blood","species 3",NA,NA,NA,NA,NA,NA,NA,12.39949749,NA,-0.539305302,NA,NA
+"86","S_059","Jiao_2023","82ClPFESA","blood","species 4",NA,NA,NA,NA,NA,NA,NA,11.6959799,NA,0.539305302,NA,NA
+"87","S_059","Jiao_2023","82ClPFESA","blood","species 5",NA,NA,NA,NA,NA,NA,NA,11.94723618,NA,0.612431444,NA,NA
+"88","S_059","Jiao_2023","82ClPFESA","blood","species 6",NA,NA,NA,NA,NA,NA,NA,12.12311558,NA,2.513711152,NA,NA
+"89","S_059","Jiao_2023","82ClPFESA","blood","species 7",NA,NA,NA,NA,NA,NA,NA,13.10301508,NA,2.970749543,NA,NA
+"90","S_059","Jiao_2023","82ClPFESA","blood","species 8",NA,NA,NA,NA,NA,NA,NA,13.17839196,NA,2.531992687,NA,NA
+"91","S_059","Jiao_2023","82ClPFESA","blood","species 9",NA,NA,NA,NA,NA,NA,NA,14.48492462,NA,1.508226691,NA,NA
+"92","S_059","Jiao_2023","82ClPFESA","blood","species 10",NA,NA,NA,NA,NA,NA,NA,14.25879397,NA,0.722120658,NA,NA
+"93","S_059","Jiao_2023","102ClPFESA","blood","species 1",NA,NA,NA,NA,NA,NA,NA,5.53188704,NA,NA,-4.582571603,NA
+"94","S_059","Jiao_2023","102ClPFESA","blood","species 2",NA,NA,NA,NA,NA,NA,NA,8.00234414,NA,NA,-4.613040829,NA
+"95","S_059","Jiao_2023","102ClPFESA","blood","species 3",NA,NA,NA,NA,NA,NA,NA,7.985463576,NA,NA,1.480804388,NA
+"96","S_059","Jiao_2023","102ClPFESA","blood","species 4",NA,NA,NA,NA,NA,NA,NA,12.42968346,NA,NA,-3.363802559,NA
+"97","S_059","Jiao_2023","102ClPFESA","blood","species 5",NA,NA,NA,NA,NA,NA,NA,11.77137975,NA,NA,-1.809872029,NA
+"98","S_059","Jiao_2023","102ClPFESA","blood","species 6",NA,NA,NA,NA,NA,NA,NA,11.92518044,NA,NA,-0.850091408,NA
+"99","S_059","Jiao_2023","102ClPFESA","blood","species 7",NA,NA,NA,NA,NA,NA,NA,12.14535505,NA,NA,0.581962218,NA
+"100","S_059","Jiao_2023","102ClPFESA","blood","species 8",NA,NA,NA,NA,NA,NA,NA,13.27681215,NA,NA,0.688604509,NA
+"101","S_059","Jiao_2023","102ClPFESA","blood","species 9",NA,NA,NA,NA,NA,NA,NA,14.60949629,NA,NA,-0.286410725,NA
+"102","S_059","Jiao_2023","102ClPFESA","blood","species 10",NA,NA,NA,NA,NA,NA,NA,14.26702372,NA,NA,-1.276660573,NA
+"103","S_059","Jiao_2023","102ClPFESA","blood","species 11",NA,NA,NA,NA,NA,NA,NA,13.71635753,NA,NA,3.44606947,NA
+"104","S_059","Jiao_2023","102ClPFESA","blood","species 12",NA,NA,NA,NA,NA,NA,NA,13.20037114,NA,NA,4.436319317,NA
+"105","S_059","Jiao_2023","103FTCA","blood","species 1",NA,NA,NA,NA,NA,NA,NA,5.568473365,NA,NA,NA,-4.617058477
+"106","S_059","Jiao_2023","103FTCA","blood","species 2",NA,NA,NA,NA,NA,NA,NA,8.037195056,NA,NA,NA,-4.578986044
+"107","S_059","Jiao_2023","103FTCA","blood","species 3",NA,NA,NA,NA,NA,NA,NA,7.94220402,NA,NA,NA,3.313853678
+"108","S_059","Jiao_2023","103FTCA","blood","species 4",NA,NA,NA,NA,NA,NA,NA,11.68654225,NA,NA,NA,0.928340207
+"109","S_059","Jiao_2023","103FTCA","blood","species 5",NA,NA,NA,NA,NA,NA,NA,11.84066909,NA,NA,NA,3.783772655
+"110","S_059","Jiao_2023","103FTCA","blood","species 6",NA,NA,NA,NA,NA,NA,NA,12.11081865,NA,NA,NA,3.67772731
+"111","S_059","Jiao_2023","103FTCA","blood","species 7",NA,NA,NA,NA,NA,NA,NA,13.06776069,NA,NA,NA,3.054695072
+"112","S_059","Jiao_2023","103FTCA","blood","species 8",NA,NA,NA,NA,NA,NA,NA,13.17168387,NA,NA,NA,3.009210868
+"113","S_059","Jiao_2023","103FTCA","blood","species 9",NA,NA,NA,NA,NA,NA,NA,13.58319555,NA,NA,NA,3.834894873
+"114","S_059","Jiao_2023","103FTCA","blood","species 10",NA,NA,NA,NA,NA,NA,NA,14.47872125,NA,NA,NA,3.013201822
+"115","S_059","Jiao_2023","103FTCA","blood","species 11",NA,NA,NA,NA,NA,NA,NA,12.39404968,NA,NA,NA,-4.580949847
+"116","S_059","Jiao_2023","103FTCA","blood","species 12",NA,NA,NA,NA,NA,NA,NA,14.15744946,NA,NA,NA,-4.560298245

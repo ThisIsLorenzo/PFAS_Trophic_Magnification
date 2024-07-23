@@ -1,0 +1,74 @@
+---
+title: "Analysis Code"
+author: "Lorenzo Ricolfi"
+output:
+  html_document:
+    code_folding: show
+    toc: yes
+    toc_float: yes
+    toc_collapsed: yes
+    toc_depth: 3
+    number_sections: no
+    theme: cerulean
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+#devtools::install_github("EIvimeyCook/ShinyDigitise")
+library(tidyr)
+library(dplyr)
+library(here)
+library(lmtest)
+library(data.table)
+library(metaDigitise)
+library(sandwich)
+#library(shinyDigitise)
+```
+
+# Raw data extracion - MetaDigitise
+```{r}
+dat <- metaDigitise("~/PhD/GitHub/PFAS_Trophic_Magnification/metaDigitise")
+dat <- shinyDigitise("~/PhD/GitHub/PFAS_Trophic_Magnification/metaDigitise")
+#write.csv(dat, file = "metaDigitise/MetaDigitise_Martin_2004_10r.csv")
+```
+
+# Data wrangling
+```{r}
+study_data <- read.csv(here("data/study_data.csv"))
+fw_data <- read.csv(here("data/fw_data.csv"))
+PFAS_data <- read.csv(here("data/PFAS_data.csv"))
+TMF_data <- read.csv(here("data/TMF_data.csv"))
+appr_data <- read.csv(here("data/appr_data.csv"))
+
+TMF_data <- TMF_data %>%
+  mutate(across(everything(), ~ ifelse(. == "na", NA, .)))
+```
+
+```{r}
+calculate_TMF_data <- function(data) {
+  data <- data %>%
+    mutate(
+      TMS_se = ifelse(is.na(TMS_se) & !is.na(TMS_lower_95CI) & !is.na(TMS_upper_95CI),
+                      (TMS_upper_95CI - TMS_lower_95CI) / 1.96, TMS_se),
+      TMF_se = ifelse(is.na(TMF_se) & !is.na(TMF_lower_95CI) & !is.na(TMF_upper_95CI),
+                      (TMF_upper_95CI - TMF_lower_95CI) / 1.96, TMF_se),
+      TMF = ifelse(is.na(TMF) & !is.na(TMS),
+                   ifelse(TMF_formula == "10^slope", 10^TMS, exp(TMS)), TMF),
+      TMF_se = ifelse(is.na(TMF_se) & is.na(TMF_lower_95CI) & is.na(TMF_upper_95CI) & !is.na(TMS_se),
+                      ifelse(TMF_formula == "10^slope", 10^TMS_se, exp(TMS_se)), TMF_se),
+      z_value = ifelse(is.na(TMS_se) & !is.na(TMS) & !is.na(pvalue_adj),
+                       qnorm(1 - pvalue_adj / 2), NA),
+      TMS_se = ifelse(is.na(TMS_se) & !is.na(TMS) & !is.na(z_value),
+                      TMS / z_value, TMS_se)
+    )
+  return(data)
+}
+
+# Apply the function to your data table
+TMF_data <- calculate_TMF_data(TMF_data)
+```
+

@@ -1,0 +1,26 @@
+"","Study_ID","filename","PFAS","tissue","species","software","ln_PFOS_mean","ln_PFDA_mean","ln_PFUnDA_mean","ln_PFDoDA_mean","ln_PFTrDA_mean","ln_FOSA_mean","delta_15N_mean","ln_62ClPFESA_mean","ln_82ClPFESA_mean","ln_102ClPFESA_mean","ln_103FTCA_mean"
+"1","S_059","Jiao_2023","PFUnDA","kidney","species 1","Raw data extracted from Figure 4",NA,NA,4.121353777,NA,NA,NA,8,NA,NA,NA,NA
+"2","S_059","Jiao_2023","PFUnDA","kidney","species 2","Raw data extracted from Figure 4",NA,NA,4.780478684,NA,NA,NA,12.10714286,NA,NA,NA,NA
+"3","S_059","Jiao_2023","PFUnDA","kidney","species 3","Raw data extracted from Figure 4",NA,NA,4.460545999,NA,NA,NA,13.21428571,NA,NA,NA,NA
+"4","S_059","Jiao_2023","PFUnDA","kidney","species 4","Raw data extracted from Figure 4",NA,NA,4.615370232,NA,NA,NA,13.64285714,NA,NA,NA,NA
+"5","S_059","Jiao_2023","PFUnDA","kidney","species 5","Raw data extracted from Figure 4",NA,NA,4.429319372,NA,NA,NA,14.17857143,NA,NA,NA,NA
+"6","S_059","Jiao_2023","PFUnDA","kidney","species 6","Raw data extracted from Figure 4",NA,NA,2.217651458,NA,NA,NA,11.60714286,NA,NA,NA,NA
+"7","S_059","Jiao_2023","PFUnDA","kidney","species 7","Raw data extracted from Figure 4",NA,NA,2.804412865,NA,NA,NA,14.53571429,NA,NA,NA,NA
+"8","S_059","Jiao_2023","PFUnDA","kidney","species 8","Raw data extracted from Figure 4",NA,NA,3.339005236,NA,NA,NA,12.42857143,NA,NA,NA,NA
+"9","S_059","Jiao_2023","PFUnDA","kidney","species 9","Raw data extracted from Figure 4",NA,NA,3.754300673,NA,NA,NA,13.10714286,NA,NA,NA,NA
+"10","S_059","Jiao_2023","PFDoDA","kidney","species 1",NA,NA,NA,NA,2.879581152,NA,NA,8.095224834,NA,NA,NA,NA
+"11","S_059","Jiao_2023","PFDoDA","kidney","species 2",NA,NA,NA,NA,3.717277487,NA,NA,12.14074858,NA,NA,NA,NA
+"12","S_059","Jiao_2023","PFDoDA","kidney","species 3",NA,NA,NA,NA,3.743455497,NA,NA,13.06282723,NA,NA,NA,NA
+"13","S_059","Jiao_2023","PFDoDA","kidney","species 4",NA,NA,NA,NA,3.821989529,NA,NA,13.20494969,NA,NA,NA,NA
+"14","S_059","Jiao_2023","PFDoDA","kidney","species 5",NA,NA,NA,NA,2.408376963,NA,NA,14.51199361,NA,NA,NA,NA
+"15","S_059","Jiao_2023","PFDoDA","kidney","species 6",NA,NA,NA,NA,1.832460733,NA,NA,14.19080242,NA,NA,NA,NA
+"16","S_059","Jiao_2023","PFDoDA","kidney","species 7",NA,NA,NA,NA,2.329842932,NA,NA,12.41951654,NA,NA,NA,NA
+"17","S_059","Jiao_2023","PFTrDA","kidney","species 1",NA,NA,NA,NA,NA,3.904654501,NA,8.025019701,NA,NA,NA,NA
+"18","S_059","Jiao_2023","PFTrDA","kidney","species 2",NA,NA,NA,NA,NA,4.667339898,NA,12.03900709,NA,NA,NA,NA
+"19","S_059","Jiao_2023","PFTrDA","kidney","species 3",NA,NA,NA,NA,NA,4.40634637,NA,13.14716312,NA,NA,NA,NA
+"20","S_059","Jiao_2023","PFTrDA","kidney","species 4",NA,NA,NA,NA,NA,4.206367673,NA,13.04866036,NA,NA,NA,NA
+"21","S_059","Jiao_2023","PFTrDA","kidney","species 5",NA,NA,NA,NA,NA,3.64495366,NA,12.35914106,NA,NA,NA,NA
+"22","S_059","Jiao_2023","PFTrDA","kidney","species 6",NA,NA,NA,NA,NA,4.237004358,NA,14.15681639,NA,NA,NA,NA
+"23","S_059","Jiao_2023","PFTrDA","kidney","species 7",NA,NA,NA,NA,NA,4.075935544,NA,13.59042553,NA,NA,NA,NA
+"24","S_059","Jiao_2023","PFTrDA","kidney","species 8",NA,NA,NA,NA,NA,3.488021444,NA,14.47695035,NA,NA,NA,NA
+"25","S_059","Jiao_2023","PFTrDA","kidney","species 9",NA,NA,NA,NA,NA,2.263458941,NA,11.64499606,NA,NA,NA,NA

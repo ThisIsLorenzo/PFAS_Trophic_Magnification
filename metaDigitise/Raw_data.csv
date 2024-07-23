@@ -1,6 +1,6 @@
 Study_ID,filename,variable,group_id,mean,sd,n,r,se,error_type,plot_type,software,note
 S_052,Cara_2022_1.png,PFOA,"PFOA, species1, location 5",1.213181551,0.487084556,NA,NA,NA,sd,mean_error,metaDigitise,NA
-S_052,Cara_2022_1.png,PFOA,"PFOA,species2, location 5",1.298822791,0.133814438,NA,NA,NA,sd,mean_error,metaDigitise,NA
+S_052,Cara_2022_1.png,PFOA,"PFOA, species2, location 5",1.298822791,0.133814438,NA,NA,NA,sd,mean_error,metaDigitise,NA
 S_052,Cara_2022_1.png,PFOA,"PFOA, species3, location 5",1.009783604,0.04282062,NA,NA,NA,sd,mean_error,metaDigitise,NA
 S_052,Cara_2022_1.png,PFOA,"PFOA, species4, location 5",1.041899069,0.155224749,NA,NA,NA,sd,mean_error,metaDigitise,NA
 S_052,Cara_2022_1.png,PFOA,"PFOA, species5, location 5",0.977668139,0.074936086,NA,NA,NA,sd,mean_error,metaDigitise,NA
@@ -585,18 +585,18 @@ S_017,Liu_2018,TL,"PFBA, species 3",2.483091787,NA,NA,NA,NA,NA,NA,Webplot Digiti
 S_017,Liu_2018,TL,"PFBA, species 4",2.729468599,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
 S_017,Liu_2018,TL,"PFBA, species 5",3.603864734,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
 S_017,Liu_2018,TL,"PFBA, species 6",2.898550725,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
-S_017,Liu_2018,PFOA,"PFOA, species 1",7.076701494,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
-S_017,Liu_2018,PFOA,"PFOA, species 2",16.26110731,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
-S_017,Liu_2018,PFOA,"PFOA, species 3",48.54823748,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
-S_017,Liu_2018,PFOA,"PFOA, species 4",9.698149595,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
-S_017,Liu_2018,PFOA,"PFOA, species 5",50.88443511,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
-S_017,Liu_2018,PFOA,"PFOA, species 6",40.07091593,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
-S_017,Liu_2018,TL,"PFOA, species 1",2.473684211,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
-S_017,Liu_2018,TL,"PFOA, species 2",2.483253589,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
-S_017,Liu_2018,TL,"PFOA, species 3",2.368421053,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
-S_017,Liu_2018,TL,"PFOA, species 4",2.727272727,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
-S_017,Liu_2018,TL,"PFOA, species 5",2.894736842,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
-S_017,Liu_2018,TL,"PFOA, species 6",3.598086124,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
+S_017,Liu_2018,PFOA,"PFOA, species 1",48.60508025,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
+S_017,Liu_2018,PFOA,"PFOA, species 2",16.09977739,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
+S_017,Liu_2018,PFOA,"PFOA, species 3",7.220717612,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
+S_017,Liu_2018,PFOA,"PFOA, species 4",9.279063663,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
+S_017,Liu_2018,PFOA,"PFOA, species 5",50.82335786,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
+S_017,Liu_2018,PFOA,"PFOA, species 6",39.32741642,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
+S_017,Liu_2018,TL,"PFOA, species 1",2.362142142,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
+S_017,Liu_2018,TL,"PFOA, species 2",2.485168515,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
+S_017,Liu_2018,TL,"PFOA, species 3",2.479355297,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
+S_017,Liu_2018,TL,"PFOA, species 4",2.725726895,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
+S_017,Liu_2018,TL,"PFOA, species 5",2.898101469,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
+S_017,Liu_2018,TL,"PFOA, species 6",3.603942879,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
 S_017,Liu_2018,PFNA,"PFNA, species 1",68.12339332,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
 S_017,Liu_2018,PFNA,"PFNA, species 2",43.05912596,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
 S_017,Liu_2018,PFNA,"PFNA, species 3",23.77892031,NA,NA,NA,NA,NA,NA,Webplot Digitiser,Raw regression data extracted from Figure 4 (PFAS concentrations) and Table 1 (TLs). We used the raw data to run the regression analysis and find slope and error.
@@ -1531,3 +1531,1645 @@ S_060,Kobayashi_2018,TL,"PFUnDA, species 2",1.8,0.7,NA,NA,NA,sd,NA,Raw data extr
 S_060,Kobayashi_2018,TL,"PFUnDA, species 3",2.6,0.5,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
 S_060,Kobayashi_2018,TL,"PFUnDA, species 4",2.8,0.6,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
 S_060,Kobayashi_2018,TL,"PFUnDA, species 5",2,NA,NA,NA,NA,sd,NA,Raw data extracted from Table 1,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 1",4.460928756,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 2",52.28664844,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 3",495.9093525,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 4",6.995642157,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 5",42.30939173,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 6",65.47747961,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 7",18.38094418,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 8",0.841952045,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 9",0.551288979,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 10",14.48503471,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 11",8.531678524,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 12",57.3615251,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 13",8.645330674,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 14",6.37672519,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 15",3.16227766,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 16",3.423597958,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 17",3.039195382,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 18",4.959093525,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 19",6.547747961,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 20",26.27484906,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 21",33.34175883,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 22",32.90344562,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 23",32.04402976,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 24",50.25154575,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 25",62.92896294,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 26",59.68456995,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 27",118.77161,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 28",961.0779662,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 29",604.7963972,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 30",236.3541425,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 31",163.1712641,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 32",0.346920437,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 33",3.657786821,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 34",6.37672519,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 35",7.183264184,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 36",9.738806728,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 37",11.41487774,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 38",18.13930694,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 39",21.83134334,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 40",26.62486144,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 41",45.20353656,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 42",42.87300337,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 43",33.78591088,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 44",32.47089452,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 45",27.33893606,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 46",22.41685655,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 47",17.66552045,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 48",16.10262028,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 49",14.10669535,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 50",11.11672882,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 51",11.56693755,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 52",11.11672882,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 53",9.484435649,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 54",7.674630429,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 55",5.440416936,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 56",4.120429888,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 57",3.204402976,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 58",3.960054377,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 59",1.126481692,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 60",47.03420342,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 61",41.20429888,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 62",27.70312334,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 63",71.83264184,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 64",55.86328066,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 65",47.66075519,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 66",47.66075519,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 67",43.44412299,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 68",46.41588834,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 69",54.40416936,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 70",84.19520454,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 71",44.60928756,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 72",45.20353656,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 73",44.0228506,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 74",47.03420342,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 75",52.28664844,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 76",35.6224789,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 77",37.06512911,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 78",29.59813644,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 79",23.01807313,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 80",25.58856768,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 81",28.82505303,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 82",29.59813644,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 83",26.9795364,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 84",24.92021151,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 85",21.83134334,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 86",20.7057971,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 87",19.12534136,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 88",21.26112334,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 89",19.63828002,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 90",15.07165414,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 91",13.02994339,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 92",10.4049831,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 93",8.760496806,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 94",11.11672882,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 95",3.805921007,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 96",4.120429888,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 97",6.210169419,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 98",43.44412299,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 99",13.55763408,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 100",15.47587355,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 101",22.41685655,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 102",21.26112334,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 103",19.38011375,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 104",29.20903717,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 105",61.28530077,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 106",67.23357536,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 107",59.68456995,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 108",89.95451959,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 109",121.957046,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 110",94.84435649,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 111",79.85439994,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 112",154.7587355,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 113",262.7484906,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 114",277.0312334,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 115",172.0410894,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 116",169.7794246,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 117",458.0570167,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFOS,"PFOS, species 118",365.7786821,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 1",0.345736403,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 2",1.193758258,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 3",1.09251954,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 4",0.929447567,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 5",0.470435013,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 6",0.516145401,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 7",0.44717122,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 8",0.109026179,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 9",0.020348078,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 10",0.00307843,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 11",0.060979626,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 12",0.081112099,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 13",0.220054406,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 14",0.253996824,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 15",0.370385365,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 16",0.5115096,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 17",0.41297915,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 18",0.578304017,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 19",0.809552805,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 20",1.778059888,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 21",7.859918727,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 22",1.319717847,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 23",1.252448119,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 24",1.066700043,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 25",1.012057162,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 26",0.788397792,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 27",1.323951855,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 28",1.928460905,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 29",2.146904769,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 30",2.308577416,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 31",3.062570356,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 32",4.876378156,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 33",5.626735294,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 34",5.52375565,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 35",7.909588519,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 36",10.5428734,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 37",4.556477019,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 38",5.261820968,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 39",3.133519914,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 40",2.395074017,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 41",2.229723331,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 42",1.736966068,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 43",1.505010352,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 44",0.963139779,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 45",0.820342238,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 46",0.48826952,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 47",0.401350794,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 48",0.463405789,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 49",0.374261283,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 50",0.295263739,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 51",264.7437264,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 52",11.98979524,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 53",8.849836084,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 54",6.300317141,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 55",5.365643249,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 56",4.910600664,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 57",4.335778542,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 58",5.983642761,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 59",3.692747897,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 60",3.141559874,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 61",2.922488356,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 62",2.67150224,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 63",2.669933885,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 64",1.619382231,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 65",2.00777734,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 66",2.23663806,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 67",1.906452786,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 68",1.976932701,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 69",1.683018821,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 70",1.567663555,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 71",1.459825098,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 72",1.093102943,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 73",0.96514716,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 74",0.821657123,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 75",0.617618342,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 76",0.59572674,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 77",0.498781627,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 78",0.508080437,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 79",0.26722511,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 80",1.13848698,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 81",1.686616616,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 82",1.814402004,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 83",2.209343026,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 84",2.252815844,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 85",1.493245743,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 86",2.453570718,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 87",3.146595322,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 88",3.830287875,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 89",4.340642094,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 90",3.694719817,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 91",3.634271186,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 92",4.117408602,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 93",5.194833784,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 94",5.583049365,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 95",4.588699418,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 96",5.111479077,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 97",5.113662576,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 98",6.693515186,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 99",11.44016034,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 100",16.63700727,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 101",14.67149683,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 102",9.942642208,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 103",8.93099548,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 104",7.348604897,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 105",4.616218268,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 106",4.303264099,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 107",3.851818773,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 108",3.647098929,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 109",3.449758761,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 110",2.78405354,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 111",0.668182263,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 112",0.799502601,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 113",0.991785856,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 114",0.461529421,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 115",2.715212326,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 116",2.718838573,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 117",2.03888552,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,TL,"PFOS, species 118",4.965962981,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S10,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 1",0.345736403,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 2",1.193758258,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 3",1.09251954,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 4",0.929447567,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 5",0.470435013,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 6",0.516145401,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 7",0.44717122,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 8",0.109026179,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 9",0.020348078,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 10",0.00307843,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 11",0.060979626,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 12",0.081112099,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 13",0.220054406,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 14",0.253996824,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 15",0.370385365,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 16",0.5115096,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 17",0.41297915,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 18",0.578304017,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 19",0.809552805,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 20",1.778059888,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 21",7.859918727,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 22",1.319717847,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 23",1.252448119,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 24",1.066700043,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 25",1.012057162,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 26",0.788397792,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 27",1.323951855,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 28",1.928460905,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 29",2.146904769,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 30",2.308577416,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 31",3.062570356,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 32",4.876378156,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 33",5.626735294,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 34",5.52375565,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 35",7.909588519,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 36",10.5428734,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 37",4.556477019,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 38",5.261820968,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 39",3.133519914,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 40",2.395074017,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 41",2.229723331,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 42",1.736966068,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 43",1.505010352,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 44",0.963139779,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 45",0.820342238,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 46",0.48826952,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 47",0.401350794,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 48",0.463405789,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 49",0.374261283,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 50",0.295263739,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 51",264.7437264,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 52",11.98979524,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 53",8.849836084,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 54",6.300317141,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 55",5.365643249,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 56",4.910600664,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 57",4.335778542,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 58",5.983642761,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 59",3.692747897,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 60",3.141559874,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 61",2.922488356,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 62",2.67150224,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 63",2.669933885,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 64",1.619382231,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 65",2.00777734,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 66",2.23663806,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 67",1.906452786,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 68",1.976932701,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 69",1.683018821,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 70",1.567663555,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 71",1.459825098,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 72",1.093102943,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 73",0.96514716,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 74",0.821657123,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 75",0.617618342,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 76",0.59572674,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 77",0.498781627,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 78",0.508080437,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 79",0.26722511,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 80",1.13848698,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 81",1.686616616,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 82",1.814402004,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 83",2.209343026,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 84",2.252815844,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 85",1.493245743,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 86",2.453570718,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 87",3.146595322,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 88",3.830287875,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 89",4.340642094,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 90",3.694719817,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 91",3.634271186,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 92",4.117408602,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 93",5.194833784,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 94",5.583049365,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 95",4.588699418,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 96",5.111479077,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 97",5.113662576,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 98",6.693515186,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 99",11.44016034,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 100",16.63700727,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 101",14.67149683,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 102",9.942642208,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 103",8.93099548,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 104",7.348604897,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 105",4.616218268,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 106",4.303264099,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 107",3.851818773,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 108",3.647098929,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 109",3.449758761,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 110",2.78405354,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 111",0.668182263,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 112",0.799502601,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 113",0.991785856,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 114",0.461529421,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 115",2.715212326,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 116",2.718838573,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 117",2.03888552,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFUnDA,"PFUnDA, species 118",4.965962981,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 1",0.879104478,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 2",1.313432836,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 3",1.380597015,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 4",1.32238806,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 5",1.210447761,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 6",1.488059701,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 7",1.456716418,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 8",1.582089552,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 9",1.792537313,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 10",2.392537313,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 11",2.347761194,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 12",2.276119403,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 13",1.985074627,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 14",2.01641791,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 15",2.155223881,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 16",2.231343284,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 17",2.285074627,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 18",2.025373134,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 19",1.73880597,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 20",1.729850746,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 21",1.886567164,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 22",2.226865672,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 23",2.33880597,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 24",2.374626866,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 25",2.464179104,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 26",2.517910448,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 27",2.495522388,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 28",2.540298507,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 29",2.540298507,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 30",2.629850746,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 31",2.334328358,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 32",2.347761194,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 33",2.352238806,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 34",2.302985075,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 35",2.414925373,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 36",2.517910448,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 37",2.656716418,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 38",2.728358209,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 39",2.755223881,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 40",2.714925373,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 41",2.714925373,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 42",2.768656716,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 43",2.746268657,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 44",2.808955224,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 45",2.849253731,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 46",2.831343284,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 47",2.889552239,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 48",2.947761194,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 49",3.028358209,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 50",2.643283582,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 51",2.867164179,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 52",2.804477612,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 53",2.835820896,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 54",2.835820896,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 55",2.867164179,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 56",2.934328358,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 57",2.992537313,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 58",3.010447761,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 59",3.028358209,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 60",2.970149254,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 61",2.907462687,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 62",2.876119403,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 63",2.826865672,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 64",2.889552239,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 65",2.920895522,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 66",2.974626866,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 67",3.07761194,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 68",3.12238806,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 69",3.12238806,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 70",3.167164179,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 71",3.189552239,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 72",2.925373134,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 73",2.98358209,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 74",2.98358209,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 75",3.041791045,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 76",3.014925373,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 77",3.117910448,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 78",3.167164179,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 79",3.274626866,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 80",3.337313433,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 81",3.301492537,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 82",3.426865672,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 83",3.444776119,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 84",3.579104478,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 85",3.588059701,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 86",3.23880597,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 87",3.104477612,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 88",3.095522388,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 89",3.086567164,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 90",3.073134328,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 91",3.189552239,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 92",3.158208955,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 93",3.153731343,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 94",3.198507463,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 95",3.247761194,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 96",3.297014925,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 97",3.332835821,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 98",3.413432836,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 99",3.368656716,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 100",3.279104478,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 101",3.234328358,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 102",3.601492537,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 103",3.601492537,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 104",3.744776119,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 105",3.749253731,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 106",3.86119403,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 107",3.565671642,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 108",3.485074627,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 109",3.319402985,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 110",3.337313433,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 111",3.641791045,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 112",3.691044776,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 113",3.767164179,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 114",4.107462687,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 115",4.237313433,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 116",2.849253731,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 117",2.710447761,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,TL,"PFUnDA, species 118",2.374626866,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S11,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 1",1.052740736,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 2",1.411086287,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 3",1.671915352,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 4",3.346212918,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 5",2.042997603,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 6",1.621143385,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 7",0.443937088,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 8",0.031299379,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 9",0.107460783,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 10",0.003050528,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 11",1.411086287,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 12",0.835362547,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 13",14.70316105,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 14",1.571913238,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 15",0.585945392,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 16",0.472179516,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 17",0.57697994,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 18",0.989773255,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 19",0.662870316,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 20",0.559458475,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 21",0.450835241,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 22",0.363302057,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 23",3.346212918,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 24",16.37893707,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 25",14.47819047,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 26",11.66713668,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 27",9.547962712,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 28",8.183638345,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 29",8.058421878,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 30",7.346346839,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 31",4.152441965,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 32",2.738419634,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 33",2.011738042,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 34",1.52417809,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 35",0.472179516,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 36",58.8964727,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 37",11.1397386,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 38",11.66713668,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 39",7.813707377,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 40",6.697193656,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 41",7.694151161,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 42",9.696324535,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 43",9.258014511,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 44",8.310800498,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 45",6.493816316,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 46",4.625711804,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 47",3.785515249,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 48",2.347122271,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 49",2.13972097,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 50",1.980956779,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 51",32.27963174,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 52",23.71373706,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 53",20.01424841,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 54",15.16364371,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 55",12.60220177,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 56",10.31318616,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 57",13.19883848,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 58",8.058421878,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 59",7.123256309,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 60",7.123256309,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 61",3.194951617,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 62",2.868066955,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 63",1.950646494,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 64",1.596338544,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 65",0.861524946,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 66",1.052740736,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 67",2.042997603,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 68",1.621143385,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 69",1.500856898,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 70",1.326685117,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 71",1.266714003,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 72",1.172725662,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 73",0.785397086,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 74",1.137112861,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 75",1.137112861,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 76",0.380502174,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 77",1.596338544,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 78",3.244596641,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 79",4.416612383,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 80",5.919996208,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 81",5.232991147,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 82",4.996440434,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 83",4.485240286,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 84",3.670558439,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 85",13.19883848,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 86",12.79802214,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 87",11.4886198,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 88",8.571083268,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 89",8.571083268,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 90",8.571083268,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 91",8.058421878,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 92",12.03253526,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 93",16.89190271,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 94",28.97701005,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 95",28.97701005,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 96",20.01424841,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 97",21.28751662,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 98",23.71373706,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 99",22.29534955,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 100",33.80787369,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 101",16.89190271,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 102",15.88154894,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 103",19.40646479,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 104",12.60220177,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 105",13.61220784,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 106",9.258014511,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 107",8.310800498,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 108",5.152922034,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 109",4.349034543,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 110",5.074078045,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 111",4.152441965,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 112",1.020771583,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 113",0.822580806,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 114",1.862469999,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 115",7.935121327,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 116",8.439938572,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 117",9.547962712,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,PFDoDA,"PFDoDA, species 118",0.959716269,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 1",0.876086354,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 2",1.204300507,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 3",1.310700417,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 4",1.381260566,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 5",1.474772823,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 6",1.457169933,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 7",1.31155233,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 8",1.579528344,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 9",1.787315749,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 10",2.388716452,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 11",1.723531276,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 12",1.737181689,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 13",1.877351014,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 14",2.007485603,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 15",2.008119585,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 16",1.981631049,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 17",2.154579195,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 18",2.225238403,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 19",2.274312526,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 20",2.336551669,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 21",2.345566093,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 22",2.279136729,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 23",2.215580093,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 24",2.325506525,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 25",2.414343169,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 26",2.303535107,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 27",2.352480452,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 28",2.339265902,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 29",2.370340897,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 30",2.543477256,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 31",2.534968037,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 32",2.495294669,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 33",2.45555196,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 34",2.513422575,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 35",2.638435783,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 36",2.506636993,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 37",2.654156541,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 38",2.702943391,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 39",2.618881419,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 40",2.729927224,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 41",2.75202742,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 42",2.814009008,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 43",2.845103814,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 44",2.871800375,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 45",2.903023959,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 46",2.881052541,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 47",2.703666526,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 48",2.810482486,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 49",2.735098135,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 50",2.748461274,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 51",2.804360603,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 52",2.840061681,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 53",2.817981298,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 54",2.93354422,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 55",2.96916605,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 56",3.000359917,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 57",2.858189587,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 58",3.022707761,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 59",2.98728405,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 60",2.969532571,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 61",2.907917503,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 62",2.925738324,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 63",2.846104316,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 64",2.881736052,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 65",2.820002113,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 66",2.944133691,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 67",2.979210693,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 68",2.979359283,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 69",3.02822538,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 70",3.068245456,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 71",3.023896476,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 72",3.010632396,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 73",3.024203561,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 74",3.112723214,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 75",3.165977652,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 76",3.264314111,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 77",3.334398774,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 78",3.08098452,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 79",3.089662141,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 80",3.120539016,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 81",3.156121223,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 82",3.17834029,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 83",3.231664069,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 84",3.302798764,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 85",3.062331599,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 86",3.097854369,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 87",3.097923711,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 88",3.177993581,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 89",3.248999498,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 90",3.333319025,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 91",3.195784684,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 92",3.328663224,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 93",3.408326949,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 94",3.128394442,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 95",3.146145921,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 96",3.150821534,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 97",3.186284869,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 98",3.230594225,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 99",3.270574678,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 100",3.363502483,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 101",3.319569553,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 102",3.292981958,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 103",3.594628328,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 104",3.586029956,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 105",3.73243013,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 106",3.559600856,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 107",3.466474931,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 108",3.435716927,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 109",3.418074414,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 110",3.573300798,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 111",3.573429575,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 112",3.649774805,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 113",3.685416447,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 114",3.764773087,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 115",3.737214708,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 116",3.84812183,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 117",4.234137257,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_047,Heimstad_2024,TL,"PFDoDA, species 118",4.10691502,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S12,NA
+S_024,Li_2021,log_HFPO-TeA,"HFPO-TeA, species 1",-1.133738602,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TeA,"HFPO-TeA, species 2",-0.960486322,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TeA,"HFPO-TeA, species 3",-1.311550152,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TeA,"HFPO-TeA, species 4",-0.249240122,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TeA,"HFPO-TeA, species 5",-1.302431611,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TeA,"HFPO-TeA, species 6",-0.869300912,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TeA,"HFPO-TeA, species 7",-1.311550152,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TeA,"HFPO-TeA, species 8",-0.709726444,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TeA,"HFPO-TeA, species 9",-0.404255319,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TeA,"HFPO-TeA, species 10",0.056231003,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TeA,"HFPO-TeA, species 11",-0.554711246,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TeA,"HFPO-TeA, species 12",0.338905775,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TeA, species 1",1.603207102,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TeA, species 2",2.005252944,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TeA, species 3",2.449529844,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TeA, species 4",2.860534148,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TeA, species 5",2.843559907,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TeA, species 6",3.011873471,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TeA, species 7",3.128333485,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TeA, species 8",3.484122592,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TeA, species 9",3.88634037,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TeA, species 10",3.953259078,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TeA, species 11",4.018784511,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TeA, species 12",4.33594136,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TrA,"HFPO-TrA, species 1",1.318326512,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TrA,"HFPO-TrA, species 2",1.605876797,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TrA,"HFPO-TrA, species 3",0.062378004,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TrA,"HFPO-TrA, species 4",1.10260608,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TrA,"HFPO-TrA, species 5",1.796515899,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TrA,"HFPO-TrA, species 6",1.134340784,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TrA,"HFPO-TrA, species 7",0.498891104,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TrA,"HFPO-TrA, species 8",1.400398783,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TrA,"HFPO-TrA, species 9",2.066939518,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TrA,"HFPO-TrA, species 10",1.896001679,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TrA,"HFPO-TrA, species 11",1.78856823,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_HFPO-TrA,"HFPO-TrA, species 12",1.431468849,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TrA, species 1",1.600503725,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TrA, species 2",1.997243502,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TrA, species 3",2.443565257,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TrA, species 4",2.835386714,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TrA, species 5",2.858068353,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TrA, species 6",3.000482737,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TrA, species 7",3.123202854,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TrA, species 8",3.475887641,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TrA, species 9",3.879994403,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TrA, species 10",3.947059852,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TrA, species 11",4.324658061,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"HFPO-TrA, species 12",4.014510092,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_PFO5DoA,"PFO5DoA, species 1",-1.448347107,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_PFO5DoA,"PFO5DoA, species 2",-1.48553719,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_PFO5DoA,"PFO5DoA, species 3",-1.026859504,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_PFO5DoA,"PFO5DoA, species 4",-0.741735537,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_PFO5DoA,"PFO5DoA, species 5",-0.41322314,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_PFO5DoA,"PFO5DoA, species 6",-1.020661157,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_PFO5DoA,"PFO5DoA, species 7",-0.17768595,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_PFO5DoA,"PFO5DoA, species 8",-0.022727273,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_PFO5DoA,"PFO5DoA, species 9",-0.084710744,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_PFO5DoA,"PFO5DoA, species 10",0.497933884,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_PFO5DoA,"PFO5DoA, species 11",-0.438016529,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_PFO5DoA,"PFO5DoA, species 12",0.845041322,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"PFO5DoA, species 1",1.597190083,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"PFO5DoA, species 2",1.993289256,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"PFO5DoA, species 3",2.440066116,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"PFO5DoA, species 4",2.851305785,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"PFO5DoA, species 5",2.830429752,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"PFO5DoA, species 6",3.120049587,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"PFO5DoA, species 7",2.993801653,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"PFO5DoA, species 8",3.47738843,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"PFO5DoA, species 9",3.877553719,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"PFO5DoA, species 10",3.94,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"PFO5DoA, species 11",4.010495868,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"PFO5DoA, species 12",4.32307438,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_H-PFMO2OSA,"H-PFMO2OSA, species 1",-1.444915254,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_H-PFMO2OSA,"H-PFMO2OSA, species 2",-0.584745763,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_H-PFMO2OSA,"H-PFMO2OSA, species 3",-1.042372881,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_H-PFMO2OSA,"H-PFMO2OSA, species 4",-0.461864407,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_H-PFMO2OSA,"H-PFMO2OSA, species 5",-0.847457627,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_H-PFMO2OSA,"H-PFMO2OSA, species 6",-0.093220339,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_H-PFMO2OSA,"H-PFMO2OSA, species 7",-0.199152542,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_H-PFMO2OSA,"H-PFMO2OSA, species 8",0.088983051,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_H-PFMO2OSA,"H-PFMO2OSA, species 9",0.016949153,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_H-PFMO2OSA,"H-PFMO2OSA, species 10",-0.326271186,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_H-PFMO2OSA,"H-PFMO2OSA, species 11",-0.156779661,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_H-PFMO2OSA,"H-PFMO2OSA, species 12",-0.207627119,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"H-PFMO2OSA, species 1",1.598143236,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"H-PFMO2OSA, species 2",1.99204244,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"H-PFMO2OSA, species 3",2.441644562,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"H-PFMO2OSA, species 4",2.831564987,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"H-PFMO2OSA, species 5",2.859416446,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"H-PFMO2OSA, species 6",2.99867374,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"H-PFMO2OSA, species 7",3.122015915,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"H-PFMO2OSA, species 8",3.480106101,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"H-PFMO2OSA, species 9",3.881962865,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"H-PFMO2OSA, species 10",3.945623342,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"H-PFMO2OSA, species 11",4.021220159,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,TL,"H-PFMO2OSA, species 12",4.331564987,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_024,Li_2021,log_PFOS,"PFOS, species 1",0.087041273,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,log_PFOS,"PFOS, species 2",0.780602427,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,log_PFOS,"PFOS, species 3",0.636027997,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,log_PFOS,"PFOS, species 4",1.117040616,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,log_PFOS,"PFOS, species 5",0.544559412,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,log_PFOS,"PFOS, species 6",0.687203347,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,log_PFOS,"PFOS, species 7",0.440929016,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,log_PFOS,"PFOS, species 8",0.953292638,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,log_PFOS,"PFOS, species 9",0.994680968,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,log_PFOS,"PFOS, species 10",1.047871292,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,log_PFOS,"PFOS, species 11",0.692854036,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,log_PFOS,"PFOS, species 12",0.905662266,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,TL,"PFOS, species 1",1.600856677,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,TL,"PFOS, species 2",2.00381093,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,TL,"PFOS, species 3",2.442368284,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,TL,"PFOS, species 4",2.860040612,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,TL,"PFOS, species 5",2.838385893,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,TL,"PFOS, species 6",3.002152644,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,TL,"PFOS, species 7",3.129433961,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,TL,"PFOS, species 8",3.485051954,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,TL,"PFOS, species 9",3.889357868,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,TL,"PFOS, species 10",3.951740732,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,TL,"PFOS, species 11",4.020309317,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,TL,"PFOS, species 12",4.328131111,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S7,NA
+S_024,Li_2021,log_PFMOAA,"PFMOAA, species 1",2.85046729,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFMOAA,"PFMOAA, species 2",0.763239875,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFMOAA,"PFMOAA, species 3",2.406542056,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFMOAA,"PFMOAA, species 4",2.757009346,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFMOAA,"PFMOAA, species 5",4.213395639,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFMOAA,"PFMOAA, species 6",2.040498442,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFMOAA,"PFMOAA, species 7",1.87694704,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFMOAA,"PFMOAA, species 8",1.908099688,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFMOAA,"PFMOAA, species 9",1.744548287,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFMOAA,"PFMOAA, species 10",1.246105919,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFMOAA, species 1",2.444088096,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFMOAA, species 2",2.859975946,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFMOAA, species 3",2.830504122,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFMOAA, species 4",2.999123049,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFMOAA, species 5",3.122616572,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFMOAA, species 6",3.482273058,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFMOAA, species 7",3.88857082,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFMOAA, species 8",3.94886748,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFMOAA, species 9",4.327015109,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFMOAA, species 10",4.017764526,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFBA,"PFBA, species 1",0.980392272,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFBA,"PFBA, species 2",0.19340176,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFBA,"PFBA, species 3",1.22525219,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFBA,"PFBA, species 4",1.147738599,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFBA,"PFBA, species 5",2.424807642,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFBA,"PFBA, species 6",0.674283564,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFBA,"PFBA, species 7",0.737308193,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFBA,"PFBA, species 8",0.923577198,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFBA,"PFBA, species 9",0.237109734,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,log_PFBA,"PFBA, species 10",0.168457696,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFBA, species 1",2.452600692,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFBA, species 2",2.866338744,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFBA, species 3",2.845055142,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFBA, species 4",3.004025038,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFBA, species 5",3.138456608,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFBA, species 6",3.484348217,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFBA, species 7",3.888092767,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFBA, species 8",3.950549951,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFBA, species 9",4.019075564,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_024,Li_2021,TL,"PFBA, species 10",4.329421,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure S8,NA
+S_025,Pan_2021,log_62ClPFESA,"62ClPFESA, species 1",-1.650574713,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_62ClPFESA,"62ClPFESA, species 2",-1.457471264,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_62ClPFESA,"62ClPFESA, species 3",-1.396168582,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_62ClPFESA,"62ClPFESA, species 4",-1.714942529,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_62ClPFESA,"62ClPFESA, species 5",-1.616858238,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_62ClPFESA,"62ClPFESA, species 6",-1.276628352,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_62ClPFESA,"62ClPFESA, species 7",-1.43908046,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_62ClPFESA,"62ClPFESA, species 8",-1.193869732,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_62ClPFESA,"62ClPFESA, species 9",-1.307279693,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_62ClPFESA,"62ClPFESA, species 10",-1.442145594,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_62ClPFESA,"62ClPFESA, species 11",-1.340996169,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_62ClPFESA,"62ClPFESA, species 12",-1.046743295,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_62ClPFESA,"62ClPFESA, species 13",-1.362452107,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_62ClPFESA,"62ClPFESA, species 14",-1.003831418,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_62ClPFESA,"62ClPFESA, species 15",-0.991570881,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"62ClPFESA, species 1",1.893382353,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"62ClPFESA, species 2",1.930147059,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"62ClPFESA, species 3",2.294117647,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"62ClPFESA, species 4",2.371323529,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"62ClPFESA, species 5",2.632352941,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"62ClPFESA, species 6",2.834558824,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"62ClPFESA, species 7",2.941176471,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"62ClPFESA, species 8",3.055147059,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"62ClPFESA, species 9",3.257352941,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"62ClPFESA, species 10",3.400735294,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"62ClPFESA, species 11",3.459558824,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"62ClPFESA, species 12",3.5625,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"62ClPFESA, species 13",3.709558824,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"62ClPFESA, species 14",3.742647059,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"62ClPFESA, species 15",3.889705882,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 1",-0.968332736,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 2",-0.520874866,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 3",-0.517726784,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 4",-0.72620294,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 5",-0.340910721,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 6",-0.252563643,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 7",-0.329874507,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 8",0.106038006,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 9",0.094306203,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 10",0.290986016,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 11",-0.415145213,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 12",-0.006389387,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 13",-0.176199355,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 14",-0.415446397,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 15",-0.619849408,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 16",-0.562108283,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 17",-0.705034062,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 18",-0.500652564,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 19",-0.519978487,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 20",-0.450555755,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 21",-0.380817497,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 22",0.004725708,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 23",-0.099634278,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 24",-0.358243098,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 25",-0.628096092,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 26",-0.662983148,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 27",-0.065206167,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 28",0.17776981,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 29",0.065873073,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,log_PFOS,"PFOS,species 30",0.05790606,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 1",1.892979563,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 2",1.930819649,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 3",2.29885407,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 4",2.37289351,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 5",2.637406956,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 6",2.838281821,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 7",2.916233776,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 8",2.939186805,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 9",3.020953747,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 10",3.062138401,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 11",3.120567946,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 12",3.221547508,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 13",3.251034779,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 14",3.276701327,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 15",3.23922266,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 16",3.306223019,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 17",3.398947293,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 18",3.447578343,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 19",3.466136967,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 20",3.477392614,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 21",3.325079957,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 22",3.459482252,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 23",3.559698817,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 24",3.622511294,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 25",3.514303335,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 26",3.599753317,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 27",3.712166368,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 28",3.753419864,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 29",3.760688419,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_025,Pan_2021,TL,"PFOS,species 30",3.890788096,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 5,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, blood, species 1",-1.066976436,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, blood, species 2",2.643494083,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, blood, species 3",0.372550789,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, blood, species 4",1.474789853,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, blood, species 5",1.633434084,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, blood, species 6",3.34483692,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, blood, species 7",4.167080194,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, blood, species 8",2.66544864,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, blood, species 9",2.191320431,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, blood, species 10",1.776289078,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, blood, species 11",1.301108254,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, blood, species 1",7.888791146,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, blood, species 2",7.878189802,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, blood, species 3",11.39896393,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, blood, species 4",10.8243861,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, blood, species 5",10.96678997,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, blood, species 6",11.13332882,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, blood, species 7",12.35955098,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, blood, species 8",12.04955565,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, blood, species 9",11.96519601,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, blood, species 10",13.10923896,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, blood, species 11",12.82488233,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, gill, species 1",-4.606299213,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, gill, species 2",3.057742782,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, gill, species 3",2.611548556,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, gill, species 4",1.56167979,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, gill, species 5",0.984251969,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, gill, species 6",2.007874016,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, gill, species 7",3.005249344,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, gill, species 8",3.530183727,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, gill, species 9",2.427821522,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, gill, species 10",2.559055118,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, gill, species 1",7.964285714,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, gill, species 2",8,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, gill, species 3",11.89285714,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, gill, species 4",11.71428571,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, gill, species 5",12.39285714,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, gill, species 6",13.10714286,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, gill, species 7",13.21428571,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, gill, species 8",13.60714286,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, gill, species 9",14.21428571,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, gill, species 10",14.5,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, heart, species 1",3.293963255,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, heart, species 2",2.532808399,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, heart, species 3",2.375328084,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, heart, species 4",3.976377953,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, heart, species 5",3.005249344,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, heart, species 6",2.769028871,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, heart, species 7",2.50656168,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, heart, species 1",8,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, heart, species 2",11.67857143,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, heart, species 3",12.39285714,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, heart, species 4",13.21428571,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, heart, species 5",14.17857143,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, heart, species 6",14.5,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, heart, species 7",13.07142857,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, liver, species 1",-4.580052493,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, liver, species 2",2.532808399,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, liver, species 3",0.538057743,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, liver, species 4",1.299212598,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, liver, species 5",3.188976378,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, liver, species 6",2.50656168,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, liver, species 7",2.480314961,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, liver, species 8",3.42519685,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, liver, species 9",4.868766404,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, liver, species 10",3.74015748,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDA,"PFDA, liver, species 11",2.270341207,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, liver, species 1",5.571428571,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, liver, species 2",8.035714286,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, liver, species 3",11.71428571,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, liver, species 4",11.89285714,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, liver, species 5",12.10714286,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, liver, species 6",12.42857143,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, liver, species 7",13.14285714,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, liver, species 8",13.21428571,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, liver, species 9",13.60714286,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, liver, species 10",14.57142857,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDA, liver, species 11",14.17857143,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, blood, species 1",-4.59592371,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, blood, species 2",-0.159124907,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, blood, species 3",2.786462229,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, blood, species 4",1.929319372,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, blood, species 5",1.951944652,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, blood, species 6",2.628272251,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, blood, species 7",1.916043381,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, blood, species 8",2.569184742,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, blood, species 9",4.903515333,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, blood, species 10",3.681002244,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, blood, species 11",2.556282723,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, blood, species 1",8,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, blood, species 2",5.571428571,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, blood, species 3",7.964285714,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, blood, species 4",11.67857143,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, blood, species 5",12.35714286,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, blood, species 6",13.17857143,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, blood, species 7",14.21428571,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, blood, species 8",14.46428571,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, blood, species 9",13.60714286,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, blood, species 10",12.10714286,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, blood, species 11",11.92857143,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, heart, species 1",3.676327599,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, heart, species 2",3.864061331,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, heart, species 3",3.470082274,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, heart, species 4",3.001495886,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, heart, species 5",2.767015707,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, heart, species 6",3.380516081,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, heart, species 7",3.696148093,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, heart, species 8",4.513089005,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, heart, species 9",3.702318624,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, heart, species 1",8,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, heart, species 2",12.14285714,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, heart, species 3",12.39285714,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, heart, species 4",11.89285714,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, heart, species 5",11.67857143,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, heart, species 6",14.5,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, heart, species 7",14.21428571,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, heart, species 8",13.17857143,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, heart, species 9",13.03571429,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, kidney, species 1",4.121353777,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, kidney, species 2",4.780478684,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, kidney, species 3",4.460545999,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, kidney, species 4",4.615370232,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, kidney, species 5",4.429319372,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, kidney, species 6",2.217651458,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, kidney, species 7",2.804412865,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, kidney, species 8",3.339005236,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, kidney, species 9",3.754300673,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, kidney, species 1",8,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, kidney, species 2",12.10714286,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, kidney, species 3",13.21428571,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, kidney, species 4",13.64285714,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, kidney, species 5",14.17857143,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, kidney, species 6",11.60714286,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, kidney, species 7",14.53571429,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, kidney, species 8",12.42857143,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, kidney, species 9",13.10714286,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, liver, species 1",-4.609386687,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, liver, species 2",2.969521316,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, liver, species 3",1.640987285,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, liver, species 4",1.404637248,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, liver, species 5",3.44540015,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, liver, species 6",3.626963351,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, liver, species 7",2.942782349,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, liver, species 8",3.806282723,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, liver, species 9",5.55815258,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, liver, species 10",3.694839192,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, liver, species 11",2.727748691,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, liver, species 1",5.571428571,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, liver, species 2",8,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, liver, species 3",11.75,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, liver, species 4",11.89285714,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, liver, species 5",12.10714286,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, liver, species 6",12.42857143,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, liver, species 7",13.10714286,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, liver, species 8",13.17857143,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, liver, species 9",13.57142857,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, liver, species 10",14.46428571,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, liver, species 11",14.17857143,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, pancreas, species 1",3.205123411,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, pancreas, species 2",1.798616305,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, pancreas, species 3",2.501121915,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, pancreas, species 4",4.120044877,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, pancreas, species 5",4.720082274,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, pancreas, species 6",4.296746447,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, pancreas, species 7",2.98934181,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFUnDA,"PFUnDA, pancreas, species 8",3.079655946,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, pancreas, species 1",8,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, pancreas, species 2",11.64285714,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, pancreas, species 3",12.46428571,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, pancreas, species 4",13.25,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, pancreas, species 5",13.64285714,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, pancreas, species 6",14.5,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, pancreas, species 7",14.21428571,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFUnDA, pancreas, species 8",11.96428571,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, blood, species 1",-4.581151832,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, blood, species 2",-0.942408377,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, blood, species 3",-4.581151832,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, blood, species 4",0.445026178,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, blood, species 5",0.628272251,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, blood, species 6",0.392670157,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, blood, species 7",1.596858639,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, blood, species 8",1.544502618,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, blood, species 9",1.492146597,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, blood, species 10",3.403141361,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, blood, species 11",1.256544503,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDoDA, blood, species 1",7.997846348,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDoDA, blood, species 2",5.634863169,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDoDA, blood, species 3",14.16805911,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDoDA, blood, species 4",12.3773718,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDoDA, blood, species 5",11.88156771,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDoDA, blood, species 6",11.70342728,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDoDA, blood, species 7",12.16869036,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDoDA, blood, species 8",13.05502952,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDoDA, blood, species 9",13.23214882,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDoDA, blood, species 10",13.59353533,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,delta_15N,"PFDoDA, blood, species 11",14.5079091,NA,NA,NA,NA,NA,NA,Raw data extracted from Figure 4,NA
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, gill, species 1",2.696335079,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, gill, species 2",0.994764398,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, gill, species 3",1.12565445,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, gill, species 4",1.335078534,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, gill, species 5",2.591623037,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, gill, species 6",3.193717277,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, gill, species 7",3.35078534,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, gill, species 8",2.591623037,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, gill, species 9",2.460732984,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, gill, species 1",8.023653039,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, gill, species 2",11.74102336,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, gill, species 3",11.63510453,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, gill, species 4",12.38052802,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, gill, species 5",11.88852995,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, gill, species 6",13.09633879,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, gill, species 7",13.59334967,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, gill, species 8",14.51264342,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, gill, species 9",14.15756934,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, heart, species 1",3.062827225,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, heart, species 2",1.596858639,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, heart, species 3",1.806282723,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, heart, species 4",2.565445026,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, heart, species 5",2.984293194,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, heart, species 6",3.455497382,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, heart, species 7",3.35078534,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, heart, species 8",3.795811518,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, heart, species 9",2.643979058,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, heart, species 10",2.486910995,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, heart, species 1",8.024952657,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, heart, species 2",11.70769745,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, heart, species 3",11.92120605,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, heart, species 4",12.10120307,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, heart, species 5",12.3509153,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, heart, species 6",13.13272808,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, heart, species 7",13.23873974,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, heart, species 8",13.63038877,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, heart, species 9",14.15821915,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, heart, species 10",14.47681111,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, kidney, species 1",2.879581152,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, kidney, species 2",3.717277487,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, kidney, species 3",3.743455497,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, kidney, species 4",3.821989529,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, kidney, species 5",2.408376963,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, kidney, species 6",1.832460733,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, kidney, species 7",2.329842932,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, kidney, species 1",8.095224834,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, kidney, species 2",12.14074858,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, kidney, species 3",13.06282723,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, kidney, species 4",13.20494969,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, kidney, species 5",14.51199361,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, kidney, species 6",14.19080242,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, kidney, species 7",12.41951654,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, liver, species 1",1.989528796,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, liver, species 2",-4.581151832,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, liver, species 3",0.916230366,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, liver, species 4",1.151832461,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, liver, species 5",2.277486911,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, liver, species 6",2.643979058,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, liver, species 7",3.115183246,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, liver, species 8",4.162303665,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, liver, species 9",2.958115183,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, liver, species 10",2.19895288,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, liver, species 1",8.056607627,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, liver, species 2",5.657420816,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, liver, species 3",11.70528387,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, liver, species 4",11.9188853,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, liver, species 5",12.13564294,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, liver, species 6",13.09438937,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, liver, species 7",13.20244328,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, liver, species 8",13.66714938,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, liver, species 9",14.51394304,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, liver, species 10",14.22756303,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, muscle, species 1",1.701570681,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, muscle, species 2",0.157068063,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, muscle, species 3",0.366492147,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, muscle, species 4",1.12565445,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, muscle, species 5",1.64921466,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, muscle, species 6",1.753926702,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, muscle, species 7",0.261780105,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, muscle, species 8",0.497382199,,,,,,,,
+S_059,Jiao_2023,ln_PFDoDA,"PFDoDA, muscle, species 9",2.696335079,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, muscle, species 1",8.055586499,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, muscle, species 2",11.70259181,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, muscle, species 3",11.9161004,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, muscle, species 4",12.37978538,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, muscle, species 5",13.2327058,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, muscle, species 6",13.65860904,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, muscle, species 7",14.18523263,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, muscle, species 8",14.50521704,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFDoDA, muscle, species 9",13.13003602,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, blood, species 1",-4.643497577,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, blood, species 2",-4.670126932,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, blood, species 3",1.881469899,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, blood, species 4",3.76633698,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, blood, species 5",2.044994819,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, blood, species 6",2.025216706,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, blood, species 7",2.279229724,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, blood, species 8",1.945457911,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, blood, species 9",2.357954369,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, blood, species 10",1.101850301,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, blood, species 11",0.96547181,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, blood, species 1",7.975768322,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, blood, species 2",13.04866036,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, blood, species 3",8.025019701,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, blood, species 4",13.54117415,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, blood, species 5",11.59574468,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, blood, species 6",11.89125296,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, blood, species 7",12.11288416,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, blood, species 8",13.1964145,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, blood, species 9",14.47695035,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, blood, species 10",14.18144208,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, blood, species 11",12.38376675,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, gill, species 1",3.285198836,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, gill, species 2",2.190551388,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, gill, species 3",2.441979032,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, gill, species 4",3.683992811,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, gill, species 5",3.927276525,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, gill, species 6",3.688775753,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, gill, species 7",3.696014801,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, gill, species 8",3.948605863,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, gill, species 1",7.975768322,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, gill, species 2",11.64499606,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, gill, species 3",12.35914106,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, gill, species 4",11.86662727,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, gill, species 5",14.1321907,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, gill, species 6",14.42769898,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, gill, species 7",13.04866036,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, gill, species 8",13.54117415,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, heart, species 1",3.649865871,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, heart, species 2",4.604644573,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, heart, species 3",4.442800146,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, heart, species 4",4.097264881,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, heart, species 5",3.810546879,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, heart, species 6",4.16461388,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, heart, species 7",3.597512043,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, heart, species 8",3.064278608,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, heart, species 9",2.828233941,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, heart, species 1",7.951142632,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, heart, species 2",13.56579984,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, heart, species 3",13.14716312,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, heart, species 4",12.99940898,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, heart, species 5",12.06363278,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, heart, species 6",14.05831363,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, heart, species 7",14.45232467,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, heart, species 8",11.86662727,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, heart, species 9",11.69424744,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, kidney, species 1",3.904654501,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, kidney, species 2",4.667339898,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, kidney, species 3",4.40634637,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, kidney, species 4",4.206367673,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, kidney, species 5",3.64495366,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, kidney, species 6",4.237004358,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, kidney, species 7",4.075935544,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, kidney, species 8",3.488021444,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, kidney, species 9",2.263458941,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, kidney, species 1",8.025019701,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, kidney, species 2",12.03900709,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, kidney, species 3",13.14716312,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, kidney, species 4",13.04866036,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, kidney, species 5",12.35914106,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, kidney, species 6",14.15681639,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, kidney, species 7",13.59042553,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, kidney, species 8",14.47695035,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, kidney, species 9",11.64499606,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, liver, species 1",2.546772867,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, liver, species 2",-4.609866167,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, liver, species 3",1.768036605,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, liver, species 4",2.359656407,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, liver, species 5",2.93565624,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, liver, species 6",3.450576607,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, liver, species 7",3.568103411,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, liver, species 8",3.334881111,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, liver, species 9",4.244609667,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, liver, species 10",4.947939181,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, liver, species 1",8.020915419,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, liver, species 2",5.619910691,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, liver, species 3",11.69424744,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, liver, species 4",11.83789729,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, liver, species 5",12.06363278,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, liver, species 6",12.35093249,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, liver, species 7",13.11022459,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, liver, species 8",14.13629498,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, liver, species 9",14.4441161,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, liver, species 10",13.56169556,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, muscle, species 1",0.223060056,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, muscle, species 2",1.787319188,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, muscle, species 3",1.023987447,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, muscle, species 4",1.508745115,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, muscle, species 5",2.00772234,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, muscle, species 6",2.388526419,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, muscle, species 7",2.854324676,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, muscle, species 8",2.459193315,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, muscle, species 9",2.866820652,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, muscle, species 10",1.709542513,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, muscle, species 11",1.84473604,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, muscle, species 12",4.522537397,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, muscle, species 1",7.979872603,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, muscle, species 2",8.020915419,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, muscle, species 3",11.65320462,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, muscle, species 4",11.89946152,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, muscle, species 5",12.33041108,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, muscle, species 6",12.12519701,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, muscle, species 7",13.08970318,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, muscle, species 8",13.13074599,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, muscle, species 9",13.60273838,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, muscle, species 10",14.15681639,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, muscle, species 11",14.4441161,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, muscle, species 12",13.58221697,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, pancreas, species 1",1.845597832,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, pancreas, species 2",4.06578795,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, pancreas, species 3",4.707714826,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, pancreas, species 4",4.706853034,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, pancreas, species 5",4.507456047,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, pancreas, species 6",4.593742912,,,,,,,,
+S_059,Jiao_2023,ln_PFTrDA,"PFTrDA, pancreas, species 7",1.889764641,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, pancreas, species 1",5.599389283,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, pancreas, species 2",8.000394011,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, pancreas, species 3",13.02813895,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, pancreas, species 4",13.19231022,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, pancreas, species 5",13.56169556,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, pancreas, species 6",14.48515892,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFTrDA, pancreas, species 7",11.65320462,,,,,,,,
+S_059,Jiao_2023,ln_PFOS,"PFOS, blood, species 1",0.833781047,,,,,,,,
+S_059,Jiao_2023,ln_PFOS,"PFOS, blood, species 2",1.379326296,,,,,,,,
+S_059,Jiao_2023,ln_PFOS,"PFOS, blood, species 3",1.576414344,,,,,,,,
+S_059,Jiao_2023,ln_PFOS,"PFOS, blood, species 4",5.676336248,,,,,,,,
+S_059,Jiao_2023,ln_PFOS,"PFOS, blood, species 5",1.205380687,,,,,,,,
+S_059,Jiao_2023,ln_PFOS,"PFOS, blood, species 6",2.586317647,,,,,,,,
+S_059,Jiao_2023,ln_PFOS,"PFOS, blood, species 7",3.512958483,,,,,,,,
+S_059,Jiao_2023,ln_PFOS,"PFOS, blood, species 8",4.315648922,,,,,,,,
+S_059,Jiao_2023,ln_PFOS,"PFOS, blood, species 9",4.936218434,,,,,,,,
+S_059,Jiao_2023,ln_PFOS,"PFOS, blood, species 10",5.160096369,,,,,,,,
+S_059,Jiao_2023,ln_PFOS,"PFOS, blood, species 11",3.766267562,,,,,,,,
+S_059,Jiao_2023,ln_PFOS,"PFOS, blood, species 12",3.596283838,,,,,,,,
+S_059,Jiao_2023,ln_PFOS,"PFOS, blood, species 13",4.550091883,,,,,,,,
+S_059,Jiao_2023,ln_PFOS,"PFOS, blood, species 14",6.310803801,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFOS, blood, species 1",5.567874055,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFOS, blood, species 2",5.59031417,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFOS, blood, species 3",5.570178991,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFOS, blood, species 4",7.989543064,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFOS, blood, species 5",7.975666405,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFOS, blood, species 6",12.3990396,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFOS, blood, species 7",11.69652146,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFOS, blood, species 8",11.88573479,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFOS, blood, species 9",12.15737042,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFOS, blood, species 10",13.29914411,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFOS, blood, species 11",13.12884293,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFOS, blood, species 12",14.20715352,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFOS, blood, species 13",14.5420641,,,,,,,,
+S_059,Jiao_2023,delta_15N,"PFOS, blood, species 14",13.67615959,,,,,,,,
+S_059,Jiao_2023,ln_FOSA,"FOSA, blood, species 1",-4.574639748,,,,,,,,
+S_059,Jiao_2023,ln_FOSA,"FOSA, blood, species 2",-0.964049835,,,,,,,,
+S_059,Jiao_2023,ln_FOSA,"FOSA, blood, species 3",4.459246473,,,,,,,,
+S_059,Jiao_2023,ln_FOSA,"FOSA, blood, species 4",4.859088862,,,,,,,,
+S_059,Jiao_2023,ln_FOSA,"FOSA, blood, species 5",4.274992495,,,,,,,,
+S_059,Jiao_2023,ln_FOSA,"FOSA, blood, species 6",3.766511558,,,,,,,,
+S_059,Jiao_2023,ln_FOSA,"FOSA, blood, species 7",3.289177424,,,,,,,,
+S_059,Jiao_2023,ln_FOSA,"FOSA, blood, species 8",2.891398979,,,,,,,,
+S_059,Jiao_2023,ln_FOSA,"FOSA, blood, species 9",2.286663164,,,,,,,,
+S_059,Jiao_2023,ln_FOSA,"FOSA, blood, species 10",1.99939958,,,,,,,,
+S_059,Jiao_2023,ln_FOSA,"FOSA, blood, species 11",2.666429,,,,,,,,
+S_059,Jiao_2023,ln_FOSA,"FOSA, blood, species 12",2.35045782,,,,,,,,
+S_059,Jiao_2023,delta_15N,"FOSA, blood, species 1",5.65989943,,,,,,,,
+S_059,Jiao_2023,delta_15N,"FOSA, blood, species 2",8.061392975,,,,,,,,
+S_059,Jiao_2023,delta_15N,"FOSA, blood, species 3",8.064395077,,,,,,,,
+S_059,Jiao_2023,delta_15N,"FOSA, blood, species 4",13.63460672,,,,,,,,
+S_059,Jiao_2023,delta_15N,"FOSA, blood, species 5",13.24039328,,,,,,,,
+S_059,Jiao_2023,delta_15N,"FOSA, blood, species 6",12.13749625,,,,,,,,
+S_059,Jiao_2023,delta_15N,"FOSA, blood, species 7",11.92134494,,,,,,,,
+S_059,Jiao_2023,delta_15N,"FOSA, blood, species 8",11.74121885,,,,,,,,
+S_059,Jiao_2023,delta_15N,"FOSA, blood, species 9",12.4461498,,,,,,,,
+S_059,Jiao_2023,delta_15N,"FOSA, blood, species 10",13.15333233,,,,,,,,
+S_059,Jiao_2023,delta_15N,"FOSA, blood, species 11",14.22189282,,,,,,,,
+S_059,Jiao_2023,delta_15N,"FOSA, blood, species 12",14.50333984,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, blood, species 1",-4.600816701,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, blood, species 2",-3.186075478,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, blood, species 3",-1.734987671,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, blood, species 4",0.512024243,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, blood, species 5",0.525505522,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, blood, species 6",2.531704795,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, blood, species 7",2.732734447,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, blood, species 8",2.573470324,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, blood, species 9",3.031040776,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, blood, species 10",3.718718147,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, blood, species 11",3.773039769,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, blood, species 12",3.833969861,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, blood, species 1",5.585531575,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, blood, species 2",5.560551559,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, blood, species 3",5.610511591,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, blood, species 4",8.008593125,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, blood, species 5",12.40507594,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, blood, species 6",11.70563549,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, blood, species 7",11.90547562,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, blood, species 8",14.22861711,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, blood, species 9",14.55335731,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, blood, species 10",13.05455635,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, blood, species 11",13.20443645,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, blood, species 12",12.10531575,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, heart, species 1",0.120670659,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, heart, species 2",5.185534112,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, heart, species 3",4.196246178,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, heart, species 4",4.544644708,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, heart, species 5",4.017685323,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, heart, species 6",2.916317739,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, heart, species 7",3.101619234,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, heart, species 8",1.039908814,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, heart, species 9",3.490725938,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, heart, species 1",5.585531575,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, heart, species 2",13.60411671,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, heart, species 3",13.07953637,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, heart, species 4",13.20443645,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, heart, species 5",12.10531575,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, heart, species 6",11.93045564,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, heart, species 7",11.63069544,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, heart, species 8",12.40507594,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, heart, species 9",14.47841727,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, liver, species 1",6.382460169,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, liver, species 2",6.030625235,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, liver, species 3",4.886699106,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, liver, species 4",4.655138323,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, liver, species 5",4.512263205,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, liver, species 6",4.348505323,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, liver, species 7",3.804231747,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, liver, species 8",3.320623924,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, liver, species 9",1.962451203,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, liver, species 10",2.882350204,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, liver, species 11",2.233398466,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, liver, species 1",13.07953637,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, liver, species 2",13.60411671,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, liver, species 3",14.5283773,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, liver, species 4",13.15447642,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, liver, species 5",12.38009592,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, liver, species 6",12.08033573,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, liver, species 7",14.25359712,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, liver, species 8",11.90547562,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, liver, species 9",11.65567546,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, liver, species 10",7.933653078,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, liver, species 11",5.585531575,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, muscle, species 1",-0.247024603,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, muscle, species 2",1.118417435,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, muscle, species 3",-0.81072708,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, muscle, species 4",0.158074599,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, muscle, species 5",0.510966888,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, muscle, species 6",1.024312825,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, muscle, species 7",1.122250348,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, muscle, species 8",1.249265138,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, muscle, species 9",1.770541239,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, muscle, species 10",2.346006792,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, muscle, species 11",3.057078147,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, muscle, species 12",3.036063213,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, muscle, species 1",5.635491607,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, muscle, species 2",7.98361311,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, muscle, species 3",8.008593125,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, muscle, species 4",12.40507594,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, muscle, species 5",11.68065548,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, muscle, species 6",11.8804956,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, muscle, species 7",14.20363709,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, muscle, species 8",14.50339728,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, muscle, species 9",13.20443645,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, muscle, species 10",12.08033573,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, muscle, species 11",13.10451639,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, muscle, species 12",13.60411671,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, pancreas, species 1",0.580091482,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, pancreas, species 2",2.606380504,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, pancreas, species 3",1.701284475,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, pancreas, species 4",2.21938851,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, pancreas, species 5",3.688054847,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, pancreas, species 6",4.012266377,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, pancreas, species 7",3.828286577,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, pancreas, species 8",3.712770524,,,,,,,,
+S_059,Jiao_2023,ln_62ClPFESA,"62ClPFESA, pancreas, species 9",3.307010476,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, pancreas, species 1",5.560551559,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, pancreas, species 2",8.008593125,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, pancreas, species 3",12.40507594,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, pancreas, species 4",11.70563549,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, pancreas, species 5",11.90547562,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, pancreas, species 6",13.1294964,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, pancreas, species 7",13.17945643,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, pancreas, species 8",14.17865707,,,,,,,,
+S_059,Jiao_2023,delta_15N,"62ClPFESA, pancreas, species 9",14.47841727,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, blood, species 1",-4.542961609,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, blood, species 2",3.665447898,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, blood, species 3",-0.539305302,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, blood, species 4",0.539305302,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, blood, species 5",0.612431444,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, blood, species 6",2.513711152,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, blood, species 7",2.970749543,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, blood, species 8",2.531992687,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, blood, species 9",1.508226691,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, blood, species 10",0.722120658,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, blood, species 1",8.002512563,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, blood, species 2",7.952261307,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, blood, species 3",12.39949749,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, blood, species 4",11.6959799,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, blood, species 5",11.94723618,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, blood, species 6",12.12311558,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, blood, species 7",13.10301508,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, blood, species 8",13.17839196,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, blood, species 9",14.48492462,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, blood, species 10",14.25879397,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, gill, species 1",3.848263254,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, gill, species 2",-0.246800731,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, gill, species 3",0.155393053,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, gill, species 4",0.813528336,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, gill, species 5",3.683729433,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, gill, species 6",3.811700183,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, gill, species 7",2.129798903,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, gill, species 8",1.727605119,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, gill, species 9",1.416819013,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, gill, species 1",7.952261307,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, gill, species 2",11.72110553,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, gill, species 3",12.42462312,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, gill, species 4",11.8718593,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, gill, species 5",13.07788945,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, gill, species 6",13.63065327,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, gill, species 7",13.22864322,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, gill, species 8",14.56030151,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, gill, species 9",14.20854271,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, liver, species 1",3.190127971,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, liver, species 2",-4.616087751,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, liver, species 3",0.118829982,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, liver, species 4",1.252285192,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, liver, species 5",2.074954296,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, liver, species 6",2.074954296,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, liver, species 7",1.819012797,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, liver, species 8",2.824497258,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, liver, species 9",3.281535649,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, liver, species 10",4.908592322,,,,,,,,
+S_059,Jiao_2023,ln_82ClPFESA,"82ClPFESA, liver, species 11",5.255941499,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, liver, species 1",8.002512563,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, liver, species 2",5.565326633,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, liver, species 3",11.6959799,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, liver, species 4",11.8718593,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, liver, species 5",12.12311558,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, liver, species 6",12.42462312,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, liver, species 7",14.20854271,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, liver, species 8",14.51005025,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, liver, species 9",13.25376884,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, liver, species 10",13.1281407,,,,,,,,
+S_059,Jiao_2023,delta_15N,"82ClPFESA, liver, species 11",13.65577889,,,,,,,,
+S_059,Jiao_2023,ln_102ClPFESA,"102ClPFESA, blood, species 1",-4.582571603,,,,,,,,
+S_059,Jiao_2023,ln_102ClPFESA,"102ClPFESA, blood, species 2",-4.613040829,,,,,,,,
+S_059,Jiao_2023,ln_102ClPFESA,"102ClPFESA, blood, species 3",1.480804388,,,,,,,,
+S_059,Jiao_2023,ln_102ClPFESA,"102ClPFESA, blood, species 4",-3.363802559,,,,,,,,
+S_059,Jiao_2023,ln_102ClPFESA,"102ClPFESA, blood, species 5",-1.809872029,,,,,,,,
+S_059,Jiao_2023,ln_102ClPFESA,"102ClPFESA, blood, species 6",-0.850091408,,,,,,,,
+S_059,Jiao_2023,ln_102ClPFESA,"102ClPFESA, blood, species 7",0.581962218,,,,,,,,
+S_059,Jiao_2023,ln_102ClPFESA,"102ClPFESA, blood, species 8",0.688604509,,,,,,,,
+S_059,Jiao_2023,ln_102ClPFESA,"102ClPFESA, blood, species 9",-0.286410725,,,,,,,,
+S_059,Jiao_2023,ln_102ClPFESA,"102ClPFESA, blood, species 10",-1.276660573,,,,,,,,
+S_059,Jiao_2023,ln_102ClPFESA,"102ClPFESA, blood, species 11",3.44606947,,,,,,,,
+S_059,Jiao_2023,ln_102ClPFESA,"102ClPFESA, blood, species 12",4.436319317,,,,,,,,
+S_059,Jiao_2023,delta_15N,"102ClPFESA, blood, species 1",5.53188704,,,,,,,,
+S_059,Jiao_2023,delta_15N,"102ClPFESA, blood, species 2",8.00234414,,,,,,,,
+S_059,Jiao_2023,delta_15N,"102ClPFESA, blood, species 3",7.985463576,,,,,,,,
+S_059,Jiao_2023,delta_15N,"102ClPFESA, blood, species 4",12.42968346,,,,,,,,
+S_059,Jiao_2023,delta_15N,"102ClPFESA, blood, species 5",11.77137975,,,,,,,,
+S_059,Jiao_2023,delta_15N,"102ClPFESA, blood, species 6",11.92518044,,,,,,,,
+S_059,Jiao_2023,delta_15N,"102ClPFESA, blood, species 7",12.14535505,,,,,,,,
+S_059,Jiao_2023,delta_15N,"102ClPFESA, blood, species 8",13.27681215,,,,,,,,
+S_059,Jiao_2023,delta_15N,"102ClPFESA, blood, species 9",14.60949629,,,,,,,,
+S_059,Jiao_2023,delta_15N,"102ClPFESA, blood, species 10",14.26702372,,,,,,,,
+S_059,Jiao_2023,delta_15N,"102ClPFESA, blood, species 11",13.71635753,,,,,,,,
+S_059,Jiao_2023,delta_15N,"102ClPFESA, blood, species 12",13.20037114,,,,,,,,
+S_059,Jiao_2023,ln_103FTCA,"103FTCA, blood, species 1",-4.617058477,,,,,,,,
+S_059,Jiao_2023,ln_103FTCA,"103FTCA, blood, species 2",-4.578986044,,,,,,,,
+S_059,Jiao_2023,ln_103FTCA,"103FTCA, blood, species 3",3.313853678,,,,,,,,
+S_059,Jiao_2023,ln_103FTCA,"103FTCA, blood, species 4",0.928340207,,,,,,,,
+S_059,Jiao_2023,ln_103FTCA,"103FTCA, blood, species 5",3.783772655,,,,,,,,
+S_059,Jiao_2023,ln_103FTCA,"103FTCA, blood, species 6",3.67772731,,,,,,,,
+S_059,Jiao_2023,ln_103FTCA,"103FTCA, blood, species 7",3.054695072,,,,,,,,
+S_059,Jiao_2023,ln_103FTCA,"103FTCA, blood, species 8",3.009210868,,,,,,,,
+S_059,Jiao_2023,ln_103FTCA,"103FTCA, blood, species 9",3.834894873,,,,,,,,
+S_059,Jiao_2023,ln_103FTCA,"103FTCA, blood, species 10",3.013201822,,,,,,,,
+S_059,Jiao_2023,ln_103FTCA,"103FTCA, blood, species 11",-4.580949847,,,,,,,,
+S_059,Jiao_2023,ln_103FTCA,"103FTCA, blood, species 12",-4.560298245,,,,,,,,
+S_059,Jiao_2023,delta_15N,"103FTCA, blood, species 1",5.568473365,,,,,,,,
+S_059,Jiao_2023,delta_15N,"103FTCA, blood, species 2",8.037195056,,,,,,,,
+S_059,Jiao_2023,delta_15N,"103FTCA, blood, species 3",7.94220402,,,,,,,,
+S_059,Jiao_2023,delta_15N,"103FTCA, blood, species 4",11.68654225,,,,,,,,
+S_059,Jiao_2023,delta_15N,"103FTCA, blood, species 5",11.84066909,,,,,,,,
+S_059,Jiao_2023,delta_15N,"103FTCA, blood, species 6",12.11081865,,,,,,,,
+S_059,Jiao_2023,delta_15N,"103FTCA, blood, species 7",13.06776069,,,,,,,,
+S_059,Jiao_2023,delta_15N,"103FTCA, blood, species 8",13.17168387,,,,,,,,
+S_059,Jiao_2023,delta_15N,"103FTCA, blood, species 9",13.58319555,,,,,,,,
+S_059,Jiao_2023,delta_15N,"103FTCA, blood, species 10",14.47872125,,,,,,,,
+S_059,Jiao_2023,delta_15N,"103FTCA, blood, species 11",12.39404968,,,,,,,,
+S_059,Jiao_2023,delta_15N,"103FTCA, blood, species 12",14.15744946,,,,,,,,

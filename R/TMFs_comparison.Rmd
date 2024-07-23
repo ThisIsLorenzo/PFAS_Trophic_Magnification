@@ -1,0 +1,137 @@
+---
+title: "TMFs comparison"
+output:
+  html_document:
+    code_folding: show
+    toc: yes
+    toc_float: yes
+    toc_collapsed: yes
+    toc_depth: 2
+    number_sections: no
+    theme: cerulean
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<style>
+.info {
+    background-color: #90EE90; /* Light red background */
+    border-left: 6px solid #006400; /* Red left border */
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+</style>
+
+<div class="info">
+Here, we compare the trophic magnification factors (TMFs) reported in the literature with those we calculated. Our TMFs were derived by extracting PFAS concentrations and trophic levels (or stable nitrogen isotope values) from the literature and fitting linear models (see file XXX for details).  
+</div>
+
+
+```{r, include=FALSE}
+#devtools::install_github("EIvimeyCook/ShinyDigitise")
+library(tidyr)
+library(dplyr)
+library(here)
+library(lmtest)
+library(data.table)
+library(sandwich)
+library(ggplot2)
+#library(shinyDigitise)
+```
+# Uploading Data & Data Wrangling
+```{r}
+# Load the CSV file into a data frame
+data_draft <- read.csv(here("data/data_draft.csv"))
+# Convert the data frame to a data table for faster processing
+data_draft <- as.data.table(data_draft)
+# Replace "na" with actual NA values in the TMS and TMS_calculated columns,then filter out rows where these columns are NA
+data_draft <- data_draft %>%
+  mutate(TMS = na_if(TMS, "na"),
+         TMS_calculated = na_if(TMS_calculated, "na")) %>% 
+  filter(!is.na(TMS) & !is.na(TMS_calculated)) %>% 
+  # Select the specified columns for further analysis
+  select(TMS_ID, Study_ID, PFAS_ID, TMS, TMS_se, TMS_calculated, TMS_se_calculated, TMF_formula) #%>%
+  #filter(Study_ID != "S_017") %>% 
+  #filter(Study_ID != "S_021")
+
+# Convert the Study_ID column to a factor
+data_draft$Study_ID <- as.factor(data_draft$Study_ID)
+# Convert TMS and TMS_calculated columns to numeric
+data_draft$TMS <- as.numeric(as.character(data_draft$TMS))
+data_draft$TMS_calculated <- as.numeric(as.character(data_draft$TMS_calculated))
+
+# Create two new columns based on TMF_formula column (log or ln)
+data_draft[, TMF := ifelse(TMF_formula == "e^slope", exp(TMS), 10^TMS)]
+data_draft[, TMF_calculated := ifelse(TMF_formula == "e^slope", exp(TMS_calculated), 10^TMS_calculated)]
+```
+
+# Linear Model
+We are about to run a linear model regressing the trophic magnification factors reported in the literature against our calculated trophic magnification factors.
+```{r}
+# Fit a linear model with TMF_calculated as the response variable and TMF as the predictor
+model <- lm(TMF_calculated ~ TMF, data = data_draft)
+# Summarize the linear model
+summary_model <- summary(model)
+# Extract the R-squared value from the model summary
+r_squared <- summary_model$r.squared
+# Perform a paired t-test between TMF and TMF_calculated
+#t_test_result <- t.test(data_draft$TMF, data_draft$TMF_calculated, paired = TRUE)
+# Extract the p-value from the t-test result
+#p_value <- t_test_result$p.value
+
+# Get the residuals from the linear model and add them to the data table
+#data_draft$residuals <- residuals(model)
+
+# Identify the data point with the largest absolute residual
+# max_residual_point <- data_draft %>%
+#   arrange(desc(abs(residuals))) %>%
+#   slice(1)
+
+# Print the data point with the largest residual and its Study_ID
+#print(max_residual_point)
+```
+# Plots
+Plot the trophic magnification factors reported in the literature against our calculated trophic magnification factors. Report the R-squared value from the model summary.
+```{r}
+# Create scatter plot with annotations and color by Study_ID
+ggplot(data_draft, aes(x = TMF, y = TMF_calculated, color = Study_ID)) +
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0, color = "red", linetype = "dashed") +
+  labs(title = "TMF provided vs. TMF calculated",
+       x = "TMF",
+       y = "TMF_calculated") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("R² =", round(r_squared, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "blue")
+```
+
+As we can see from the above plot and the associated R-squared value, our TMFs and those reported in the literature do not quite match (R-squared = 0.19). However, the R-squared value increase drastically when removing S_017 (i.e., Liu et al., 2018) from the data set.
+
+```{r}
+data_draft2 <- data_draft %>%
+  filter(Study_ID != "S_017")
+
+model2 <- lm(TMF_calculated ~ TMF, data = data_draft2)
+summary_model2 <- summary(model2)
+r_squared2 <- summary_model2$r.squared
+
+ggplot(data_draft2, aes(x = TMF, y = TMF_calculated, color = Study_ID)) +
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0, color = "red", linetype = "dashed") +
+  labs(title = "TMF provided vs. TMF calculated",
+       x = "TMF",
+       y = "TMF_calculated") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("R² =", round(r_squared2, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "blue")
+```
+
+The above plot shows a higher correlation coefficient compared to the previous plot. Note: all observations below the regression line overestimate the trophic magnification potential of PFAS.
+
+# References
+-  Liu, W., He, W., Wu, J., Qin, N., He, Q., & Xu, F. (2018). Residues, bioaccumulations and biomagnification of perfluoroalkyl acids (PFAAs) in aquatic animals from Lake Chaohu, China. Environmental Pollution, 240, 607-614.

@@ -1,0 +1,65 @@
+"","Study_ID","filename","PFAS","tissue","species","software","ln_PFOS_mean","ln_PFDA_mean","ln_PFUnDA_mean","ln_PFDoDA_mean","ln_PFTrDA_mean","ln_FOSA_mean","delta_15N_mean","ln_62ClPFESA_mean","ln_82ClPFESA_mean","ln_102ClPFESA_mean","ln_103FTCA_mean"
+"1","S_059","Jiao_2023","PFDA","liver","species 1","Raw data extracted from Figure 4",NA,-4.580052493,NA,NA,NA,NA,5.571428571,NA,NA,NA,NA
+"2","S_059","Jiao_2023","PFDA","liver","species 2","Raw data extracted from Figure 4",NA,2.532808399,NA,NA,NA,NA,8.035714286,NA,NA,NA,NA
+"3","S_059","Jiao_2023","PFDA","liver","species 3","Raw data extracted from Figure 4",NA,0.538057743,NA,NA,NA,NA,11.71428571,NA,NA,NA,NA
+"4","S_059","Jiao_2023","PFDA","liver","species 4","Raw data extracted from Figure 4",NA,1.299212598,NA,NA,NA,NA,11.89285714,NA,NA,NA,NA
+"5","S_059","Jiao_2023","PFDA","liver","species 5","Raw data extracted from Figure 4",NA,3.188976378,NA,NA,NA,NA,12.10714286,NA,NA,NA,NA
+"6","S_059","Jiao_2023","PFDA","liver","species 6","Raw data extracted from Figure 4",NA,2.50656168,NA,NA,NA,NA,12.42857143,NA,NA,NA,NA
+"7","S_059","Jiao_2023","PFDA","liver","species 7","Raw data extracted from Figure 4",NA,2.480314961,NA,NA,NA,NA,13.14285714,NA,NA,NA,NA
+"8","S_059","Jiao_2023","PFDA","liver","species 8","Raw data extracted from Figure 4",NA,3.42519685,NA,NA,NA,NA,13.21428571,NA,NA,NA,NA
+"9","S_059","Jiao_2023","PFDA","liver","species 9","Raw data extracted from Figure 4",NA,4.868766404,NA,NA,NA,NA,13.60714286,NA,NA,NA,NA
+"10","S_059","Jiao_2023","PFDA","liver","species 10","Raw data extracted from Figure 4",NA,3.74015748,NA,NA,NA,NA,14.57142857,NA,NA,NA,NA
+"11","S_059","Jiao_2023","PFDA","liver","species 11","Raw data extracted from Figure 4",NA,2.270341207,NA,NA,NA,NA,14.17857143,NA,NA,NA,NA
+"12","S_059","Jiao_2023","PFUnDA","liver","species 1","Raw data extracted from Figure 4",NA,NA,-4.609386687,NA,NA,NA,5.571428571,NA,NA,NA,NA
+"13","S_059","Jiao_2023","PFUnDA","liver","species 2","Raw data extracted from Figure 4",NA,NA,2.969521316,NA,NA,NA,8,NA,NA,NA,NA
+"14","S_059","Jiao_2023","PFUnDA","liver","species 3","Raw data extracted from Figure 4",NA,NA,1.640987285,NA,NA,NA,11.75,NA,NA,NA,NA
+"15","S_059","Jiao_2023","PFUnDA","liver","species 4","Raw data extracted from Figure 4",NA,NA,1.404637248,NA,NA,NA,11.89285714,NA,NA,NA,NA
+"16","S_059","Jiao_2023","PFUnDA","liver","species 5","Raw data extracted from Figure 4",NA,NA,3.44540015,NA,NA,NA,12.10714286,NA,NA,NA,NA
+"17","S_059","Jiao_2023","PFUnDA","liver","species 6","Raw data extracted from Figure 4",NA,NA,3.626963351,NA,NA,NA,12.42857143,NA,NA,NA,NA
+"18","S_059","Jiao_2023","PFUnDA","liver","species 7","Raw data extracted from Figure 4",NA,NA,2.942782349,NA,NA,NA,13.10714286,NA,NA,NA,NA
+"19","S_059","Jiao_2023","PFUnDA","liver","species 8","Raw data extracted from Figure 4",NA,NA,3.806282723,NA,NA,NA,13.17857143,NA,NA,NA,NA
+"20","S_059","Jiao_2023","PFUnDA","liver","species 9","Raw data extracted from Figure 4",NA,NA,5.55815258,NA,NA,NA,13.57142857,NA,NA,NA,NA
+"21","S_059","Jiao_2023","PFUnDA","liver","species 10","Raw data extracted from Figure 4",NA,NA,3.694839192,NA,NA,NA,14.46428571,NA,NA,NA,NA
+"22","S_059","Jiao_2023","PFUnDA","liver","species 11","Raw data extracted from Figure 4",NA,NA,2.727748691,NA,NA,NA,14.17857143,NA,NA,NA,NA
+"23","S_059","Jiao_2023","PFDoDA","liver","species 1",NA,NA,NA,NA,1.989528796,NA,NA,8.056607627,NA,NA,NA,NA
+"24","S_059","Jiao_2023","PFDoDA","liver","species 2",NA,NA,NA,NA,-4.581151832,NA,NA,5.657420816,NA,NA,NA,NA
+"25","S_059","Jiao_2023","PFDoDA","liver","species 3",NA,NA,NA,NA,0.916230366,NA,NA,11.70528387,NA,NA,NA,NA
+"26","S_059","Jiao_2023","PFDoDA","liver","species 4",NA,NA,NA,NA,1.151832461,NA,NA,11.9188853,NA,NA,NA,NA
+"27","S_059","Jiao_2023","PFDoDA","liver","species 5",NA,NA,NA,NA,2.277486911,NA,NA,12.13564294,NA,NA,NA,NA
+"28","S_059","Jiao_2023","PFDoDA","liver","species 6",NA,NA,NA,NA,2.643979058,NA,NA,13.09438937,NA,NA,NA,NA
+"29","S_059","Jiao_2023","PFDoDA","liver","species 7",NA,NA,NA,NA,3.115183246,NA,NA,13.20244328,NA,NA,NA,NA
+"30","S_059","Jiao_2023","PFDoDA","liver","species 8",NA,NA,NA,NA,4.162303665,NA,NA,13.66714938,NA,NA,NA,NA
+"31","S_059","Jiao_2023","PFDoDA","liver","species 9",NA,NA,NA,NA,2.958115183,NA,NA,14.51394304,NA,NA,NA,NA
+"32","S_059","Jiao_2023","PFDoDA","liver","species 10",NA,NA,NA,NA,2.19895288,NA,NA,14.22756303,NA,NA,NA,NA
+"33","S_059","Jiao_2023","PFTrDA","liver","species 1",NA,NA,NA,NA,NA,2.546772867,NA,8.020915419,NA,NA,NA,NA
+"34","S_059","Jiao_2023","PFTrDA","liver","species 2",NA,NA,NA,NA,NA,-4.609866167,NA,5.619910691,NA,NA,NA,NA
+"35","S_059","Jiao_2023","PFTrDA","liver","species 3",NA,NA,NA,NA,NA,1.768036605,NA,11.69424744,NA,NA,NA,NA
+"36","S_059","Jiao_2023","PFTrDA","liver","species 4",NA,NA,NA,NA,NA,2.359656407,NA,11.83789729,NA,NA,NA,NA
+"37","S_059","Jiao_2023","PFTrDA","liver","species 5",NA,NA,NA,NA,NA,2.93565624,NA,12.06363278,NA,NA,NA,NA
+"38","S_059","Jiao_2023","PFTrDA","liver","species 6",NA,NA,NA,NA,NA,3.450576607,NA,12.35093249,NA,NA,NA,NA
+"39","S_059","Jiao_2023","PFTrDA","liver","species 7",NA,NA,NA,NA,NA,3.568103411,NA,13.11022459,NA,NA,NA,NA
+"40","S_059","Jiao_2023","PFTrDA","liver","species 8",NA,NA,NA,NA,NA,3.334881111,NA,14.13629498,NA,NA,NA,NA
+"41","S_059","Jiao_2023","PFTrDA","liver","species 9",NA,NA,NA,NA,NA,4.244609667,NA,14.4441161,NA,NA,NA,NA
+"42","S_059","Jiao_2023","PFTrDA","liver","species 10",NA,NA,NA,NA,NA,4.947939181,NA,13.56169556,NA,NA,NA,NA
+"43","S_059","Jiao_2023","62ClPFESA","liver","species 1",NA,NA,NA,NA,NA,NA,NA,13.07953637,6.382460169,NA,NA,NA
+"44","S_059","Jiao_2023","62ClPFESA","liver","species 2",NA,NA,NA,NA,NA,NA,NA,13.60411671,6.030625235,NA,NA,NA
+"45","S_059","Jiao_2023","62ClPFESA","liver","species 3",NA,NA,NA,NA,NA,NA,NA,14.5283773,4.886699106,NA,NA,NA
+"46","S_059","Jiao_2023","62ClPFESA","liver","species 4",NA,NA,NA,NA,NA,NA,NA,13.15447642,4.655138323,NA,NA,NA
+"47","S_059","Jiao_2023","62ClPFESA","liver","species 5",NA,NA,NA,NA,NA,NA,NA,12.38009592,4.512263205,NA,NA,NA
+"48","S_059","Jiao_2023","62ClPFESA","liver","species 6",NA,NA,NA,NA,NA,NA,NA,12.08033573,4.348505323,NA,NA,NA
+"49","S_059","Jiao_2023","62ClPFESA","liver","species 7",NA,NA,NA,NA,NA,NA,NA,14.25359712,3.804231747,NA,NA,NA
+"50","S_059","Jiao_2023","62ClPFESA","liver","species 8",NA,NA,NA,NA,NA,NA,NA,11.90547562,3.320623924,NA,NA,NA
+"51","S_059","Jiao_2023","62ClPFESA","liver","species 9",NA,NA,NA,NA,NA,NA,NA,11.65567546,1.962451203,NA,NA,NA
+"52","S_059","Jiao_2023","62ClPFESA","liver","species 10",NA,NA,NA,NA,NA,NA,NA,7.933653078,2.882350204,NA,NA,NA
+"53","S_059","Jiao_2023","62ClPFESA","liver","species 11",NA,NA,NA,NA,NA,NA,NA,5.585531575,2.233398466,NA,NA,NA
+"54","S_059","Jiao_2023","82ClPFESA","liver","species 1",NA,NA,NA,NA,NA,NA,NA,8.002512563,NA,3.190127971,NA,NA
+"55","S_059","Jiao_2023","82ClPFESA","liver","species 2",NA,NA,NA,NA,NA,NA,NA,5.565326633,NA,-4.616087751,NA,NA
+"56","S_059","Jiao_2023","82ClPFESA","liver","species 3",NA,NA,NA,NA,NA,NA,NA,11.6959799,NA,0.118829982,NA,NA
+"57","S_059","Jiao_2023","82ClPFESA","liver","species 4",NA,NA,NA,NA,NA,NA,NA,11.8718593,NA,1.252285192,NA,NA
+"58","S_059","Jiao_2023","82ClPFESA","liver","species 5",NA,NA,NA,NA,NA,NA,NA,12.12311558,NA,2.074954296,NA,NA
+"59","S_059","Jiao_2023","82ClPFESA","liver","species 6",NA,NA,NA,NA,NA,NA,NA,12.42462312,NA,2.074954296,NA,NA
+"60","S_059","Jiao_2023","82ClPFESA","liver","species 7",NA,NA,NA,NA,NA,NA,NA,14.20854271,NA,1.819012797,NA,NA
+"61","S_059","Jiao_2023","82ClPFESA","liver","species 8",NA,NA,NA,NA,NA,NA,NA,14.51005025,NA,2.824497258,NA,NA
+"62","S_059","Jiao_2023","82ClPFESA","liver","species 9",NA,NA,NA,NA,NA,NA,NA,13.25376884,NA,3.281535649,NA,NA
+"63","S_059","Jiao_2023","82ClPFESA","liver","species 10",NA,NA,NA,NA,NA,NA,NA,13.1281407,NA,4.908592322,NA,NA
+"64","S_059","Jiao_2023","82ClPFESA","liver","species 11",NA,NA,NA,NA,NA,NA,NA,13.65577889,NA,5.255941499,NA,NA

@@ -1,0 +1,46 @@
+"","Study_ID","filename","group_id","software","TL_mean","log_PFOS_mean","log_62ClPFESA_mean"
+"1","S_025","Pan_2021","62ClPFESA, species 1","Raw data extracted from Figure 5",1.893382353,NA,-1.650574713
+"2","S_025","Pan_2021","62ClPFESA, species 2","Raw data extracted from Figure 5",1.930147059,NA,-1.457471264
+"3","S_025","Pan_2021","62ClPFESA, species 3","Raw data extracted from Figure 5",2.294117647,NA,-1.396168582
+"4","S_025","Pan_2021","62ClPFESA, species 4","Raw data extracted from Figure 5",2.371323529,NA,-1.714942529
+"5","S_025","Pan_2021","62ClPFESA, species 5","Raw data extracted from Figure 5",2.632352941,NA,-1.616858238
+"6","S_025","Pan_2021","62ClPFESA, species 6","Raw data extracted from Figure 5",2.834558824,NA,-1.276628352
+"7","S_025","Pan_2021","62ClPFESA, species 7","Raw data extracted from Figure 5",2.941176471,NA,-1.43908046
+"8","S_025","Pan_2021","62ClPFESA, species 8","Raw data extracted from Figure 5",3.055147059,NA,-1.193869732
+"9","S_025","Pan_2021","62ClPFESA, species 9","Raw data extracted from Figure 5",3.257352941,NA,-1.307279693
+"10","S_025","Pan_2021","62ClPFESA, species 10","Raw data extracted from Figure 5",3.400735294,NA,-1.442145594
+"11","S_025","Pan_2021","62ClPFESA, species 11","Raw data extracted from Figure 5",3.459558824,NA,-1.340996169
+"12","S_025","Pan_2021","62ClPFESA, species 12","Raw data extracted from Figure 5",3.5625,NA,-1.046743295
+"13","S_025","Pan_2021","62ClPFESA, species 13","Raw data extracted from Figure 5",3.709558824,NA,-1.362452107
+"14","S_025","Pan_2021","62ClPFESA, species 14","Raw data extracted from Figure 5",3.742647059,NA,-1.003831418
+"15","S_025","Pan_2021","62ClPFESA, species 15","Raw data extracted from Figure 5",3.889705882,NA,-0.991570881
+"16","S_025","Pan_2021","PFOS,species 1","Raw data extracted from Figure 5",1.892979563,-0.968332736,NA
+"17","S_025","Pan_2021","PFOS,species 2","Raw data extracted from Figure 5",1.930819649,-0.520874866,NA
+"18","S_025","Pan_2021","PFOS,species 3","Raw data extracted from Figure 5",2.29885407,-0.517726784,NA
+"19","S_025","Pan_2021","PFOS,species 4","Raw data extracted from Figure 5",2.37289351,-0.72620294,NA
+"20","S_025","Pan_2021","PFOS,species 5","Raw data extracted from Figure 5",2.637406956,-0.340910721,NA
+"21","S_025","Pan_2021","PFOS,species 6","Raw data extracted from Figure 5",2.838281821,-0.252563643,NA
+"22","S_025","Pan_2021","PFOS,species 7","Raw data extracted from Figure 5",2.916233776,-0.329874507,NA
+"23","S_025","Pan_2021","PFOS,species 8","Raw data extracted from Figure 5",2.939186805,0.106038006,NA
+"24","S_025","Pan_2021","PFOS,species 9","Raw data extracted from Figure 5",3.020953747,0.094306203,NA
+"25","S_025","Pan_2021","PFOS,species 10","Raw data extracted from Figure 5",3.062138401,0.290986016,NA
+"26","S_025","Pan_2021","PFOS,species 11","Raw data extracted from Figure 5",3.120567946,-0.415145213,NA
+"27","S_025","Pan_2021","PFOS,species 12","Raw data extracted from Figure 5",3.221547508,-0.006389387,NA
+"28","S_025","Pan_2021","PFOS,species 13","Raw data extracted from Figure 5",3.251034779,-0.176199355,NA
+"29","S_025","Pan_2021","PFOS,species 14","Raw data extracted from Figure 5",3.276701327,-0.415446397,NA
+"30","S_025","Pan_2021","PFOS,species 15","Raw data extracted from Figure 5",3.23922266,-0.619849408,NA
+"31","S_025","Pan_2021","PFOS,species 16","Raw data extracted from Figure 5",3.306223019,-0.562108283,NA
+"32","S_025","Pan_2021","PFOS,species 17","Raw data extracted from Figure 5",3.398947293,-0.705034062,NA
+"33","S_025","Pan_2021","PFOS,species 18","Raw data extracted from Figure 5",3.447578343,-0.500652564,NA
+"34","S_025","Pan_2021","PFOS,species 19","Raw data extracted from Figure 5",3.466136967,-0.519978487,NA
+"35","S_025","Pan_2021","PFOS,species 20","Raw data extracted from Figure 5",3.477392614,-0.450555755,NA
+"36","S_025","Pan_2021","PFOS,species 21","Raw data extracted from Figure 5",3.325079957,-0.380817497,NA
+"37","S_025","Pan_2021","PFOS,species 22","Raw data extracted from Figure 5",3.459482252,0.004725708,NA
+"38","S_025","Pan_2021","PFOS,species 23","Raw data extracted from Figure 5",3.559698817,-0.099634278,NA
+"39","S_025","Pan_2021","PFOS,species 24","Raw data extracted from Figure 5",3.622511294,-0.358243098,NA
+"40","S_025","Pan_2021","PFOS,species 25","Raw data extracted from Figure 5",3.514303335,-0.628096092,NA
+"41","S_025","Pan_2021","PFOS,species 26","Raw data extracted from Figure 5",3.599753317,-0.662983148,NA
+"42","S_025","Pan_2021","PFOS,species 27","Raw data extracted from Figure 5",3.712166368,-0.065206167,NA
+"43","S_025","Pan_2021","PFOS,species 28","Raw data extracted from Figure 5",3.753419864,0.17776981,NA
+"44","S_025","Pan_2021","PFOS,species 29","Raw data extracted from Figure 5",3.760688419,0.065873073,NA
+"45","S_025","Pan_2021","PFOS,species 30","Raw data extracted from Figure 5",3.890788096,0.05790606,NA
