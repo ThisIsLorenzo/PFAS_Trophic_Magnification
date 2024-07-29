@@ -26,11 +26,14 @@ library(lmtest)
 library(data.table)
 library(metaDigitise)
 library(sandwich)
+library(metafor)
+library(orchaRd)
+library(ggplot2)
 #library(shinyDigitise)
 ```
 
 # Raw data extracion - MetaDigitise
-```{r}
+```{r, eval=FALSE}
 dat <- metaDigitise("~/PhD/GitHub/PFAS_Trophic_Magnification/metaDigitise")
 dat <- shinyDigitise("~/PhD/GitHub/PFAS_Trophic_Magnification/metaDigitise")
 #write.csv(dat, file = "metaDigitise/MetaDigitise_Martin_2004_10r.csv")
@@ -38,37 +41,145 @@ dat <- shinyDigitise("~/PhD/GitHub/PFAS_Trophic_Magnification/metaDigitise")
 
 # Data wrangling
 ```{r}
-study_data <- read.csv(here("data/study_data.csv"))
-fw_data <- read.csv(here("data/fw_data.csv"))
-PFAS_data <- read.csv(here("data/PFAS_data.csv"))
-TMF_data <- read.csv(here("data/TMF_data.csv"))
-appr_data <- read.csv(here("data/appr_data.csv"))
+# study_data <- read.csv(here("data/study_data.csv"))
+# fw_data <- read.csv(here("data/fw_data.csv"))
+# PFAS_data <- read.csv(here("data/PFAS_data.csv"))
+# TMF_data <- read.csv(here("data/TMF_data.csv"))
+# appr_data <- read.csv(here("data/appr_data.csv"))
+
+TMF_data <- read.csv(here("data/data_draft.csv"))
+FW_data <- read.csv(here("data/fw_data_draft.csv"))
 
 TMF_data <- TMF_data %>%
   mutate(across(everything(), ~ ifelse(. == "na", NA, .)))
-```
 
-```{r}
-calculate_TMF_data <- function(data) {
+function1 <- function(data) {
+  # Convert necessary columns to numeric, handling any potential issues
   data <- data %>%
     mutate(
-      TMS_se = ifelse(is.na(TMS_se) & !is.na(TMS_lower_95CI) & !is.na(TMS_upper_95CI),
-                      (TMS_upper_95CI - TMS_lower_95CI) / 1.96, TMS_se),
+      TMF_lower_95CI = as.numeric(TMF_lower_95CI),
+      TMF_upper_95CI = as.numeric(TMF_upper_95CI),
+      TMF_se = as.numeric(TMF_se),
+      TMS_lower_95CI = as.numeric(TMS_lower_95CI),
+      TMS_upper_95CI = as.numeric(TMS_upper_95CI),
+      TMS_se = as.numeric(TMS_se),
+      TMS = as.numeric(TMS),
+      TMF = as.numeric(TMF),
+      pvalue_adj = as.numeric(pvalue_adj),
+      TMS_calculated = as.numeric(TMS_calculated),
+      TMS_se_calculated = as.numeric(TMS_se_calculated)
+    ) %>%
+    mutate(
       TMF_se = ifelse(is.na(TMF_se) & !is.na(TMF_lower_95CI) & !is.na(TMF_upper_95CI),
                       (TMF_upper_95CI - TMF_lower_95CI) / 1.96, TMF_se),
+      TMS_se = ifelse(is.na(TMS_se) & !is.na(TMS_lower_95CI) & !is.na(TMS_upper_95CI),
+                      (TMS_upper_95CI - TMS_lower_95CI) / 1.96, TMS_se),
       TMF = ifelse(is.na(TMF) & !is.na(TMS),
                    ifelse(TMF_formula == "10^slope", 10^TMS, exp(TMS)), TMF),
-      TMF_se = ifelse(is.na(TMF_se) & is.na(TMF_lower_95CI) & is.na(TMF_upper_95CI) & !is.na(TMS_se),
-                      ifelse(TMF_formula == "10^slope", 10^TMS_se, exp(TMS_se)), TMF_se),
-      z_value = ifelse(is.na(TMS_se) & !is.na(TMS) & !is.na(pvalue_adj),
+      z_value = ifelse(is.na(TMS_se) & !is.na(pvalue_adj),
                        qnorm(1 - pvalue_adj / 2), NA),
+      TMS = ifelse(is.na(TMS) & !is.na(TMF),
+                   ifelse(TMF_formula == "10^slope", log10(TMF), log(TMF)), TMS),
       TMS_se = ifelse(is.na(TMS_se) & !is.na(TMS) & !is.na(z_value),
-                      TMS / z_value, TMS_se)
+                      TMS / z_value, TMS_se),
+      TMS_se = ifelse(is.na(TMS) & !is.na(TMF) & !is.na(z_value),
+                      ifelse(TMF_formula == "10^slope", log10(TMF) / z_value, log(TMF) / z_value), TMS_se),
+      TMF_se = ifelse(is.na(TMF_se) & !is.na(TMS_se),
+                      ifelse(TMF_formula == "10^slope", 10^TMS_se, exp(TMS_se)), TMF_se),
+      TMF = ifelse(is.na(TMF) & !is.na(TMS_calculated),
+                   ifelse(TMF_formula == "10^slope", 10^TMS_calculated, exp(TMS_calculated)), TMF),
+      TMF_se = ifelse(is.na(TMF_se) & !is.na(TMS_se_calculated),
+                      ifelse(TMF_formula == "10^slope", 10^TMS_se_calculated, exp(TMS_se_calculated)), TMF_se),
+      TMF = ifelse(is.na(TMF) & !is.na(TMS),
+                   ifelse(TMF_formula == "10^slope", 10^TMS, exp(TMS)), TMF),
+      TMF_se = ifelse(is.na(TMF_se) & !is.na(TMS_se),
+                      ifelse(TMF_formula == "10^slope", 10^TMS_se, exp(TMS_se)), TMF_se)
     )
+  
   return(data)
 }
 
-# Apply the function to your data table
-TMF_data <- calculate_TMF_data(TMF_data)
+# Apply the function
+TMF_data <- function1(TMF_data)
+
+# Count the number of rows with non-NA values in both TMF and TMF_se
+TMF_data %>%
+  filter(!is.na(TMF) & !is.na(TMF_se)) %>%
+  nrow()
+# [1] 879
+# Count the number of rows with non-NA values in TMF
+TMF_data %>%
+  filter(!is.na(TMF)) %>%
+  nrow()
+# [1] 916
+
+# Filter rows with NA in either TMF or TMF_se
+TMF_data_na_rows <- TMF_data %>%
+  filter(is.na(TMF) | is.na(TMF_se)) %>% 
+  as.data.table()
+
+TMF_data <- TMF_data %>%
+  filter(!is.na(TMF) | !is.na(TMF_se)) %>%
+  mutate(
+    ln_TMF = log(TMF),
+    ln_TMF_se = TMF_se / TMF # Taylor approximation
+  )
 ```
 
+# Intercept meta-analytic model
+
+Determine the random effect structure
+
+The random effects model is used to account for between-study heterogeneity, which is the variability in effect sizes among the studies being analyzed. When determining the random effect structure, we are trying to identify the sources of this heterogeneity and to quantify the degree to which it is present in the data.
+
+```{r, eval=FALSE}
+ma_all_random_effects <- rma.mv(yi = ln_TMF,
+                                V = ln_TMF_se,
+             random = list(~1|Study_ID, # Between-study effect
+                           ~1|FW_ID, # Between food webs effect
+                           ~1|PFAS_ID, # Between type of PFAS effect
+                           ~1|TMS_ID # Within-study effect
+              ),
+             test = "t",
+             data = TMF_data)
+
+save(ma_all_random_effects, file = here("Rdata", "ma_all_random_effects.RData"))
+```
+
+
+```{r}
+load(here("RData", "ma_all_random_effects.RData"))
+summary(ma_all_random_effects)
+i2_ml(ma_all_random_effects)
+#   I2_Total I2_Study_ID    I2_FW_ID  I2_PFAS_ID   I2_TMS_ID 
+#  63.597363   22.411274   11.452498   20.072554    9.661038
+I2 <- orchaRd::i2_ml(ma_all_random_effects)
+orchaRd::orchard_plot(ma_all_random_effects,
+             mod = "1",
+             group = "Study_ID", 
+             xlab = "ln_TMF",
+             alpha = 1,
+             trunk.size = 0.7,
+             branch.size = 1.5,
+             twig.size = 0.3,
+             k.pos = "right",
+             colour = FALSE,
+             fill = FALSE) +  
+  annotate(geom = "text",
+           x = 1.2,
+           y = 2.8, 
+           label = paste0("italic(I)^{2} == ", round(I2[1],4)),
+           color ="black",
+           parse = TRUE, 
+           size = 3.5) +
+  
+  scale_size_continuous(range = c(1, 7)) + # change point scaling
+  theme(panel.border = element_rect(colour = "black", 
+                                             fill=NA,
+                                             size=1.3), # border around the plot
+                 text = element_text(size = 9), # change font sizes
+                 legend.title = element_text(size = 8),
+                 legend.text = element_text(size = 7),
+        axis.text.y = element_blank()) +
+  xlab("Intercept")
+```

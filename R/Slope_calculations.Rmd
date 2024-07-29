@@ -14,6 +14,7 @@ output:
     toc: yes
     toc_depth: '2'
 ---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
@@ -31,6 +32,7 @@ library(ggplot2)
 #library(shinyDigitise)
 ```
 
+```{=html}
 <style>
 .warning {
     background-color: #ffdddd; /* Light red background */
@@ -39,7 +41,9 @@ library(ggplot2)
     margin-bottom: 15px;
 }
 </style>
+```
 
+```{=html}
 <style>
 .info {
     background-color: #d9edf7; /* Light blue background */
@@ -48,7 +52,9 @@ library(ggplot2)
     margin-bottom: 15px;
 }
 </style>
+```
 
+```{=html}
 <style>
 .info2 {
     background-color: #90EE90; /* Light red background */
@@ -58,13 +64,16 @@ library(ggplot2)
     font-size: 16px;
 }
 </style>
+```
 
-<div class="info2">
-Here, we calculate the Trophic magnification factor (TMF) for all those studies that do not report such value and/or its standard error. The TMF is calculated using PFAS concentrations and trophic levels (or stable nitrogen isotope values) data extracted from the included studies. 
-</div>
+::: info2
+Here, we calculate the Trophic magnification factor (TMF) for all those studies that do not report such value and/or its standard error. The TMF is calculated using PFAS concentrations and trophic levels (or stable nitrogen isotope values) data extracted from the included studies.
+:::
 
 # Data wrangling
+
 ```{r}
+# Uploading data
 raw_data <- read.csv(here("metaDigitise/Raw_data.csv"))
 head(raw_data)
 # Reshaping Data with pivot_wider
@@ -78,12 +87,14 @@ head(wide_data)
 ```
 
 ## S_052: Cara_2022
-<div class="info">
-- 3 food webs: location 4, 5, and 8.
-- [PFAS] regressed on the original scale. We log-transformed them before running linear models.
-- Standard deviations were log-scaled using the Delta method (Taylor approximation).
-- Data were extracted from plots (Figure 6) using metaDigitise.
-</div>
+
+::: info
+-   3 food webs: location 4, 5, and 8.
+-   [PFAS] regressed on the original scale. We log-transformed them before running linear models.
+-   Standard deviations were log-scaled using the Delta method (Taylor approximation).
+-   Data were extracted from plots (Figure 6) using metaDigitise.
+:::
+
 ```{r}
 Cara_2022 <- wide_data %>% 
   filter(Study_ID == "S_052") %>%
@@ -128,12 +139,14 @@ Cara_2022_loc8 <- Cara_2022 %>%
 ```
 
 ## S_013: Martin_2004
-<div class="info">
-- 3 food webs: benthic, pelagic, and whole food web.
-- Benthic food web only has 2 trophic levels included in the regression. Standard error cannot be calculated.
-- [PFAS] already ln-tranformed.
-- Data were extracted from plots (Figure 3) using metaDigitise.
-</div>
+
+::: info
+-   3 food webs: benthic, pelagic, and whole food web.
+-   Benthic food web only has 2 trophic levels included in the regression. Standard error cannot be calculated.
+-   [PFAS] already ln-tranformed.
+-   Data were extracted from plots (Figure 3) using metaDigitise.
+:::
+
 ```{r}
 Martin_2004 <- wide_data %>% 
   filter(Study_ID == "S_013") %>%
@@ -164,12 +177,14 @@ Martin_2004_whole <- Martin_2004 %>%
 ```
 
 ## S_053: Koch_2020
-<div class="info">
-- 2 food webs: aquatic and riparian
-- [PFAS] regressed on the original scale, although plots have y-axis on the log scale. We log-transformed them before running linear models.
-- Data were extracted from plots (Figure 4) using Webplot Digitizer.
-- [PFAS] regressed against delta15N.
-</div>
+
+::: info
+-   2 food webs: aquatic and riparian
+-   [PFAS] regressed on the original scale, although plots have y-axis on the log scale. We log-transformed them before running linear models.
+-   Data were extracted from plots (Figure 4) using Webplot Digitizer.
+-   [PFAS] regressed against delta15N.
+:::
+
 ```{r}
 Koch_2020 <- wide_data %>% 
   filter(Study_ID == "S_053") %>%
@@ -198,11 +213,13 @@ Koch_2020_riparian <- Koch_2020 %>%
 ```
 
 ## S_004: Mazzoni_2020
-<div class="info">
-- 2 food webs: including and excluding zooplankton.
-- [PFAS] regressed on the original scale. We log-transformed them before running linear models.
-- Data were extracted from tables (Table 1 and Table S5).
-</div>
+
+::: info
+-   2 food webs: including and excluding zooplankton.
+-   [PFAS] regressed on the original scale. We log-transformed them before running linear models.
+-   Data were extracted from tables (Table 1 and Table S5).
+:::
+
 ```{r}
 Mazzoni_2020 <- wide_data %>% 
   filter(Study_ID == "S_004") %>%
@@ -236,11 +253,13 @@ Mazzoni_2020_fw2 <- Mazzoni_2020 %>%
 ```
 
 ## S_017: Liu_2018
-<div class="info">
-- 1 food web.
-- [PFAS] regressed on the original scale. We ln-transformed them before running linear models.
-- Data were extracted from tables (Table 1) and plots (Figure 4) using Webplot Digitizer.
-</div>
+
+::: info
+-   1 food web.
+-   [PFAS] regressed on the original scale. We ln-transformed them before running linear models.
+-   Data were extracted from tables (Table 1) and plots (Figure 4) using Webplot Digitizer.
+:::
+
 ```{r}
 Liu_2018 <- wide_data %>% 
   filter(Study_ID == "S_017") %>%
@@ -259,11 +278,13 @@ Liu_2018 <- wide_data %>%
 ```
 
 ## S_019: Gao_2020
-<div class="info">
-- 1 food web.
-- [PFAS] already log-tranformed.
-- Data were extracted from plots (Figure 4) using metaDigitise.
-</div>
+
+::: info
+-   1 food web.
+-   [PFAS] already log-tranformed.
+-   Data were extracted from plots (Figure 4) using metaDigitise.
+:::
+
 ```{r}
 Gao_2020 <- wide_data %>% 
   filter(Study_ID == "S_019") %>%
@@ -274,11 +295,13 @@ Gao_2020 <- wide_data %>%
 ```
 
 ## S_021: Chen_2018
-<div class="info">
-- 1 food web.
-- [PFAS] already ln-tranformed.
-- Data were extracted from tables (Table 6).
-</div>
+
+::: info
+-   1 food web.
+-   [PFAS] already ln-tranformed.
+-   Data were extracted from tables (Table 6).
+:::
+
 ```{r}
 Chen_2018 <- wide_data %>% 
   filter(Study_ID == "S_021") %>%
@@ -289,11 +312,13 @@ Chen_2018 <- wide_data %>%
 ```
 
 ## S_023: Du_2021
-<div class="info">
-- 1 food web.
-- [PFAS] already log-tranformed.
-- Data were extracted from plots (Figure 4) using Webplot Digitizer.
-</div>
+
+::: info
+-   1 food web.
+-   [PFAS] already log-tranformed.
+-   Data were extracted from plots (Figure 4) using Webplot Digitizer.
+:::
+
 ```{r}
 Du_2021 <- wide_data %>% 
   filter(Study_ID == "S_023") %>%
@@ -304,11 +329,13 @@ Du_2021 <- wide_data %>%
 ```
 
 ## S_035: Ren_2022
-<div class="info">
-- 1 food web: Port Austin (USA), food web including benthic organisms.
-- [PFAS] regressed on the original scale. We log-transformed them before running linear models.
-- Data were extracted from tables (Table 1).
-</div>
+
+::: info
+-   1 food web: Port Austin (USA), food web including benthic organisms.
+-   [PFAS] regressed on the original scale. We log-transformed them before running linear models.
+-   Data were extracted from tables (Table 1).
+:::
+
 ```{r}
 Ren_2022 <- wide_data %>% 
   filter(Study_ID == "S_035") %>%
@@ -332,12 +359,14 @@ Ren_2022 <- wide_data %>%
 ```
 
 ## S_054: Koch_2021
-<div class="info">
-- 2 food webs: freshwater and terrestrial.
-- [PFAS] already ln-tranformed.
-- [PFAS] regressed against delta15N.
-- Data were extracted from plots (Figure S10) using Webplot Digitizer.
-</div>
+
+::: info
+-   2 food webs: freshwater and terrestrial.
+-   [PFAS] already ln-tranformed.
+-   [PFAS] regressed against delta15N.
+-   Data were extracted from plots (Figure S10) using Webplot Digitizer.
+:::
+
 ```{r}
 Koch_2021 <- wide_data %>% 
   filter(Study_ID == "S_054") %>%
@@ -356,11 +385,13 @@ Koch_2021_terrestrial <- Koch_2021 %>%
 ```
 
 ## S_056: Li_2008
-<div class="info">
-- 2 food webs: Tilapia included and excluded.
-- [PFAS] already ln-tranformed.
-- Data were extracted from plots (Figure 3) using Webplot Digitizer.
-</div>
+
+::: info
+-   2 food webs: Tilapia included and excluded.
+-   [PFAS] already ln-tranformed.
+-   Data were extracted from plots (Figure 3) using Webplot Digitizer.
+:::
+
 ```{r}
 Li_2008 <- wide_data %>% 
   filter(Study_ID == "S_056") %>%
@@ -378,11 +409,13 @@ Li_2008_fw2 <- Li_2008 %>%
 ```
 
 ## S_057: Pan_2010
-<div class="info">
-- 1 food web.
-- [PFAS] regressed on the original scale. We log-transformed them before running linear models.
-- Data were extracted from plots (Figure S1) using Webplot Digitizer.
-</div>
+
+::: info
+-   1 food web.
+-   [PFAS] regressed on the original scale. We log-transformed them before running linear models.
+-   Data were extracted from plots (Figure S1) using Webplot Digitizer.
+:::
+
 ```{r}
 Pan_2010 <- wide_data %>% 
   filter(Study_ID == "S_057") %>%
@@ -394,11 +427,13 @@ Pan_2010 <- wide_data %>%
 ```
 
 ## S_058: Van de Vijver_2003
-<div class="info">
-- 1 food web.
-- [PFAS] regressed on the original scale. We log-transformed them before running linear models.
-- Data were extracted from plots (Figure 3) using Webplot Digitizer.
-</div>
+
+::: info
+-   1 food web.
+-   [PFAS] regressed on the original scale. We log-transformed them before running linear models.
+-   Data were extracted from plots (Figure 3) using Webplot Digitizer.
+:::
+
 ```{r}
 Van_de_Vijver_2003 <- wide_data %>% 
   filter(Study_ID == "S_058") %>%
@@ -410,11 +445,13 @@ Van_de_Vijver_2003 <- wide_data %>%
 ```
 
 ## S_061: Barghi_2018
-<div class="info">
-- 1 food web.
-- [PFAS] regressed on the original scale. We log-transformed them before running linear models.
-- Data were extracted from plots (Figure S2) using Webplot Digitizer.
-</div>
+
+::: info
+-   1 food web.
+-   [PFAS] regressed on the original scale. We log-transformed them before running linear models.
+-   Data were extracted from plots (Figure S2) using Webplot Digitizer.
+:::
+
 ```{r}
 Barghi_2018 <- wide_data %>% 
   filter(Study_ID == "S_061") %>% 
@@ -424,15 +461,17 @@ Barghi_2018 <- wide_data %>%
   mutate(across(ends_with("mean"), ~ as.numeric(as.character(.))))
 
 #write.csv(Barghi_2018, file = here("Rdata", "Barghi_2018.csv"))
-``` 
+```
 
 ## S_060: Kobayashi_2018
-<div class="info">
-- 1 food web.
-- [PFAS] on the original scale. We log-transformed them before running linear models.
-- Data were extracted from tables (Table 1).
-- Standard deviations were log-scaled using the Delta method (Taylor approximation).
-</div>
+
+::: info
+-   1 food web.
+-   [PFAS] on the original scale. We log-transformed them before running linear models.
+-   Data were extracted from tables (Table 1).
+-   Standard deviations were log-scaled using the Delta method (Taylor approximation).
+:::
+
 ```{r}
 Kobayashi_2018 <- wide_data %>% 
   filter(Study_ID == "S_060") %>% 
@@ -462,11 +501,13 @@ Kobayashi_2018 <- wide_data %>%
 ```
 
 ## S_047: Heimstad_2024
-<div class="info">
-- 1 food web.
-- [PFAS] regressed on the original scale, although plots have y-axis on the log scale. We log-transformed them before running linear models.
-- Data extracted from plots (Figure S10 - S12) using Webplot Digitizer.
-</div>
+
+::: info
+-   1 food web.
+-   [PFAS] regressed on the original scale, although plots have y-axis on the log scale. We log-transformed them before running linear models.
+-   Data extracted from plots (Figure S10 - S12) using Webplot Digitizer.
+:::
+
 ```{r}
 Heimstad_2024 <- wide_data %>% 
   filter(Study_ID == "S_047") %>% 
@@ -476,12 +517,18 @@ Heimstad_2024 <- wide_data %>%
   mutate(log_PFOS_mean = log10(PFOS_mean)) %>% 
   mutate(log_PFUnDA_mean = log10(PFUnDA_mean))
 
-#write.csv(Heimstad_2024, file = here("Rdata", "Heimstad_2024.csv"))
+# write.csv(Heimstad_2024, file = here("Rdata", "Heimstad_2024.csv"))
 ```
 
 ## S_024: Li_2021
-<div class="info">
-</div>
+
+::: info
+- 1 food web.
+- [PFAS] already log-tranformed.
+- [PFAS] regressed against trophic levels.
+- Data were extracted from plots (Figure 4, Figure S7, Figure S8) using Webplot Digitizer.
+:::
+
 ```{r}
 Li_2021 <- wide_data %>% 
   filter(Study_ID == "S_024") %>% 
@@ -492,8 +539,14 @@ Li_2021 <- wide_data %>%
 ```
 
 ## S_025: Pan_2021
-<div class="info">
-</div>
+
+::: info
+- 1 food web.
+- [PFAS] already log-tranformed.
+- [PFAS] regressed against trophic levels.
+- Data were extracted from plots (Figure 5) using Webplot Digitizer.
+:::
+
 ```{r}
 Pan_2021 <- wide_data %>% 
   filter(Study_ID == "S_025") %>% 
@@ -504,8 +557,15 @@ Pan_2021 <- wide_data %>%
 ```
 
 ## S_059: Jiao_2023
-<div class="info">
-</div>
+
+::: info
+- 1 food web.
+- [PFAS] measured in several tissues.
+- [PFAS] already ln-tranformed.
+- [PFAS] regressed against trophic levels.
+- Data were extracted from plots (Figure 4c) using Webplot Digitizer.
+:::
+
 ```{r}
 Jiao_2023 <- wide_data %>% 
   filter(Study_ID == "S_059") %>% 
@@ -541,15 +601,16 @@ Jiao_2023_muscle <- Jiao_2023 %>%
 #write.csv(Jiao_2023_muscle, file = here("Rdata", "Jiao_2023_muscle.csv"))
 ```
 
-
 # Linear models
 
 ## S_052: Cara_2022
-<div class="info">
-- It provides standard deviations of individual observations. Weights were assigned (inverse of square standard deviation).
-</div>
+
+::: info
+-   It provides standard deviations of individual observations. Weights were assigned (inverse of square standard deviation).
+:::
 
 ### First food web - "location 4"
+
 ```{r}
 Cara_2022_loc4 <- read.csv(here("RData", "Cara_2022_loc4.csv"))
 
@@ -578,6 +639,7 @@ ggplot(Cara_2022_loc4, aes(x = TL_mean, y = log_PFOA_mean)) +
 ```
 
 ### Second food web - "location 5"
+
 ```{r}
 Cara_2022_loc5 <- read.csv(here("RData", "Cara_2022_loc5.csv"))
 
@@ -604,7 +666,6 @@ ggplot(Cara_2022_loc5, aes(x = TL_mean, y = log_PFOA_mean)) +
            hjust = 3, vjust = 5.5, size = 4, color = "red")
 ```
 
-
 ```{r}
 Cara_2022_loc5_lm_model_PFUnDA <- lm(log_PFUnDA_mean ~ TL_mean, 
                                      data = Cara_2022_loc5, 
@@ -627,6 +688,7 @@ ggplot(Cara_2022_loc5, aes(x = TL_mean, y = log_PFUnDA_mean)) +
 ```
 
 ### Third food web - "location 8"
+
 ```{r}
 Cara_2022_loc8 <- read.csv(here("RData", "Cara_2022_loc8.csv"))
 
@@ -675,15 +737,19 @@ ggplot(Cara_2022_loc8, aes(x = TL_mean, y = log_PFTrDA_mean)) +
 ```
 
 ## S_013: Martin_2004
-<div class="info">
-- It provides standard errors of individual observations. Weights were assigned (inverse of standard error).
-</div>
+
+::: info
+-   It provides standard errors of individual observations. Weights were assigned (inverse of standard error).
+:::
 
 ### Benthic food web
-<div class="warning">
-WARNING! Benthic food web includes only two trophic levels!
-</div>
+
+::: warning
+WARNING! Benthic food web includes only two trophic levels! It cannot be considered a food web.
+:::
+
 SE values for benthic food web slope cannot be calculated.
+
 ```{r}
 Martin_2004_benthic <- read.csv(here("RData/Martin_2004_benthic.csv"))
 
@@ -711,7 +777,6 @@ ggplot(Martin_2004_benthic, aes(x = TL_mean, y = ln_PFOS_mean)) +
   annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Martin_2004_benthic_PFOS_slope, 3)), 
            hjust = 3, vjust = 5.5, size = 4, color = "red")
 ```
-
 
 ```{r}
 # PFOA
@@ -800,7 +865,6 @@ ggplot(Martin_2004_benthic, aes(x = TL_mean, y = ln_PFUnDA_mean)) +
   annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Martin_2004_benthic_PFUnDA_slope, 3)), 
            hjust = 3, vjust = 5.5, size = 4, color = "red")
 ```
-
 
 ```{r}
 # PFDoDA
@@ -1050,6 +1114,7 @@ ggplot(Martin_2004_pelagic, aes(x = TL_mean, y = ln_PFTeDA_mean)) +
 ```
 
 ### Whole food web
+
 ```{r}
 Martin_2004_whole <- read.csv(here("RData", "Martin_2004_whole.csv"))
 
@@ -1076,11 +1141,13 @@ ggplot(Martin_2004_whole, aes(x = TL_mean, y = ln_FOSA_mean)) +
 ```
 
 ## S_053: Koch_2020
-<div class="info">
-- It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
-</div>
+
+::: info
+-   It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
+:::
 
 ### Aquatic food web
+
 ```{r}
 Koch_2020_aquatic <- read.csv(here("Rdata", "Koch_2020_aquatic.csv"))
 
@@ -1104,6 +1171,7 @@ ggplot(Koch_2020_aquatic, aes(x = delta_15N_mean, y = log_PFOS_mean)) +
 ```
 
 ### Riparian food web
+
 ```{r}
 Koch_2020_riparian <- read.csv(here("Rdata", "Koch_2020_riparian.csv"))
 
@@ -1127,11 +1195,13 @@ ggplot(Koch_2020_riparian, aes(x = delta_15N_mean, y = log_PFOS_mean)) +
 ```
 
 ## S_004: Mazzoni_2020
-<div class="info">
-- It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
-</div>
+
+::: info
+-   It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
+:::
 
 ### Food web 1 - including zooplankton
+
 ```{r}
 Mazzoni_2020_fw1 <- read.csv(here("Rdata", "Mazzoni_2020_fw1.csv"))
 
@@ -1239,6 +1309,7 @@ ggplot(Mazzoni_2020_fw1, aes(x = TL_mean, y = log_PFUnDA_mean)) +
 ```
 
 ### Food web 2 - excluding zooplankton
+
 ```{r}
 Mazzoni_2020_fw2 <- read.csv(here("Rdata", "Mazzoni_2020_fw2.csv"))
 
@@ -1246,79 +1317,267 @@ Mazzoni_2020_fw2 <- read.csv(here("Rdata", "Mazzoni_2020_fw2.csv"))
 Mazzoni_2020_fw2_lm_model_PFDA <- lm(log_PFDA_mean ~ TL_mean,
                                       data = Mazzoni_2020_fw2)
 
-summary(Mazzoni_2020_fw2_lm_model_PFDA)
+Mazzoni_2020_fw2_PFDA_slope <- coef(Mazzoni_2020_fw2_lm_model_PFDA)["TL_mean"]
 
+summary(Mazzoni_2020_fw2_lm_model_PFDA)
+```
+
+```{r}
+ggplot(Mazzoni_2020_fw2, aes(x = TL_mean, y = log_PFDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mazzoni_2020_fw2_PFDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFDoDA
 Mazzoni_2020_fw2_lm_model_PFDoDA <- lm(log_PFDoDA_mean ~ TL_mean,
                                       data = Mazzoni_2020_fw2)
 
-summary(Mazzoni_2020_fw2_lm_model_PFDoDA)
+Mazzoni_2020_fw2_PFDoDA_slope <- coef(Mazzoni_2020_fw2_lm_model_PFDoDA)["TL_mean"]
 
+summary(Mazzoni_2020_fw2_lm_model_PFDoDA)
+```
+
+```{r}
+ggplot(Mazzoni_2020_fw2, aes(x = TL_mean, y = log_PFDoDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFDoDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mazzoni_2020_fw2_PFDoDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFOS
 Mazzoni_2020_fw2_lm_model_PFOS <- lm(log_PFOS_mean ~ TL_mean,
                                       data = Mazzoni_2020_fw2)
 
-summary(Mazzoni_2020_fw2_lm_model_PFOS)
+Mazzoni_2020_fw2_PFOS_slope <- coef(Mazzoni_2020_fw2_lm_model_PFOS)["TL_mean"]
 
+summary(Mazzoni_2020_fw2_lm_model_PFOS)
+```
+
+```{r}
+ggplot(Mazzoni_2020_fw2, aes(x = TL_mean, y = log_PFOS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mazzoni_2020_fw2_PFOS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFUnDA
 Mazzoni_2020_fw2_lm_model_PFUnDA <- lm(log_PFUnDA_mean ~ TL_mean,
                                       data = Mazzoni_2020_fw2)
 
+Mazzoni_2020_fw2_PFUnDA_slope <- coef(Mazzoni_2020_fw2_lm_model_PFUnDA)["TL_mean"]
+
 summary(Mazzoni_2020_fw2_lm_model_PFUnDA)
 ```
 
+```{r}
+ggplot(Mazzoni_2020_fw2, aes(x = TL_mean, y = log_PFUnDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFUnDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mazzoni_2020_fw2_PFUnDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
 ## S_017: Liu_2018
-<div class="info">
-- It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
-</div>
+
+::: info
+-   It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
+:::
+
 ```{r}
 Liu_2018 <- read.csv(here("Rdata", "Liu_2018.csv"))
 # PFBA
 Liu_2018_lm_model_PFBA <- lm(ln_PFBA_mean ~ TL_mean,
                              data = Liu_2018)
 
+Liu_2018_PFBA_slope <- coef(Liu_2018_lm_model_PFBA)["TL_mean"]
+
 summary(Liu_2018_lm_model_PFBA)
+```
+
+```{r}
+ggplot(Liu_2018, aes(x = TL_mean, y = ln_PFBA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFBA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Liu_2018_PFBA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFOA
 Liu_2018_lm_model_PFOA <- lm(ln_PFOA_mean ~ TL_mean,
                              data = Liu_2018)
 
+Liu_2018_PFOA_slope <- coef(Liu_2018_lm_model_PFOA)["TL_mean"]
+
+
 summary(Liu_2018_lm_model_PFOA)
+```
+
+```{r}
+ggplot(Liu_2018, aes(x = TL_mean, y = ln_PFOA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFOA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Liu_2018_PFOA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFNA
 Liu_2018_lm_model_PFNA <- lm(ln_PFNA_mean ~ TL_mean,
                              data = Liu_2018)
 
+Liu_2018_PFNA_slope <- coef(Liu_2018_lm_model_PFNA)["TL_mean"]
+
 summary(Liu_2018_lm_model_PFNA)
+```
+
+```{r}
+ggplot(Liu_2018, aes(x = TL_mean, y = ln_PFNA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFNA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Liu_2018_PFNA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFDA
 Liu_2018_lm_model_PFDA <- lm(ln_PFDA_mean ~ TL_mean,
                              data = Liu_2018)
 
+Liu_2018_PFDA_slope <- coef(Liu_2018_lm_model_PFDA)["TL_mean"]
+
 summary(Liu_2018_lm_model_PFDA)
+```
+
+```{r}
+ggplot(Liu_2018, aes(x = TL_mean, y = ln_PFDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Liu_2018_PFDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFUnDA
 Liu_2018_lm_model_PFUnDA <- lm(ln_PFUnDA_mean ~ TL_mean,
                              data = Liu_2018)
 
+Liu_2018_PFUnDA_slope <- coef(Liu_2018_lm_model_PFUnDA)["TL_mean"]
+
 summary(Liu_2018_lm_model_PFUnDA)
+```
+
+```{r}
+ggplot(Liu_2018, aes(x = TL_mean, y = ln_PFUnDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFUnDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Liu_2018_PFUnDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFDoDA
 Liu_2018_lm_model_PFDoDA <- lm(ln_PFDoDA_mean ~ TL_mean,
                              data = Liu_2018)
 
+Liu_2018_PFDoDA_slope <- coef(Liu_2018_lm_model_PFDoDA)["TL_mean"]
+
 summary(Liu_2018_lm_model_PFDoDA)
+```
+
+```{r}
+ggplot(Liu_2018, aes(x = TL_mean, y = ln_PFDoDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFDoDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Liu_2018_PFDoDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFTrDA 
 Liu_2018_lm_model_PFTrDA <- lm(ln_PFTrDA_mean ~ TL_mean,
                              data = Liu_2018)
 
+Liu_2018_PFTrDA_slope <- coef(Liu_2018_lm_model_PFTrDA)["TL_mean"]
+
 summary(Liu_2018_lm_model_PFTrDA)
+```
+
+```{r}
+ggplot(Liu_2018, aes(x = TL_mean, y = ln_PFTrDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFTrDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Liu_2018_PFTrDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFOS
 Liu_2018_lm_model_PFOS <- lm(ln_PFOS_mean ~ TL_mean,
                              data = Liu_2018)
 
+Liu_2018_PFOS_slope <- coef(Liu_2018_lm_model_PFOS)["TL_mean"]
+
 summary(Liu_2018_lm_model_PFOS)
 ```
 
+```{r}
+ggplot(Liu_2018, aes(x = TL_mean, y = ln_PFOS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Liu_2018_PFOS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
 ## S_019: Gao_2020
-<div class="info">
-- It provides standard deviations of individual observations. Weights were assigned (inverse of square standard deviation).
-</div>
+
+::: info
+-   It provides standard deviations of individual observations. Weights were assigned (inverse of square standard deviation).
+:::
+
 ```{r}
 Gao_2020 <- read.csv(here("Rdata", "Gao_2020.csv"))
 Gao_2020_PFHxS_weights <- 1 / (Gao_2020$log_PFHxS_sd^2)
@@ -1330,27 +1589,72 @@ Gao_2020_lm_model_PFHxS <- lm(log_PFHxS_mean ~ TL_mean,
                               data = Gao_2020,
                               weights = Gao_2020_PFHxS_weights)
 
-summary(Gao_2020_lm_model_PFHxS)
+Gao_2020_PFHxS_slope <- coef(Gao_2020_lm_model_PFHxS)["TL_mean"]
 
+summary(Gao_2020_lm_model_PFHxS)
+```
+
+```{r}
+ggplot(Gao_2020, aes(x = TL_mean, y = log_PFHxS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFHxS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Gao_2020_PFHxS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFOS
 Gao_2020_lm_model_PFOS <- lm(log_PFOS_mean ~ TL_mean,
                              data = Gao_2020,
                              weights = Gao_2020_PFOS_weights)
 
-summary(Gao_2020_lm_model_PFOS)
+Gao_2020_PFOS_slope <- coef(Gao_2020_lm_model_PFOS)["TL_mean"]
 
+summary(Gao_2020_lm_model_PFOS)
+```
+
+```{r}
+ggplot(Gao_2020, aes(x = TL_mean, y = log_PFOS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Gao_2020_PFOS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFBA
 Gao_2020_lm_model_PFBA <- lm(log_PFBA_mean ~ TL_mean,
                              data = Gao_2020,
                              weights = Gao_2020_PFBA_weights)
 
+Gao_2020_PFBA_slope <- coef(Gao_2020_lm_model_PFBA)["TL_mean"]
+
 summary(Gao_2020_lm_model_PFBA)
 ```
 
+```{r}
+ggplot(Gao_2020, aes(x = TL_mean, y = log_PFBA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFBA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Gao_2020_PFBA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
 ## S_021: Chen_2018
-<div class="info">
-- It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
-</div>
+
+::: info
+-   It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
+:::
+
 ```{r}
 Chen_2018 <- read.csv(here("Rdata", "Chen_2018.csv"))
 
@@ -1358,31 +1662,91 @@ Chen_2018 <- read.csv(here("Rdata", "Chen_2018.csv"))
 Chen_2018_lm_model_PFOS <- lm(ln_PFOS_mean ~ TL_mean,
                              data = Chen_2018)
 
-summary(Chen_2018_lm_model_PFOS)
+Chen_2018_PFOS_slope <- coef(Chen_2018_lm_model_PFOS)["TL_mean"]
 
+summary(Chen_2018_lm_model_PFOS)
+```
+
+```{r}
+ggplot(Chen_2018, aes(x = TL_mean, y = ln_PFOS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2018_PFOS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFDA
 Chen_2018_lm_model_PFDA <- lm(ln_PFDA_mean ~ TL_mean,
                              data = Chen_2018)
 
-summary(Chen_2018_lm_model_PFDA)
+Chen_2018_PFDA_slope <- coef(Chen_2018_lm_model_PFDA)["TL_mean"]
 
+summary(Chen_2018_lm_model_PFDA)
+```
+
+```{r}
+ggplot(Chen_2018, aes(x = TL_mean, y = ln_PFDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2018_PFDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFUnDA
 Chen_2018_lm_model_PFUnDA <- lm(ln_PFUnDA_mean ~ TL_mean,
                              data = Chen_2018)
 
-summary(Chen_2018_lm_model_PFUnDA)
+Chen_2018_PFUnDA_slope <- coef(Chen_2018_lm_model_PFUnDA)["TL_mean"]
 
+summary(Chen_2018_lm_model_PFUnDA)
+```
+
+```{r}
+ggplot(Chen_2018, aes(x = TL_mean, y = ln_PFUnDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFUnDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2018_PFUnDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFDoDA
 Chen_2018_lm_model_PFDoDA <- lm(ln_PFDoDA_mean ~ TL_mean,
                              data = Chen_2018)
 
+Chen_2018_PFDoDA_slope <- coef(Chen_2018_lm_model_PFDoDA)["TL_mean"]
+
 summary(Chen_2018_lm_model_PFDoDA)
 ```
 
+```{r}
+ggplot(Chen_2018, aes(x = TL_mean, y = ln_PFDoDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFDoDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2018_PFDoDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
 ## S_023: Du_2021
-<div class="info">
-- .
-</div>
+
+::: info
+-   .
+:::
+
 ```{r}
 Du_2021 <- read.csv(here("Rdata", "Du_2021.csv"))
 
@@ -1390,49 +1754,154 @@ Du_2021 <- read.csv(here("Rdata", "Du_2021.csv"))
 Du_2021_lm_model_PFBA <- lm(log_PFBA_mean ~ TL_mean,
                              data = Du_2021)
 
-summary(Du_2021_lm_model_PFBA)
+Du_2021_PFBA_slope <- coef(Du_2021_lm_model_PFBA)["TL_mean"]
 
+summary(Du_2021_lm_model_PFBA)
+```
+
+```{r}
+ggplot(Du_2021, aes(x = TL_mean, y = log_PFBA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFBA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Du_2021_PFBA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFHxA
 Du_2021_lm_model_PFHxA <- lm(log_PFHxA_mean ~ TL_mean,
                              data = Du_2021)
 
-summary(Du_2021_lm_model_PFHxA)
+Du_2021_PFHxA_slope <- coef(Du_2021_lm_model_PFHxA)["TL_mean"]
 
+summary(Du_2021_lm_model_PFHxA)
+```
+
+```{r}
+ggplot(Du_2021, aes(x = TL_mean, y = log_PFHxA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFHxA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Du_2021_PFHxA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFOA
 Du_2021_lm_model_PFOA <- lm(log_PFOA_mean ~ TL_mean,
                              data = Du_2021)
 
-summary(Du_2021_lm_model_PFOA)
+Du_2021_PFOA_slope <- coef(Du_2021_lm_model_PFOA)["TL_mean"]
 
+summary(Du_2021_lm_model_PFOA)
+```
+
+```{r}
+ggplot(Du_2021, aes(x = TL_mean, y = log_PFOA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFOA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Du_2021_PFOA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFUnDA
 Du_2021_lm_model_PFUnDA <- lm(log_PFUnDA_mean ~ TL_mean,
                              data = Du_2021)
 
-summary(Du_2021_lm_model_PFUnDA)
+Du_2021_PFUnDA_slope <- coef(Du_2021_lm_model_PFUnDA)["TL_mean"]
 
+summary(Du_2021_lm_model_PFUnDA)
+```
+
+```{r}
+ggplot(Du_2021, aes(x = TL_mean, y = log_PFUnDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFUnDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Du_2021_PFUnDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFTrDA
 Du_2021_lm_model_PFTrDA <- lm(log_PFTrDA_mean ~ TL_mean,
                              data = Du_2021)
 
-summary(Du_2021_lm_model_PFTrDA)
+Du_2021_PFTrDA_slope <- coef(Du_2021_lm_model_PFTrDA)["TL_mean"]
 
+summary(Du_2021_lm_model_PFTrDA)
+```
+
+```{r}
+ggplot(Du_2021, aes(x = TL_mean, y = log_PFTrDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFTrDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Du_2021_PFTrDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFBS
 Du_2021_lm_model_PFBS <- lm(log_PFBS_mean ~ TL_mean,
                              data = Du_2021)
 
-summary(Du_2021_lm_model_PFBS)
+Du_2021_PFBS_slope <- coef(Du_2021_lm_model_PFBS)["TL_mean"]
 
+summary(Du_2021_lm_model_PFBS)
+```
+
+```{r}
+ggplot(Du_2021, aes(x = TL_mean, y = log_PFBS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFBS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Du_2021_PFBS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFOS
 Du_2021_lm_model_PFOS <- lm(log_PFOS_mean ~ TL_mean,
                              data = Du_2021)
 
+Du_2021_PFOS_slope <- coef(Du_2021_lm_model_PFOS)["TL_mean"]
+
 summary(Du_2021_lm_model_PFOS)
 ```
 
+```{r}
+ggplot(Du_2021, aes(x = TL_mean, y = log_PFOS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Du_2021_PFOS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
 ## S_035: Ren_2022
-<div class="info">
-- It provides standard errors of individual observations. Weights were assigned (inverse of standard error).
-</div>
+
+::: info
+-   It provides standard errors of individual observations. Weights were assigned (inverse of standard error).
+:::
+
 ```{r}
 Ren_2022 <- read.csv(here("Rdata", "Ren_2022.csv"))
 
@@ -1543,7 +2012,6 @@ ggplot(Ren_2022, aes(x = TL_mean, y = log_PFDA_mean)) +
            hjust = 3, vjust = 5.5, size = 4, color = "red")
 ```
 
-
 ```{r}
 # PFUnDA
 Ren_2022_lm_model_PFUnDA <- lm(log_PFUnDA_mean ~ TL_mean,
@@ -1629,11 +2097,13 @@ ggplot(Ren_2022, aes(x = TL_mean, y = log_PFTeDA_mean)) +
 ```
 
 ## S_054: Koch_2021
-<div class="info">
-- It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
-</div>
+
+::: info
+-   It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
+:::
 
 ### Food web 1 - freshwater
+
 ```{r}
 Koch_2021_freshwater <- read.csv(here("Rdata", "Koch_2021_freshwater.csv"))
 Koch_2021_freshwater_lm_model_PFOS <- lm(log_PFOS_mean ~ delta_15N_mean,
@@ -1656,79 +2126,169 @@ ggplot(Koch_2021_freshwater, aes(x = delta_15N_mean, y = log_PFOS_mean)) +
 ```
 
 ### Food web 2 - terrestrial
+
 ```{r}
 Koch_2021_terrestrial <- read.csv(here("Rdata", "Koch_2021_terrestrial.csv"))
 
 Koch_2021_terrestrial_lm_model_PFOS <- lm(log_PFOS_mean ~ delta_15N_mean,
                                          data = Koch_2021_terrestrial)
 
+Koch_2021_terrestrial_PFOS_slope <- coef(Koch_2021_terrestrial_lm_model_PFOS)["delta_15N_mean"]
+
 summary(Koch_2021_terrestrial_lm_model_PFOS)
 ```
 
+```{r}
+ggplot(Koch_2021_terrestrial, aes(x = delta_15N_mean, y = log_PFOS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Koch_2021_terrestrial_PFOS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
 ## S_056: Li_2008
-<div class="info">
-- It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
-</div>
+
+::: info
+-   It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
+:::
 
 ### Food web 1 - Tilapia excluded
+
 ```{r}
 Li_2008_fw1 <- read.csv(here("Rdata", "Li_2008_fw1.csv"))
 Li_2008_fw1_lm_model_PFOS <- lm(ln_PFOS_mean ~ TL_mean,
                                 data = Li_2008_fw1)
 
+Li_2008_fw1_PFOS_slope <- coef(Li_2008_fw1_lm_model_PFOS)["TL_mean"]
+
 summary(Li_2008_fw1_lm_model_PFOS)
 ```
 
+```{r}
+ggplot(Li_2008_fw1, aes(x = TL_mean, y = ln_PFOS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Li_2008_fw1_PFOS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
 ### Food web 2 - Tilapia included
+
 ```{r}
 Li_2008_fw2 <- read.csv(here("Rdata", "Li_2008_fw2.csv"))
 Li_2008_fw2_lm_model_PFOS <- lm(ln_PFOS_mean ~ TL_mean,
                                 data = Li_2008_fw2)
 
+Li_2008_fw2_PFOS_slope <- coef(Li_2008_fw2_lm_model_PFOS)["TL_mean"]
+
 summary(Li_2008_fw2_lm_model_PFOS)
 ```
 
+```{r}
+ggplot(Li_2008_fw2, aes(x = TL_mean, y = ln_PFOS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "ln [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Li_2008_fw2_PFOS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
 ## S_057: Pan_2010
-<div class="info">
-- It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
-</div>
+
+::: info
+-   It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
+:::
+
 ```{r}
 Pan_2010 <- read.csv(here("Rdata", "Pan_2010.csv"))
 Pan_2010_lm_model_PFOS <- lm(log_PFCs_mean ~ TL_mean,
                                 data = Pan_2010)
 
+Pan_2010_PFOS_slope <- coef(Pan_2010_lm_model_PFOS)["TL_mean"]
+
 summary(Pan_2010_lm_model_PFOS)
 ```
 
+```{r}
+ggplot(Pan_2010, aes(x = TL_mean, y = log_PFCs_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Pan_2010_PFOS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
 ## S_058: Van de Vijver_2003
-<div class="info">
-- .
-</div>
+
+::: info
+-   .
+:::
+
 ```{r}
 Van_de_Vijver_2003 <- read.csv(here("Rdata", "Van_de_Vijver_2003.csv"))
 Van_de_Vijver_2003_lm_model_PFOS <- lm(log_PFOS_mean ~ delta_15N_mean,
                                        data = Van_de_Vijver_2003)
 
+Van_de_Vijver_2003_PFOS_slope <- coef(Van_de_Vijver_2003_lm_model_PFOS)["delta_15N_mean"]
+
 summary(Van_de_Vijver_2003_lm_model_PFOS)
 ```
 
+```{r}
+ggplot(Van_de_Vijver_2003, aes(x = delta_15N_mean, y = log_PFOS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Van_de_Vijver_2003_PFOS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
 ## S_061: Barghi_2018
-<div class="info">
-- .
-</div>
+
+::: info
+-   .
+:::
+
 ```{r}
 Barghi_2018 <- read.csv(here("Rdata", "Barghi_2018.csv"))
 
 Barghi_2018_lm_model_PFNA <- lm(log_PFNA_mean ~ delta_15N_mean,
                                        data = Barghi_2018)
 
+Barghi_2018_PFNA_slope <- coef(Barghi_2018_lm_model_PFNA)["delta_15N_mean"]
+
 summary(Barghi_2018_lm_model_PFNA)
 ```
 
+```{r}
+ggplot(Barghi_2018, aes(x = delta_15N_mean, y = log_PFNA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Barghi_2018_PFNA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
 ## S_060: Kobayashi_2018
-<div class="info">
-- It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
-</div>
+
+::: info
+-   It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
+:::
+
 ```{r}
 Kobayashi_2018 <- read.csv(here("Rdata", "Kobayashi_2018.csv"))
 
@@ -1736,54 +2296,196 @@ Kobayashi_2018 <- read.csv(here("Rdata", "Kobayashi_2018.csv"))
 Kobayashi_2018_lm_model_PFHxS <- lm(log_PFHxS_mean ~ TL_mean,
                                     data = Kobayashi_2018)
 
-summary(Kobayashi_2018_lm_model_PFHxS)
+Kobayashi_2018_PFHxS_slope <- coef(Kobayashi_2018_lm_model_PFHxS)["TL_mean"]
 
+summary(Kobayashi_2018_lm_model_PFHxS)
+```
+
+```{r}
+ggplot(Kobayashi_2018, aes(x = TL_mean, y = log_PFHxS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFHxS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Kobayashi_2018_PFHxS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFOS
 Kobayashi_2018_lm_model_PFOS <- lm(log_PFOS_mean ~ TL_mean,
                                     data = Kobayashi_2018)
 
+Kobayashi_2018_PFOS_slope <- coef(Kobayashi_2018_lm_model_PFOS)["TL_mean"]
+
 summary(Kobayashi_2018_lm_model_PFOS)
+```
+
+```{r}
+ggplot(Kobayashi_2018, aes(x = TL_mean, y = log_PFOS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Kobayashi_2018_PFOS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFPeA
 Kobayashi_2018_lm_model_PFPeA <- lm(log_PFPeA_mean ~ TL_mean,
                                     data = Kobayashi_2018)
 
+Kobayashi_2018_PFPeA_slope <- coef(Kobayashi_2018_lm_model_PFPeA)["TL_mean"]
+
 summary(Kobayashi_2018_lm_model_PFPeA)
+```
+
+```{r}
+ggplot(Kobayashi_2018, aes(x = TL_mean, y = log_PFPeA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFPeA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Kobayashi_2018_PFPeA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFHxA
 Kobayashi_2018_lm_model_PFHxA <- lm(log_PFHxA_mean ~ TL_mean,
                                     data = Kobayashi_2018)
 
+Kobayashi_2018_PFHxA_slope <- coef(Kobayashi_2018_lm_model_PFHxA)["TL_mean"]
+
 summary(Kobayashi_2018_lm_model_PFHxA)
+```
+
+```{r}
+ggplot(Kobayashi_2018, aes(x = TL_mean, y = log_PFHxA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFHxA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Kobayashi_2018_PFHxA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFHpA
 Kobayashi_2018_lm_model_PFHpA <- lm(log_PFHpA_mean ~ TL_mean,
                                     data = Kobayashi_2018)
 
+Kobayashi_2018_PFHpA_slope <- coef(Kobayashi_2018_lm_model_PFHpA)["TL_mean"]
+
 summary(Kobayashi_2018_lm_model_PFHpA)
+```
+
+```{r}
+ggplot(Kobayashi_2018, aes(x = TL_mean, y = log_PFHpA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFHpA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Kobayashi_2018_PFHpA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFOA
 Kobayashi_2018_lm_model_PFOA <- lm(log_PFOA_mean ~ TL_mean,
                                     data = Kobayashi_2018)
 
+Kobayashi_2018_PFOA_slope <- coef(Kobayashi_2018_lm_model_PFOA)["TL_mean"]
+
 summary(Kobayashi_2018_lm_model_PFOA)
+```
+
+```{r}
+ggplot(Kobayashi_2018, aes(x = TL_mean, y = log_PFOA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFOA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Kobayashi_2018_PFOA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFNA
 Kobayashi_2018_lm_model_PFNA <- lm(log_PFNA_mean ~ TL_mean,
                                     data = Kobayashi_2018)
 
+Kobayashi_2018_PFNA_slope <- coef(Kobayashi_2018_lm_model_PFNA)["TL_mean"]
+
 summary(Kobayashi_2018_lm_model_PFNA)
+```
+
+```{r}
+ggplot(Kobayashi_2018, aes(x = TL_mean, y = log_PFNA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFNA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Kobayashi_2018_PFNA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFDA
 Kobayashi_2018_lm_model_PFDA <- lm(log_PFDA_mean ~ TL_mean,
                                     data = Kobayashi_2018)
 
+Kobayashi_2018_PFDA_slope <- coef(Kobayashi_2018_lm_model_PFDA)["TL_mean"]
+
 summary(Kobayashi_2018_lm_model_PFDA)
+```
+
+```{r}
+ggplot(Kobayashi_2018, aes(x = TL_mean, y = log_PFDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Kobayashi_2018_PFDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFUnDA
 Kobayashi_2018_lm_model_PFUnDA <- lm(log_PFUnDA_mean ~ TL_mean,
                                     data = Kobayashi_2018)
 
+Kobayashi_2018_PFUnDA_slope <- coef(Kobayashi_2018_lm_model_PFUnDA)["TL_mean"]
+
 summary(Kobayashi_2018_lm_model_PFUnDA)
 ```
 
+```{r}
+ggplot(Kobayashi_2018, aes(x = TL_mean, y = log_PFUnDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFUnDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Kobayashi_2018_PFUnDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
 ## S_047: Heimstad_2024
-<div class="info">
-- .
-</div>
+
+::: info
+-   It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
+:::
+
 ```{r}
 Heimstad_2024 <- read.csv(here("Rdata", "Heimstad_2024.csv"))
 
@@ -1791,25 +2493,70 @@ Heimstad_2024 <- read.csv(here("Rdata", "Heimstad_2024.csv"))
 Heimstad_2024_lm_model_PFOS <- lm(log_PFOS_mean ~ TL_mean,
                                     data = Heimstad_2024)
 
-summary(Heimstad_2024_lm_model_PFOS)
+Heimstad_2024_PFOS_slope <- coef(Heimstad_2024_lm_model_PFOS)["TL_mean"]
 
+summary(Heimstad_2024_lm_model_PFOS)
+```
+
+```{r}
+ggplot(Heimstad_2024, aes(x = TL_mean, y = log_PFOS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Heimstad_2024_PFOS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFUnDA
 Heimstad_2024_lm_model_PFUnDA <- lm(log_PFUnDA_mean ~ TL_mean,
                                     data = Heimstad_2024)
 
-summary(Heimstad_2024_lm_model_PFUnDA)
+Heimstad_2024_PFUnDA_slope <- coef(Heimstad_2024_lm_model_PFUnDA)["TL_mean"]
 
+summary(Heimstad_2024_lm_model_PFUnDA)
+```
+
+```{r}
+ggplot(Heimstad_2024, aes(x = TL_mean, y = log_PFUnDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFUnDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Heimstad_2024_PFUnDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFDoDA
 Heimstad_2024_lm_model_PFDoDA <- lm(log_PFDoDA_mean ~ TL_mean,
                                     data = Heimstad_2024)
 
+Heimstad_2024_PFDoDA_slope <- coef(Heimstad_2024_lm_model_PFDoDA)["TL_mean"]
+
 summary(Heimstad_2024_lm_model_PFDoDA)
 ```
 
+```{r}
+ggplot(Heimstad_2024, aes(x = TL_mean, y = log_PFDoDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFDoDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Heimstad_2024_PFDoDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
 ## S_024: Li_2021
-<div class="info">
-- .
-</div>
+
+::: info
+-   It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
+:::
+
 ```{r}
 Li_2021 <- read.csv(here("Rdata", "Li_2021.csv"))
 
@@ -1817,49 +2564,154 @@ Li_2021 <- read.csv(here("Rdata", "Li_2021.csv"))
 Li_2021_lm_model_HFPOTeA <- lm(log_HFPO.TeA_mean ~ TL_mean,
                                     data = Li_2021)
 
-summary(Li_2021_lm_model_HFPOTeA)
+Li_2021_HFPOTeA_slope <- coef(Li_2021_lm_model_HFPOTeA)["TL_mean"]
 
+summary(Li_2021_lm_model_HFPOTeA)
+```
+
+```{r}
+ggplot(Li_2021, aes(x = TL_mean, y = log_HFPO.TeA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [HFPOTeA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Li_2021_HFPOTeA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # HFPO-TrA
 Li_2021_lm_model_HFPOTrA <- lm(log_HFPO.TrA_mean ~ TL_mean,
                                     data = Li_2021)
 
-summary(Li_2021_lm_model_HFPOTrA)
+Li_2021_HFPOTrA_slope <- coef(Li_2021_lm_model_HFPOTrA)["TL_mean"]
 
+summary(Li_2021_lm_model_HFPOTrA)
+```
+
+```{r}
+ggplot(Li_2021, aes(x = TL_mean, y = log_HFPO.TrA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [HFPOTrA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Li_2021_HFPOTrA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFO5DoA
 Li_2021_lm_model_PFO5DoA <- lm(log_PFO5DoA_mean ~ TL_mean,
                                     data = Li_2021)
 
-summary(Li_2021_lm_model_PFO5DoA)
+Li_2021_PFO5DoA_slope <- coef(Li_2021_lm_model_PFO5DoA)["TL_mean"]
 
+summary(Li_2021_lm_model_PFO5DoA)
+```
+
+```{r}
+ggplot(Li_2021, aes(x = TL_mean, y = log_PFO5DoA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFO5DoA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Li_2021_PFO5DoA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # H-PFMO2OSA
 Li_2021_lm_model_HPFMO2OSA <- lm(log_H.PFMO2OSA_mean ~ TL_mean,
                                     data = Li_2021)
 
-summary(Li_2021_lm_model_HPFMO2OSA)
+Li_2021_HPFMO2OSA_slope <- coef(Li_2021_lm_model_HPFMO2OSA)["TL_mean"]
 
+summary(Li_2021_lm_model_HPFMO2OSA)
+```
+
+```{r}
+ggplot(Li_2021, aes(x = TL_mean, y = log_H.PFMO2OSA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [HPFMO2OSA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Li_2021_HPFMO2OSA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFOS
 Li_2021_lm_model_PFOS <- lm(log_PFOS_mean ~ TL_mean,
                                     data = Li_2021)
 
-summary(Li_2021_lm_model_PFOS)
+Li_2021_PFOS_slope <- coef(Li_2021_lm_model_PFOS)["TL_mean"]
 
+summary(Li_2021_lm_model_PFOS)
+```
+
+```{r}
+ggplot(Li_2021, aes(x = TL_mean, y = log_PFOS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Li_2021_PFOS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFMOAA
 Li_2021_lm_model_PFMOAA <- lm(log_PFMOAA_mean ~ TL_mean,
                                     data = Li_2021)
 
-summary(Li_2021_lm_model_PFMOAA)
+Li_2021_PFMOAA_slope <- coef(Li_2021_lm_model_PFMOAA)["TL_mean"]
 
+summary(Li_2021_lm_model_PFMOAA)
+```
+
+```{r}
+ggplot(Li_2021, aes(x = TL_mean, y = log_PFMOAA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFMOAA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Li_2021_PFMOAA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFBA
 Li_2021_lm_model_PFBA <- lm(log_PFBA_mean ~ TL_mean,
                                     data = Li_2021)
 
+Li_2021_PFBA_slope <- coef(Li_2021_lm_model_PFBA)["TL_mean"]
+
 summary(Li_2021_lm_model_PFBA)
 ```
 
+```{r}
+ggplot(Li_2021, aes(x = TL_mean, y = log_PFBA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFBA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Li_2021_PFBA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
 ## S_025: Pan_2021
-<div class="info">
-- .
-</div>
+
+::: info
+-   It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
+:::
+
 ```{r}
 Pan_2021 <- read.csv(here("Rdata", "Pan_2021.csv"))
 
@@ -1867,20 +2719,49 @@ Pan_2021 <- read.csv(here("Rdata", "Pan_2021.csv"))
 Pan_2021_lm_model_62ClPFESA <- lm(log_62ClPFESA_mean ~ TL_mean,
                                     data = Pan_2021)
 
-summary(Pan_2021_lm_model_62ClPFESA)
+Pan_2021_62ClPFESA_slope <- coef(Pan_2021_lm_model_62ClPFESA)["TL_mean"]
 
+summary(Pan_2021_lm_model_62ClPFESA)
+```
+
+```{r}
+ggplot(Pan_2021, aes(x = TL_mean, y = log_62ClPFESA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [62ClPFESA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Pan_2021_62ClPFESA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFOS
 Pan_2021_lm_model_PFOS <- lm(log_PFOS_mean ~ TL_mean,
                                     data = Pan_2021)
 
+Pan_2021_PFOS_slope <- coef(Pan_2021_lm_model_PFOS)["TL_mean"]
+
 summary(Pan_2021_lm_model_PFOS)
 ```
 
+```{r}
+ggplot(Pan_2021, aes(x = TL_mean, y = log_PFOS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "Trophic level",
+       y = "log [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Pan_2021_PFOS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
 
 ## S_059: Jiao_2023
-<div class="info">
-- It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
-</div>
+
+::: info
+-   It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
+:::
+
 ```{r}
 Jiao_2023_blood <- read.csv(here("Rdata", "Jiao_2023_blood.csv"))
 
@@ -1888,220 +2769,729 @@ Jiao_2023_blood <- read.csv(here("Rdata", "Jiao_2023_blood.csv"))
 Jiao_2023_blood_lm_model_PFDA <- lm(ln_PFDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_blood)
 
-summary(Jiao_2023_blood_lm_model_PFDA)
+Jiao_2023_blood_PFDA_slope <- coef(Jiao_2023_blood_lm_model_PFDA)["delta_15N_mean"]
 
+summary(Jiao_2023_blood_lm_model_PFDA)
+```
+
+```{r}
+ggplot(Jiao_2023_blood, aes(x = delta_15N_mean, y = ln_PFDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_blood_PFDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFUnDA
 Jiao_2023_blood_lm_model_PFUnDA <- lm(ln_PFUnDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_blood)
 
-summary(Jiao_2023_blood_lm_model_PFUnDA)
+Jiao_2023_blood_PFUnDA_slope <- coef(Jiao_2023_blood_lm_model_PFUnDA)["delta_15N_mean"]
 
+summary(Jiao_2023_blood_lm_model_PFUnDA)
+```
+
+```{r}
+ggplot(Jiao_2023_blood, aes(x = delta_15N_mean, y = ln_PFUnDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFUnDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_blood_PFUnDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFDoDA
 Jiao_2023_blood_lm_model_PFDoDA <- lm(ln_PFDoDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_blood)
 
-summary(Jiao_2023_blood_lm_model_PFDoDA)
+Jiao_2023_blood_PFDoDA_slope <- coef(Jiao_2023_blood_lm_model_PFDoDA)["delta_15N_mean"]
 
+summary(Jiao_2023_blood_lm_model_PFDoDA)
+```
+
+```{r}
+ggplot(Jiao_2023_blood, aes(x = delta_15N_mean, y = ln_PFDoDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFDoDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_blood_PFDoDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFTrDA
 Jiao_2023_blood_lm_model_PFTrDA <- lm(ln_PFTrDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_blood)
 
-summary(Jiao_2023_blood_lm_model_PFTrDA)
+Jiao_2023_blood_PFTrDA_slope <- coef(Jiao_2023_blood_lm_model_PFTrDA)["delta_15N_mean"]
 
+summary(Jiao_2023_blood_lm_model_PFTrDA)
+```
+
+```{r}
+ggplot(Jiao_2023_blood, aes(x = delta_15N_mean, y = ln_PFTrDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFTrDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_blood_PFTrDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFOS
 Jiao_2023_blood_lm_model_PFOS <- lm(ln_PFOS_mean ~ delta_15N_mean,
                                     data = Jiao_2023_blood)
 
-summary(Jiao_2023_blood_lm_model_PFOS)
+Jiao_2023_blood_PFOS_slope <- coef(Jiao_2023_blood_lm_model_PFOS)["delta_15N_mean"]
 
+summary(Jiao_2023_blood_lm_model_PFOS)
+```
+
+```{r}
+ggplot(Jiao_2023_blood, aes(x = delta_15N_mean, y = ln_PFOS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_blood_PFOS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # FOSA
 Jiao_2023_blood_lm_model_FOSA <- lm(ln_FOSA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_blood)
 
-summary(Jiao_2023_blood_lm_model_FOSA)
+Jiao_2023_blood_FOSA_slope <- coef(Jiao_2023_blood_lm_model_FOSA)["delta_15N_mean"]
 
+summary(Jiao_2023_blood_lm_model_FOSA)
+```
+
+```{r}
+ggplot(Jiao_2023_blood, aes(x = delta_15N_mean, y = ln_FOSA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [FOSA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_blood_FOSA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # 62ClPFESA
 Jiao_2023_blood_lm_model_62ClPFESA <- lm(ln_62ClPFESA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_blood)
 
-summary(Jiao_2023_blood_lm_model_62ClPFESA)
+Jiao_2023_blood_62ClPFESA_slope <- coef(Jiao_2023_blood_lm_model_62ClPFESA)["delta_15N_mean"]
 
+summary(Jiao_2023_blood_lm_model_62ClPFESA)
+```
+
+```{r}
+ggplot(Jiao_2023_blood, aes(x = delta_15N_mean, y = ln_62ClPFESA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [6:2 ClPFESA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_blood_62ClPFESA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # 82ClPFESA
 Jiao_2023_blood_lm_model_82ClPFESA <- lm(ln_82ClPFESA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_blood)
 
-summary(Jiao_2023_blood_lm_model_82ClPFESA)
+Jiao_2023_blood_82ClPFESA_slope <- coef(Jiao_2023_blood_lm_model_82ClPFESA)["delta_15N_mean"]
 
+summary(Jiao_2023_blood_lm_model_82ClPFESA)
+```
+
+```{r}
+ggplot(Jiao_2023_blood, aes(x = delta_15N_mean, y = ln_82ClPFESA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [8:2 ClPFESA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_blood_82ClPFESA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # 102ClPFESA
 Jiao_2023_blood_lm_model_102ClPFESA <- lm(ln_102ClPFESA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_blood)
 
-summary(Jiao_2023_blood_lm_model_102ClPFESA)
+Jiao_2023_blood_102ClPFESA_slope <- coef(Jiao_2023_blood_lm_model_102ClPFESA)["delta_15N_mean"]
 
+summary(Jiao_2023_blood_lm_model_102ClPFESA)
+```
+
+```{r}
+ggplot(Jiao_2023_blood, aes(x = delta_15N_mean, y = ln_102ClPFESA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [10:2 ClPFESA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_blood_102ClPFESA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # 103FTCA
 Jiao_2023_blood_lm_model_103FTCA <- lm(ln_103FTCA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_blood)
 
-summary(Jiao_2023_blood_lm_model_103FTCA)
+Jiao_2023_blood_103FTCA_slope <- coef(Jiao_2023_blood_lm_model_103FTCA)["delta_15N_mean"]
 
+summary(Jiao_2023_blood_lm_model_103FTCA)
+```
+
+```{r}
+ggplot(Jiao_2023_blood, aes(x = delta_15N_mean, y = ln_103FTCA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [10:3 FTCA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_blood_103FTCA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 Jiao_2023_gill <- read.csv(here("Rdata", "Jiao_2023_gill.csv"))
 
 # PFDA
 Jiao_2023_gill_lm_model_PFDA <- lm(ln_PFDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_gill)
 
-summary(Jiao_2023_gill_lm_model_PFDA)
+Jiao_2023_gill_PFDA_slope <- coef(Jiao_2023_gill_lm_model_PFDA)["delta_15N_mean"]
 
+summary(Jiao_2023_gill_lm_model_PFDA)
+```
+
+```{r}
+ggplot(Jiao_2023_gill, aes(x = delta_15N_mean, y = ln_PFDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_gill_PFDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFDoDA
 Jiao_2023_gill_lm_model_PFDoDA <- lm(ln_PFDoDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_gill)
 
-summary(Jiao_2023_gill_lm_model_PFDoDA)
+Jiao_2023_gill_PFDoDA_slope <- coef(Jiao_2023_gill_lm_model_PFDoDA)["delta_15N_mean"]
 
+summary(Jiao_2023_gill_lm_model_PFDoDA)
+```
+
+```{r}
+ggplot(Jiao_2023_gill, aes(x = delta_15N_mean, y = ln_PFDoDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFDoDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_gill_PFDoDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFTrDA
 Jiao_2023_gill_lm_model_PFTrDA <- lm(ln_PFTrDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_gill)
 
-summary(Jiao_2023_gill_lm_model_PFTrDA)
+Jiao_2023_gill_PFTrDA_slope <- coef(Jiao_2023_gill_lm_model_PFTrDA)["delta_15N_mean"]
 
+summary(Jiao_2023_gill_lm_model_PFTrDA)
+```
+
+```{r}
+ggplot(Jiao_2023_gill, aes(x = delta_15N_mean, y = ln_PFTrDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFTrDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_gill_PFTrDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # 82ClPFESA
 Jiao_2023_gill_lm_model_82ClPFESA <- lm(ln_82ClPFESA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_gill)
 
-summary(Jiao_2023_gill_lm_model_82ClPFESA)
+Jiao_2023_gill_82ClPFESA_slope <- coef(Jiao_2023_gill_lm_model_82ClPFESA)["delta_15N_mean"]
 
+summary(Jiao_2023_gill_lm_model_82ClPFESA)
+```
+
+```{r}
+ggplot(Jiao_2023_gill, aes(x = delta_15N_mean, y = ln_82ClPFESA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [8:2 ClPFESA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_gill_82ClPFESA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 Jiao_2023_heart <- read.csv(here("Rdata", "Jiao_2023_heart.csv"))
 
 # PFDA
 Jiao_2023_heart_lm_model_PFDA <- lm(ln_PFDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_heart)
 
-summary(Jiao_2023_heart_lm_model_PFDA)
+Jiao_2023_heart_PFDA_slope <- coef(Jiao_2023_heart_lm_model_PFDA)["delta_15N_mean"]
 
+summary(Jiao_2023_heart_lm_model_PFDA)
+```
+
+```{r}
+ggplot(Jiao_2023_heart, aes(x = delta_15N_mean, y = ln_PFDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [8:2 PFDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_heart_PFDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFUnDA
 Jiao_2023_heart_lm_model_PFUnDA <- lm(ln_PFUnDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_heart)
 
-summary(Jiao_2023_heart_lm_model_PFUnDA)
+Jiao_2023_heart_PFUnDA_slope <- coef(Jiao_2023_heart_lm_model_PFUnDA)["delta_15N_mean"]
 
+summary(Jiao_2023_heart_lm_model_PFUnDA)
+```
+
+```{r}
+ggplot(Jiao_2023_heart, aes(x = delta_15N_mean, y = ln_PFUnDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [8:2 PFUnDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_heart_PFUnDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFDoDA
 Jiao_2023_heart_lm_model_PFDoDA <- lm(ln_PFDoDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_heart)
 
-summary(Jiao_2023_heart_lm_model_PFDoDA)
+Jiao_2023_heart_PFDoDA_slope <- coef(Jiao_2023_heart_lm_model_PFDoDA)["delta_15N_mean"]
 
+summary(Jiao_2023_heart_lm_model_PFDoDA)
+```
+
+```{r}
+ggplot(Jiao_2023_heart, aes(x = delta_15N_mean, y = ln_PFDoDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFDoDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_heart_PFDoDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFTrDA
 Jiao_2023_heart_lm_model_PFTrDA <- lm(ln_PFTrDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_heart)
 
-summary(Jiao_2023_heart_lm_model_PFTrDA)
+Jiao_2023_heart_PFTrDA_slope <- coef(Jiao_2023_heart_lm_model_PFTrDA)["delta_15N_mean"]
 
+summary(Jiao_2023_heart_lm_model_PFTrDA)
+```
+
+```{r}
+ggplot(Jiao_2023_heart, aes(x = delta_15N_mean, y = ln_PFTrDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFTrDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_heart_PFTrDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # 62ClPFESA
 Jiao_2023_heart_lm_model_62ClPFESA <- lm(ln_62ClPFESA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_heart)
 
-summary(Jiao_2023_heart_lm_model_62ClPFESA)
+Jiao_2023_heart_62ClPFESA_slope <- coef(Jiao_2023_heart_lm_model_62ClPFESA)["delta_15N_mean"]
 
+summary(Jiao_2023_heart_lm_model_62ClPFESA)
+```
+
+```{r}
+ggplot(Jiao_2023_heart, aes(x = delta_15N_mean, y = ln_62ClPFESA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [6:2 ClPFESA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_heart_62ClPFESA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 Jiao_2023_kidney <- read.csv(here("Rdata", "Jiao_2023_kidney.csv"))
 
 # PFUnDA
 Jiao_2023_kidney_lm_model_PFUnDA <- lm(ln_PFUnDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_kidney)
 
-summary(Jiao_2023_kidney_lm_model_PFUnDA)
+Jiao_2023_kidney_PFUnDA_slope <- coef(Jiao_2023_kidney_lm_model_PFUnDA)["delta_15N_mean"]
 
+summary(Jiao_2023_kidney_lm_model_PFUnDA)
+```
+
+```{r}
+ggplot(Jiao_2023_kidney, aes(x = delta_15N_mean, y = ln_PFUnDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFUnDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_kidney_PFUnDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFDoDA
 Jiao_2023_kidney_lm_model_PFDoDA <- lm(ln_PFDoDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_kidney)
 
-summary(Jiao_2023_kidney_lm_model_PFDoDA)
+Jiao_2023_kidney_PFDoDA_slope <- coef(Jiao_2023_kidney_lm_model_PFDoDA)["delta_15N_mean"]
 
+summary(Jiao_2023_kidney_lm_model_PFDoDA)
+```
+
+```{r}
+ggplot(Jiao_2023_kidney, aes(x = delta_15N_mean, y = ln_PFDoDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFDoDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_kidney_PFDoDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFTrDA
 Jiao_2023_kidney_lm_model_PFTrDA <- lm(ln_PFTrDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_kidney)
 
-summary(Jiao_2023_kidney_lm_model_PFTrDA)
+Jiao_2023_kidney_PFTrDA_slope <- coef(Jiao_2023_kidney_lm_model_PFTrDA)["delta_15N_mean"]
 
+summary(Jiao_2023_kidney_lm_model_PFTrDA)
+```
+
+```{r}
+ggplot(Jiao_2023_kidney, aes(x = delta_15N_mean, y = ln_PFTrDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFTrDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_kidney_PFTrDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 Jiao_2023_liver <- read.csv(here("Rdata", "Jiao_2023_liver.csv"))
 
 # PFDA
 Jiao_2023_liver_lm_model_PFDA <- lm(ln_PFDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_liver)
 
-summary(Jiao_2023_liver_lm_model_PFDA)
+Jiao_2023_liver_PFDA_slope <- coef(Jiao_2023_liver_lm_model_PFDA)["delta_15N_mean"]
 
+summary(Jiao_2023_liver_lm_model_PFDA)
+```
+
+```{r}
+ggplot(Jiao_2023_liver, aes(x = delta_15N_mean, y = ln_PFDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_liver_PFDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFUnDA
 Jiao_2023_liver_lm_model_PFUnDA <- lm(ln_PFUnDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_liver)
 
-summary(Jiao_2023_liver_lm_model_PFUnDA)
+Jiao_2023_liver_PFUnDA_slope <- coef(Jiao_2023_liver_lm_model_PFUnDA)["delta_15N_mean"]
 
+summary(Jiao_2023_liver_lm_model_PFUnDA)
+```
+
+```{r}
+ggplot(Jiao_2023_liver, aes(x = delta_15N_mean, y = ln_PFUnDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFUnDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_liver_PFUnDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFDoDA
 Jiao_2023_liver_lm_model_PFDoDA <- lm(ln_PFDoDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_liver)
 
-summary(Jiao_2023_liver_lm_model_PFDoDA)
+Jiao_2023_liver_PFDoDA_slope <- coef(Jiao_2023_liver_lm_model_PFDoDA)["delta_15N_mean"]
 
+summary(Jiao_2023_liver_lm_model_PFDoDA)
+```
+
+```{r}
+ggplot(Jiao_2023_liver, aes(x = delta_15N_mean, y = ln_PFDoDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFDoDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_liver_PFDoDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFTrDA
 Jiao_2023_liver_lm_model_PFTrDA <- lm(ln_PFTrDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_liver)
 
-summary(Jiao_2023_liver_lm_model_PFTrDA)
+Jiao_2023_liver_PFTrDA_slope <- coef(Jiao_2023_liver_lm_model_PFTrDA)["delta_15N_mean"]
 
+summary(Jiao_2023_liver_lm_model_PFTrDA)
+```
+
+```{r}
+ggplot(Jiao_2023_liver, aes(x = delta_15N_mean, y = ln_PFTrDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFTrDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_liver_PFTrDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # 62ClPFESA
 Jiao_2023_liver_lm_model_62ClPFESA <- lm(ln_62ClPFESA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_liver)
 
-summary(Jiao_2023_liver_lm_model_62ClPFESA)
+Jiao_2023_liver_62ClPFESA_slope <- coef(Jiao_2023_liver_lm_model_62ClPFESA)["delta_15N_mean"]
 
+summary(Jiao_2023_liver_lm_model_62ClPFESA)
+```
+
+```{r}
+ggplot(Jiao_2023_liver, aes(x = delta_15N_mean, y = ln_62ClPFESA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [6:2 ClPFESA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_liver_62ClPFESA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # 82ClPFESA
 Jiao_2023_liver_lm_model_82ClPFESA <- lm(ln_82ClPFESA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_liver)
 
-summary(Jiao_2023_liver_lm_model_82ClPFESA)
+Jiao_2023_liver_82ClPFESA_slope <- coef(Jiao_2023_liver_lm_model_82ClPFESA)["delta_15N_mean"]
 
+summary(Jiao_2023_liver_lm_model_82ClPFESA)
+```
+
+```{r}
+ggplot(Jiao_2023_liver, aes(x = delta_15N_mean, y = ln_82ClPFESA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [8:2 ClPFESA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_liver_82ClPFESA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 Jiao_2023_muscle <- read.csv(here("Rdata", "Jiao_2023_muscle.csv"))
 
 # PFDoDA
 Jiao_2023_muscle_lm_model_PFDoDA <- lm(ln_PFDoDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_muscle)
 
-summary(Jiao_2023_muscle_lm_model_PFDoDA)
+Jiao_2023_muscle_PFDoDA_slope <- coef(Jiao_2023_muscle_lm_model_PFDoDA)["delta_15N_mean"]
 
+summary(Jiao_2023_muscle_lm_model_PFDoDA)
+```
+
+```{r}
+ggplot(Jiao_2023_muscle, aes(x = delta_15N_mean, y = ln_PFDoDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFDoDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_muscle_PFDoDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFTrDA
 Jiao_2023_muscle_lm_model_PFTrDA <- lm(ln_PFTrDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_muscle)
 
-summary(Jiao_2023_muscle_lm_model_PFTrDA)
+Jiao_2023_muscle_PFTrDA_slope <- coef(Jiao_2023_muscle_lm_model_PFTrDA)["delta_15N_mean"]
 
+summary(Jiao_2023_muscle_lm_model_PFTrDA)
+```
+
+```{r}
+ggplot(Jiao_2023_muscle, aes(x = delta_15N_mean, y = ln_PFTrDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFTrDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_muscle_PFTrDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # 62ClPFESA
 Jiao_2023_muscle_lm_model_62ClPFESA <- lm(ln_62ClPFESA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_muscle)
 
-summary(Jiao_2023_muscle_lm_model_62ClPFESA)
+Jiao_2023_muscle_62ClPFESA_slope <- coef(Jiao_2023_muscle_lm_model_62ClPFESA)["delta_15N_mean"]
 
+summary(Jiao_2023_muscle_lm_model_62ClPFESA)
+```
+
+```{r}
+ggplot(Jiao_2023_muscle, aes(x = delta_15N_mean, y = ln_62ClPFESA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [6:2 ClPFESA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_muscle_62ClPFESA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 Jiao_2023_pancreas <- read.csv(here("Rdata", "Jiao_2023_pancreas.csv"))
 
 # PFUnDA
 Jiao_2023_pancreas_lm_model_PFUnDA <- lm(ln_PFUnDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_pancreas)
 
-summary(Jiao_2023_pancreas_lm_model_PFUnDA)
+Jiao_2023_pancreas_PFUnDA_slope <- coef(Jiao_2023_pancreas_lm_model_PFUnDA)["delta_15N_mean"]
 
+summary(Jiao_2023_pancreas_lm_model_PFUnDA)
+```
+
+```{r}
+ggplot(Jiao_2023_pancreas, aes(x = delta_15N_mean, y = ln_PFUnDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFUnDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_pancreas_PFUnDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # PFTrDA
 Jiao_2023_pancreas_lm_model_PFTrDA <- lm(ln_PFTrDA_mean ~ delta_15N_mean,
                                     data = Jiao_2023_pancreas)
 
-summary(Jiao_2023_pancreas_lm_model_PFTrDA)
+Jiao_2023_pancreas_PFTrDA_slope <- coef(Jiao_2023_pancreas_lm_model_PFTrDA)["delta_15N_mean"]
 
+summary(Jiao_2023_pancreas_lm_model_PFTrDA)
+```
+
+```{r}
+ggplot(Jiao_2023_pancreas, aes(x = delta_15N_mean, y = ln_PFTrDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [PFTrDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_pancreas_PFTrDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
 # 62ClPFESA
 Jiao_2023_pancreas_lm_model_62ClPFESA <- lm(ln_62ClPFESA_mean ~ delta_15N_mean,
-                                    data = Jiao_2023_pancreas)
+                                            data = Jiao_2023_pancreas)
+
+Jiao_2023_pancreas_62ClPFESA_slope <- coef(Jiao_2023_pancreas_lm_model_62ClPFESA)["delta_15N_mean"]
 
 summary(Jiao_2023_pancreas_lm_model_62ClPFESA)
 ```
 
+```{r}
+ggplot(Jiao_2023_pancreas, aes(x = delta_15N_mean, y = ln_62ClPFESA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "ln [6:2 ClPFESA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_pancreas_62ClPFESA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
 # References
--  Barghi_2018: Barghi, M., Jin, X., Lee, S., Jeong, Y., Yu, J. P., Paek, W. K., & Moon, H. B. (2018). Accumulation and exposure assessment of persistent chlorinated and fluorinated contaminants in Korean birds. Science of The Total Environment, 645, 220-228.
--  Cara_2022: Cara, B., Lies, T., Thimo, G., Robin, L., & Lieven, B. (2022). Bioaccumulation and trophic transfer of perfluorinated alkyl substances (PFAS) in marine biota from the Belgian North Sea: distribution and human health risk implications. Environmental Pollution, 311, 119907.
--  
+
+-   Barghi_2018: Barghi, M., Jin, X., Lee, S., Jeong, Y., Yu, J. P., Paek, W. K., & Moon, H. B. (2018). Accumulation and exposure assessment of persistent chlorinated and fluorinated contaminants in Korean birds. Science of The Total Environment, 645, 220-228.
+-   Cara_2022: Cara, B., Lies, T., Thimo, G., Robin, L., & Lieven, B. (2022). Bioaccumulation and trophic transfer of perfluorinated alkyl substances (PFAS) in marine biota from the Belgian North Sea: distribution and human health risk implications. Environmental Pollution, 311, 119907.
+-   

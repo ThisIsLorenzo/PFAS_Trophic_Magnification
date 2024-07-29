@@ -55,8 +55,7 @@ data_draft <- data_draft %>%
          TMS_calculated = na_if(TMS_calculated, "na")) %>% 
   filter(!is.na(TMS) & !is.na(TMS_calculated)) %>% 
   # Select the specified columns for further analysis
-  select(TMS_ID, Study_ID, PFAS_ID, TMS, TMS_se, TMS_calculated, TMS_se_calculated, TMF_formula) #%>%
-  #filter(Study_ID != "S_017") %>% 
+  select(TMS_ID, Study_ID, PFAS_ID, TMS, TMS_se, TMS_calculated, TMS_se_calculated, TMF_formula) #%>% 
   #filter(Study_ID != "S_021")
 
 # Convert the Study_ID column to a factor
