@@ -152,7 +152,7 @@ load(here("RData", "ma_all_random_effects.RData"))
 summary(ma_all_random_effects)
 i2_ml(ma_all_random_effects)
 #   I2_Total I2_Study_ID    I2_FW_ID  I2_PFAS_ID   I2_TMS_ID 
-#  63.597363   22.411274   11.452498   20.072554    9.661038
+#  65.981811   20.409925   10.522630   27.163144    7.886111
 I2 <- orchaRd::i2_ml(ma_all_random_effects)
 orchaRd::orchard_plot(ma_all_random_effects,
              mod = "1",
@@ -170,8 +170,7 @@ orchaRd::orchard_plot(ma_all_random_effects,
            y = 2.8, 
            label = paste0("italic(I)^{2} == ", round(I2[1],4)),
            color ="black",
-           parse = TRUE, 
-           size = 3.5) +
+           parse = TRUE) +
   
   scale_size_continuous(range = c(1, 7)) + # change point scaling
   theme(panel.border = element_rect(colour = "black", 
