@@ -601,6 +601,30 @@ Jiao_2023_muscle <- Jiao_2023 %>%
 #write.csv(Jiao_2023_muscle, file = here("Rdata", "Jiao_2023_muscle.csv"))
 ```
 
+## S_062: Miniero_2014
+
+::: info
+- 1 food web.
+- [PFOS] provided on the original scale.
+- TL values provided.
+- Data were extracted from tables (Table 1 and Table SM-1).
+:::
+
+```{r}
+Miniero_2014 <- wide_data %>% 
+  filter(Study_ID == "S_062") %>%
+  select_if(~ !all(is.na(.))) %>%
+  setDT() %>%
+  mutate(log_PFOS_mean = log10(PFOS_mean)) %>% 
+  mutate(across(ends_with("mean"), ~ as.numeric(as.character(.)))) %>% 
+  melt(id.vars = c("group_id"), na.rm = TRUE) %>% 
+  dcast(group_id ~ variable, value.var = "value", fun.aggregate = max, na.rm = TRUE) 
+  
+
+#write.csv(Miniero_2014, file = here("Rdata", "Miniero_2014.csv"))
+```
+
+
 # Linear models
 
 ## S_052: Cara_2022
@@ -3489,6 +3513,31 @@ ggplot(Jiao_2023_pancreas, aes(x = delta_15N_mean, y = ln_62ClPFESA_mean)) +
   annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Jiao_2023_pancreas_62ClPFESA_slope, 3)), 
            hjust = 3, vjust = 5.5, size = 4, color = "red")
 ```
+
+## S_062: Miniero_2014
+
+```{r}
+Miniero_2014 <- read.csv(here("Rdata", "Miniero_2014.csv"))
+
+Miniero_2014_lm_model_PFOS <- lm(log_PFOS_mean ~ TL_mean,
+                             data = Miniero_2014)
+
+Miniero_2014_PFOS_slope <- coef(Miniero_2014_lm_model_PFOS)["TL_mean"]
+
+summary(Miniero_2014_lm_model_PFOS)
+```
+
+```{r}
+ggplot(Miniero_2014, aes(x = TL_mean, y = log_PFOS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "TL",
+       y = "log [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Miniero_2014_PFOS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
 
 # References
 
