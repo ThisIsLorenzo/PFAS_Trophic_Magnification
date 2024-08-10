@@ -152,7 +152,7 @@ load(here("RData", "ma_all_random_effects.RData"))
 summary(ma_all_random_effects)
 i2_ml(ma_all_random_effects)
 #   I2_Total I2_Study_ID    I2_FW_ID  I2_PFAS_ID   I2_TMS_ID 
-#  65.981811   20.409925   10.522630   27.163144    7.886111
+#  66.209617   20.694604   10.453998   27.188562    7.872453
 I2 <- orchaRd::i2_ml(ma_all_random_effects)
 orchaRd::orchard_plot(ma_all_random_effects,
              mod = "1",
