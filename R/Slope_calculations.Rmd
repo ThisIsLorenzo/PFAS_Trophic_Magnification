@@ -3516,6 +3516,10 @@ ggplot(Jiao_2023_pancreas, aes(x = delta_15N_mean, y = ln_62ClPFESA_mean)) +
 
 ## S_062: Miniero_2014
 
+::: info
+-   It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
+:::
+
 ```{r}
 Miniero_2014 <- read.csv(here("Rdata", "Miniero_2014.csv"))
 
@@ -3543,4 +3547,20 @@ ggplot(Miniero_2014, aes(x = TL_mean, y = log_PFOS_mean)) +
 
 -   Barghi_2018: Barghi, M., Jin, X., Lee, S., Jeong, Y., Yu, J. P., Paek, W. K., & Moon, H. B. (2018). Accumulation and exposure assessment of persistent chlorinated and fluorinated contaminants in Korean birds. Science of The Total Environment, 645, 220-228.
 -   Cara_2022: Cara, B., Lies, T., Thimo, G., Robin, L., & Lieven, B. (2022). Bioaccumulation and trophic transfer of perfluorinated alkyl substances (PFAS) in marine biota from the Belgian North Sea: distribution and human health risk implications. Environmental Pollution, 311, 119907.
--   
+-   Koch_2020: Koch, A., Jonsson, M., Yeung, L. W., Karrman, A., Ahrens, L., Ekblad, A., & Wang, T. (2020). Per-and polyfluoroalkyl-contaminated freshwater impacts adjacent riparian food webs. Environmental Science & Technology, 54(19), 11951-11960.
+-   Mazzoni_2020: Mazzoni, M., Ferrario, C., Bettinetti, R., Piscia, R., Cicala, D., Volta, P., ... & Polesello, S. (2020). Trophic magnification of legacy (PCB, DDT and Hg) and emerging pollutants (PFAS) in the fish community of a small protected Southern Alpine Lake (Lake Mergozzo, Northern Italy). Water, 12(6), 1591.
+-   Liu_2018: Liu, W., He, W., Wu, J., Qin, N., He, Q., & Xu, F. (2018). Residues, bioaccumulations and biomagnification of perfluoroalkyl acids (PFAAs) in aquatic animals from Lake Chaohu, China. Environmental Pollution, 240, 607-614.
+-   Gao_2020: Gao, K., Miao, X., Fu, J., Chen, Y., Li, H., Pan, W., ... & Jiang, G. (2020). Occurrence and trophic transfer of per-and polyfluoroalkyl substances in an Antarctic ecosystem. Environmental Pollution, 257, 113383.
+-   Chen_2018: Chen, H., Han, J., Cheng, J., Sun, R., Wang, X., Han, G., ... & He, X. (2018). Distribution, bioaccumulation and trophic transfer of chlorinated polyfluoroalkyl ether sulfonic acids in the marine food web of Bohai, China. Environmental Pollution, 241, 504-510.
+-   Du_2021: Du, D., Lu, Y., Zhou, Y., Li, Q., Zhang, M., Han, G., ... & Jeppesen, E. (2021). Bioaccumulation, trophic transfer and biomagnification of perfluoroalkyl acids (PFAAs) in the marine food web of the South China Sea. Journal of hazardous materials, 405, 124681.
+-   Ren_2022: Ren, J., Point, A. D., Baygi, S. F., Fernando, S., Hopke, P. K., Holsen, T. M., & Crimmins, B. S. (2022). Bioaccumulation of polyfluoroalkyl substances in the Lake Huron aquatic food web. Science of The Total Environment, 819, 152974.
+-   Koch_2021: Koch, A., Jonsson, M., Yeung, L. W., Karrman, A., Ahrens, L., Ekblad, A., & Wang, T. (2021). Quantification of biodriven transfer of per-and polyfluoroalkyl substances from the aquatic to the terrestrial environment via emergent insects. Environmental Science & Technology, 55(12), 7900-7909.
+-   Li_2008: Li, X., Yeung, L. W. Y., Xu, M., Taniyasu, S., Lam, P. K., Yamashita, N., & Dai, J. (2008). Perfluorooctane sulfonate (PFOS) and other fluorochemicals in fish blood collected near the outfall of wastewater treatment plant (WWTP) in Beijing. Environmental Pollution, 156(3), 1298-1303.
+-   Pan_2010: Pan, Y., Shi, Y., Wang, Y., Cai, Y., & Jiang, G. (2010). Investigation of perfluorinated compounds (PFCs) in mollusks from coastal waters in the Bohai Sea of China. Journal of Environmental Monitoring, 12(2), 508-513.
+-   Van de Vijver_2003: Van de Vijver, K. I., Hoff, P. T., Das, K., Van Dongen, W., Esmans, E. L., Jauniaux, T., ... & De Coen, W. (2003). Perfluorinated chemicals infiltrate ocean waters: link between exposure levels and stable isotope ratios in marine mammals. Environmental science & technology, 37(24), 5545-5550.
+-   Kobayashi_2018: Kobayashi, J., Maeda, Y., Imuta, Y., Ishihara, F., Nakashima, N., Komorita, T., & Sakurai, T. (2018). Bioaccumulation patterns of perfluoroalkyl acids in an estuary of the Ariake Sea, Japan. Bulletin of environmental contamination and toxicology, 100, 536-540.
+-   Heimstad_2024: Heimstad, E. S., Nygård, T., Moe, B., & Herzke, D. (2024). New insights from an eight-year study on per-and polyfluoroalkyl substances in an urban terrestrial ecosystem. Environmental Pollution, 347, 123735.
+-   Li_2021: Li, Y., Yao, J., Zhang, J., Pan, Y., Dai, J., Ji, C., & Tang, J. (2021). First report on the bioaccumulation and trophic transfer of perfluoroalkyl ether carboxylic acids in estuarine food web. Environmental Science & Technology, 56(10), 6046-6055.
+-   Pan_2021: Pan, C. G., Xiao, S. K., Yu, K. F., Wu, Q., & Wang, Y. H. (2021). Legacy and alternative per-and polyfluoroalkyl substances in a subtropical marine food web from the Beibu Gulf, South China: Fate, trophic transfer and health risk assessment. Journal of Hazardous Materials, 403, 123618.
+-   Jiao_2023: Jiao, Z., Yu, N., Mao, J., Yang, Q., Jiao, L., Wang, X., ... & Wei, S. (2023). The occurrence, tissue distribution, and PBT potential of per-and polyfluoroalkyl substances in the freshwater organisms from the Yangtze river via nontarget analysis. Journal of Hazardous Materials, 458, 131868.
+-   Miniero_2014: Miniero, R., Abate, V., Brambilla, G., Davoli, E., De Felip, E., De Filippis, S. P., ... & Di Domenico, A. (2014). Persistent toxic substances in Mediterranean aquatic species. Science of the total environment, 494, 18-27.
