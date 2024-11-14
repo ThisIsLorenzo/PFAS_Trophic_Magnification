@@ -897,6 +897,7 @@ ggsave(here("figs/supplements", "forest_plot.png"), plot = forest_plot3, width =
 
 ## Simpler model
 Let's run a few simpler models to see if what one has the lowest AICc value (better fit).
+In this model, Here, ~ 1 | PFAS_ID and ~ 1 | FW_ID specifies independent random intercepts for PFAS_ID and FW_ID. This structure does not allow for varying slopes but instead models each PFAS_ID and each FW_ID with separate random intercepts, treating them independently.
 
 ```{r, eval=FALSE}
 mod_chem2 <- rma.mv(ln_TMF ~ PFAS_ID - 1,
@@ -920,7 +921,7 @@ load(here("RData", "mod_chem2.RData"))
 summary(mod_chem2)
 ```
 
-
+While mod_chem has more variance components and hence a greater risk of overfitting, the lower AICc (mod_chem = 4122 and mod_chem2 = 6731) suggests that the additional complexity is justified by the improved fit to the data. This indicates that mod_chem is likely capturing meaningful interaction variability between PFAS_ID and FW_ID that mod_chem2 does not account for, making it a better model for these data despite having more parameters.
 
 ## PFOS reference - Comparison model
 We are going to compare each compound against PFOS (the compound with the largest effect size and sample size). By doing so, we can assess what compounds have a mean estimate lower than PFOS.
