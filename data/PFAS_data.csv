@@ -1,0 +1,87 @@
+Initials_double_checker,Initials_data_extraction,PFAS_ID,Synonym,Acronyms_comment,Compound_full_name,Compound_full_name_comment,Molecular_formula,ccl,ccl_comment,Chain_length,Class,Chain_length_comment,CASRN,PFAS_data_comment
+,LR,PFBA,NA,NA,Perfluorobutanoic acid,NA,C3F7CO2H,4,NA,short,PFCA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,375-22-4,NA
+,LR,PFPeA,NA,NA,Perfluoropentanoic acid,NA,C4F9CO2H,5,NA,short,PFCA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,2706-90-3,NA
+,LR,PFHxA,NA,NA,Perfluorohexanoic acid,NA,C5F11CO2H,6,NA,short,PFCA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,307-24-4,NA
+,LR,PFHpA,NA,NA,Perfluoroheptanoic acid,NA,C7F17COOH,7,NA,short,PFCA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,375-85-9,NA
+,LR,PFOA,NA,NA,Perfluorooctanoic acid,NA,C8F17COOH,8,NA,long,PFCA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,335-67-1,NA
+,LR,l-PFOA,NA,NA,Linear perfluorooctanoic acid,NA,C8F17COOH,8,NA,long,PFCA,NA,NA,NA
+,LR,br-PFOA,NA,NA,Branched perfluorooctanoic acid,NA,C8F17COOH,8,NA,long,PFCA,NA,NA,NA
+,LR,PFNA,NA,NA,Perfluorononanoic acid,NA,C9F17COOH,9,NA,long,PFCA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,375-95-1,NA
+,LR,PFDA,NA,NA,Perfluorodecanoic acid,NA,C10F19COOH,10,NA,long,PFCA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,335-76-2,NA
+,LR,l-PFDA,NA,NA,Linear perfluorodecanoic acid,NA,C10F19COOH,10,NA,long,PFCA,NA,NA,NA
+,LR,br-PFDA,NA,NA,Branched perfluorodecanoic acid,NA,C10F19COOH,10,NA,long,PFCA,NA,NA,NA
+,LR,PFUnDA,PFUnA,according to https://pfas-1.itrcweb.org/acronyms/,Perfluoroundecanoic acid,NA,C11F21COOH,11,NA,long,PFCA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,2058-94-8,NA
+,LR,PFDoDA,PFDoA,according to https://pfas-1.itrcweb.org/acronyms/,Perfluorododecanoic acid,NA,C12F25COOH,12,NA,long,PFCA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,307-55-1,NA
+,LR,l-PFDoDA,NA,NA,Linear perfluorododecanoic acid,NA,C12F25COOH,12,NA,long,PFCA,NA,NA,NA
+,LR,br-PFDoDA,NA,NA,Branched perfluorododecanoic acid,NA,C12F25COOH,12,NA,long,PFCA,NA,NA,NA
+,LR,PFTrDA,PFTriA,according to https://pfas-1.itrcweb.org/acronyms/,Perfluorotridecanoic Acid,NA,C13F25COOH,13,NA,long,PFCA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,72629-94-8,NA
+,LR,PFTeDA,PFTA,according to https://pfas-1.itrcweb.org/acronyms/,Perfluorotetradecanoic acid,NA,C14F27COOH,14,NA,long,PFCA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,0376-06-07,NA
+,LR,l-PFTeDA,NA,NA,Linear perfluorotetradecanoic acid,NA,C14F27COOH,14,NA,long,PFCA,NA,NA,NA
+,LR,br-PFTeDA,NA,NA,Branched perfluorotetradecanoic acid,NA,C14F27COOH,14,NA,long,PFCA,NA,NA,NA
+,LR,PFHxDA,NA,NA,Perfluorohexadecanoic acid,NA,C15F31CO2H,16,NA,long,PFCA,NA,NA,NA
+,LR,PFODA,PFOcDA,NA,Perfluorooctadecanoic acid,NA,C17F35CO2H,18,NA,long,PFCA,NA,NA,NA
+,LR,PFBS,NA,NA,Perfluorobutanesulfonic acid,NA,C4F9SO3H,4,NA,short,PFSA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,375-73-5,NA
+,LR,PFPeS,NA,NA,Perfluoropentanesulfonic acid,NA,C5F9SO3H,5,NA,short,PFSA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,na,NA
+,LR,PFHxS,NA,NA,Perfluorohexanesulphonic acid,NA,C6F13SO3H,6,NA,long,PFSA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,355-46-4,NA
+,LR,PFHpS,NA,NA,perfluoroheptanesulfonic acid ,NA,C7HF15SO3,7,NA,long,PFSA,NA,375-92-8,NA
+,LR,PFOS,NA,NA,Perfluorooctanesulfonic acid,NA,C8F17SO3H,8,NA,long,PFSA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,NA,NA
+,LR,l-PFOS,NA,NA,Linear perfluorooctanesulfonic acid,NA,C8F17SO3H,8,NA,long,PFSA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,1763-23-1,NA
+,LR,br-PFOS,NA,NA,Branched perfluorooctanesulfonic acid,NA,C8F17SO3H,8,NA,long,PFSA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,NA,NA
+,LR,dm-PFOS,NA,NA,Dimethyl perfluorooctanesulfonic acid,NA,C8F17SO3H,8,NA,long,PFSA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,NA,NA
+,LR,mm-PFOS,NA,NA,Monomethylated perfluorooctanesulfonic acid,NA,C8F17SO3H,8,NA,long,PFSA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,NA,NA
+,LR,3m-PFOS,NA,NA,3-Methylperfluorooctanesulfonic acid,NA,C8F17SO3H,8,NA,long,PFSA,NA,NA,NA
+,LR,4m-PFOS,NA,NA,4-Methylperfluorooctanesulfonic acid,NA,C8F17SO3H,8,NA,long,PFSA,NA,NA,NA
+,LR,5m-PFOS,NA,NA,5-Methylperfluorooctanesulfonic acid,NA,C8F17SO3H,8,NA,long,PFSA,NA,NA,NA
+,LR,iso-PFOS,NA,NA,Isopropyl perfluorooctanesulfonate,NA,C8F17SO3H,8,NA,long,PFSA,NA,NA,NA
+,LR,PFNS,NA,NA,Perfluorononanesulfonic acid,NA,C9F19SO3H,9,NA,long,PFSA,NA,NA,NA
+,LR,PFDS,NA,NA,Perfluorodecanesulfonic acid,NA,C10F21SO3H,10,NA,long,PFSA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,355-77-3,NA
+,LR,PFUnDS,PFUnS,according to https://pfas-1.itrcweb.org/acronyms/,Perfluoroundecane sulfonic acid,NA,NA,11,NA,long,PFSA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,NA,NA
+,LR,PFDoDS,PFDoS,according to https://pfas-1.itrcweb.org/acronyms/,perfluorododecane sulfonate,NA,NA,12,NA,long,PFSA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,NA,NA
+,LR,PFTrDS,PFTriS,according to https://pfas-1.itrcweb.org/acronyms/,Perfluorotridecane sulfonic acid,NA,NA,13,NA,long,PFSA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,NA,NA
+,LR,PFTeDS,PFTS,according to https://pfas-1.itrcweb.org/acronyms/,Perfluorotetradecane sulfonic acid,NA,NA,14,NA,long,PFSA,according to Table 2-3 from https://pfas-1.itrcweb.org/2-2-chemistry-terminology-and-acronyms/,NA,NA
+,LR,FOSA,PFOSA,according to https://pfas-1.itrcweb.org/acronyms/,Perfluorooctanesulfonamide,NA,C8F17SO2NH2,8,NA,long,Precursor and/or intermediate,NA,754-91-6,NA
+,LR,l-FOSA,NA,NA,Linear perfluorooctanesulfonamide,NA,NA,8,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,br-FOSA,NA,NA,Branched perfluorooctanesulfonamide,NA,NA,8,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,NMeFOSAA,NA,NA,(N-methylperfluorooctanesulfonamido)acetic acid,from https://pubchem.ncbi.nlm.nih.gov/compound/22286931#section=Wikidata,C11H6F17O4NS,11,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,NEtFOSAA,NA,NA,N-Ethyl-N-[(heptadecafluorooctyl)sulphonyl]glycine,from https://pubchem.ncbi.nlm.nih.gov/compound/N-Ethyl-N-_heptadecafluorooctyl_sulphonyl_glycine,C12H8F17O4NS,12,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,4:2 FTSA,NA,NA,4:2 fluorotelomer sulfonic acid,NA,C4F13CH2CH2SO3 -,6,NA,short,Precursor and/or intermediate,NA,NA,NA
+,LR,6:2 FTSA,NA,NA,6:2 fluorotelomer sulfonic acid,NA,C6F13CH2CH2SO3 -,8,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,8:2 FTSA,NA,NA,"1H,1H,2H,2H-perfluorodecane sulfonate",NA,C8F17CH2CH2SO3 -,10,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,10:2 FTSA,NA,NA,"1H,1H,2H,2H-perfluorododecane sulfonate",NA,C10F19CH2CH2SO3 -,12,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,7:3 FTCA,NA,NA,7:3 fluorotelomer carboxylate,NA,NA,10,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,MeFOSAA,NA,NA,2-(N-methylperfluorooctane sulfonamido) acetic acid,NA,C8F17SO2N(CH3)CH2COOH,8,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,EtFOSAA,NA,NA,2-(N-ethylperfluorooctane sulfonamido) acetic acid ,NA,C8F17SO2N(C2H5)CH2COOH,8,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,MeFOSA,NA,NA,N-methyl perfluorooctane sulfonamide,NA,C8F17SO2N(CH3)H,8,NA,long,Precursor and/or intermediate,NA,31506-32-8,NA
+,LR,EtFOSA,NA,NA,N-ethyl perfluorooctane sulfonamide,NA,C8F17SO2N(C2H5)H,8,NA,long,Precursor and/or intermediate,NA,4151-50-2,NA
+,LR,l-EtFOSA,NA,NA,Linear n-ethyl perfluorooctane sulfonamide,NA,NA,8,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,br-EtFOSA,NA,NA,Branched n-ethyl perfluorooctane sulfonamide,NA,NA,8,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,FOSAA,NA,NA,perfluorooctanesulfonamido acetic acid,NA,C8F17SO2NCH2COOH,8,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,6:2 diPAP,NA,NA,"bis(1H,1H,2H,2H-perfluorooctyl) phosphate",NA,bis[CF3(CF2)5CH2CH2]PO4-,8,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,Cl-PFESA,NA,NA,chlorinated polyfluorinated ether sulfonate,NA,NA,NA,NA,NA,Precursor and/or intermediate,NA,NA,NA
+,LR,F53B,6:2 Cl-PFESA,NA,6:2 chlorinated polyfluorinated ether sulfonate,NA,NA,8,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,8:2 Cl-PFESA,NA,NA,8:2 chlorinated polyfluorinated ether sulfonate,NA,NA,10,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,10:2 Cl-PFESA,NA,NA,10:2 chlorinated polyfluoroalkyl ether sulfonic acid,NA,C12H6ClF21O4S,12,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,12:2 FTS,NA,NA,12:2 fluorotelomer sulfonate,NA,NA,14,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,HFPO-DA,NA,NA,Hexafluoropropylene dimer acid ,NA,NA,3,NA,short,Emerging PFAS,NA,NA,NA
+,LR,HFPO-TeA,NA,NA,Hexafluoropropylene tetramer acid,NA,NA,6,NA,short,Emerging PFAS,NA,NA,NA
+,LR,HFPO-TrA,NA,NA,Hexafluoropropylene trimer acid,NA,NA,4,NA,short,Emerging PFAS,NA,NA,NA
+,LR,PFO5DoA,NA,NA,"perfluoro(3,5,7,9,11-pentaoxadodecanoic) acid ",NA,NA,7,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,H-PFMO2OSA,NA,NA,"7-hydro-perfluoro-4-methyl-3,6-dioxooctane sulfonic acid",NA,NA,4,NA,short,Precursor and/or intermediate,NA,NA,NA
+,LR,PFMOAA,NA,NA,perfluoro-2-methoxyacetic acid,NA,NA,3,NA,short,Precursor and/or intermediate,NA,NA,NA
+,LR,FBSA,NA,NA,perfluorobutane sulfonamide,NA,NA,4,NA,short,Precursor and/or intermediate,NA,NA,NA
+,LR,PFECHS,NA,NA,perfluoroethyl cyclohexane sulfonate,NA,NA,8,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,cis-PFECHS ,NA,NA,cis-erfluoroethylcyclohexane sulfonate ,NA,C8HF15O3S,8,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,trans-PFECHS,NA,NA,trans-perfluoroethylcyclohexane sulfonate ,NA,C8HF15O3S,8,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,PFNOBS,NA,NA,p-perfluorous nonenoxybenzene sulfonate,NA,NA,9,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,6:2 H-PFESA,NA,NA,6:2 hydrogen-substituted polyfluorinated ether sulfonate,NA,C8H2F16O4S,8,NA,long,Emerging PFAS,NA,NA,NA
+,LR,8:2 H-PFESA,NA,NA,8:2 hydrogen-substituted polyfluorinated ether sulfonate,NA,C10H2ClF20O4S,10,NA,long,Emerging PFAS,NA,NA,NA
+,LR,FHpPA,NA,NA,7:3 Fluorotelomer carboxylic acid ,NA,C10H5F11O2,10,NA,long,PFCA,NA,NA,NA
+,LR,ΣPFAS,NA,NA,Perfluoroalkyl substances,NA,NA,NA,NA,NA,NA,NA,NA,NA
+,LR,ΣPFCA,NA,NA,Perﬂuorocarboxylates,NA,NA,NA,NA,NA,PFCA,NA,NA,NA
+,LR,ΣPFSA,NA,NA,Perﬂuorosulfonates,NA,NA,NA,NA,NA,PFSA,NA,NA,NA
+,LR,ADONA,NA,NA,"4,8-Dioxa-3H-perfluorononanoic acid",NA,C7H2F12O4,7,na,long,Emerging PFAS,NA,919005-14-4,NA
+,LR,8:2 FTS,NA,NA,8:2 fluorotelomer sulfonic acid,NA,NA,10,NA,long,NA,NA,NA,NA
+,LR,ΣPFCs,NA,NA,Perflurinated substances,NA,NA,NA,NA,NA,NA,NA,NA,NA
+,LR,10:3 FTCA,NA,NA,10:3 Fluorotelomer acid,NA,C13H5F21O2,13,NA,long,Precursor and/or intermediate,NA,NA,NA
+,LR,PF4OPeA,NA,NA,Perfluoro-3-methoxypropanoic acid,NA,NA,3,NA,short,Emerging PFAS,NA,NA,NA
+,LR,OBS,NA,NA,Sodium p-perfluorinated noneoxybenzene sulfonate,NA,NA,NA,NA,long,PFSA,NA,NA,NA

@@ -1,0 +1,8 @@
+Predictor_name_from_the_model,Predictor,Sum_of_weights,n_containing_models,R2_marginal,R2_conditional
+Conc_determ_method,Determination method,1,64,0.02171318,0.72186305
+ccl,Carbon chain length,1,64,0.003930719,0.729537507
+Sample_type,Type of sample,1,64,0.04286735,0.74123959
+Breathing_type_fw,Breathing type (food web),0.94,64,0.06726798,0.74236406
+Breathing_type,Breathing type (top predator),0.92,64,0.08664525,0.86399168
+Class,PFAS chemical class,0.91,64,0.008130275,0.728982328
+Latitude_abs,Food web latitude,0.73,64,1.09E-05,7.24E-01

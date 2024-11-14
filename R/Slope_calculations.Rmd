@@ -81,7 +81,8 @@ wide_data <- raw_data %>%
   pivot_wider(
     names_from = variable,
     values_from = c(mean, sd),
-    names_glue = "{variable}_{.value}"
+    names_glue = "{variable}_{.value}",
+    id_cols = c(Study_ID, group_id)
   )
 head(wide_data)
 ```
@@ -99,10 +100,11 @@ head(wide_data)
 Cara_2022 <- wide_data %>% 
   filter(Study_ID == "S_052") %>%
   setDT() %>% 
-  melt(id.vars = c("group_id"), na.rm = TRUE) %>% 
-  dcast(group_id ~ variable, value.var = "value", fun.aggregate = max, na.rm = TRUE) %>% 
-  mutate(group_id = gsub("^(\\w+\\s[^,]+)", "\\1,", group_id)) %>% 
+  # melt(id.vars = c("group_id"), na.rm = TRUE) %>% 
+  # dcast(group_id ~ variable, value.var = "value", fun.aggregate = max, na.rm = TRUE) %>% 
+  # mutate(group_id = gsub("^(\\w+\\s[^,]+)", "\\1,", group_id)) %>% 
   separate(group_id, into = c("PFAS", "species", "location"), sep = ",\\s*", extra = "drop")
+
 
 # Divide the Cara_2022 dataset into locations (food webs).
 
@@ -152,9 +154,9 @@ Martin_2004 <- wide_data %>%
   filter(Study_ID == "S_013") %>%
   select_if(~ !all(is.na(.))) %>% 
   setDT() %>% 
-  melt(id.vars = c("group_id"), na.rm = TRUE) %>% 
-  dcast(group_id ~ variable, value.var = "value", fun.aggregate = max, na.rm = TRUE) %>% 
-  mutate(group_id = gsub("^(\\w+\\s[^,]+)", "\\1,", group_id)) %>% 
+  # melt(id.vars = c("group_id"), na.rm = TRUE) %>% 
+  # dcast(group_id ~ variable, value.var = "value", fun.aggregate = max, na.rm = TRUE) %>% 
+  # mutate(group_id = gsub("^(\\w+\\s[^,]+)", "\\1,", group_id)) %>% 
   separate(group_id, into = c("PFAS", "species", "food_web"), sep = ",\\s*", extra = "drop")
 
 Martin_2004_pelagic <- Martin_2004 %>% 
@@ -190,11 +192,11 @@ Koch_2020 <- wide_data %>%
   filter(Study_ID == "S_053") %>%
   select_if(~ !all(is.na(.))) %>% 
   setDT() %>% 
-  melt(id.vars = c("group_id"), na.rm = TRUE) %>% 
-  dcast(group_id ~ variable, value.var = "value", fun.aggregate = max, na.rm = TRUE) %>% 
-  mutate(group_id = gsub("^(\\w+\\s[^,]+)", "\\1,", group_id)) %>% 
-  separate(group_id, into = c("PFAS", "species", "food_web"), sep = ",\\s*", extra = "drop") %>% 
   mutate(across(ends_with("mean") | ends_with("sd"), ~ as.numeric(as.character(.)))) %>% 
+  # melt(id.vars = c("group_id"), na.rm = TRUE) %>% 
+  # dcast(group_id ~ variable, value.var = "value", fun.aggregate = max, na.rm = TRUE) %>% 
+  # mutate(group_id = gsub("^(\\w+\\s[^,]+)", "\\1,", group_id)) %>% 
+  separate(group_id, into = c("PFAS", "species", "food_web"), sep = ",\\s*", extra = "drop") %>% 
   mutate(log_PFOS_mean = log10(PFOS_mean))
 
 #write.csv(Koch_2020, file = here("Rdata", "Koch_2020.csv"))
@@ -224,10 +226,10 @@ Koch_2020_riparian <- Koch_2020 %>%
 Mazzoni_2020 <- wide_data %>% 
   filter(Study_ID == "S_004") %>%
   setDT() %>% 
-  melt(id.vars = c("group_id"), na.rm = TRUE) %>% 
-  dcast(group_id ~ variable, value.var = "value", fun.aggregate = max, na.rm = TRUE) %>% 
-  separate(group_id, into = c("PFAS", "food_web", "species"), sep = ",\\s*", extra = "drop") %>% 
-  mutate(across(ends_with("mean"), ~ as.numeric(as.character(.))))
+  mutate(across(ends_with("mean"), ~ as.numeric(as.character(.)))) %>% 
+  # melt(id.vars = c("group_id"), na.rm = TRUE) %>% 
+  # dcast(group_id ~ variable, value.var = "value", fun.aggregate = max, na.rm = TRUE) %>% 
+  separate(group_id, into = c("PFAS", "food_web", "species"), sep = ",\\s*", extra = "drop")
 
 Mazzoni_2020_fw1 <- Mazzoni_2020 %>% 
   filter(food_web == "food web 1") %>%
@@ -264,6 +266,7 @@ Mazzoni_2020_fw2 <- Mazzoni_2020 %>%
 Liu_2018 <- wide_data %>% 
   filter(Study_ID == "S_017") %>%
   setDT() %>% 
+  mutate(across(ends_with("mean"), ~ as.numeric(as.character(.)))) %>% 
   mutate(ln_PFBA_mean = log(PFBA_mean)) %>%
   mutate(ln_PFOA_mean = log(PFOA_mean)) %>%
   mutate(ln_PFNA_mean = log(PFNA_mean)) %>%
@@ -341,8 +344,8 @@ Ren_2022 <- wide_data %>%
   filter(Study_ID == "S_035") %>%
   select_if(~ !all(is.na(.))) %>%
   setDT() %>% 
-  melt(id.vars = c("group_id"), na.rm = TRUE) %>% 
-  dcast(group_id ~ variable, value.var = "value", fun.aggregate = max, na.rm = TRUE) %>% 
+  # melt(id.vars = c("group_id"), na.rm = TRUE) %>% 
+  # dcast(group_id ~ variable, value.var = "value", fun.aggregate = max, na.rm = TRUE) %>% 
   separate(group_id, into = c("PFAS", "species"), sep = ",\\s*", extra = "drop") %>% 
   mutate(across(ends_with("mean"), ~ as.numeric(as.character(.)))) %>%
   mutate(log_PFHxS_mean = log10(PFHxS_mean)) %>%
@@ -371,9 +374,9 @@ Ren_2022 <- wide_data %>%
 Koch_2021 <- wide_data %>% 
   filter(Study_ID == "S_054") %>%
   select_if(~ !all(is.na(.))) %>%
+  mutate(across(ends_with("mean"), ~ as.numeric(as.character(.)))) %>% 
   mutate(log_PFOS_mean = log10(PFOS_mean)) %>% 
-  separate(group_id, into = c("PFAS", "food_web", "species"), sep = ",\\s*", extra = "drop") %>% 
-  mutate(across(ends_with("mean"), ~ as.numeric(as.character(.))))
+  separate(group_id, into = c("PFAS", "food_web", "species"), sep = ",\\s*", extra = "drop") 
 # food web 1 - freshwater
 Koch_2021_freshwater <- Koch_2021 %>% 
   filter(food_web == "food web 1")
@@ -395,9 +398,9 @@ Koch_2021_terrestrial <- Koch_2021 %>%
 ```{r}
 Li_2008 <- wide_data %>% 
   filter(Study_ID == "S_056") %>%
-  select_if(~ !all(is.na(.))) %>% 
-  separate(group_id, into = c("PFAS", "food_web", "species"), sep = ",\\s*", extra = "drop") %>% 
-  mutate(across(ends_with("mean"), ~ as.numeric(as.character(.))))
+  select_if(~ !all(is.na(.))) %>%
+  mutate(across(ends_with("mean"), ~ as.numeric(as.character(.)))) %>% 
+  separate(group_id, into = c("PFAS", "food_web", "species"), sep = ",\\s*", extra = "drop")
 # food web 1 - Tilapia excluded
 Li_2008_fw1 <- Li_2008 %>% 
   filter(food_web == "food web 1")
@@ -444,7 +447,7 @@ Van_de_Vijver_2003 <- wide_data %>%
 #write.csv(Van_de_Vijver_2003, file = here("Rdata", "Van_de_Vijver_2003.csv"))
 ```
 
-## S_061: Barghi_2018
+## S_064: Barghi_2018
 
 ::: info
 -   1 food web.
@@ -477,6 +480,7 @@ Kobayashi_2018 <- wide_data %>%
   filter(Study_ID == "S_060") %>% 
   setDT() %>%
   select_if(~ !all(is.na(.))) %>%
+  mutate(across(ends_with("mean"), ~ as.numeric(as.character(.)))) %>% 
   mutate(log_PFHxS_mean = log10(PFHxS_mean)) %>% 
   mutate(log_PFHxS_sd = PFHxS_sd/(PFHxS_mean*log(10))) %>%
   mutate(log_PFOS_mean = log10(PFOS_mean)) %>% 
@@ -494,8 +498,7 @@ Kobayashi_2018 <- wide_data %>%
   mutate(log_PFDA_mean = log10(PFDA_mean)) %>% 
   mutate(log_PFDA_sd = PFDA_sd/(PFDA_mean*log(10))) %>%
   mutate(log_PFUnDA_mean = log10(PFUnDA_mean)) %>% 
-  mutate(log_PFUnDA_sd = PFUnDA_sd/(PFUnDA_mean*log(10))) %>%
-  mutate(across(ends_with("mean"), ~ as.numeric(as.character(.))))
+  mutate(log_PFUnDA_sd = PFUnDA_sd/(PFUnDA_mean*log(10)))
 
 #write.csv(Kobayashi_2018, file = here("Rdata", "Kobayashi_2018.csv"))
 ```
@@ -615,15 +618,110 @@ Miniero_2014 <- wide_data %>%
   filter(Study_ID == "S_062") %>%
   select_if(~ !all(is.na(.))) %>%
   setDT() %>%
-  mutate(log_PFOS_mean = log10(PFOS_mean)) %>% 
   mutate(across(ends_with("mean"), ~ as.numeric(as.character(.)))) %>% 
-  melt(id.vars = c("group_id"), na.rm = TRUE) %>% 
-  dcast(group_id ~ variable, value.var = "value", fun.aggregate = max, na.rm = TRUE) 
+  mutate(log_PFOS_mean = log10(PFOS_mean))
+  # melt(id.vars = c("group_id"), na.rm = TRUE) %>% 
+  # dcast(group_id ~ variable, value.var = "value", fun.aggregate = max, na.rm = TRUE) 
   
 
 #write.csv(Miniero_2014, file = here("Rdata", "Miniero_2014.csv"))
 ```
 
+## S_063: Chen_2023
+
+::: info
+- 1 food web.
+- [PFAS] provided on the original scale.
+- TL values provided.
+- Data were extracted from tables (Table 1 and Table S5).
+:::
+
+```{r}
+Chen_2023 <- wide_data %>% 
+  filter(Study_ID == "S_063") %>%
+  select_if(~ !all(is.na(.))) %>%
+  setDT() %>%
+  mutate(log_PFBA_mean = log10(PFBA_mean)) %>%
+  mutate(log_PFPeA_mean = log10(PFPeA_mean)) %>% 
+  mutate(log_PFHxA_mean = log10(PFHxA_mean)) %>% 
+  mutate(log_PFBS_mean = log10(PFBS_mean)) %>%
+  mutate(log_PFHpA_mean = log10(PFHpA_mean)) %>%
+  mutate(log_PFOA_mean = log10(PFOA_mean)) %>% 
+  mutate(log_PF4OPeA_mean = log10(PF4OPeA_mean)) %>% 
+  mutate(log_PFNA_mean = log10(PFNA_mean)) %>%
+  mutate(log_PFDA_mean = log10(PFDA_mean)) %>%
+  mutate(log_PFOS_mean = log10(PFOS_mean)) %>% 
+  mutate(log_PFUnDA_mean = log10(PFUnDA_mean)) %>%
+  mutate(log_62ClPFESA_mean = log10(a62ClPFESA_mean)) %>% 
+  mutate(log_PFDoDA_mean = log10(PFDoDA_mean)) %>% 
+  mutate(log_PFTrDA_mean = log10(PFTrDA_mean)) %>%
+  mutate(log_PFTeDA_mean = log10(PFTeDA_mean)) %>% 
+  mutate(across(ends_with("mean"), ~ as.numeric(as.character(.)))) %>% 
+  melt(id.vars = c("group_id"), na.rm = TRUE) %>% 
+  dcast(group_id ~ variable, value.var = "value", fun.aggregate = max, na.rm = TRUE)
+
+#write.csv(Chen_2023, file = here("Rdata", "Chen_2023.csv"))
+```
+## S_065: Yordy_2013
+
+::: info
+- 1 food web.
+- [PFCs] provided on the original scale.
+- [PFCs] regressed against stable nitrogen isotopes.
+- Data were extracted from Table 1.
+:::
+
+```{r}
+Yordy_2013 <- wide_data %>% 
+  filter(Study_ID == "S_064") %>%
+  select_if(~ !all(is.na(.))) %>%
+  setDT() %>% 
+  mutate(across(ends_with("mean"), ~ as.numeric(as.character(.)))) %>%
+  mutate(log_PFCs_mean = log10(PFCs_mean)) %>% 
+  melt(id.vars = c("group_id"), na.rm = TRUE) %>% 
+  dcast(group_id ~ variable, value.var = "value", fun.aggregate = max, na.rm = TRUE)
+
+write.csv(Yordy_2013, file = here("Rdata", "Yordy_2013.csv"))
+```
+
+## S_066: Mo_2024
+
+::: info
+- 1 food web.
+- [PFAS] provided on the original scale.
+- [PFAS] regressed against stable nitrogen isotopes.
+- Data were extracted from Table 1.
+:::
+
+```{r}
+Mo_2024 <- wide_data %>% 
+  setDT() %>% 
+  filter(Study_ID == "S_065") %>%
+  select_if(~ !all(is.na(.))) %>%
+  mutate(across(ends_with("mean") | ends_with("sd"), ~ as.numeric(as.character(.)))) %>%
+  mutate(log_PFBA_mean = log10(PFBA_mean)) %>% 
+  mutate(log_PFHxA_mean = log10(PFHxA_mean)) %>%
+  mutate(log_PFHpA_mean = log10(PFHpA_mean)) %>%
+  mutate(log_PFOA_mean = log10(PFOA_mean)) %>%
+  mutate(log_PFNA_mean = log10(PFNA_mean)) %>%
+  mutate(log_PFDA_mean = log10(PFDA_mean)) %>%
+  mutate(log_PFUnDA_mean = log10(PFUnDA_mean)) %>%
+  mutate(log_PFDoDA_mean = log10(PFDoDA_mean)) %>%
+  mutate(log_PFTrDA_mean = log10(PFTrDA_mean)) %>%
+  mutate(log_PFTeDA_mean = log10(PFTeDA_mean)) %>%
+  mutate(log_PFBS_mean = log10(PFBS_mean)) %>%
+  mutate(log_PFHxS_mean = log10(PFHxS_mean)) %>%
+  mutate(log_PFHpS_mean = log10(PFHpS_mean)) %>%
+  mutate(log_PFOS_mean = log10(PFOS_mean)) %>%
+  mutate(log_HFPO_DA_mean = log10(HFPO_DA_mean)) %>%
+  mutate(log_HFPO_TrA_mean = log10(HFPO_TrA_mean)) %>%
+  mutate(log_62ClPFESA_mean = log10(a62ClPFESA_mean)) %>%
+  mutate(log_82ClPFESA_mean = log10(a82ClPFESA_mean)) %>%
+  mutate(log_OBS_mean = log10(OBS_mean)) %>%
+  mutate(log_FOSA_mean = log10(FOSA_mean))
+
+#write.csv(Mo_2024, file = here("Rdata", "Mo_2024.csv"))
+```
 
 # Linear models
 
@@ -2279,7 +2377,7 @@ ggplot(Van_de_Vijver_2003, aes(x = delta_15N_mean, y = log_PFOS_mean)) +
            hjust = 3, vjust = 5.5, size = 4, color = "red")
 ```
 
-## S_061: Barghi_2018
+## S_064: Barghi_2018
 
 ::: info
 -   .
@@ -3542,12 +3640,785 @@ ggplot(Miniero_2014, aes(x = TL_mean, y = log_PFOS_mean)) +
            hjust = 3, vjust = 5.5, size = 4, color = "red")
 ```
 
+## S_063: Chen_2023
+
+::: info
+-   It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
+:::
+
+```{r}
+Chen_2023 <- read.csv(here("Rdata", "Chen_2023.csv"))
+# PFBA
+Chen_2023_lm_model_PFBA <- lm(log_PFBA_mean ~ TL_mean,
+                             data = Chen_2023)
+
+Chen_2023_PFBA_slope <- coef(Chen_2023_lm_model_PFBA)["TL_mean"]
+
+summary(Chen_2023_lm_model_PFBA)
+```
+
+```{r}
+ggplot(Chen_2023, aes(x = TL_mean, y = log_PFBA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "TL",
+       y = "log [PFBA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2023_PFBA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+#PFPeA
+Chen_2023_lm_model_PFPeA <- lm(log_PFPeA_mean ~ TL_mean,
+                             data = Chen_2023)
+
+Chen_2023_PFPeA_slope <- coef(Chen_2023_lm_model_PFPeA)["TL_mean"]
+
+summary(Chen_2023_lm_model_PFPeA)
+```
+```{r}
+ggplot(Chen_2023, aes(x = TL_mean, y = log_PFPeA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "TL",
+       y = "log [PFPeA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2023_PFPeA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFHxA
+Chen_2023_lm_model_PFHxA <- lm(log_PFHxA_mean ~ TL_mean,
+                             data = Chen_2023)
+
+Chen_2023_PFHxA_slope <- coef(Chen_2023_lm_model_PFHxA)["TL_mean"]
+
+summary(Chen_2023_lm_model_PFHxA)
+```
+```{r}
+ggplot(Chen_2023, aes(x = TL_mean, y = log_PFHxA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "TL",
+       y = "log [PFHxA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2023_PFHxA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFBS
+Chen_2023_lm_model_PFBS <- lm(log_PFBS_mean ~ TL_mean,
+                             data = Chen_2023)
+
+Chen_2023_PFBS_slope <- coef(Chen_2023_lm_model_PFBS)["TL_mean"]
+
+summary(Chen_2023_lm_model_PFBS)
+```
+
+```{r}
+ggplot(Chen_2023, aes(x = TL_mean, y = log_PFBS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "TL",
+       y = "log [PFBS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2023_PFBS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFHpA
+Chen_2023_lm_model_PFHpA <- lm(log_PFHpA_mean ~ TL_mean,
+                             data = Chen_2023)
+
+Chen_2023_PFHpA_slope <- coef(Chen_2023_lm_model_PFHpA)["TL_mean"]
+
+summary(Chen_2023_lm_model_PFHpA)
+```
+
+```{r}
+ggplot(Chen_2023, aes(x = TL_mean, y = log_PFHpA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "TL",
+       y = "log [PFHpA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2023_PFHpA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFOA
+Chen_2023_lm_model_PFOA <- lm(log_PFOA_mean ~ TL_mean,
+                             data = Chen_2023)
+
+Chen_2023_PFOA_slope <- coef(Chen_2023_lm_model_PFOA)["TL_mean"]
+
+summary(Chen_2023_lm_model_PFOA)
+```
+
+```{r}
+ggplot(Chen_2023, aes(x = TL_mean, y = log_PFOA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "TL",
+       y = "log [PFOA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2023_PFOA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PF4OPeA
+Chen_2023_lm_model_PF4OPeA <- lm(log_PF4OPeA_mean ~ TL_mean,
+                             data = Chen_2023)
+
+Chen_2023_PF4OPeA_slope <- coef(Chen_2023_lm_model_PF4OPeA)["TL_mean"]
+
+summary(Chen_2023_lm_model_PF4OPeA)
+```
+
+```{r}
+ggplot(Chen_2023, aes(x = TL_mean, y = log_PF4OPeA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "TL",
+       y = "log [PF4OPeA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2023_PF4OPeA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFNA
+Chen_2023_lm_model_PFNA <- lm(log_PFNA_mean ~ TL_mean,
+                             data = Chen_2023)
+
+Chen_2023_PFNA_slope <- coef(Chen_2023_lm_model_PFNA)["TL_mean"]
+
+summary(Chen_2023_lm_model_PFNA)
+```
+
+```{r}
+ggplot(Chen_2023, aes(x = TL_mean, y = log_PFNA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "TL",
+       y = "log [PFNA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2023_PF4OPeA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFDA
+Chen_2023_lm_model_PFDA <- lm(log_PFDA_mean ~ TL_mean,
+                             data = Chen_2023)
+
+Chen_2023_PFDA_slope <- coef(Chen_2023_lm_model_PFDA)["TL_mean"]
+
+summary(Chen_2023_lm_model_PFDA)
+```
+
+```{r}
+ggplot(Chen_2023, aes(x = TL_mean, y = log_PFDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "TL",
+       y = "log [PFDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2023_PFDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFOS
+Chen_2023_lm_model_PFOS <- lm(log_PFOS_mean ~ TL_mean,
+                             data = Chen_2023)
+
+Chen_2023_PFOS_slope <- coef(Chen_2023_lm_model_PFOS)["TL_mean"]
+
+summary(Chen_2023_lm_model_PFOS)
+```
+
+```{r}
+ggplot(Chen_2023, aes(x = TL_mean, y = log_PFOS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "TL",
+       y = "log [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2023_PFOS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFUnDA
+Chen_2023_lm_model_PFUnDA <- lm(log_PFUnDA_mean ~ TL_mean,
+                             data = Chen_2023)
+
+Chen_2023_PFUnDA_slope <- coef(Chen_2023_lm_model_PFUnDA)["TL_mean"]
+
+summary(Chen_2023_lm_model_PFUnDA)
+```
+
+```{r}
+ggplot(Chen_2023, aes(x = TL_mean, y = log_PFUnDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "TL",
+       y = "log [PFUnDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2023_PFUnDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# 62ClPFESA
+Chen_2023_lm_model_62ClPFESA <- lm(log_62ClPFESA_mean ~ TL_mean,
+                             data = Chen_2023)
+
+Chen_2023_62ClPFESA_slope <- coef(Chen_2023_lm_model_62ClPFESA)["TL_mean"]
+
+summary(Chen_2023_lm_model_62ClPFESA)
+```
+
+```{r}
+ggplot(Chen_2023, aes(x = TL_mean, y = log_62ClPFESA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "TL",
+       y = "log [62ClPFESA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2023_62ClPFESA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFDoDA
+Chen_2023_lm_model_PFDoDA <- lm(log_PFDoDA_mean ~ TL_mean,
+                             data = Chen_2023)
+
+Chen_2023_PFDoDA_slope <- coef(Chen_2023_lm_model_PFDoDA)["TL_mean"]
+
+summary(Chen_2023_lm_model_PFDoDA)
+```
+
+```{r}
+ggplot(Chen_2023, aes(x = TL_mean, y = log_PFDoDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "TL",
+       y = "log [PFDoDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2023_PFDoDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFTrDA
+Chen_2023_lm_model_PFTrDA <- lm(log_PFTrDA_mean ~ TL_mean,
+                             data = Chen_2023)
+
+Chen_2023_PFTrDA_slope <- coef(Chen_2023_lm_model_PFTrDA)["TL_mean"]
+
+summary(Chen_2023_lm_model_PFTrDA)
+```
+
+```{r}
+ggplot(Chen_2023, aes(x = TL_mean, y = log_PFTrDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "TL",
+       y = "log [PFTrDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2023_PFTrDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFTeDA
+Chen_2023_lm_model_PFTeDA <- lm(log_PFTeDA_mean ~ TL_mean,
+                             data = Chen_2023)
+
+Chen_2023_PFTeDA_slope <- coef(Chen_2023_lm_model_PFTeDA)["TL_mean"]
+
+summary(Chen_2023_lm_model_PFTeDA)
+```
+
+```{r}
+ggplot(Chen_2023, aes(x = TL_mean, y = log_PFTeDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "TL",
+       y = "log [PFTeDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Chen_2023_PFTeDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+## S_065: Yordy_2013
+
+::: info
+-   It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
+:::
+
+```{r}
+Yordy_2013 <- read.csv(here("Rdata", "Yordy_2013.csv"))
+# PFBA
+Yordy_2013_lm_model_PFCs <- lm(log_PFCs_mean ~ delta_15N_mean,
+                             data = Yordy_2013)
+
+Yordy_2013_PFCs_slope <- coef(Yordy_2013_lm_model_PFCs)["delta_15N_mean"]
+
+summary(Yordy_2013_lm_model_PFCs)
+```
+
+```{r}
+ggplot(Yordy_2013, aes(x = delta_15N_mean, y = log_PFCs_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [PFCs]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Yordy_2013_PFCs_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+## S_066: Mo_2024
+
+::: info
+-   It does not provide standard error or standard deviation values of individual observations. Weights cannot be assigned.
+:::
+
+```{r}
+Mo_2024 <- read.csv(here("Rdata", "Mo_2024.csv"))
+# PFBA
+Mo_2024_lm_model_PFBA <- lm(log_PFBA_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_PFBA_slope <- coef(Mo_2024_lm_model_PFBA)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_PFBA)
+```
+
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_PFBA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [PFBA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_PFBA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFHxA
+Mo_2024_lm_model_PFHxA <- lm(log_PFHxA_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_PFHxA_slope <- coef(Mo_2024_lm_model_PFHxA)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_PFHxA)
+```
+
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_PFHxA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [PFHxA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_PFHxA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFHpA
+Mo_2024_lm_model_PFHpA <- lm(log_PFHpA_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_PFHpA_slope <- coef(Mo_2024_lm_model_PFHpA)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_PFHpA)
+```
+
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_PFHpA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [PFHpA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_PFHpA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFOA
+Mo_2024_lm_model_PFOA <- lm(log_PFOA_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_PFOA_slope <- coef(Mo_2024_lm_model_PFOA)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_PFOA)
+```
+
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_PFOA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [PFOA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_PFOA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFNA
+Mo_2024_lm_model_PFNA <- lm(log_PFNA_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_PFNA_slope <- coef(Mo_2024_lm_model_PFNA)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_PFNA)
+```
+
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_PFNA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [PFNA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_PFNA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFDA
+Mo_2024_lm_model_PFDA <- lm(log_PFDA_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_PFDA_slope <- coef(Mo_2024_lm_model_PFDA)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_PFDA)
+```
+
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_PFDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [PFDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_PFDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFUnDA
+Mo_2024_lm_model_PFUnDA <- lm(log_PFUnDA_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_PFUnDA_slope <- coef(Mo_2024_lm_model_PFUnDA)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_PFUnDA)
+```
+
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_PFUnDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [PFUnDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_PFUnDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFDoDA
+Mo_2024_lm_model_PFDoDA <- lm(log_PFDoDA_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_PFDoDA_slope <- coef(Mo_2024_lm_model_PFDoDA)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_PFDoDA)
+```
+
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_PFDoDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [PFDoDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_PFDoDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFTrDA
+Mo_2024_lm_model_PFTrDA <- lm(log_PFTrDA_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_PFTrDA_slope <- coef(Mo_2024_lm_model_PFTrDA)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_PFTrDA)
+```
+
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_PFTrDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [PFDoDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_PFTrDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFTeDA
+Mo_2024_lm_model_PFTeDA <- lm(log_PFTeDA_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_PFTeDA_slope <- coef(Mo_2024_lm_model_PFTeDA)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_PFTeDA)
+```
+
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_PFTeDA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [PFTeDA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_PFTeDA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFBS
+Mo_2024_lm_model_PFBS <- lm(log_PFBS_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_PFBS_slope <- coef(Mo_2024_lm_model_PFBS)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_PFBS)
+```
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_PFBS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [PFBS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_PFBS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFHxS
+Mo_2024_lm_model_PFHxS <- lm(log_PFHxS_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_PFHxS_slope <- coef(Mo_2024_lm_model_PFHxS)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_PFHxS)
+```
+
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_PFHxS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [PFHxS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_PFHxS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFHpS
+Mo_2024_lm_model_PFHpS <- lm(log_PFHpS_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_PFHpS_slope <- coef(Mo_2024_lm_model_PFHpS)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_PFHpS)
+```
+
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_PFHpS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [PFHpS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_PFHpS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# PFOS
+Mo_2024_lm_model_PFOS <- lm(log_PFOS_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_PFOS_slope <- coef(Mo_2024_lm_model_PFOS)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_PFOS)
+```
+
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_PFOS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [PFOS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_PFOS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# HFPO_DA
+Mo_2024_lm_model_HFPO_DA <- lm(log_HFPO_DA_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_HFPO_DA_slope <- coef(Mo_2024_lm_model_HFPO_DA)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_HFPO_DA)
+```
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_HFPO_DA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [HFPO-DA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_HFPO_DA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# HFPO_TrA
+Mo_2024_lm_model_HFPO_TrA <- lm(log_HFPO_TrA_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_HFPO_TrA_slope <- coef(Mo_2024_lm_model_HFPO_TrA)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_HFPO_TrA)
+```
+
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_HFPO_TrA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [HFPO-TrA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_HFPO_TrA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# 62ClPFESA
+Mo_2024_lm_model_62ClPFESA <- lm(log_62ClPFESA_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_62ClPFESA_slope <- coef(Mo_2024_lm_model_62ClPFESA)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_62ClPFESA)
+```
+
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_62ClPFESA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [6:2 Cl-PFESA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_62ClPFESA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# 82ClPFESA
+Mo_2024_lm_model_82ClPFESA <- lm(log_82ClPFESA_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_82ClPFESA_slope <- coef(Mo_2024_lm_model_82ClPFESA)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_82ClPFESA)
+```
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_82ClPFESA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [8:2 Cl-PFESA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_82ClPFESA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# FOSA
+Mo_2024_lm_model_FOSA <- lm(log_FOSA_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_FOSA_slope <- coef(Mo_2024_lm_model_FOSA)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_FOSA)
+```
+
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_FOSA_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [FOSA]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_FOSA_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
+```{r}
+# OBS
+Mo_2024_lm_model_OBS <- lm(log_OBS_mean ~ delta_15N_mean,
+                             data = Mo_2024)
+
+Mo_2024_OBS_slope <- coef(Mo_2024_lm_model_OBS)["delta_15N_mean"]
+
+summary(Mo_2024_lm_model_OBS)
+```
+
+```{r}
+ggplot(Mo_2024, aes(x = delta_15N_mean, y = log_OBS_mean)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 0.5) +
+  labs(x = "delta 15N",
+       y = "log [OBS]") +
+  theme_minimal() +
+  annotate("text", x = Inf, y = Inf, label = paste("slope =", round(Mo_2024_OBS_slope, 3)), 
+           hjust = 3, vjust = 5.5, size = 4, color = "red")
+```
+
 
 # References
 
 -  Barghi_2018: Barghi, M., Jin, X., Lee, S., Jeong, Y., Yu, J. P., Paek, W. K., & Moon, H. B. (2018). Accumulation and exposure assessment of persistent chlorinated and fluorinated contaminants in Korean birds. Science of The Total Environment, 645, 220-228.
 -  Cara_2022: Cara, B., Lies, T., Thimo, G., Robin, L., & Lieven, B. (2022). Bioaccumulation and trophic transfer of perfluorinated alkyl substances (PFAS) in marine biota from the Belgian North Sea: distribution and human health risk implications. Environmental Pollution, 311, 119907.
 -  Chen_2018: Chen, H., Han, J., Cheng, J., Sun, R., Wang, X., Han, G., ... & He, X. (2018). Distribution, bioaccumulation and trophic transfer of chlorinated polyfluoroalkyl ether sulfonic acids in the marine food web of Bohai, China. Environmental Pollution, 241, 504-510.
+-  Chen, Z., Zhang, J., Diao, J., Su, C., Sun, Q., Zhou, Y., ... & Wang, T. (2023). Bioaccumulation and risk mitigation of legacy and novel perfluoroalkyl substances in seafood: Insights from trophic transfer and cooking method. Environment International, 177, 108023.
 -  Du_2021: Du, D., Lu, Y., Zhou, Y., Li, Q., Zhang, M., Han, G., ... & Jeppesen, E. (2021). Bioaccumulation, trophic transfer and biomagnification of perfluoroalkyl acids (PFAAs) in the marine food web of the South China Sea. Journal of hazardous materials, 405, 124681.
 -  Gao_2020: Gao, K., Miao, X., Fu, J., Chen, Y., Li, H., Pan, W., ... & Jiang, G. (2020). Occurrence and trophic transfer of per-and polyfluoroalkyl substances in an Antarctic ecosystem. Environmental Pollution, 257, 113383.
 -  Heimstad_2024: Heimstad, E. S., Nygård, T., Moe, B., & Herzke, D. (2024). New insights from an eight-year study on per-and polyfluoroalkyl substances in an urban terrestrial ecosystem. Environmental Pollution, 347, 123735.
@@ -3560,6 +4431,7 @@ ggplot(Miniero_2014, aes(x = TL_mean, y = log_PFOS_mean)) +
 -  Liu_2018: Liu, W., He, W., Wu, J., Qin, N., He, Q., & Xu, F. (2018). Residues, bioaccumulations and biomagnification of perfluoroalkyl acids (PFAAs) in aquatic animals from Lake Chaohu, China. Environmental Pollution, 240, 607-614.
 -  Mazzoni_2020: Mazzoni, M., Ferrario, C., Bettinetti, R., Piscia, R., Cicala, D., Volta, P., ... & Polesello, S. (2020). Trophic magnification of legacy (PCB, DDT and Hg) and emerging pollutants (PFAS) in the fish community of a small protected Southern Alpine Lake (Lake Mergozzo, Northern Italy). Water, 12(6), 1591.
 -  Miniero_2014: Miniero, R., Abate, V., Brambilla, G., Davoli, E., De Felip, E., De Filippis, S. P., ... & Di Domenico, A. (2014). Persistent toxic substances in Mediterranean aquatic species. Science of the total environment, 494, 18-27.
+-  Mo_2024: Mo, L., Wan, N., Zhou, B., Shao, M., Zhang, X., Li, M., ... & Mai, B. (2024). Per-and polyfluoroalkyl substances in waterbird feathers around Poyang Lake, China: Compound and species-specific bioaccumulation. Ecotoxicology and Environmental Safety, 273, 116141.
 -  Pan_2010: Pan, Y., Shi, Y., Wang, Y., Cai, Y., & Jiang, G. (2010). Investigation of perfluorinated compounds (PFCs) in mollusks from coastal waters in the Bohai Sea of China. Journal of Environmental Monitoring, 12(2), 508-513.
 -  Pan_2021: Pan, C. G., Xiao, S. K., Yu, K. F., Wu, Q., & Wang, Y. H. (2021). Legacy and alternative per-and polyfluoroalkyl substances in a subtropical marine food web from the Beibu Gulf, South China: Fate, trophic transfer and health risk assessment. Journal of Hazardous Materials, 403, 123618.
 -  Ren_2022: Ren, J., Point, A. D., Baygi, S. F., Fernando, S., Hopke, P. K., Holsen, T. M., & Crimmins, B. S. (2022). Bioaccumulation of polyfluoroalkyl substances in the Lake Huron aquatic food web. Science of The Total Environment, 819, 152974.
