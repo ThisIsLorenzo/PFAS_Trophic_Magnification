@@ -16,6 +16,8 @@ Houses all datasets in CSV format used in the analysis.
 -  `/data/PFAS_data.csv`
 -  `/data/TMF_data.csv`
 -  `/data/RoB_data.csv`
+-  `/data/deduplication/deduplicated.bib`
+-  `/data/deduplication/from_Rayyan_combined.csv`
 ### R generated data (`/Rdata`)
 Includes all data generated through analysis.
 ### Statistical models (`/Rmodels`)
