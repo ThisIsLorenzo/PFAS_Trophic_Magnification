@@ -1,7 +1,10 @@
 # PFAS Trophic Magnification: A Meta-Analysis 
 ## Study Overview
 This repository contains all data, code, and analysis materials for the research study: "*A meta-analysis reveals PFAS concentrations double with each trophic level*".
+
 Our research demonstrates significant biomagnification of per- and polyfluoroalkyl substances (PFAS) through food webs, with concentrations doubling at each trophic level.
+
+You can find the Preprint at the following link: [EcoEvoRxiv](https://ecoevorxiv.org/repository/view/8548/)
 ## Repository Structure
 ### Analysis scripts (`/R`)
 Contains R markdown files (`.Rmd`) with corresponding HTML outputs documenting the analysis.
@@ -28,3 +31,6 @@ Includes all figures generated for the manuscript and supplementary materials in
 Contains data extracted from published literature using the metaDigitise software.
 ### Project file
 `PFAS_Trophic_Magnification.Rproj` - RStudio project file for convenient access to the complete analysis environment.
+
+
+Repository curated by *Lorenzo Ricolfi*
