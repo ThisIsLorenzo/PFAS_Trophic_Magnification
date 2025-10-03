@@ -6,6 +6,8 @@ Our research demonstrates significant biomagnification of per- and polyfluoroalk
 
 You can find the Preprint at the following link: [EcoEvoRxiv](https://ecoevorxiv.org/repository/view/8548/)
 
+Repository curated by *Lorenzo Ricolfi*
+
 ## Repository Structure
 ### Analysis scripts (`/R`)
 Contains R markdown files (`.Rmd`) with corresponding HTML outputs documenting the analysis.
@@ -33,16 +35,45 @@ Houses all datasets in CSV format used in the analysis.
 -  `/data/splitting/split5.bib`: One sixth of the bibliographic records assigned to the fifth of the six authors conducting literature screening.
 -  `/data/splitting/split6.bib`: One sixth of the bibliographic records assigned to the sixth of the six authors conducting literature screening.
 
-### R generated data (`/Rdata`)
+### R-generated data (`/Rdata`)
 Includes all data generated through analysis.
+
 ### Statistical models (`/Rmodels`)
 Contains saved model objects (`.RData` files) from statistical analyses, allowing for reproducibility and further exploration without recomputation.
+
 ### Visualisations (`/figs`)
 Includes all main and supplementary figures.
+- `/figs/fig1.pdf`: World map showing the geographical distribution of the 119 food webs included in the meta-analysis.
+- `/figs/fig2.pdf`: Trophic magnification factor (TMF) of per- and polyfluoroalkyl substances (PFAS) in food webs. The light and dark green shields were added outside the R environment.
+- `/figs/fig3.pdf`: Trophic magnification factor (TMF) of per- and polyfluoroalkyl substances (PFAS), stratified by sample type (A), concentration determination method (B), trophic enrichment factor (C), and treatment strategy of undetected values (D).
+- `/figs/fig4.pdf`: Trophic magnification factor (TMF) of per- and polyfluoroalkyl substances (PFAS), stratified by food webs of exclusively water breathing organisms versus mixed breathing types (A), food webs with either air breathing or water breathing top predators (B), and PFAS chemical class (C).
+- `/figs/fig4.pdf`: The relationship between trophic magnification of per- and polyfluoroalkyl substances (PFAS) and food webs’ latitude (A), trophic position of the food web’s baseline organism (B), trophic position of the food web’s top predator (C), the number of trophic levels in the food web (D), PFAS carbon chain length (E), and publication year of the included studies in the meta-analysis (F).
+- `/figs/supplements/figS1.pdf`: Trophic magnification of per- and polyfluoroalkyl substances (PFAS) in aquatic and terrestrial food webs.
+- `/figs/supplements/figS2.pdf`: Trophic magnification factor (TMF) of per- and polyfluoroalkyl substances (PFAS), stratified by geographic location of food webs.
+- `/figs/supplements/figS3.pdf`: The relationship between trophic magnification of per- and polyfluoroalkyl substances (PFAS) and perfluoroalkyl chain length.
+- `/figs/supplements/figS4.pdf`: Trophic magnification factor (TMF) of per- and polyfluoroalkyl substances (PFAS), stratified by broad ecosystem type (terrestrial vs aquatic).
+- `/figs/supplements/figS5.pdf`: Trophic magnification factor (TMF) of per- and polyfluoroalkyl substances (PFAS) in aquatic ecosystems, stratified by ecosystem type (marine vs freshwater).
+- `/figs/supplements/figS6.pdf`: Trophic magnification factor (TMF) of per- and polyfluoroalkyl substances (PFAS) in food webs.
+- `/figs/supplements/figS7.pdf`: Trophic magnification factor (TMF) of per- and polyfluoroalkyl substances (PFAS), stratified by sample type.
+- `/figs/supplements/figS8.pdf`: Trophic magnification factor (TMF) of per- and polyfluoroalkyl substances (PFAS), stratified by concentration determination method.
+- `/figs/supplements/figS9.pdf`: Trophic magnification factor (TMF) of per- and polyfluoroalkyl substances (PFAS), stratified by trophic enrichment factor.
+- `/figs/supplements/figS10.pdf`: Trophic magnification factor (TMF) of per- and polyfluoroalkyl substances (PFAS), stratified by treatment strategy of undetected values.
+- `/figs/supplements/figS11.pdf`: Trophic magnification factor (TMF) of per- and polyfluoroalkyl substances (PFAS), stratified by food webs of exclusively water breathing organisms versus mixed breathing types.
+- `/figs/supplements/figS12.pdf`: Trophic magnification factor (TMF) of per- and polyfluoroalkyl substances (PFAS), stratified by food webs with either air breathing or water breathing top predators.
+- `/figs/supplements/figS13.pdf`: Trophic magnification factor (TMF) of per- and polyfluoroalkyl substances (PFAS), stratified by PFAS chemical class.
+- `/figs/supplements/figS14.pdf`: Trophic magnification factor (TMF) of per- and polyfluoroalkyl substances (PFAS), stratified by chemicals’ international regulation status.
+- `/figs/supplements/figS15.pdf`: Alluvial plot of the overlap among the three categorical variables included in the full model.
+- `/figs/supplements/figS16.pdf`: Relative importance of tested moderator variables based on Akaike weights, calculated from the Akaike Information Criterion (AIC).
+- `/figs/supplements/figS17.pdf`: Funnel plot for visual inspection of studies’ precision.
+- `/figs/supplements/figS18.pdf`: Publication bias test.
+- `/figs/supplements/figS19.pdf`: Forest plot illustrating the results of leave-one-out sensitivity analyses.
+- `/figs/supplements/figS20.pdf`: Model validation and profile likelihood for the 17 PFAS included in the subgroup-correlated effects model.
+- `/figs/supplements/figS21.pdf`: Overall TMF after filtering out studies flagged by the study validity assessment.
+- `/figs/supplements/figS22.pdf`: Search and screening flow PRISMA diagram.
+- `/figs/supplements/figS23.pdf`: Diagram illustrating the structure of the relational database of the extracted data.
+  
 ### Data extraction from plots (`/metaDigitise/Raw_data.csv`)
 Contains data extracted from published literature using the metaDigitise software.
+
 ### Project file
 `PFAS_Trophic_Magnification.Rproj` - RStudio project file for convenient access to the complete analysis environment.
-
-
-Repository curated by *Lorenzo Ricolfi*
