@@ -7,15 +7,10 @@ You can find the Preprint at the following link: [EcoEvoRxiv](https://ecoevorxiv
 Repository created and curated by *Lorenzo Ricolfi*
 
 ## Repository Structure
-### Analysis scripts (`/R`)
-Contains R markdown files (`.Rmd`) with corresponding HTML outputs documenting the analysis.
--  `/R/Analysis_code.Rmd`: General analysis code. It hosts the analyses conducted to generate model results and plots.
--  `/R/random_splitting.Rmd`: We utilised this code to evenly split the bibliographic records among reviewers during the literature search.
--  `/R/deduplication.Rmd`: We utilised this code to remove duplicates from the bibliographic records extracted from Rayyan.
--  `/R/Slope_calculations.Rmd`: The file contains trophic magnification slope calculations using data manually extracted from plots (see *Data extraction from plots*). A user-friendly and easy-to-read version of this file is available at `/R/Slope_calculations.html`.
--  `/R/TMFs_comparison.Rmd`: In this file, we report a validation analysis of trophic magnification slopes calculated against the reported values by the included studies in the meta-analysis. A user-friendly and easy-to-read version of this file is available at `/R/TMFs_comparison.html`.
--  `/R/Model_validation.Rmd`: We utilised this code to validate our subgroup-correlated effects meta-regression model. A user-friendly and easy-to-read version of this file is available at `/R/Model_validation.html`.
-  
+
+### Project file
+`PFAS_Trophic_Magnification.Rproj` - RStudio project file for convenient access to the complete analysis environment.
+
 ### Data files (`/data`)
 Houses all datasets in CSV format used in the analysis.
 -  `/data/study_data.csv`: Raw data related to characteristics of the included studies in the meta-analysis (Data S1). Data were extracted from the included studies.
@@ -32,6 +27,15 @@ Houses all datasets in CSV format used in the analysis.
 -  `/data/splitting/split4.bib`: One sixth of the bibliographic records assigned to the fourth of the six authors conducting literature screening.
 -  `/data/splitting/split5.bib`: One sixth of the bibliographic records assigned to the fifth of the six authors conducting literature screening.
 -  `/data/splitting/split6.bib`: One sixth of the bibliographic records assigned to the sixth of the six authors conducting literature screening.
+
+### Analysis scripts (`/R`)
+Contains R markdown files (`.Rmd`) with corresponding HTML outputs documenting the analysis.
+-  `/R/Analysis_code.Rmd`: General analysis code. It hosts the analyses conducted to generate model results and plots.
+-  `/R/random_splitting.Rmd`: We utilised this code to evenly split the bibliographic records among reviewers during the literature search.
+-  `/R/deduplication.Rmd`: We utilised this code to remove duplicates from the bibliographic records extracted from Rayyan.
+-  `/R/Slope_calculations.Rmd`: The file contains trophic magnification slope calculations using data manually extracted from plots (see *Data extraction from plots*). A user-friendly and easy-to-read version of this file is available at `/R/Slope_calculations.html`.
+-  `/R/TMFs_comparison.Rmd`: In this file, we report a validation analysis of trophic magnification slopes calculated against the reported values by the included studies in the meta-analysis. A user-friendly and easy-to-read version of this file is available at `/R/TMFs_comparison.html`.
+-  `/R/Model_validation.Rmd`: We utilised this code to validate our subgroup-correlated effects meta-regression model. A user-friendly and easy-to-read version of this file is available at `/R/Model_validation.html`.
 
 ### R-generated data (`/Rdata`)
 Includes all data generated through analysis.
@@ -127,6 +131,3 @@ Contains data extracted from plots of published literature using the metaDigitis
 - `/metaDigitise/Raw_data.csv`: Contains data extracted from plots of published literature using the metaDigitise software.
 - `/metaDigitise/caldat`: Software-related files.
 - `/metaDigitise/figures`: Figures from the literature which were used to extract data using the metaDigitise software.
-
-### Project file
-`PFAS_Trophic_Magnification.Rproj` - RStudio project file for convenient access to the complete analysis environment.
