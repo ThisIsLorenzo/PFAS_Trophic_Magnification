@@ -8,9 +8,6 @@ Repository created and curated by *Lorenzo Ricolfi*
 
 ## Repository Structure
 
-### Project file
-`PFAS_Trophic_Magnification.Rproj` - RStudio project file for convenient access to the complete analysis environment.
-
 ### Data files (`/data`)
 Houses all datasets in CSV format used in the analysis.
 -  `/data/study_data.csv`: Raw data related to characteristics of the included studies in the meta-analysis (Data S1). Data were extracted from the included studies.
@@ -131,3 +128,6 @@ Contains data extracted from plots of published literature using the metaDigitis
 - `/metaDigitise/Raw_data.csv`: Contains data extracted from plots of published literature using the metaDigitise software.
 - `/metaDigitise/caldat`: Software-related files.
 - `/metaDigitise/figures`: Figures from the literature which were used to extract data using the metaDigitise software.
+
+### Project file
+`PFAS_Trophic_Magnification.Rproj` - RStudio project file for convenient access to the complete analysis environment.
