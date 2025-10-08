@@ -1,0 +1,120 @@
+FW_ID,Ecosystem,Location,Latitude_DD,Longitude_DD
+FW_001,Aquatic,North America,64.25,-113.1167
+FW_002,Aquatic,North America,64.25,-113.1167
+FW_003,Aquatic,Europe,45.45,4.8
+FW_004,Aquatic,Europe,45.6333,5.15
+FW_005,Aquatic,Europe,45.5167,4.25
+FW_006,Aquatic,Europe,43.4667,5.4167
+FW_007,Aquatic,Europe,45.7,5.15
+FW_008,Aquatic,East Asia,31.5,120.1667
+FW_009,Aquatic,East Asia,31.5,120.1667
+FW_010,Aquatic,Europe,45.95,8.45
+FW_011,Aquatic,Europe,45.95,8.45
+FW_012,Aquatic,North America,32.776566,-79.930923
+FW_013,Aquatic,North America,27.377865,-82.585945
+FW_014,Aquatic,North America,27.377865,-82.585945
+FW_018,Aquatic,North America,43.05,-79.0333
+FW_019,Aquatic,North America,43.05,-79.0333
+FW_020,Aquatic,Arctic Region,69.5333,-133.6
+FW_022,Aquatic,Arctic Region,66.55,-58.1
+FW_023,Aquatic,East Asia,22.4833,114.0333
+FW_024,Aquatic,Europe,45.4277,0.8613
+FW_025,Aquatic,Europe,45.4277,0.8613
+FW_026,Aquatic,Europe,45.4277,0.8613
+FW_027,Aquatic,Europe,48.6667,2.35
+FW_028,Aquatic,South America,-12.5833,-38.4833
+FW_029,Aquatic,South America,-12.5833,-38.4833
+FW_030,Aquatic,South America,-12.5833,-38.4833
+FW_031,Aquatic,North America,43.7,-77.9
+FW_032,Aquatic,North America,43.7,-77.9
+FW_033,Aquatic,North America,43.7,-77.9
+FW_034,Aquatic,East Asia,31.258,120.2051
+FW_035,Aquatic,East Asia,40.7,121.7667
+FW_036,Aquatic,East Asia,38.8495,119.7889
+FW_037,Aquatic,East Asia,30.55,117.4167
+FW_040,Aquatic,Antarctic Region,-62.1833,-58.9167
+FW_041,Aquatic,Europe,60.03,10.17
+FW_042,Aquatic,Europe,60.03,10.17
+FW_043,Aquatic,East Asia,31.258,120.2051
+FW_044,Aquatic,East Asia,31.258,120.2051
+FW_045,Aquatic,East Asia,31.258,120.2051
+FW_046,Aquatic,East Asia,21.6261,108.6625
+FW_047,Aquatic,East Asia,37.2667,118.8833
+FW_048,Aquatic,East Asia,21.7,108.6
+FW_049,Aquatic,East Asia,31.6833,121.2333
+FW_050,Aquatic,East Asia,38.8495,119.7889
+FW_051,Aquatic,East Asia,38.8495,119.7889
+FW_052,Aquatic,East Asia,38.8495,119.7889
+FW_053,Aquatic,East Asia,38.8495,119.7889
+FW_054,Aquatic,East Asia,38.8495,119.7889
+FW_055,Terrestrial,West Asia,30.7667,90.9833
+FW_056,Terrestrial,North America,69,-139.3667
+FW_057,Terrestrial,North America,69,-139.3667
+FW_058,Terrestrial,North America,65.75,-110.3
+FW_059,Terrestrial,North America,65.75,-110.3
+FW_060,Aquatic,Europe,53.1167,13.5
+FW_061,Aquatic,North America,54.2333,-59.95
+FW_062,Aquatic,North America,54.2333,-59.95
+FW_063,Aquatic,North America,41.5,-71.3333
+FW_064,Aquatic,East Asia,41.6167,108.8333
+FW_065,Aquatic,East Asia,41.6167,108.8333
+FW_066,Aquatic,East Asia,41.6167,108.8333
+FW_067,Aquatic,East Asia,41.6167,108.8333
+FW_068,Aquatic,Europe,53.1167,13.5
+FW_069,Aquatic,North America,45,-83.3333
+FW_070,Aquatic,North America,45,-83.3333
+FW_071,Aquatic,North America,44.15,-83.0667
+FW_072,Aquatic,North America,44.15,-83.0667
+FW_073,Aquatic,North America,46.8131,71.2075
+FW_074,Aquatic,North America,46.8131,71.2075
+FW_075,Aquatic,East Asia,30.4167,122.5
+FW_076,Aquatic,Antarctic Region,-62.8167,-58.15
+FW_077,Aquatic,East Asia,29.7333,123.2333
+FW_078,Aquatic,East Asia,22.1167,114.05
+FW_079,Aquatic,Antarctic Region,-71.9167,5.16667
+FW_080,Aquatic,Antarctic Region,-71.9167,5.16667
+FW_081,Aquatic,Antarctic Region,-66.65,140
+FW_082,Aquatic,East Asia,34.0833,118.1833
+FW_083,Aquatic,Arctic Region,74.9883,37.1063
+FW_084,Aquatic,North America,74.7009,-94.9947
+FW_085,Aquatic,North America,74.6868,-94.9393
+FW_086,Aquatic,North America,74.7009,-94.9947
+FW_087,Aquatic,North America,74.7009,-94.9947
+FW_088,Aquatic,North America,74.7009,-94.9947
+FW_089,Aquatic,North America,74.7009,-94.9947
+FW_090,Aquatic,Europe,51.2213,4.4051
+FW_091,Aquatic,East Asia,23.9321,117.428
+FW_092,Aquatic,East Asia,23.9321,117.428
+FW_093,Aquatic,North America,42.4666,-79.7333
+FW_094,Aquatic,North America,41.5666,82.9
+FW_095,Terrestrial,Europe,58.9909,9.4863
+FW_096,Aquatic,North America,40.7368,-74.1441
+FW_097,Aquatic,East Asia,37.2589,119.6875
+FW_098,Aquatic,East Asia,31.4771,120.142
+FW_099,Aquatic,Europe,49.4347,0.2893
+FW_100,Aquatic,Europe,51.4526,3.1139
+FW_101,Aquatic,Europe,51.4526,3.1139
+FW_102,Aquatic,Europe,51.4526,3.1139
+FW_103,Aquatic,Europe,51.4526,3.1139
+FW_104,Aquatic,Europe,56.2546,15.2667
+FW_105,Aquatic,Europe,56.2546,15.2667
+FW_106,Aquatic,Europe,59.1148,15.2691
+FW_107,Terrestrial,Europe,59.1148,15.2691
+FW_109,Aquatic,East Asia,39.9076,116.5248
+FW_110,Aquatic,East Asia,39.9076,116.5248
+FW_111,Aquatic,East Asia,38.8495,119.7889
+FW_112,Aquatic,Europe,51.2264,2.7789
+FW_113,Aquatic,East Asia,31.3743,118.3407
+FW_114,Aquatic,East Asia,33.0377,130.4359
+FW_115,Terrestrial,North America,49.2827,123.1207
+FW_116,Terrestrial,North America,49.2827,123.1207
+FW_117,Terrestrial,North America,49.2827,123.1207
+FW_118,Terrestrial,North America,49.2827,123.1207
+FW_119,Terrestrial,North America,49.1666,123.1336
+FW_120,Terrestrial,North America,49.0901,123.082
+FW_121,Terrestrial,North America,49.2827,123.1207
+FW_122,Aquatic,Mediterranean Region,38.2864,15.8026
+FW_123,Aquatic,East Asia,15.4881,114.4048
+FW_124,Terrestrial,East Asia,36.0519,127.3502
+FW_125,Terrestrial,North America,33.8361,81.1637
+FW_126,Terrestrial,East Asia,29.1451,116.1832

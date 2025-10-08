@@ -1,7 +1,0 @@
-"","PFAS","species","food_web","Study_ID","filename","se","error_type","plot_type","software","TL_mean","ln_PFOS_mean","ln_PFOA_mean","ln_PFNA_mean","ln_PFDA_mean","ln_PFUnDA_mean","ln_PFDoDA_mean","ln_PFTrDA_mean","ln_PFTeDA_mean","ln_FOSA_mean"
-"1","FOSA","species1","whole food web","S_013","Martin_2004_10r.png","0.136585366","se","mean_error","metaDigitise",3.331972789,NA,NA,NA,NA,NA,NA,NA,NA,-1.697560976
-"2","FOSA","species2","whole food web","S_013","Martin_2004_10r.png","0.07804878","se","mean_error","metaDigitise",3.576870748,NA,NA,NA,NA,NA,NA,NA,NA,-2.068292683
-"3","FOSA","species3","whole food web","S_013","Martin_2004_10r.png","0.03902439","se","mean_error","metaDigitise",4.085714286,NA,NA,NA,NA,NA,NA,NA,NA,-1.892682927
-"4","FOSA","species4","whole food web","S_013","Martin_2004_10r.png","0.72195122","se","mean_error","metaDigitise",4.102040816,NA,NA,NA,NA,NA,NA,NA,NA,-5.892682927
-"5","FOSA","species5","whole food web","S_013","Martin_2004_10r.png","0.331707317","se","mean_error","metaDigitise",4.395142385,NA,NA,NA,NA,NA,NA,NA,NA,-2.673170732
-"6","FOSA","species6","whole food web","S_013","Martin_2004_10r.png","1.112195122","se","mean_error","metaDigitise",4.937414966,NA,NA,NA,NA,NA,NA,NA,NA,-4.468292683
