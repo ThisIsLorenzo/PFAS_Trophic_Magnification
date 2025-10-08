@@ -1,6 +1,6 @@
 ---
 title: "Analysis Code"
-author: "Lorenzo Ricolfi"
+author: "Script created and curated by Lorenzo Ricolfi"
 output:
   html_document:
     code_folding: hide
@@ -52,7 +52,7 @@ pacman::p_load(tidyr,        # For tidying data, including reshaping and separat
 
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 # metaDigitise and shinyDigitise for data extraction from plots
 dat <- metaDigitise("~/PhD/GitHub/PFAS_Trophic_Magnification/metaDigitise")
 dat <- shinyDigitise("~/PhD/GitHub/PFAS_Trophic_Magnification/metaDigitise")
@@ -369,7 +369,7 @@ TMF_data2 %>%
 #write.csv(TMF_data2, here("Rdata/TMF_data2.csv"), row.names = FALSE)
 ```
 
-```{r, echo=FALSE}
+```{r, eval=FALSE, include=FALSE}
 # Data model visualization:
 figS23 <- data_dm_all_keys %>% 
   dm_draw()
@@ -390,7 +390,7 @@ VCV <- vcalc(vi = TMF_data2$ln_TMF_se^2, #Specifies the variance of the effect s
 
 # Functions
 
-The following chunks modify the OrchaRd plot function to display model outputs on the natural log scale (ln_TMF) while presenting the plots on the original scale (TMF), enhancing the visual interpretation of the results, along with minor aesthetic changes. The last chunk modifies the bubble_plot function for minor aesthetic changes. The code creates 3 modified functions: orchard_plot_new, orchard_plot_new2, and bubble_plot_new.
+The following code chunks modify the OrchaRd plot function to display model outputs on the natural log scale (ln_TMF) while plotting them on the original scale (TMF), improving the interpretability of results and refining plot aesthetics. The final chunk similarly adjusts the bubble_plot function for minor visual enhancements. Together, the code defines three modified functions: orchard_plot_new, orchard_plot_new2, and bubble_plot_new.
 
 ```{r, warning=FALSE}
 orchard_plot_new <- function (object, mod = "1", group, xlab, N = NULL, alpha = 0.5, 
@@ -1067,10 +1067,7 @@ run_model <- function(data, formula){
 
 # Intercept meta-analytic model
 
-Determine the random effect structure:
-The random effects model accounts for between-study heterogeneity, which reflects the variability in effect sizes across the studies being analyzed. In determining the random effect structure, we aim to identify the sources of this heterogeneity and quantify its extent within the data. This step is crucial for accurately modeling the variation and ensuring that the results are generalizable beyond the specific studies included in the analysis.
-
---> **NOTE!** Model outputs are on the natural log scale (ln TMF), whereas the plots on the original scale (TMF).
+--> **NOTE:** Model outputs are on the natural log scale (ln TMF), whereas the plots on the original scale (TMF).
 ```{r, eval=FALSE, include=TRUE}
 mod <- rma.mv(yi = ln_TMF, # Natural logarithm of the Trophic Magnification Factor
               V = VCV, # Variance co-variance matrix
@@ -1145,10 +1142,7 @@ ggsave(here("figs","fig2A.png"),
        height = 4)
 ```
 
-The red dotted line represents TMF = 1, the threshold indicating trophic magnification when exceeded, and biodilution when below.
-Next, we'll plot the same graph with a zoomed-out view (no scale_y_continuous restrictions).
-
-```{r, warning=FALSE}
+```{r, warning=FALSE, include=FALSE}
 figS6 <- orchard_plot_new(mod,
                         transfm = "percent",
                         mod = "1",
@@ -1185,14 +1179,14 @@ figS6 <- orchard_plot_new(mod,
 figS6
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 ggsave(here("figs/supplements","figS6.png"),
        width = 8,
        height = 4)
 ```
 
 # Terrestrial vs Aquatic
-```{r}
+```{r, include=FALSE}
 TMF_data2_ecogroups <- TMF_data2 %>%
   mutate(Ecosystem_group = ifelse(Ecosystem == "terrestrial", 
                                   "Terrestrial", 
@@ -1262,7 +1256,7 @@ figS4 <- orchard_plot_new(
 figS4
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 ggsave(here("figs/supplements","figS4.png"),
        width = 10,
        height = 6)
@@ -1270,7 +1264,7 @@ ggsave(here("figs/supplements","figS4.png"),
 
 # Subcategory meta-regression analysis
 
-```{r}
+```{r, include=FALSE}
 TMF_data3 <- TMF_data2 %>% 
   filter(!PFAS_ID %in% c("ΣPFAS", "ΣPFCA", "ΣPFSA", "ΣPFCs", "PFODA")) %>%  # PFODA removed because NA
   #filter(n_distinct(Study_ID) > 1) %>%
@@ -1413,9 +1407,7 @@ fig2B_data <- plot_data1 %>%
 write_csv(fig2B_data, here("Rdata", "fig2B_data.csv"))
 ```
 
-Now, we have a look to all chemicals regardless of the number of effect sizes.
-
-```{r}
+```{r, include=FALSE}
 plot_data1_full <- res_tab1 %>%
   as.data.frame() %>% 
   arrange(estimate)
@@ -1448,18 +1440,13 @@ figS1 <- ggplot(plot_data1_full, aes(y = reorder(PFAS_ID, estimate), x = estimat
   scale_x_break(c(19.4, 23))
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 # Save the  plot
 ggsave(here("figs/supplements", "figS1.png"), plot = figS1, width = 9, height = 14, dpi = 300)
 ```
 
-Let's run a few similar models to see what one has the lowest AICc value (better fit).
-
-## mod_chem2
-
-mod_chem2 is identical to mod_chem but with the addition of an independent random factor (i.e., ~ 1 | TMF_ID). 
-
 ```{r, eval=FALSE}
+#mod_chem2 is identical to mod_chem but with the addition of an independent random factor (i.e., ~ 1 | TMF_ID). 
 mod_chem2 <- rma.mv(ln_TMF ~ PFAS_ID - 1,
                      V = VCV_chem,
                      random = list(~ PFAS_ID | FW_ID, 
@@ -1476,7 +1463,7 @@ mod_chem2 <- rma.mv(ln_TMF ~ PFAS_ID - 1,
 save(mod_chem2, file = here("Rdata", "mod_chem2.RData"))
 ```
 
-```{r, warning=FALSE, echo=FALSE}
+```{r, warning=FALSE, include=FALSE}
 load(here("Rmodels", "mod_chem2.RData"))
 summary(mod_chem2)
 
@@ -1541,9 +1528,7 @@ forest_plot3 <- ggplot(plot_data2, aes(y = reorder(PFAS_ID, estimate), x = estim
 forest_plot3
 ```
 
-Now, let's check the profile likelihood of model parameters for which we have at least 10 effect sizes.
-
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 # Identify the indices of the variance components for the parameters
 parameter_indices <- c(17, 47, 32, 51, 42, 33, 50, 20, 40, 34, 49, 46, 30, 36, 48, 31, 38)
 
@@ -1570,11 +1555,9 @@ for (i in parameter_indices) {
 # Combine all results into a single data frame
 mod_chem2_profile_results <- do.call(rbind, profile_results)
 ```
-## mod_chem3
 
-In mod-chem3, ~ 1 | TMF_ID and ~ 1 | FW_ID specifies independent random intercepts for TMF_ID and FW_ID. This structure does not allow for varying slopes but instead models each TMF_ID and each FW_ID with separate random intercepts, treating them independently.
-
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
+# In mod-chem3, ~ 1 | TMF_ID and ~ 1 | FW_ID specifies independent random intercepts for TMF_ID and FW_ID. This structure does not allow for varying slopes but instead models each TMF_ID and each FW_ID with separate random intercepts, treating them independently.
 mod_chem3 <- rma.mv(ln_TMF ~ PFAS_ID - 1,
                      V = VCV_chem,
                      random = list(~ 1|FW_ID,
@@ -1592,7 +1575,7 @@ mod_chem3 <- rma.mv(ln_TMF ~ PFAS_ID - 1,
 save(mod_chem3, file = here("Rmodels", "mod_chem3.RData"))
 ```
 
-```{r, warning=FALSE, echo=FALSE}
+```{r, warning=FALSE, include=FALSE}
 load(here("Rmodels", "mod_chem3.RData"))
 summary(mod_chem3)
 
@@ -1657,19 +1640,16 @@ forest_plot4 <- ggplot(plot_data3, aes(y = reorder(PFAS_ID, estimate), x = estim
 forest_plot4
 ```
 
-While mod_chem has more variance components and hence a greater risk of overfitting, the lower AICc (mod_chem = 4122 and mod_chem2 = 6731) suggests that the additional complexity is justified by the improved fit to the data. This indicates that mod_chem is likely capturing meaningful interaction variability between PFAS_ID and FW_ID that mod_chem2 does not account for, making it a better model for these data despite having more parameters.
-
-
 ## PFOS reference - Comparison model
 We are going to compare each compound against PFOS (the compound with the largest effect size and sample size). By doing so, we can assess what compounds have a mean estimate lower than PFOS.
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 TMF_data3$PFAS_ID <- factor(TMF_data3$PFAS_ID)
 # Relevel PFAS_ID so that PFOS is the reference level
 TMF_data3$PFAS_ID <- relevel(TMF_data3$PFAS_ID, ref = "PFOS")
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 # Fit the model
 mod_chem_contr <- rma.mv(ln_TMF ~ PFAS_ID,
                    V = VCV_chem,
@@ -1685,86 +1665,13 @@ mod_chem_contr <- rma.mv(ln_TMF ~ PFAS_ID,
 save(mod_chem_contr, file = here("Rmodels", "mod_chem_contr.RData"))
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 load(here("Rmodels", "mod_chem_contr.RData"))
 summary(mod_chem_contr)
 ```
 
 ## Means for (un)regulated compounds
 
-```{r}
-# Regulation levels
-lacking <- c("6:2ClPFESA", "PFDS", "PFBA", "PFPeA","PFHxA")
-REACH <- c("PFDA", "PFUnDA", "PFTrDA", "PFDoDA", "PFTeDA", "PFHpA", "PFBS")
-SCPoPs <- c("PFOS", "br-PFOS", "l-PFOS", "PFNA", "FOSA", "PFHxS", "PFOA")
-
-plot_data4 <- TMF_data2
-
-# Add the regulation column based on PFAS_ID
-plot_data4$regulation <- ifelse(plot_data4$PFAS_ID %in% lacking, "none",
-                          ifelse(plot_data4$PFAS_ID %in% REACH, "REACH",
-                          ifelse(plot_data4$PFAS_ID %in% SCPoPs, "SCPoPs", NA)))
-
-plot_data4$regulation <- factor(plot_data4$regulation, levels = c("none", "REACH", "SCPoPs"))
-
-# Remove rows where the regulation column is NA
-plot_data4 <- plot_data4 %>% filter(!is.na(regulation))
-```
-
-```{r, eval=FALSE}
-regulation_model <- run_model(plot_data4, ~ regulation -1)
-save(regulation_model, file = here("Rmodels", "regulation_model.RData"))
-```
-
-```{r}
-load(here("Rmodels", "regulation_model.RData"))
-summary(regulation_model)
-r2_regulation <- r2_ml(regulation_model, plot_data4)
-predict.rma(regulation_model, newmods = c(1, 0, -1), transf = exp, addx = T)
-predict.rma(regulation_model, newmods = c(1, -1, 0), transf = exp, addx = T)
-```
-
-```{r}
-figS14 <- orchard_plot_new(regulation_model,
-             transfm = "percent",
-             mod = "regulation",
-             group = "Study_ID",
-             xlab = "ln_TMF",
-             legend.pos = "bottom.right",
-             k.pos = "left",
-             angle = 0,
-             colour = "black",
-             fill = FALSE,
-             trunk.size = 1,
-             branch.size = 3.1,
-             twig.size = 0.5) +
-  annotate(geom = "text",
-           x = 3.4,
-           y = 8, 
-           label = paste0("italic(R)^{2} == ", round(r2_regulation[1],4)),
-           color ="black",
-           parse = TRUE, 
-           size = 4) +
-  #ggtitle("c)")+
-  theme(#plot.title = element_text(face = "bold", size = 16),
-       legend.title = element_text(size = 13),
-        legend.text = element_text(size = 12),
-        axis.title.x = element_text(size = 12),
-        axis.title.y = element_text(size = 14),
-        axis.text.y = element_text(size = 13),
-       axis.text.x = element_text(size = 13)) +
-  #ggtitle("C") +
-  xlab("International regulation") +
-  ylab("TMF") +
-  #scale_y_break(c(11, 13)) +
-  scale_y_continuous(limits = c(0, 11), breaks = seq(0, 11, by = 1))
-
-figS14
-```
-
-```{r, eval=FALSE}
-ggsave(here("figs/supplements", "figS14.png"), plot = fig_regulation, width = 9, height = 5, dpi = 300)
-```
 
 # World map location of food webs
 
@@ -1777,23 +1684,9 @@ coords <- fw_data %>%
     Latitude = round(Latitude_DD, 0),  
     Longitude = round(Longitude_DD, 0)
   ) %>%
-  # group_by(Latitude_DD, Longitude_DD, Ecosystem) %>%
-  # reframe(
-  #   count_FW = n(),  # Count how many FW_IDs share the same (rounded) Latitude and Longitude
-  # ) %>%
-  # rename(
-  #   Latitude = Latitude_DD,
-  #   Longitude = Longitude_DD
-  # ) %>% 
-  # mutate(
-  #   Ecosystem = fct_recode(Ecosystem,
-  #                          "estuarine/brackish/tidal" = "estuarine",
-  #                          "estuarine/brackish/tidal" = "brackish",
-  #                          "estuarine/brackish/tidal" = "tidal")) %>% 
   mutate(Ecosystem = ifelse(Ecosystem == "terrestrial", 
                                   "Terrestrial", 
                                   "Aquatic"))
-
 
 # Load the world map data
 world <- ne_countries(scale = "medium", returnclass = "sf")
@@ -1825,7 +1718,7 @@ w_map <- ggplot(data = world) +
 w_map
 ```
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, include=FALSE, eval=FALSE}
 # Save the  plot
 ggsave(here("figs", "fig1.pdf"), plot = w_map, width = 170, height = 110, dpi = 600, units = 'mm')
 
@@ -1838,16 +1731,16 @@ write_csv(fig1_data, here("Rdata", "fig1_data.csv"))
 
 In our meta-analysis, we have 4 categories of predictors:
 
--  Predictors belonging to the **research methods**.
--  Predictors belonging to the **geographical location** of food webs.
--  Predictors belonging to the **biological and ecological characteristics of food webs**.
--  Predictors belonging to the **PFAS characteristics**.
+-  Research methodological factors.
+-  Biological and environmental factors.
+-  Compounds’ physicochemical properties.
+-  Chemicals’ regulation status.
 
-## Research methods
+## Research methodological factors
 
 ### Sample type: whole-organism or organ/tissue-specific analysis
 
-```{r}
+```{r, include=FALSE}
 TMF_data2 <- TMF_data2 %>% 
   mutate(Sample_type = recode(
     Sample_type,
@@ -1912,7 +1805,7 @@ fig3A
 predict.rma(sample_model, newmods = c(-1, 0, 1), transf = exp, addx = T)
 ```
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, include=FALSE, eval=FALSE}
 figS7 <- orchard_plot_new2(sample_model,
                            transfm="percent",
              mod = "Sample_type",
@@ -1986,12 +1879,12 @@ TMF_data2_norm <- TMF_data2_norm %>%
   ungroup()
 ```
 
-```{r, eval=FALSE, warning=FALSE}
+```{r, eval=FALSE, include=FALSE}
 norm_model <- run_model(TMF_data2_norm, ~ Conc_determ_method - 1)
 save(norm_model, file = here("Rmodels", "norm_model.RData"))
 ```
 
-```{r, eval=FALSE, fig.cap="Note: Maximum TMF value set to 12"}
+```{r, include=FALSE}
 load(here("Rmodels", "norm_model.RData"))
 summary(norm_model)
 r2_norm <- r2_ml(norm_model, TMF_data2_norm)
@@ -2097,7 +1990,7 @@ fig3B <- orchard_plot_new2(norm_model2,
 fig3B
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 figS8 <- orchard_plot_new2(norm_model2,
                                transfm="percent",
              mod = "Normalization",
@@ -2145,7 +2038,7 @@ fig3B_data <- TMF_data2_norm %>%
 write_csv(fig3B_data, here("Rdata", "fig3B_data.csv"))
 ```
 
-### Undetected strategy - Limit of Detection (LOD)
+### Undetected strategy
 
 ```{r, include=FALSE}
 TMF_data2_undetected_strategy <- TMF_data2 %>%
@@ -2171,13 +2064,12 @@ doc <- body_add_flextable(doc, undetected_strategy_table)
 ```
 
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 # Save the document
 print(doc, target = "Rdata/undetected_strategy_table.docx")
 ```
 
-Table for meta-regression analysis:
-```{r}
+```{r, include=FALSE}
 # Recode the 'Censored_data_strategy' column
 TMF_data2_undetected_strategy2 <- TMF_data2 %>%
   mutate(Censored_data_strategy = recode(Censored_data_strategy,
@@ -2244,7 +2136,7 @@ undetected_model <- run_model(TMF_data2_undetected_strategy2, ~ Censored_data_st
 save(undetected_model, file = here("Rmodels", "undetected_model.RData"))
 ```
 
-```{r, echo=FALSE, fig.cap="Note: Maximum TMF value set to 10"}
+```{r, fig.cap="Note: Maximum TMF value set to 10"}
 load(here("Rmodels", "undetected_model.RData"))
 summary(undetected_model)
 r2_lod <- r2_ml(undetected_model, TMF_data2_undetected_strategy2)
@@ -2290,7 +2182,7 @@ fig3D <- orchard_plot_new2(undetected_model,
   scale_color_manual(values = c("#F28482", "#66101F", "#597802", "#114B5F", "#FB8B24"))
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 figS10 <- orchard_plot_new2(undetected_model,
              transfm = "percent",
              mod = "Censored_data_strategy",
@@ -2362,7 +2254,7 @@ tef_model <- run_model(TMF_data2_tef, ~ TEF-1)
 save(tef_model, file = here("Rmodels", "tef_model.RData"))
 ```
 
-```{r, echo=FALSE, fig.cap="Note: Maximum TMF value set to 12"}
+```{r, fig.cap="Note: Maximum TMF value set to 12"}
 load(here("Rmodels", "tef_model.RData"))
 summary(tef_model)
 r2_tef <- r2_ml(tef_model, TMF_data2_tef)
@@ -2410,7 +2302,7 @@ fig3C <- orchard_plot_new2(tef_model,
   scale_color_manual(values = c("#66101F", "#597802", "#114B5F", "#FB8B24"))
 ```
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, eval=FALSE, include=FALSE}
 figS9 <- orchard_plot_new2(tef_model,
                             transfm="percent",
              mod = "TEF",
@@ -2459,7 +2351,7 @@ fig3C_data <- TMF_data2_tef %>%
 write_csv(fig3C_data, here("Rdata", "fig3C_data.csv"))
 ```
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, eval=FALSE, include=FALSE}
 # Combine plots with specified heights
 fig3 <- (fig3A / fig3B) + fig3C + fig3D +
   plot_layout(heights = c(1.5, 1, 1.8, 2))
@@ -2485,7 +2377,7 @@ rv_model <- run_model(TMF_data2_rv, ~ Regression_variable)
 save(rv_model, file = here("Rmodels", "rv_model.RData"))
 ```
 
-```{r, echo=FALSE, fig.cap="Note: Maximum TMF value set to 10"}
+```{r}
 load(here("Rmodels", "rv_model.RData"))
 summary(rv_model)
 r2_rv <- r2_ml(rv_model, TMF_data2_rv)
@@ -2524,13 +2416,13 @@ fig_rv <- orchard_plot_new(rv_model,
 fig_rv
 ```
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, include=FALSE, eval=FALSE}
 ggsave(here("figs","regr_variab.png"),
        width = 8,
        height = 4)
 ```
 
-## Geography
+## Biological and environmental factors
 
 ### Latitude
 
@@ -2545,7 +2437,7 @@ lat_model <- run_model(TMF_data2, ~ scale(Latitude_abs))
 save(lat_model, file = here("Rmodels", "lat_model.RData"))
 ```
 
-```{r, echo=FALSE}
+```{r}
 load(here("Rmodels", "lat_model.RData"))
 summary(lat_model)
 r2_lat <- r2_ml(lat_model, TMF_data2)
@@ -2598,7 +2490,7 @@ fig5A <- bubble_plot_new(lat_bubble,
   ylab("ln TMF")
 ```
 
-```{r, eval=FALSE}
+```{r, include=FALSE}
 fig5A_data <- TMF_data2 %>% 
   select(Study_ID, FW_ID, PFAS_ID, Latitude_abs, ln_TMF, ln_TMF_se)
 
@@ -2607,7 +2499,7 @@ write_csv(fig5A_data, here("Rdata", "fig5A_data.csv"))
 
 ### Geographic location
 
-```{r}
+```{r, include=FALSE}
 # Generate a table with counts and percentages for each PFAS_ID and Location
 combined_table <- TMF_data2 %>%
   mutate(
@@ -2636,9 +2528,7 @@ combined_table_wide <- combined_table %>%
 combined_table_wide
 ```
 
-Counting the number of TMFs from different world regions for PFAS showing a statistically significant TMF above 1
-
-```{r}
+```{r, include=FALSE}
 combined_table_wide2 <- combined_table_wide %>%
   filter(PFAS_ID %in% c("F-53B", "PFOS", "PFDA", "br-PFOS", "PFUnDA", "l-PFOS", "PFNA", "PFTrDA", "PFDoDA", "FOSA", "PFHxS", "PFDS", "PFTeDA", "PFOA", "PFBA", "PFPeA", "PFHpA", "PFBS", "PFHxA"))
 
@@ -2682,7 +2572,7 @@ location_model <- run_model(TMF_data2_loc, ~ Location - 1)
 save(location_model, file = here("Rmodels", "location_model.RData"))
 ```
 
-```{r, echo=FALSE, fig.cap="Note: Maximum TMF value set to 12"}
+```{r}
 load(here("Rmodels", "location_model.RData"))
 summary(location_model)
 r2_location <- r2_ml(location_model, TMF_data2_loc)
@@ -2725,13 +2615,11 @@ figS2
 #predict.rma(location_model, newmods = c(0, -1, 1, 0), transf = exp, addx = T)
 ```
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, eval=FALSE, include=FALSE}
 ggsave(here("figs/supplements","figS2.png"),
        width = 9,
        height = 8)
 ```
-
-## Bio/Ecological characteristics
 
 ### Type of breathing - top predator
 
@@ -2753,7 +2641,7 @@ breath_model <- run_model(TMF_data2_bt, ~ Breathing_type)
 save(breath_model, file = here("Rmodels", "breath_model.RData"))
 ```
 
-```{r, echo=FALSE,fig.cap="Note: Maximum TMF value set to 12"}
+```{r}
 load(here("Rmodels", "breath_model.RData"))
 summary(breath_model)
 r2_breath <- r2_ml(breath_model, TMF_data2_bt)
@@ -2801,7 +2689,7 @@ fig4A <- orchard_plot_new2(breath_model,
   scale_color_manual(values = c("#F28482", "#66101F", "#597802", "#114B5F", "#FB8B24"))
 ```
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, eval=FALSE, include=FALSE}
 figS12 <- orchard_plot_new2(breath_model,
                                transfm="percent",
              mod = "Breathing_type",
@@ -2850,17 +2738,17 @@ fig4B_data <- TMF_data2_bt %>%
 write_csv(fig4B_data, here("Rdata", "fig4B_data.csv"))
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 TMF_data2_bt <- TMF_data2_bt %>% 
   mutate(int = interaction(Breathing_type,Sample_type, drop = T))
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 breath_model_int <- run_model(TMF_data2_bt, ~ int)
 save(breath_model_int, file = here("Rmodels", "breath_model_int.RData"))
 ```
 
-```{r, echo=FALSE,fig.cap="Note: Maximum TMF value set to 12"}
+```{r, include=FALSE}
 load(here("Rmodels", "breath_model_int.RData"))
 summary(breath_model_int)
 r2_breath_int <- r2_ml(breath_model_int, TMF_data2_bt)
@@ -2904,78 +2792,15 @@ fig_breath_int <- orchard_plot_new(breath_model_int,
 fig_breath_int
 ```
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, eval=FALSE, include=FALSE}
 ggsave(here("figs/supplements","breathing_type_tp_int.png"),
        width = 15,
        height = 7)
 ```
 
-### Ecosystem type
-
-```{r, include=FALSE}
-TMF_data2 <- TMF_data2 %>%
-  mutate(Ecosystem = recode(
-    Ecosystem,
-    "estuarine" = "estuarine/tidal/brackish",
-    "brackish" = "estuarine/tidal/brackish",
-    "tidal" = "estuarine/tidal/brackish"))
-```
-
-```{r, eval=FALSE}
-sum(is.na(TMF_data2$Ecosystem)) #checking the amount of NAs
-#[1] 0
-eco_model <- run_model(TMF_data2, ~ Ecosystem -1)
-save(eco_model, file = here("Rmodels", "eco_model.RData"))
-```
-
-```{r, echo=FALSE, warning=FALSE, fig.cap="Note: Maximum TMF value set to 12"}
-load(here("Rmodels", "eco_model.RData"))
-summary(eco_model)
-r2_eco <- r2_ml(eco_model, TMF_data2)
-
-fig_eco <- orchard_plot_new(eco_model,
-                            transfm="percent",
-                            mod = "Ecosystem",
-                            group = "Study_ID",
-                            xlab = "ln_TMF",
-                            legend.pos = "bottom.right",
-                            k.pos = "left",
-                            angle = 45,
-                            colour = "black",
-                            fill = FALSE,
-                            trunk.size = 0.6,
-                            branch.size = 3.1,
-                            twig.size = 0.5) +
-  annotate(geom = "text",
-           x = 4.4,
-           y = 10, 
-           label = paste0("italic(R)^{2} == ", round(r2_eco[1],4)),
-           color ="black",
-           parse = TRUE, 
-           size = 4) +
-  #ggtitle("c)")+
-  theme(plot.title = element_text(size = 18),
-       legend.title = element_text(size = 11),
-        legend.text = element_text(size = 9),
-        axis.title.x = element_text(size = 16),
-        axis.title.y = element_text(size = 16),
-        axis.text.y = element_text(size = 10),
-       axis.text.x = element_text(size = 14)) +
-  ylab("TMF") +
-  ylim(NA, 12)
-
-fig_eco
-```
-
-```{r, eval=FALSE, echo=FALSE}
-ggsave(here("figs","ecosystem.png"),
-       width = 8,
-       height = 5)
-```
-
 ### Marine vs freshwater
 
-```{r}
+```{r, include=FALSE}
 TMF_data2_aquatic <- TMF_data2 %>%
   filter(Ecosystem == "marine" | Ecosystem == "freshwater")
 ```
@@ -2987,7 +2812,7 @@ eco_aq_model <- run_model(TMF_data2_aquatic, ~ Ecosystem)
 save(eco_aq_model, file = here("Rmodels", "eco_aq_model.RData"))
 ```
 
-```{r, echo=FALSE, warning=FALSE, fig.cap="Note: Maximum TMF value set to 12"}
+```{r, warning=FALSE}
 load(here("Rmodels", "eco_aq_model.RData"))
 summary(eco_aq_model)
 r2_eco_aq <- r2_ml(eco_aq_model, TMF_data2_aquatic)
@@ -3026,7 +2851,7 @@ figS5 <- orchard_plot_new(eco_aq_model,
 figS5
 ```
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, eval=FALSE, include=FALSE}
 ggsave(here("figs/supplements","figS5.png"),
        width = 8,
        height = 5)
@@ -3051,7 +2876,7 @@ bt_fw_model <- run_model(TMF_data2, ~ Breathing_type_fw)
 save(bt_fw_model, file = here("Rmodels", "bt_fw_model.RData"))
 ```
 
-```{r, echo=FALSE, warning=FALSE, fig.cap="Note: Maximum TMF value set to 12"}
+```{r, warning=FALSE}
 load(here("Rmodels", "bt_fw_model.RData"))
 summary(bt_fw_model)
 r2_bt_fw <- r2_ml(bt_fw_model, TMF_data2)
@@ -3099,7 +2924,7 @@ fig4B <- orchard_plot_new2(bt_fw_model,
  # scale_y_break(c(11, 13))
 ```
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, eval=FALSE, include=FALSE}
 figS11 <- orchard_plot_new2(bt_fw_model,
             transfm="percent",
              mod = "Breathing_type_fw",
@@ -3163,7 +2988,7 @@ TL_lowest_model <- run_model(TMF_data2_TL_lowest, ~scale(TL_lowest))
 save(TL_lowest_model, file = here("Rmodels", "TL_lowest_model.RData"))
 ```
 
-```{r, echo=FALSE}
+```{r}
 load(here("Rmodels", "TL_lowest_model.RData"))
 summary(TL_lowest_model)
 r2_TL_lowest <- r2_ml(TL_lowest_model, TMF_data2_TL_lowest)
@@ -3216,7 +3041,7 @@ fig5B <- bubble_plot_new(TL_lowest_bubble,
   ylab("ln TMF")
 ```
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, eval=FALSE, include=FALSE}
 fig5B_data <- TMF_data2_TL_lowest %>% 
   select(Study_ID, FW_ID, PFAS_ID, TL_lowest, ln_TMF, ln_TMF_se)
 
@@ -3238,7 +3063,7 @@ TL_highest_model <- run_model(TMF_data2_TL_highest, ~scale(TL_highest))
 save(TL_highest_model, file = here("Rmodels", "TL_highest_model.RData"))
 ```
 
-```{r, echo=FALSE}
+```{r}
 load(here("Rmodels", "TL_highest_model.RData"))
 summary(TL_highest_model)
 r2_TL_highest <- r2_ml(TL_highest_model, TMF_data2_TL_highest)
@@ -3288,7 +3113,7 @@ fig5C <- bubble_plot_new(TL_highest_bubble,
 ```
 
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, eval=FALSE, include=FALSE}
 fig5C_data <- TMF_data2_TL_highest %>% 
   select(Study_ID, FW_ID, PFAS_ID, TL_highest, ln_TMF, ln_TMF_se)
 
@@ -3310,7 +3135,7 @@ fw_length_model <- run_model(TMF_data2_fw_length, ~scale(fw_length)-1)
 save(fw_length_model, file = here("Rmodels", "fw_length_model.RData"))
 ```
 
-```{r, echo=FALSE}
+```{r}
 load(here("Rmodels", "fw_length_model.RData"))
 summary(fw_length_model)
 r2_fw_length <- r2_ml(fw_length_model, TMF_data2_fw_length)
@@ -3363,74 +3188,16 @@ fig5D <- bubble_plot_new(fw_length_bubble,
   ylab("ln TMF")
 ```
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, eval=FALSE, include=FALSE}
 fig5D_data <- TMF_data2_fw_length %>% 
   select(Study_ID, FW_ID, PFAS_ID, fw_length, ln_TMF, ln_TMF_se)
 
 write_csv(fig5D_data, here("Rdata", "fig5D_data.csv"))
 ```
 
-### Number of species
+## Compounds’ physicochemical properties
 
-```{r, eval=FALSE}
-sum(is.na(TMF_data2$n_species)) #checking the amount of NAs
-#[1] 0
-n_species_model <- run_model(TMF_data2, ~scale(n_species))
-save(n_species_model, file = here("Rmodels", "n_species_model.RData"))
-```
-
-```{r, echo=FALSE}
-load(here("Rmodels", "n_species_model.RData"))
-summary(n_species_model)
-
-r2_n_species <- r2_ml(n_species_model, TMF_data2)
-
-n_species_bubble <- orchaRd::mod_results(n_species_model, 
-                                   mod = "n_species", 
-                                   group = "Study_ID")
-                                   
-  
-fig_n_species <- bubble_plot(n_species_bubble,
-            mod = "n_species",
-            group = "Study_ID",
-            x = "n_species",
-            y = "ln_TMF",
-            est.lwd = 1,
-            legend.pos = "bottom.right",
-            k.pos = "bottom.left",
-            ci.col = "red",
-            pi.col = "black",
-            est.col = "black",
-            g = TRUE) +
-  annotate(geom ="text",
-           x = 30,
-           y = 4,
-           label = paste0("italic(R)^{2} == ", round(r2_n_species[1],4)),
-           color = "black",
-           parse = TRUE,
-           size = 4) +
-  #ggtitle("a)") +
-  theme(plot.title = element_text(size = 16),
-        legend.title = element_text(size = 10),
-        legend.text = element_text(size = 8),
-        axis.title.x = element_text(size = 14),
-        axis.title.y = element_text(size = 14),
-        axis.text.y = element_text(size = 12),
-        axis.text.x = element_text(size = 12)) +
-  xlab("Number of species in the food web")
-
-fig_n_species
-```
-
-```{r, eval=FALSE, echo=FALSE}
-ggsave(here("figs","n_species.png"),
-       width = 8,
-       height = 5)
-```
-
-## PFAS properties
-
-### carbon chain length
+### Carbon chain length
 
 ```{r, include=FALSE}
 sum(is.na(TMF_data2$ccl)) #checking the amount of NAs
@@ -3445,7 +3212,7 @@ ccl_model <- run_model(TMF_data2_ccl, ~scale(ccl))
 save(ccl_model, file = here("Rmodels", "ccl_model.RData"))
 ```
 
-```{r, echo=FALSE}
+```{r}
 load(here("Rmodels", "ccl_model.RData"))
 summary(ccl_model)
 r2_ccl <- r2_ml(ccl_model, TMF_data2_ccl)
@@ -3495,14 +3262,14 @@ fig5E <- bubble_plot_new(ccl_bubble,
   scale_x_continuous(limits = c(3, 15), breaks = seq(3, 15, by = 3))
 ```
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, eval=FALSE, include=FALSE}
 fig5E_data <- TMF_data2_ccl %>% 
   select(Study_ID, FW_ID, PFAS_ID, ccl, ln_TMF, ln_TMF_se)
 
 write_csv(fig5E_data, here("Rdata", "fig5E_data.csv"))
 ```
 
-### perfluoroalkyl chain length
+### Perfluoroalkyl chain length
 
 ```{r, include=FALSE}
 sum(is.na(TMF_data2$perfluoroalkyl_ccl)) #checking the amount of NAs
@@ -3517,7 +3284,7 @@ p_ccl_model <- run_model(TMF_data2_p_ccl, ~scale(perfluoroalkyl_ccl))
 save(p_ccl_model, file = here("Rmodels", "p_ccl_model.RData"))
 ```
 
-```{r, echo=FALSE}
+```{r, warning=FALSE}
 load(here("Rmodels", "p_ccl_model.RData"))
 summary(p_ccl_model)
 r2_p_ccl <- r2_ml(p_ccl_model, TMF_data2_p_ccl)
@@ -3566,7 +3333,7 @@ figS3 <- bubble_plot(p_ccl_bubble,
 figS3
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 ggsave(here("figs/supplements","figS3.png"),
        width = 8,
        height = 4)
@@ -3597,7 +3364,7 @@ class_model <- run_model(TMF_data2_class, ~ Class-1)
 save(class_model, file = here("Rmodels", "class_model.RData"))
 ```
 
-```{r, echo=FALSE}
+```{r}
 load(here("Rmodels", "class_model.RData"))
 summary(class_model)
 r2_class <- r2_ml(class_model, TMF_data2_class)
@@ -3645,7 +3412,7 @@ fig4C <- orchard_plot_new2(class_model,
   scale_color_manual(values = c("#66101F", "#597802", "#114B5F", "#FB8B24"))
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 figS13 <- orchard_plot_new2(class_model,
              transfm="percent",
              mod = "Class",
@@ -3696,7 +3463,7 @@ fig4C_data <- TMF_data2_class %>%
 write_csv(fig4C_data, here("Rdata", "fig4C_data.csv"))
 ```
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, eval=FALSE, include=FALSE}
 # Combine plots with specified heights
 fig4 <- (fig4A / fig4B) + fig4C +
   plot_layout(heights = c(1, 1, 2))
@@ -3704,6 +3471,82 @@ fig4 <- (fig4A / fig4B) + fig4C +
 # Save the combined plot
 ggsave(here("figs", "fig4.pdf"), plot = fig4, width = 180, height = 140, dpi = 600, units = 'mm')
 
+```
+
+## Chemicals’ regulation status
+
+```{r, include=FALSE}
+# Regulation levels
+lacking <- c("6:2ClPFESA", "PFDS", "PFBA", "PFPeA","PFHxA")
+REACH <- c("PFDA", "PFUnDA", "PFTrDA", "PFDoDA", "PFTeDA", "PFHpA", "PFBS")
+SCPoPs <- c("PFOS", "br-PFOS", "l-PFOS", "PFNA", "FOSA", "PFHxS", "PFOA")
+
+plot_data4 <- TMF_data2
+
+# Add the regulation column based on PFAS_ID
+plot_data4$regulation <- ifelse(plot_data4$PFAS_ID %in% lacking, "none",
+                          ifelse(plot_data4$PFAS_ID %in% REACH, "REACH",
+                          ifelse(plot_data4$PFAS_ID %in% SCPoPs, "SCPoPs", NA)))
+
+plot_data4$regulation <- factor(plot_data4$regulation, levels = c("none", "REACH", "SCPoPs"))
+
+# Remove rows where the regulation column is NA
+plot_data4 <- plot_data4 %>% filter(!is.na(regulation))
+```
+
+```{r, eval=FALSE}
+regulation_model <- run_model(plot_data4, ~ regulation -1)
+save(regulation_model, file = here("Rmodels", "regulation_model.RData"))
+```
+
+```{r}
+load(here("Rmodels", "regulation_model.RData"))
+summary(regulation_model)
+r2_regulation <- r2_ml(regulation_model, plot_data4)
+predict.rma(regulation_model, newmods = c(1, 0, -1), transf = exp, addx = T)
+predict.rma(regulation_model, newmods = c(1, -1, 0), transf = exp, addx = T)
+```
+
+```{r}
+figS14 <- orchard_plot_new(regulation_model,
+             transfm = "percent",
+             mod = "regulation",
+             group = "Study_ID",
+             xlab = "ln_TMF",
+             legend.pos = "bottom.right",
+             k.pos = "left",
+             angle = 0,
+             colour = "black",
+             fill = FALSE,
+             trunk.size = 1,
+             branch.size = 3.1,
+             twig.size = 0.5) +
+  annotate(geom = "text",
+           x = 3.4,
+           y = 8, 
+           label = paste0("italic(R)^{2} == ", round(r2_regulation[1],4)),
+           color ="black",
+           parse = TRUE, 
+           size = 4) +
+  #ggtitle("c)")+
+  theme(#plot.title = element_text(face = "bold", size = 16),
+       legend.title = element_text(size = 13),
+        legend.text = element_text(size = 12),
+        axis.title.x = element_text(size = 12),
+        axis.title.y = element_text(size = 14),
+        axis.text.y = element_text(size = 13),
+       axis.text.x = element_text(size = 13)) +
+  #ggtitle("C") +
+  xlab("International regulation") +
+  ylab("TMF") +
+  #scale_y_break(c(11, 13)) +
+  scale_y_continuous(limits = c(0, 11), breaks = seq(0, 11, by = 1))
+
+figS14
+```
+
+```{r, eval=FALSE, include=FALSE}
+ggsave(here("figs/supplements", "figS14.png"), plot = fig_regulation, width = 9, height = 5, dpi = 300)
 ```
 
 # Correlation assessment
@@ -3744,7 +3587,7 @@ TMF_data2_corr <- TMF_data2 %>%
 ```
 
 
-```{r, echo=FALSE}
+```{r, include=FALSE}
 # Create the alluvial plot - Sample type and breathign type top predator
 figS15 <- ggplot(TMF_data2_corr,
        aes(axis1 = Sample_type, axis2 = Breathing_type_fw, axis3 = Breathing_type, y = Frequency)) +
@@ -3760,7 +3603,7 @@ figS15 <- ggplot(TMF_data2_corr,
 figS15
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 ggsave(here("figs/supplements","figS15.png"),
        width = 10,
        height = 7)
@@ -3784,14 +3627,14 @@ ggplot(TMF_data2_loc_agg,
   theme(legend.position = "none")
 ```
 
-```{r}
+```{r, include=FALSE}
 cor.test(TMF_data2$fw_length, TMF_data2$TL_highest)
 cor.test(TMF_data2$fw_length, TMF_data2$n_species)
 ```
 
 # Full model
 
-```{r}
+```{r, include=FALSE}
 TMF_data_fmodel <- TMF_data2 %>% 
   mutate(Sample_type = recode(
     Sample_type,
@@ -3816,7 +3659,10 @@ TMF_data_fmodel <- TMF_data2 %>%
     Class,
     "Precursor and/or intermediate" = "Precursor/intermediate"
   ))
-  
+```
+
+
+```{r}
 VCV_fmodel <- vcalc(vi = TMF_data_fmodel$ln_TMF_se^2, 
              cluster = TMF_data_fmodel$FW_ID, 
              obs = TMF_data_fmodel$TMF_ID, 
@@ -3824,7 +3670,7 @@ VCV_fmodel <- vcalc(vi = TMF_data_fmodel$ln_TMF_se^2,
 ```
 
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 TMF_data_fmodel %>%
   filter(Censored_data_strategy == "Not provided") %>%
   tally()
@@ -3839,20 +3685,20 @@ sum(is.na(TMF_data_fmodel$TL_highest))
 # [1] 119
 sum(is.na(TMF_data_fmodel$fw_length))
 # [1] 119
+```
+
+
+```{r, eval=FALSE}
 full_model <- rma.mv(yi = ln_TMF,
                      V = VCV_fmodel, 
                      mods = ~  1 + 
                        Sample_type +
                        Conc_determ_method +
-                       #Censored_data_strategy +
                        TEF +
                        Breathing_type_fw +
                        Breathing_type +
                        Class +
                        scale(Latitude_abs) +
-                       #scale(TL_lowest) +
-                       #scale(TL_highest) +
-                       #scale(fw_length) +
                        scale(ccl),
                      random = list(~1|Study_ID, 
                                    ~1|FW_ID, 
@@ -3866,7 +3712,7 @@ full_model <- rma.mv(yi = ln_TMF,
 save(full_model, file = here("Rmodels", "full_model.RData"))
 ```
 
-```{r, echo=FALSE}
+```{r}
 load(here("Rmodels", "full_model.RData"))
 summary(full_model)
 r2_ml(full_model, TMF_data_fmodel)
@@ -3926,8 +3772,7 @@ figS16 <- ggplot(weights, aes(Predictor, Sum_of_weights)) +
 figS16
 ```
 
-
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 ggsave(here("figs/supplements","figS16.png"),
        width = 9,
        height = 4)
@@ -3960,7 +3805,7 @@ mod_RoB <- rma.mv(yi = ln_TMF, # Natural logarithm of the Trophic Magnification 
 save(mod_RoB, file = here("Rmodels", "mod_RoB.RData"))
 ```
 
-```{r, warning=FALSE, echo=FALSE}
+```{r, warning=FALSE}
 load(here("Rmodels", "mod_RoB.RData"))
 summary(mod_RoB)
 i2_ml(mod_RoB)
@@ -4003,7 +3848,7 @@ figS21 <- orchard_plot_new(mod_RoB,
 figS21
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 ggsave(here("figs/supplements","figS21.png"),
        width = 10,
        height = 6)
@@ -4052,15 +3897,15 @@ mod_se <- rma.mv(ln_TMF,
 
 save(mod_se, file = here("Rmodels", "mod_se.RData"))
 summary(mod_se)
-mod_pb <- rma.mv(ln_TMF,
-                 VCV,
-                     method = "REML", 
-                     test = "t", 
-                     data = TMF_data2
-                     )
-
-
-robust(mod_pb, cluster = FW_ID, clubSandwich = T)
+# mod_pb <- rma.mv(ln_TMF,
+#                  VCV,
+#                      method = "REML", 
+#                      test = "t", 
+#                      data = TMF_data2
+#                      )
+# 
+# 
+# robust(mod_pb, cluster = FW_ID, clubSandwich = T)
 ```
 
 ```{r}
@@ -4091,7 +3936,7 @@ figS18 <- orchaRd::bubble_plot(sse_bubble,
 figS18
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 ggsave(here("figs/supplements","figS18.png"),
        width = 10,
        height = 6)
@@ -4115,7 +3960,7 @@ MLMR_mod_year.c <- metafor::rma.mv(ln_TMF,
 save(MLMR_mod_year.c, file = here("Rmodels", "MLMR_mod_year.c.RData"))
 ```
 
-```{r, echo=FALSE}
+```{r}
 load(here("Rmodels", "MLMR_mod_year.c.RData"))
 summary(MLMR_mod_year.c)
 r2_pbias <- r2_ml(MLMR_mod_year.c, TMF_data2)
@@ -4156,7 +4001,7 @@ fig5F <- bubble_plot_new(pb_bubble,
   scale_x_continuous(breaks = seq(2003, 2024, by = 5), limits = c(2003, 2024))
 ```
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, eval=FALSE, include=FALSE}
 # Combine plots with specified heights
 fig5 <- (fig5A + fig5B) / (fig5C  + fig5D) / (fig5E + fig5F)
 
@@ -4170,7 +4015,7 @@ write_csv(fig5F_data, here("Rdata", "fig5F_data.csv"))
 ```
 
 ## Leave-one-out-analysis
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 TMF_data2 <- TMF_data2 %>%
   mutate(leave_out = Study_ID)
 
@@ -4241,7 +4086,7 @@ figS19
 ```
 
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 #Save the plot
 ggsave(here("figs/supplements","figS19.png"),
        width = 7,
