@@ -3,7 +3,7 @@ title: "Analysis Code"
 author: "Lorenzo Ricolfi"
 output:
   html_document:
-    code_folding: show
+    code_folding: hide
     toc: yes
     toc_float: yes
     toc_collapsed: yes
@@ -21,41 +21,41 @@ knitr::opts_chunk$set(echo = TRUE)
 # Packages
 
 The following packages are required to run the code in this script.
-```{r, echo=TRUE, results='hide', warning=FALSE, message=FALSE}
+```{r, results='hide'}
 #devtools::install_github("EIvimeyCook/ShinyDigitise")
 #library(shinyDigitise)
-pacman::p_load(tidyr,       # For tidying data, including reshaping and separating data into columns.
-               dplyr,       # For data manipulation, including filtering, selecting, and summarizing data.
-               stringr,     # For string manipulation, including pattern matching and text extraction.
-               readr,
-               here,        # For constructing file paths relative to the root of the project directory.
-               lmtest,      # For conducting diagnostic tests and hypothesis tests on linear models.
-               dm,          # For working with data models and relational data within R.
-               data.table,  # For fast and efficient data manipulation, particularly with large datasets.
-               metaDigitise,# For extracting and digitizing data from plots in scientific literature.
-               clubSandwich,# For computing robust standard errors in meta-analysis, particularly in clustered data.
-               metafor,     # For conducting meta-analyses, including univariate and multivariate models.
-               orchaRd,     # For visualizing meta-analysis results, including bubble plots and forest plots.
-               ggplot2,     # For creating complex and customizable visualizations using the grammar of graphics.
-               MuMIn,       # For model selection and model averaging, particularly in regression models.
-               kableExtra,  # Enhances the formatting capabilities of tables
-               patchwork,   # Facilitates combining multiple ggplot2 plots into a single layout
-               ggalluvial,  # Extends ggplot2 to create alluvial diagrams
-               ggbreak,
-               rnaturalearth,
-               rnaturalearthdata,
-               officer,
-               flextable,
-               ggsci, 
-               forcats)  
+pacman::p_load(tidyr,        # For tidying data, including reshaping and separating data into columns.
+               dplyr,        # For data manipulation, including filtering, selecting, and summarizing data.
+               stringr,      # For string manipulation, including pattern matching and text extraction.
+               readr,        # For reading rectangular data (csv, tsv, fwf, etc.) into R efficiently.
+               here,         # For constructing file paths relative to the root of the project directory.
+               lmtest,       # For conducting diagnostic tests and hypothesis tests on linear models.
+               dm,           # For working with data models and relational data within R.
+               data.table,   # For fast and efficient data manipulation, particularly with large datasets.
+               metaDigitise, # For extracting and digitizing data from plots in scientific literature.
+               clubSandwich, # For computing robust standard errors in meta-analysis, particularly in clustered data.
+               metafor,      # For conducting meta-analyses, including univariate and multivariate models.
+               orchaRd,      # For visualizing meta-analysis results, including bubble plots and forest plots.
+               ggplot2,      # For creating complex and customizable visualizations using the grammar of graphics.
+               MuMIn,        # For model selection and model averaging, particularly in regression models.
+               kableExtra,   # Enhances the formatting and styling capabilities of tables.
+               patchwork,    # Facilitates combining multiple ggplot2 plots into a single layout.
+               ggalluvial,   # Extends ggplot2 to create alluvial diagrams for categorical data flows.
+               ggbreak,      # For breaking and rescaling ggplot2 axes to handle extreme values.
+               rnaturalearth,# For accessing map data from Natural Earth for geographical visualizations.
+               rnaturalearthdata, # Provides the datasets (map layers) used with rnaturalearth.
+               officer,      # For creating and editing Microsoft Word and PowerPoint documents.
+               flextable,    # For creating customizable and publication-ready tables.
+               ggsci,        # Provides scientific journal and science-themed color palettes for ggplot2.
+               forcats)      # For working with categorical variables (factors), including reordering and recoding.
 
 
 ```
 
-```{r, eval=FALSE, include=FALSE}
+```{r, eval=FALSE}
+# metaDigitise and shinyDigitise for data extraction from plots
 dat <- metaDigitise("~/PhD/GitHub/PFAS_Trophic_Magnification/metaDigitise")
 dat <- shinyDigitise("~/PhD/GitHub/PFAS_Trophic_Magnification/metaDigitise")
-#write.csv(dat, file = "metaDigitise/MetaDigitise_Martin_2004_10r.csv")
 ```
 
 # Data uploading and wrangling
@@ -63,13 +63,14 @@ dat <- shinyDigitise("~/PhD/GitHub/PFAS_Trophic_Magnification/metaDigitise")
 We need to perform data wrangling to optimally structure the data for analysis. The following code chunk outlines the steps taken, along with brief descriptions of each.
 ```{r, results='hide', warning=FALSE}
 study_data <- read.csv(here("data/study_data.csv"))
- fw_data <- read.csv(here("data/fw_data.csv"))
- PFAS_data <- read.csv(here("data/PFAS_data.csv"))
- TMF_data <- read.csv(here("data/TMF_data.csv"))
-# appr_data <- read.csv(here("data/appr_data.csv"))
+fw_data <- read.csv(here("data/fw_data.csv"))
+PFAS_data <- read.csv(here("data/PFAS_data.csv"))
+TMF_data <- read.csv(here("data/TMF_data.csv"))
+RoB_data <- read.csv(here("data/RoB_data.csv"))
 
+# Replacing "na" strings with actual NA values
 TMF_data <- TMF_data %>%
-  mutate(across(everything(), # Replace "na" strings with actual NA values
+  mutate(across(everything(),
                 ~ ifelse(. == "na", NA, .)))
 
 function1 <- function(data) {
@@ -131,7 +132,7 @@ TMF_data <- function1(TMF_data)
 TMF_data %>%
   filter(!is.na(TMF) & !is.na(TMF_se)) %>%
   nrow()
-# [1] 981
+# [1] 1009
 
 
 TMF_data <- TMF_data %>%
@@ -139,38 +140,52 @@ TMF_data <- TMF_data %>%
   mutate(
     ln_TMF = log(TMF),
     ln_TMF_se = TMF_se / TMF, # Taylor approximation
-    Sample_type = factor(Sample_type), # Convert to factor
-    Sample_type = relevel(Sample_type, ref = "whole-organisms only") # Relevel
+    Sample_type = factor(Sample_type), 
+    Sample_type = relevel(Sample_type, ref = "whole-organisms only")
   ) 
   
-
+# Data cleaning
 TMF_data <- TMF_data %>% 
-  select(-(starts_with("Initial"))) %>% #removing any column starting with initials
-  select(-(starts_with("X"))) %>% #removing any column starting with X
-  select(-(ends_with("comment"))) %>%  #removing any column ending with comment
-  select(-("Study_ID")) #removing Study_ID column because redundant
+  select(-(starts_with("Initial"))) %>% 
+  select(-(starts_with("X"))) %>% 
+  select(-(ends_with("comment"))) %>%  #
+  filter(!(Study_ID %in% c("S_018", "S_055"))) %>% 
+  select(-("Study_ID")) %>% 
+  select(-("Censored_data_strategy")) %>% 
+  select(-("Undetected_strategy_LOQ")) %>%
+  select(-("Undetected_strategy_LOD"))
 
 PFAS_data <- PFAS_data %>% 
-  select(-(starts_with("Initial"))) %>% #removing any column starting with initials
-  select(-(starts_with("X"))) %>% #removing any column starting with X
-  select(-(ends_with("comment"))) #removing any column ending with comment
+  select(-(starts_with("Initial"))) %>% 
+  select(-(starts_with("X"))) %>% 
+  select(-(ends_with("comment"))) 
 
 fw_data <- fw_data %>% 
-  select(-(starts_with("Initial"))) %>% #removing any column starting with initials
-  select(-(starts_with("X"))) %>% #removing any column starting with X
-  select(-(ends_with("comment"))) #removing any column ending with comment
+  select(-(starts_with("Initial"))) %>% 
+  select(-(starts_with("X"))) %>% 
+  select(-(ends_with("comment"))) %>% 
+  filter(!(Study_ID %in% c("S_018", "S_055"))) 
 
 study_data <- study_data %>% 
-  select(-(starts_with("Initials"))) %>% #removing any column starting with initials
-  select(-(starts_with("X"))) %>% #removing any column starting with X
-  select(-(ends_with("comment"))) %>%  #removing any column ending with comment
-  filter(!is.na(Study_ID) & Study_ID != "") %>%  #removing rows where Study_ID is empty (either NA or "")
+  select(-(starts_with("Initials"))) %>% 
+  select(-(starts_with("X"))) %>% 
+  select(-(ends_with("comment"))) %>%  
+  filter(!is.na(Study_ID) & Study_ID != "") %>%  
   mutate(Regression_variable = case_when(
     grepl("TL", Linear_regression_formula) ~ "TL",
     grepl("δ15N", Linear_regression_formula) ~ "δ15N",
     TRUE ~ NA_character_
   )) %>%
-  mutate(year_publication = as.numeric(str_extract(Author_year, "(?<=_)\\d{4}")))
+  mutate(year_publication = as.numeric(str_extract(Author_year, "(?<=_)\\d{4}"))) %>% 
+  filter(!(Study_ID %in% c("S_018", "S_055"))) 
+
+RoB_data <- RoB_data %>%
+  select(-(starts_with("Initials"))) %>%
+  select(-(ends_with("comment"))) %>% 
+  select(-(ends_with("details"))) %>% 
+  select(-(starts_with("X"))) %>% 
+  filter(!(Study_ID %in% c("S_018", "S_055"))) %>%
+  select(-("Study_ID"))
 
 TMF_data <- TMF_data %>%
   # Correct mislabelings in the PFAS_ID column (TMF_data data table)
@@ -189,6 +204,7 @@ PFAS_data <- PFAS_data %>%
     TRUE ~ PFAS_ID
   ))
 
+# Fixing latitude and longitude data
 fw_data <- fw_data %>%
   # Trim whitespace
   mutate(Latitude_DD = str_trim(Latitude_DD)) %>%
@@ -213,11 +229,11 @@ fw_data <- fw_data %>%
       "fish and other species", "no fish"
     ) ~ "not water-breathing only",
     
-    TRUE ~ NA_character_  # Assign NA for any species not in the lists
+    TRUE ~ NA_character_  
   )) %>% 
   mutate(
     Ecosystem = factor(Ecosystem),
-    Ecosystem = relevel(Ecosystem, ref = "marine")) # Relevel
+    Ecosystem = relevel(Ecosystem, ref = "marine"))
     
 
 fw_data <- fw_data %>%
@@ -310,45 +326,35 @@ fw_data <- fw_data %>%
   mutate(fw_length = TL_highest - TL_lowest)
 
 # The following code creates a data model object called data_dm_no_keys using the dm() function, with the tables st, sp, pfas, co, sa, and me.
-data_dm_no_keys <- dm(study_data, PFAS_data, fw_data, TMF_data)
+data_dm_no_keys <- dm(study_data, PFAS_data, fw_data, TMF_data, RoB_data)
 data_dm_no_keys #printing the data_dm_no_keys object, which displays the structure and content of the data model
 data_dm_no_keys$study_data #accessing the study_data table from the data model using $ operator and printing it
 data_dm_no_keys[c("study_data", "PFAS_data")] #accessing the columns "study_data" and "PFAS_data" from the data model using indexing and printing the corresponding data
 
 # The following code adds primary keys to the data_dm_no_keys data model using the dm_add_pk() function. It specifies the table and the corresponding column(s) to be used as primary keys for each table. The resulting data model with only primary keys is stored in the data_dm_only_pks object and printed. Next, foreign keys are added to the data_dm_only_pks data model using the dm_add_fk() function. It specifies the table, columns, and the referenced table for each foreign key constraint. The resulting data model with both primary and foreign keys is stored in the data_dm_all_keys object and printed.
 data_dm_only_pks <- data_dm_no_keys %>% 
-  dm_add_pk(table = study_data, columns = Study_ID) %>% 
+  dm_add_pk(table = study_data, columns = Study_ID) %>%
+  dm_add_pk(RoB_data, Appraisal_ID) %>% 
   dm_add_pk(PFAS_data, PFAS_ID) %>% 
   dm_add_pk(fw_data, FW_ID) %>% 
   dm_add_pk(TMF_data, TMF_ID)
 data_dm_only_pks
 
 data_dm_all_keys <- 
-  data_dm_only_pks %>% 
-  dm_add_fk(table = fw_data, columns = Study_ID, ref_table = study_data) %>% 
+  data_dm_only_pks %>%
+  dm_add_fk(table = fw_data, columns = Study_ID, ref_table = study_data) %>%
   dm_add_fk(table = TMF_data, columns = FW_ID, ref_table = fw_data) %>% 
-  dm_add_fk(table = TMF_data, columns = PFAS_ID, ref_table = PFAS_data)
+  dm_add_fk(table = TMF_data, columns = PFAS_ID, ref_table = PFAS_data) %>%
+  dm_add_fk(table = study_data, columns = Appraisal_ID, ref_table = RoB_data)
 data_dm_all_keys
 
 # Create a palette of 70 colors using a range from a selection of base colors
 color_palette <- colorRampPalette(c("red", "blue", "green", "purple", "orange", "pink", "yellow"))(70)
-```
 
-
-```{r}
-# Data model visualization:
-data_dm_all_keys %>% 
-  dm_draw()
- # Data model integrity check:
-data_dm_all_keys %>% 
-  dm_examine_constraints()
-```
-
-```{r, results='hide'}
-# The following chunk creates a new table (i.e., 'TMF_data2') that merges 'study_data', 'PFAS_data', 'fw_data', and 'TMF_data' tables.
+# The following code creates a new table (i.e., 'TMF_data2') that merges 'study_data', 'PFAS_data', 'fw_data', and 'TMF_data' tables.
 TMF_data2 <- 
   data_dm_all_keys %>%
-  dm_select_tbl(TMF_data, fw_data, PFAS_data, study_data) %>%
+  dm_select_tbl(TMF_data, RoB_data, fw_data, PFAS_data, study_data) %>%
   dm_flatten_to_tbl(.start = TMF_data, .recursive = TRUE, .join = left_join) 
 
 colnames(TMF_data2)
@@ -357,27 +363,261 @@ TMF_data2 %>%
   filter(!is.na(TMF) & !is.na(TMF_se)) %>%
   distinct(Study_ID) %>%
   count()
-# [1] 63
+# [1] 64
 
 # Save the table
-#write.csv(TMF_data2, here("data/TMF_data2.csv"), row.names = FALSE)
+#write.csv(TMF_data2, here("Rdata/TMF_data2.csv"), row.names = FALSE)
+```
+
+```{r, echo=FALSE}
+# Data model visualization:
+figS23 <- data_dm_all_keys %>% 
+  dm_draw()
+ # Data model integrity check:
+data_dm_all_keys %>% 
+  dm_examine_constraints()
 ```
 
 # VCV matrix
 
 The following code creates a variance-covariance matrix (VCV) using the vcalc function:
-```{r, warning=FALSE}
+```{r}
 VCV <- vcalc(vi = TMF_data2$ln_TMF_se^2, #Specifies the variance of the effect sizes
              cluster = TMF_data2$FW_ID, #Indicates the clustering variable
              obs = TMF_data2$TMF_ID, #Identifies each unique observation by its TMF_ID, allowing the function to calculate covariances between effect sizes that share a cluster.
              rho = 0.5) #Sets the assumed correlation between effect sizes within the same cluster. This correlation reflects how much the effect sizes are expected to covary within the same food web.
 ```
 
-# Modifying OrchaRd plot function
+# Functions
 
-The following code modifies the OrchaRd plot function to display model outputs on the natural log scale (ln_TMF) while presenting the plots on the original scale (TMF), enhancing the visual interpretation of the results.
-```{r, results='hide', warning=FALSE}
+The following chunks modify the OrchaRd plot function to display model outputs on the natural log scale (ln_TMF) while presenting the plots on the original scale (TMF), enhancing the visual interpretation of the results, along with minor aesthetic changes. The last chunk modifies the bubble_plot function for minor aesthetic changes. The code creates 3 modified functions: orchard_plot_new, orchard_plot_new2, and bubble_plot_new.
+
+```{r, warning=FALSE}
 orchard_plot_new <- function (object, mod = "1", group, xlab, N = NULL, alpha = 0.5, 
+    angle = 90, cb = TRUE, k = TRUE, g = TRUE, tree.order = NULL, 
+    trunk.size = 1, branch.size = 1.2, twig.size = 0.5, transfm = c("none", 
+        "tanh", "invlogit", "percent", "percentr"), condition.lab = "Condition", 
+    legend.pos = c("bottom.right", "bottom.left", "top.right", 
+        "top.left", "top.out", "bottom.out", "none"), k.pos = c("right", 
+        "left", "none"), colour = FALSE, fill = TRUE, weights = "prop", 
+    by = NULL, at = NULL, upper = TRUE, flip = TRUE) 
+{
+    transfm <- match.arg(NULL, choices = transfm)
+    legend.pos <- match.arg(NULL, choices = legend.pos)
+    k.pos <- match.arg(NULL, choices = k.pos)
+    if (any(class(object) %in% c("robust.rma", "rma.mv", "rma", 
+        "rma.uni"))) {
+        if (mod != "1") {
+            results <- orchaRd::mod_results(object, mod, group, 
+                N, by = by, at = at, weights = weights, upper = upper)
+        }
+        else {
+            results <- orchaRd::mod_results(object, mod = "1", 
+                group, N, by = by, at = at, weights = weights, 
+                upper = upper)
+        }
+    }
+    if (any(class(object) %in% c("orchard"))) {
+        results <- object
+    }
+    mod_table <- results$mod_table
+    data_trim <- results$data
+    data_trim$moderator <- factor(data_trim$moderator, levels = mod_table$name, 
+        labels = mod_table$name)
+    data_trim$scale <- (1/sqrt(data_trim[, "vi"]))
+    legend <- "Precision (1/SE)"
+    if (!is.null(tree.order) & length(tree.order) != nlevels(data_trim[, 
+        "moderator"])) {
+        stop("Length of 'tree.order' does not equal number of categories in moderator")
+    }
+    if (!is.null(tree.order)) {
+        data_trim$moderator <- factor(data_trim$moderator, levels = tree.order, 
+            labels = tree.order)
+        mod_table <- mod_table %>% dplyr::arrange(factor(name, 
+            levels = tree.order))
+    }
+    if (is.null(N) == FALSE) {
+        data_trim$scale <- data_trim$N
+        legend <- paste0("Sample Size ($\\textit{N}$)")
+    }
+    if (transfm == "tanh") {
+        cols <- sapply(mod_table, is.numeric)
+        mod_table[, cols] <- Zr_to_r(mod_table[, cols])
+        data_trim$yi <- Zr_to_r(data_trim$yi)
+        label <- xlab
+    }
+    if (transfm == "invlogit") {
+        cols <- sapply(mod_table, is.numeric)
+        mod_table[, cols] <- lapply(mod_table[, cols], function(x) metafor::transf.ilogit(x))
+        data_trim$yi <- metafor::transf.ilogit(data_trim$yi)
+        label <- xlab
+    }
+    if (transfm == "percentr") {
+        cols <- sapply(mod_table, is.numeric)
+        mod_table[, cols] <- lapply(mod_table[, cols], function(x) (exp(x) - 
+            1) * 100)
+        data_trim$yi <- (exp(data_trim$yi) - 1) * 100
+        label <- xlab
+    }
+    if (transfm == "percent") {
+        cols <- sapply(mod_table, is.numeric)
+        mod_table[, cols] <- lapply(mod_table[, cols], function(x) exp(x))
+        data_trim$yi <- (exp(data_trim$yi))
+        label <- xlab
+    }
+    else {
+        label <- xlab
+    }
+    mod_table$K <- as.vector(by(data_trim, data_trim[, "moderator"], 
+        function(x) length(x[, "yi"])))
+    mod_table$g <- as.vector(num_studies(data_trim, moderator, 
+        stdy)[, 2])
+    group_no <- length(unique(mod_table[, "name"]))
+    cbpl <- c("grey69", 
+                 "grey69", 
+                 "grey69",
+                 "grey69", 
+                 "grey69", 
+                 "grey69", 
+                 "grey69", 
+                 "grey69"
+)
+    if (colour == TRUE) {
+        color <- as.factor(data_trim$stdy)
+        color2 <- NULL
+    }
+    else {
+        color <- data_trim$mod
+        color2 <- mod_table$name
+    }
+    if (fill == TRUE) {
+        fill <- color
+    }
+    else {
+        fill <- NULL
+    }
+    if (names(mod_table)[2] == "condition") {
+        condition_no <- length(unique(mod_table[, "condition"]))
+        plot <- ggplot2::ggplot() + ggbeeswarm::geom_quasirandom(data = data_trim, 
+            ggplot2::aes(y = yi, x = moderator, size = scale, 
+                colour = color, fill = fill), alpha = alpha, 
+            shape = 21) + ggplot2::geom_hline(yintercept = 1, 
+            linetype = 2, colour = "red", alpha = 1, size = 0.4) + 
+            ggplot2::geom_linerange(data = mod_table, ggplot2::aes(x = name, 
+                ymin = lowerCL, ymax = upperCL), size = branch.size, 
+                position = ggplot2::position_dodge2(width = 0.3)) + 
+            ggplot2::geom_pointrange(data = mod_table, ggplot2::aes(y = estimate, 
+                x = name, ymin = lowerPR, ymax = upperPR, shape = as.factor(condition), 
+                fill = color2), fill = "red", size = trunk.size, position = ggplot2::position_dodge2(width = 0.3), 
+                linewidth = twig.size) + ggplot2::scale_shape_manual(values = 20 + 
+            (1:condition_no)) + ggplot2::theme_bw() + ggplot2::guides(fill = "none", 
+            colour = "none") + ggplot2::theme(legend.position = c(0, 
+            1), legend.justification = c(0, 1)) + ggplot2::theme(legend.title = ggplot2::element_text(size = 9)) + 
+            ggplot2::theme(legend.direction = "horizontal") + 
+            ggplot2::theme(legend.background = ggplot2::element_blank()) + 
+            ggplot2::labs(y = label, x = "", size = latex2exp::TeX(legend)) + 
+            ggplot2::labs(shape = condition.lab) + ggplot2::theme(axis.text.y = ggplot2::element_text(size = 10, 
+            colour = "black", hjust = 0.5, angle = angle))
+        if (flip) {
+            plot <- plot + ggplot2::coord_flip()
+        }
+    }
+    else {
+        plot <- ggplot2::ggplot() + ggbeeswarm::geom_quasirandom(data = data_trim, 
+            ggplot2::aes(y = yi, x = moderator, size = scale, 
+                colour = color, fill = fill), alpha = alpha, 
+            shape = 21) + ggplot2::geom_hline(yintercept = 1, 
+            linetype = 2, colour = "red", alpha = 1, size = 0.4) + 
+            ggplot2::geom_linerange(data = mod_table, ggplot2::aes(x = name, 
+                ymin = lowerCL, ymax = upperCL), size = branch.size) + 
+            ggplot2::geom_pointrange(data = mod_table, ggplot2::aes(y = estimate, 
+                x = name, ymin = lowerPR, ymax = upperPR, fill = color2), fill = "red",
+                size = trunk.size, linewidth = twig.size, shape = 21) + 
+            ggplot2::theme_bw() + ggplot2::guides(fill = "none", 
+            colour = "none") + ggplot2::theme(legend.title = ggplot2::element_text(size = 9)) + 
+            ggplot2::theme(legend.direction = "horizontal") + 
+            ggplot2::theme(legend.background = ggplot2::element_blank()) + 
+            ggplot2::labs(y = label, x = "", size = latex2exp::TeX(legend)) + 
+            ggplot2::theme(axis.text.y = ggplot2::element_text(size = 10, 
+                colour = "black", hjust = 0.5, angle = angle))
+        if (flip) {
+            plot <- plot + ggplot2::coord_flip()
+        }
+    }
+    if (legend.pos == "bottom.right") {
+        plot <- plot + ggplot2::theme(legend.position = c(1, 
+            0), legend.justification = c(1, 0))
+    }
+    else if (legend.pos == "bottom.left") {
+        plot <- plot + ggplot2::theme(legend.position = c(0, 
+            0), legend.justification = c(0, 0))
+    }
+    else if (legend.pos == "top.right") {
+        plot <- plot + ggplot2::theme(legend.position = c(1, 
+            1), legend.justification = c(1, 1))
+    }
+    else if (legend.pos == "top.left") {
+        plot <- plot + ggplot2::theme(legend.position = c(0, 
+            1), legend.justification = c(0, 1))
+    }
+    else if (legend.pos == "top.out") {
+        plot <- plot + ggplot2::theme(legend.position = "top")
+    }
+    else if (legend.pos == "bottom.out") {
+        plot <- plot + ggplot2::theme(legend.position = "bottom")
+    }
+    else if (legend.pos == "none") {
+        plot <- plot + ggplot2::theme(legend.position = "none")
+    }
+    if (cb == TRUE) {
+        plot <- plot + ggplot2::scale_fill_manual(values = cbpl) + 
+            ggplot2::scale_colour_manual(values = cbpl)
+    }
+    if (k == TRUE && g == FALSE && k.pos == "right") {
+        plot <- plot + ggplot2::annotate("text", y = (max(data_trim$yi) + 
+            (max(data_trim$yi) * 0.1)), x = (seq(1, group_no, 
+            1) + 0.3), label = paste("italic(k)==", mod_table$K[1:group_no]), 
+            parse = TRUE, hjust = "right", size = 2)
+    }
+    else if (k == TRUE && g == FALSE && k.pos == "left") {
+        plot <- plot + ggplot2::annotate("text", y = (min(data_trim$yi) + 
+            3), x = (seq(1, group_no, 
+            1) + 0.3), label = paste("italic(k)==", mod_table$K[1:group_no]), 
+            parse = TRUE, hjust = "left", size = 2)
+    }
+    else if (k == TRUE && g == TRUE && k.pos == "right") {
+        plot <- plot + ggplot2::annotate("text", y = (max(data_trim$yi) + 
+            (max(data_trim$yi) * 0.1)), x = (seq(1, group_no, 
+            1) + 0.3), label = paste("italic(k)==", mod_table$K[1:group_no], 
+            "~", "(", mod_table$g[1:group_no], ")"), parse = TRUE, 
+            hjust = "right", size = 2)
+    }
+    else if (k == TRUE && g == TRUE && k.pos == "left") {
+        plot <- plot + ggplot2::annotate("text", y = (min(data_trim$yi) + 
+            3), x = (seq(1, group_no, 
+            1) + 0.3), label = paste("italic(k)==", mod_table$K[1:group_no], 
+            "~", "(", mod_table$g[1:group_no], ")"), parse = TRUE, 
+            hjust = "left", size = 2)
+    }
+    else if (k == TRUE && g == FALSE && k.pos %in% c("right", 
+        "left", "none") == FALSE) {
+        plot <- plot + ggplot2::annotate("text", y = k.pos, x = (seq(1, 
+            group_no, 1) + 0.3), label = paste("italic(k)==", 
+            mod_table$K[1:group_no]), parse = TRUE, size = 2)
+    }
+    else if (k == TRUE && g == TRUE && k.pos %in% c("right", 
+        "left", "none") == FALSE) {
+        plot <- plot + ggplot2::annotate("text", y = k.pos, x = (seq(1, 
+            group_no, 1) + 0.3), label = paste("italic(k)==", 
+            mod_table$K[1:group_no], "~", "(", mod_table$g[1:group_no], 
+            ")"), parse = TRUE, size = 2)
+    }
+    return(plot)
+}
+```
+
+```{r, warning=FALSE}
+orchard_plot_new2 <- function (object, mod = "1", group, xlab, N = NULL, alpha = 0.5, 
     angle = 90, cb = TRUE, k = TRUE, g = TRUE, tree.order = NULL, 
     trunk.size = 1, branch.size = 1.2, twig.size = 0.5, transfm = c("none", 
         "tanh", "invlogit", "percent", "percentr"), condition.lab = "Condition", 
@@ -560,51 +800,252 @@ orchard_plot_new <- function (object, mod = "1", group, xlab, N = NULL, alpha = 
     if (k == TRUE && g == FALSE && k.pos == "right") {
         plot <- plot + ggplot2::annotate("text", y = (max(data_trim$yi) + 
             (max(data_trim$yi) * 0.1)), x = (seq(1, group_no, 
-            1) + 0.3), label = paste("italic(k)==", mod_table$K[1:group_no]), 
-            parse = TRUE, hjust = "right", size = 5)
+            1) + 0.4), label = paste("italic(k)==", mod_table$K[1:group_no]), 
+            parse = TRUE, hjust = "right", size = 2)
     }
     else if (k == TRUE && g == FALSE && k.pos == "left") {
         plot <- plot + ggplot2::annotate("text", y = (min(data_trim$yi) + 
             3), x = (seq(1, group_no, 
-            1) + 0.3), label = paste("italic(k)==", mod_table$K[1:group_no]), 
-            parse = TRUE, hjust = "left", size = 5)
+            1) + 0.4), label = paste("italic(k)==", mod_table$K[1:group_no]), 
+            parse = TRUE, hjust = "left", size = 2)
     }
     else if (k == TRUE && g == TRUE && k.pos == "right") {
         plot <- plot + ggplot2::annotate("text", y = (max(data_trim$yi) + 
             (max(data_trim$yi) * 0.1)), x = (seq(1, group_no, 
-            1) + 0.3), label = paste("italic(k)==", mod_table$K[1:group_no], 
+            1) + 0.4), label = paste("italic(k)==", mod_table$K[1:group_no], 
             "~", "(", mod_table$g[1:group_no], ")"), parse = TRUE, 
-            hjust = "right", size = 5)
+            hjust = "right", size = 2)
     }
     else if (k == TRUE && g == TRUE && k.pos == "left") {
         plot <- plot + ggplot2::annotate("text", y = (min(data_trim$yi) + 
             3), x = (seq(1, group_no, 
-            1) + 0.3), label = paste("italic(k)==", mod_table$K[1:group_no], 
+            1) + 0.4), label = paste("italic(k)==", mod_table$K[1:group_no], 
             "~", "(", mod_table$g[1:group_no], ")"), parse = TRUE, 
-            hjust = "left", size = 5)
+            hjust = "left", size = 2)
     }
     else if (k == TRUE && g == FALSE && k.pos %in% c("right", 
         "left", "none") == FALSE) {
         plot <- plot + ggplot2::annotate("text", y = k.pos, x = (seq(1, 
-            group_no, 1) + 0.3), label = paste("italic(k)==", 
-            mod_table$K[1:group_no]), parse = TRUE, size = 5)
+            group_no, 1) + 0.4), label = paste("italic(k)==", 
+            mod_table$K[1:group_no]), parse = TRUE, size = 2)
     }
     else if (k == TRUE && g == TRUE && k.pos %in% c("right", 
         "left", "none") == FALSE) {
         plot <- plot + ggplot2::annotate("text", y = k.pos, x = (seq(1, 
-            group_no, 1) + 0.3), label = paste("italic(k)==", 
+            group_no, 1) + 0.4), label = paste("italic(k)==", 
             mod_table$K[1:group_no], "~", "(", mod_table$g[1:group_no], 
-            ")"), parse = TRUE, size = 5)
+            ")"), parse = TRUE, size = 2)
     }
     return(plot)
 }
 ```
 
-# Customized functions
+```{r, warning=FALSE}
+bubble_plot_new <- function (object, mod, group = NULL, xlab = "Moderator", ylab = "Effect size", 
+    N = "none", alpha = 0.5, cb = TRUE, k = TRUE, g = FALSE, 
+    transfm = c("none", "tanh", "invlogit", "percent", "percentr"), 
+    est.lwd = 1, ci.lwd = 0.5, pi.lwd = 0.5, est.col = "black", 
+    ci.col = "black", pi.col = "black", legend.pos = c("top.left", 
+        "top.right", "bottom.right", "bottom.left", "top.out", 
+        "bottom.out", "none"), k.pos = c("top.right", "top.left", 
+        "bottom.right", "bottom.left", "none"), condition.nrow = 2, 
+    weights = "prop", by = NULL, at = NULL, cond_levels = NULL) 
+{
+    transfm <- match.arg(NULL, choices = transfm)
+    legend.pos <- match.arg(NULL, choices = legend.pos)
+    k.pos <- match.arg(NULL, choices = k.pos)
+    label <- xlab
+    if (missing(group)) {
+        stop("Please specify the 'group' argument by providing the name of the grouping variable. See ?bubble_plot")
+    }
+    if (is.numeric(by)) {
+        k = FALSE
+        g = FALSE
+    }
+    if (any(class(object) %in% c("robust.rma", "rma.mv", "rma", 
+        "rma.uni"))) {
+        if (mod != "1") {
+            results <- orchaRd::mod_results(object, mod, group, 
+                by = by, at = at, weights = weights)
+        }
+        else {
+            results <- orchaRd::mod_results(object, mod = "1", 
+                group, by = by, at = at, weights = weights)
+        }
+    }
+    if (any(class(object) %in% c("orchard"))) {
+        results <- object
+    }
+    mod_table <- results$mod_table
+    data_trim <- results$data
+    data_trim$scale <- (1/sqrt(data_trim[, "vi"]))
+    legend <- "Precision (1/SE)"
+    if (any(N != "none")) {
+        data_trim$scale <- data_trim$N
+        legend <- paste0("Sample Size ($\\textit{N}$)")
+    }
+    if (transfm != "none") {
+        excluded_cols <- which(colnames(mod_table) %in% c("condition", 
+            "moderator"))
+        mod_table[, -excluded_cols] <- transform_data(mod_table[, 
+            -excluded_cols], transfm)
+        data_trim$yi <- transform_data(data_trim$yi, transfm)
+    }
+    if (is.null(data_trim$condition) == TRUE) {
+        effect_num <- nrow(data_trim)
+        group_num <- length(unique(data_trim$stdy))
+        dat_text <- data.frame(K = effect_num, G = group_num)
+    }
+    else {
+        if (!is.null(cond_levels)) {
+            data_trim$condition <- factor(data_trim$condition, 
+                levels = cond_levels, labels = cond_levels, ordered = TRUE)
+        }
+        else {
+            data_trim$condition <- factor(data_trim$condition, 
+                levels = mod_table$condition, labels = mod_table$condition)
+        }
+        effect_num <- as.vector(by(data_trim, data_trim[, "condition"], 
+            function(x) base::length(x[, "yi"])))
+        group_num <- as.vector(by(data_trim, data_trim[, "condition"], 
+            function(x) base::length(base::unique(x[, "stdy"]))))
+        dat_text <- data.frame(K = effect_num, G = group_num, 
+            condition = as.vector(base::levels(data_trim$condition)))
+    }
+    if (is.null(data_trim$condition) == TRUE) {
+        plot <- ggplot2::ggplot() + ggplot2::geom_point(data = data_trim, 
+            ggplot2::aes(x = moderator, y = yi, size = scale), 
+            shape = 21, alpha = alpha, fill = "grey90") + ggplot2::geom_smooth(data = mod_table, 
+            ggplot2::aes(x = moderator, y = lowerPR), method = "loess", 
+            formula = y ~ x, se = FALSE, lty = "dotted", lwd = pi.lwd, 
+            colour = pi.col) + ggplot2::geom_smooth(data = mod_table, 
+            ggplot2::aes(x = moderator, y = upperPR), method = "loess", 
+            formula = y ~ x, se = FALSE, lty = "dotted", lwd = pi.lwd, 
+            colour = pi.col) + ggplot2::geom_smooth(data = mod_table, 
+            ggplot2::aes(x = moderator, y = lowerCL), method = "loess", 
+            formula = y ~ x, se = FALSE, lty = "dashed", lwd = ci.lwd, 
+            colour = ci.col) + ggplot2::geom_smooth(data = mod_table, 
+            ggplot2::aes(x = moderator, y = upperCL), method = "loess", 
+            formula = y ~ x, se = FALSE, lty = "dashed", lwd = ci.lwd, 
+            colour = ci.col) + ggplot2::geom_smooth(data = mod_table, 
+            ggplot2::aes(x = moderator, y = estimate), method = "loess", 
+            formula = y ~ x, se = FALSE, lwd = est.lwd, colour = est.col) + 
+            ggplot2::labs(x = xlab, y = ylab, size = legend, 
+                parse = TRUE) + ggplot2::guides(fill = "none", 
+            colour = "none") + ggplot2::theme_bw() + ggplot2::theme(legend.direction = "horizontal") + 
+            ggplot2::theme(legend.background = ggplot2::element_blank()) + 
+            ggplot2::theme(axis.text.y = ggplot2::element_text(size = 10, 
+                colour = "black", hjust = 0.5, angle = 90))
+    }
+    else if (is.character(data_trim$condition) == TRUE || is.factor(data_trim$condition) == 
+        TRUE) {
+        plot <- ggplot2::ggplot() + ggplot2::geom_point(data = data_trim, 
+            ggplot2::aes(x = moderator, y = yi, size = scale, 
+                fill = condition), shape = 21, alpha = alpha) + 
+            ggplot2::geom_smooth(data = mod_table, ggplot2::aes(x = moderator, 
+                y = lowerPR), method = "loess", formula = y ~ 
+                x, se = FALSE, lty = "dotted", lwd = pi.lwd, 
+                colour = pi.col) + ggplot2::geom_smooth(data = mod_table, 
+            ggplot2::aes(x = moderator, y = upperPR), method = "loess", 
+            formula = y ~ x, se = FALSE, lty = "dotted", lwd = pi.lwd, 
+            colour = pi.col) + ggplot2::geom_smooth(data = mod_table, 
+            ggplot2::aes(x = moderator, y = lowerCL), method = "loess", 
+            formula = y ~ x, se = FALSE, lty = "dashed", lwd = ci.lwd, 
+            colour = ci.col) + ggplot2::geom_smooth(data = mod_table, 
+            ggplot2::aes(x = moderator, y = upperCL), method = "loess", 
+            formula = y ~ x, se = FALSE, lty = "dashed", lwd = ci.lwd, 
+            colour = ci.col) + ggplot2::geom_smooth(data = mod_table, 
+            ggplot2::aes(x = moderator, y = estimate), method = "loess", 
+            formula = y ~ x, se = FALSE, lwd = est.lwd, colour = est.col) + 
+            ggplot2::facet_wrap(ggplot2::vars(condition), nrow = condition.nrow) + 
+            ggplot2::labs(x = xlab, y = ylab, size = legend, 
+                parse = TRUE) + ggplot2::guides(fill = "none", 
+            colour = "none") + ggplot2::theme_bw() + ggplot2::theme(legend.direction = "horizontal") + 
+            ggplot2::theme(legend.background = ggplot2::element_blank()) + 
+            ggplot2::theme(axis.text.y = ggplot2::element_text(size = 10, 
+                colour = "black", hjust = 0.5, angle = 90))
+    }
+    else {
+        plot <- ggplot2::ggplot() + ggplot2::geom_smooth(data = mod_table, 
+            ggplot2::aes(x = moderator, y = lowerPR), method = "loess", 
+            formula = y ~ x, se = FALSE, lty = "dotted", lwd = pi.lwd, 
+            colour = pi.col) + ggplot2::geom_smooth(data = mod_table, 
+            ggplot2::aes(x = moderator, y = upperPR), method = "loess", 
+            formula = y ~ x, se = FALSE, lty = "dotted", lwd = pi.lwd, 
+            colour = pi.col) + ggplot2::geom_smooth(data = mod_table, 
+            ggplot2::aes(x = moderator, y = lowerCL), method = "loess", 
+            formula = y ~ x, se = FALSE, lty = "dashed", lwd = ci.lwd, 
+            colour = ci.col) + ggplot2::geom_smooth(data = mod_table, 
+            ggplot2::aes(x = moderator, y = upperCL), method = "loess", 
+            formula = y ~ x, se = FALSE, lty = "dashed", lwd = ci.lwd, 
+            colour = ci.col) + ggplot2::geom_smooth(data = mod_table, 
+            ggplot2::aes(x = moderator, y = estimate), method = "loess", 
+            formula = y ~ x, se = FALSE, lwd = est.lwd, colour = est.col) + 
+            ggplot2::facet_wrap(ggplot2::vars(condition), nrow = condition.nrow) + 
+            ggplot2::labs(x = xlab, y = ylab, size = legend, 
+                parse = TRUE) + ggplot2::guides(fill = "none", 
+            colour = "none") + ggplot2::theme_bw()
+    }
+    plot <- switch(legend.pos, bottom.right = plot + ggplot2::theme(legend.position = "inside", 
+        legend.justification = c(1, 0)), bottom.left = plot + 
+        ggplot2::theme(legend.position = "inside", legend.justification = c(0, 
+            0)), top.right = plot + ggplot2::theme(legend.position = "inside", 
+        legend.justification = c(1, 1)), top.left = plot + ggplot2::theme(legend.position = "inside", 
+        legend.justification = c(0, 1)), top.out = plot + ggplot2::theme(legend.position = "top"), 
+        bottom.out = plot + ggplot2::theme(legend.position = "bottom"), 
+        none = plot + ggplot2::theme(legend.position = "none"), 
+        plot)
+    if (k == TRUE && g == FALSE && k.pos == "top.right") {
+        plot <- plot + ggplot2::geom_text(data = dat_text, mapping = ggplot2::aes(x = Inf, 
+            y = Inf), label = paste("italic(k)==", dat_text$K), 
+            parse = TRUE, hjust = 2, vjust = 2.2,size = 2)
+    }
+    else if (k == TRUE && g == FALSE && k.pos == "top.left") {
+        plot <- plot + ggplot2::geom_text(data = dat_text, mapping = ggplot2::aes(x = -Inf, 
+            y = Inf), label = paste("italic(k)==", dat_text$K), 
+            parse = TRUE, hjust = -0.5, vjust = 2.2, size = 2)
+    }
+    else if (k == TRUE && g == FALSE && k.pos == "bottom.right") {
+        plot <- plot + ggplot2::geom_text(data = dat_text, mapping = ggplot2::aes(x = Inf, 
+            y = -Inf), label = paste("italic(k)==", rev(dat_text$K)), 
+            parse = TRUE, hjust = 2, vjust = -1.8, size = 2)
+    }
+    else if (k == TRUE && g == FALSE && k.pos == "bottom.left") {
+        plot <- plot + ggplot2::geom_text(data = dat_text, mapping = ggplot2::aes(x = -Inf, 
+            y = -Inf), label = paste("italic(k)==", dat_text$K), 
+            parse = TRUE, hjust = -0.5, vjust = -1.8, size = 2)
+    }
+    else if (k == TRUE && g == TRUE && k.pos == "top.right") {
+        plot <- plot + ggplot2::geom_text(data = dat_text, mapping = ggplot2::aes(x = Inf, 
+            y = Inf), label = paste("italic(k)==", dat_text$K, 
+            "~", "(", dat_text$G, ")"), parse = TRUE, hjust = 1.5, 
+            vjust = 2.2, size = 2)
+    }
+    else if (k == TRUE && g == TRUE && k.pos == "top.left") {
+        plot <- plot + ggplot2::geom_text(data = dat_text, mapping = ggplot2::aes(x = -Inf, 
+            y = Inf), label = paste("italic(k)==", dat_text$K, 
+            "~", "(", dat_text$G, ")"), parse = TRUE, hjust = -0.5, 
+            vjust = 2.2, size = 2)
+    }
+    else if (k == TRUE && g == TRUE && k.pos == "bottom.right") {
+        plot <- plot + ggplot2::geom_text(data = dat_text, mapping = ggplot2::aes(x = Inf, 
+            y = -Inf), label = paste("italic(k)==", dat_text$K, 
+            "~", "(", dat_text$G, ")"), parse = TRUE, hjust = 1.5, 
+            vjust = -0.8, size = 2)
+    }
+    else if (k == TRUE && g == TRUE && k.pos == "bottom.left") {
+        plot <- plot + ggplot2::geom_text(data = dat_text, mapping = ggplot2::aes(x = -Inf, 
+            y = -Inf), label = paste("italic(k)==", dat_text$K, 
+            "~", "(", dat_text$G, ")"), parse = TRUE, hjust = -0.5, 
+            vjust = -0.8, size = 2)
+    }
+    return(plot)
+}
+```
 
 The following code defines a standardized function to fit multivariate meta-analytic models. We are going to use this function to run all single-moderator models below.
 
-```{r}
+```{r, results='hide'}
 run_model <- function(data, formula){
   data <- as.data.frame(data) # convert data set into a data frame to calculate VCV matrix 
   VCV <- impute_covariance_matrix(data$ln_TMF_se^2,
@@ -642,17 +1083,73 @@ mod <- rma.mv(yi = ln_TMF, # Natural logarithm of the Trophic Magnification Fact
               sparse = T,
               data = TMF_data2)
 
-save(mod, file = here("Rdata", "mod.RData"))
+save(mod, file = here("Rmodels", "mod.RData"))
+
+fig2A_data <- TMF_data2 %>% 
+  select(TMF_ID, FW_ID, PFAS_ID, Study_ID, ln_TMF, ln_TMF_se)
+
+write_csv(fig2A_data, here("Rdata", "fig2A_data.csv"))
 ```
 
-```{r, warning=FALSE, echo=FALSE}
-load(here("RData", "mod.RData"))
+```{r, warning=FALSE}
+load(here("Rmodels", "mod.RData"))
 tab_mod <-readRDS(here("Rdata", "tab_mod.RDS"))
 summary(mod)
 i2_ml(mod)
 
 I2 <- orchaRd::i2_ml(mod)
-ma1 <- orchard_plot_new(mod,
+fig2A <- orchard_plot_new(mod,
+                        transfm = "percent",
+                        mod = "1",
+                        group = "Study_ID", 
+                        xlab = "ln_TMF",
+                        k.pos = "left",
+                        alpha = 0.5,
+                        trunk.size = 0.5,
+                        branch.size = 0.8,
+                        twig.size = 0.2,
+                        colour = FALSE,
+                        fill = FALSE) +  
+  annotate(geom = "text",
+           x = 1.3,
+           y = 7.5, 
+           label = paste0("italic(I)^{2} == ", round(I2[1],4)),
+           size = 2,
+           color ="black",
+           parse = TRUE) +
+  scale_size_continuous(range = c(1, 3)) + # change point scaling
+  theme(panel.border = element_rect(colour = "black", 
+                                    fill = NA,
+                                    size = 0.5), # border around the plot
+        plot.title = element_text(face = "bold", size = 8),
+       legend.title = element_text(size = 6),
+        legend.text = element_text(size = 6),
+       legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_text(size = 8),
+        axis.title.y = element_text(size = 8),
+        axis.text.y = element_blank(),
+       axis.text.x = element_text(size = 7)) +
+  #ylim(NA, 10) +
+  xlab("Intercept") +
+  ylab("TMF") +
+  ggtitle("A") +
+  scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 1))
+
+fig2A
+```
+
+```{r, eval=FALSE}
+ggsave(here("figs","fig2A.png"),
+       width = 8,
+       height = 4)
+```
+
+The red dotted line represents TMF = 1, the threshold indicating trophic magnification when exceeded, and biodilution when below.
+Next, we'll plot the same graph with a zoomed-out view (no scale_y_continuous restrictions).
+
+```{r, warning=FALSE}
+figS6 <- orchard_plot_new(mod,
                         transfm = "percent",
                         mod = "1",
                         group = "Study_ID", 
@@ -666,76 +1163,114 @@ ma1 <- orchard_plot_new(mod,
                         fill = FALSE) +  
   annotate(geom = "text",
            x = 1.3,
-           y = 7.5, 
+           y = 13.5, 
            label = paste0("italic(I)^{2} == ", round(I2[1],4)),
-           size = 6,
+           size = 4,
            color ="black",
            parse = TRUE) +
   scale_size_continuous(range = c(1, 10)) + # change point scaling
   theme(panel.border = element_rect(colour = "black", 
                                     fill = NA,
                                     size = 1.3), # border around the plot
-        plot.title = element_text(face = "bold", size = 17),
-       legend.title = element_text(size = 15),
-        legend.text = element_text(size = 14),
-        axis.title.x = element_text(size = 17),
-        axis.title.y = element_text(size = 17),
+       legend.title = element_text(size = 13),
+        legend.text = element_text(size = 11),
+        axis.title.x = element_text(size = 14),
+        axis.title.y = element_text(size = 14),
         axis.text.y = element_blank(),
-       axis.text.x = element_text(size = 16)) +
+       axis.text.x = element_text(size = 13)) +
   #ylim(NA, 10) +
   xlab("Intercept") +
-  ylab("TMF") +
-  ggtitle("A") +
-  scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 1))
+  ylab("TMF")
 
-
-ma1
+figS6
 ```
 
-```{r, echo=FALSE, eval=FALSE}
-ggsave(here("figs","overall.png"),
+```{r, eval=FALSE}
+ggsave(here("figs/supplements","figS6.png"),
        width = 8,
        height = 4)
 ```
 
-The red dotted line represents TMF = 1, the threshold indicating trophic magnification when exceeded, and biodilution when below.
-Next, we'll plot the same graph with a zoomed-in view to enhance the visual interpretation of the results. (Note: The maximum value on the x-axis is equal to 10).
-
-```{r, warning=FALSE, echo=FALSE}
-ma2 <- orchard_plot_new(mod,
-                        transfm="percent",
-                        mod = "1",
-                        group = "Study_ID", 
-                        xlab = "ln_TMF",
-                        alpha = 1.2,
-                        trunk.size = 1.2,
-                        branch.size = 2.5,
-                        twig.size = 0.3,
-                        k.pos = "left",
-                        colour = FALSE,
-                        fill = FALSE) + 
-  scale_size_continuous(range = c(1, 7)) + # change point scaling
-  theme(panel.border = element_rect(colour = "black", 
-                                    fill=NA,
-                                    size=1.3), # border around the plot
-        text = element_text(size = 11), # change font sizes
-        legend.title = element_text(size = 10),
-        legend.text = element_text(size = 9),
-        axis.text.y = element_blank() ,
-  axis.text.x = element_text(size = 10)) +
-  xlab("Intercept") +
-  ylab("TMF") +
-  ylim(NA, 10)
-
-ma2
+# Terrestrial vs Aquatic
+```{r}
+TMF_data2_ecogroups <- TMF_data2 %>%
+  mutate(Ecosystem_group = ifelse(Ecosystem == "terrestrial", 
+                                  "Terrestrial", 
+                                  "Aquatic"))
 ```
 
-Our model shows that the overall PFAS Trophic Magnification Factor (TMF) is 2 (95% CI: 1.63-2.45), which is statistically significantly greater than 1. This indicates that, on average, PFAS) biomagnify within food webs by a factor of 2.
-A TMF of 2 means that the concentration of PFAS doubles with each increase in trophic level.
+```{r, eval=FALSE, include=TRUE}
+mod_ecogroup <- rma.mv(
+  yi = ln_TMF, 
+  V = VCV, 
+  mods = ~ Ecosystem_group, # Add Ecosystem_group as a moderator
+  random = list(
+    ~1 | Study_ID,
+    ~1 | FW_ID,
+    ~1 | PFAS_ID,
+    ~1 | TMF_ID
+  ),
+  test = "t",
+  sparse = TRUE,
+  data = TMF_data2_ecogroups # Use the updated dataset
+)
+
+save(mod_ecogroup, file = here("Rmodels", "mod_ecogroup.RData"))
+```
+
+```{r, warning=FALSE}
+load(here("Rmodels", "mod_ecogroup.RData"))
+summary(mod_ecogroup)
+r2_ecogroup <- r2_ml(mod_ecogroup, TMF_data2_ecogroups)
+
+figS4 <- orchard_plot_new(
+  mod_ecogroup,
+  transfm = "percent",
+  mod = "Ecosystem_group", # Specify the moderator
+  group = "Study_ID",
+  xlab = "ln_TMF",
+  k.pos = "left",
+  alpha = 0.6,
+  trunk.size = 1.5,
+  branch.size = 2.7,
+  twig.size = 0.4,
+  colour = FALSE,
+  fill = FALSE
+) + 
+  scale_size_continuous(range = c(1, 10)) +
+  annotate(geom = "text",
+           x = 2.4,
+           y = 8, 
+           label = paste0("italic(R)^{2} == ", round(r2_ecogroup[1],4)),
+           color ="black",
+           parse = TRUE, 
+           size = 5) +
+  theme(
+    panel.border = element_rect(colour = "black", fill = NA, size = 1.3),
+    #plot.title = element_text(face = "bold", size = 15),
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 11),
+    axis.title.x = element_text(size = 14),
+    axis.title.y = element_blank(),
+    axis.text.y = element_text(size = 13),
+    axis.text.x = element_text(size = 13)
+  ) +
+  scale_y_continuous(limits = c(0, 11), breaks = seq(0, 11, by = 1)) +
+  xlab("Intercept") +
+  ylab("TMF") 
+
+figS4
+```
+
+```{r, eval=FALSE}
+ggsave(here("figs/supplements","figS4.png"),
+       width = 10,
+       height = 6)
+```
 
 # Subcategory meta-regression analysis
 
-```{r, echo=FALSE}
+```{r}
 TMF_data3 <- TMF_data2 %>% 
   filter(!PFAS_ID %in% c("ΣPFAS", "ΣPFCA", "ΣPFSA", "ΣPFCs", "PFODA")) %>%  # PFODA removed because NA
   #filter(n_distinct(Study_ID) > 1) %>%
@@ -744,6 +1279,26 @@ TMF_data3 <- TMF_data2 %>%
     PFAS_ID == "6:2 Cl-PFESA" ~ "F-53B",
     PFAS_ID == "8:2 Cl-PFESA" ~ "F-53B",
     PFAS_ID == "F53B" ~ "F-53B",
+    PFAS_ID == "3m-PFOS" ~ "PFOS",
+    PFAS_ID == "4m-PFOS" ~ "PFOS",
+    PFAS_ID == "5m-PFOS" ~ "PFOS",
+    PFAS_ID == "br-EtFOSA" ~ "EtFOSA",
+    PFAS_ID == "br-FOSA" ~ "FOSA",
+    PFAS_ID == "br-PFDA" ~ "PFDA",
+    PFAS_ID == "br-PFDoDA" ~ "PFDoDA",
+    PFAS_ID == "br-PFOA" ~ "PFOA",
+    PFAS_ID == "br-PFOS" ~ "PFOS",
+    PFAS_ID == "br-PFTeDA" ~ "PFTeDA",
+    PFAS_ID == "dm-PFOS" ~ "PFOS",
+    PFAS_ID == "iso-PFOS" ~ "PFOS",
+    PFAS_ID == "l-EtFOSA" ~ "EtFOSA",
+    PFAS_ID == "l-FOSA" ~ "FOSA",
+    PFAS_ID == "l-PFDA" ~ "PFDA",
+    PFAS_ID == "l-PFDoDA" ~ "PFDoDA",
+    PFAS_ID == "l-PFOA" ~ "PFOA",
+    PFAS_ID == "l-PFOS" ~ "PFOS",
+    PFAS_ID == "l-PFTeDA" ~ "PFTeDA",
+    PFAS_ID == "mm-PFOS" ~ "PFOS",
     TRUE ~ PFAS_ID
   ))
 
@@ -751,41 +1306,184 @@ k_n_data <- TMF_data3 %>%
   group_by(PFAS_ID) %>%
   arrange(PFAS_ID) %>% 
   summarise(k = n(), n = length(unique(Study_ID)))
-```
 
-```{r, eval=FALSE, include=TRUE}
 VCV_chem <- vcalc(vi = ln_TMF_se^2,
                   cluster = FW_ID, 
                   obs = TMF_ID,
                   subgroup = PFAS_ID, 
                   rho = 0.5,
                   data = TMF_data3)
+```
 
-
+## mod_chem
+```{r, eval=FALSE, include=TRUE}
 mod_chem <- rma.mv(ln_TMF ~ PFAS_ID - 1,
                    V = VCV_chem,
-                   random = list(~ PFAS_ID | FW_ID), 
+                   random = list(~ PFAS_ID | FW_ID),
                    struct = "DIAG",
-                   test = "t",
+                   test = "t", #to conunteract potential small sample size 
                    sparse = T,
                    data = TMF_data3,
                    #verbose = TRUE, 
-                   control=list(iter.max=1000, 
-                                rel.tol=1e-8))
+                   control = list(iter.max = 1000, 
+                                  rel.tol = 1e-8))
 # Save the model
-save(mod_chem, file = here("Rdata", "mod_chem.RData"))
+save(mod_chem, file = here("Rmodels", "mod_chem.RData"))
 # Save the table
-write.csv(TMF_data3, here("data/TMF_data3.csv"), row.names = FALSE)
+write.csv(TMF_data3, here("Rdata/TMF_data3.csv"), row.names = FALSE)
+```
+
+```{r, warning=FALSE}
+load(here("Rmodels", "mod_chem.RData"))
+summary(mod_chem)
+
+res_tab1 <- broom::tidy(mod_chem)
+res_tab1$ci.lb <- mod_chem$ci.lb
+res_tab1$ci.ub <- mod_chem$ci.ub
+res_tab1$pval <-mod_chem$pval
+res_tab1 <- res_tab1 %>% 
+  mutate(
+    PFAS_ID = str_remove(term, "^PFAS_ID"),  # Remove 'PFAS_ID1: ' prefix
+    estimate = exp(estimate),  # Convert estimates back to original scale
+    ci.lb = exp(ci.lb),  # Convert lower CI back to original scale
+    ci.ub = exp(ci.ub)   # Convert upper CI back to original scale
+  ) %>% 
+  arrange(PFAS_ID)
+
+res_tab1 <- res_tab1 %>% 
+  mutate(k = k_n_data$k) %>% 
+  mutate(n = k_n_data$n)
+
+# Prepare the data for plotting and order PFAS_ID by estimate value
+plot_data1 <- res_tab1 %>%
+  as.data.frame() %>% 
+  filter(k > 10) %>% 
+  arrange(estimate)
+
+# Create the flipped forest plot
+fig2B <- ggplot(plot_data1, aes(y = reorder(PFAS_ID, estimate), x = estimate)) +
+  geom_point(aes(size = k),  # Make point size proportional to k
+             color = ifelse(plot_data1$pval > 0.05, "grey", "black"),  # You can change the color if desired
+             alpha = 1) +  # Add transparency for better visibility 
+  scale_size(range = c(1.5, 4)) + # Set minimum size to 3 and maximum to 6
+  geom_errorbarh(aes(xmin = ci.lb, xmax = ci.ub), 
+                 height = 0.2,
+                 size = 0.1,
+                 alpha = ifelse(plot_data1$pval > 0.05, 0.6, 1)) +  # Horizontal error bars
+  geom_vline(xintercept = 1, linetype = "dashed", color = "red", size = 0.4) +  # Reference line at 1
+  geom_text(aes(label = paste0("k = ", k, " (", n, ")"), x = -0.18),
+            hjust = 0, size = 2, # Add k values as text next to the points
+            fontface = ifelse(plot_data1$pval < 0.05, "bold", "plain")) +  # Access pval outside aes()
+  # Add "*" next to PFUnDA and PFNA
+  # geom_text(data = subset(plot_data1, PFAS_ID %in% c("PFUnDA", "PFNA", "PFTrDA", "PFDoDA", "FOSA", "PFHxS", "PFDS", "PFTeDA", "PFOA", "PFBA", "PFPeA", "PFHpA", "PFBS", "PFHxA")),
+  #           aes(x = -0.21, label = "*"), size = 9, color = "black") +
+  # geom_text(data = subset(plot_data1, PFAS_ID %in% c("PFUnDA", "PFNA", "PFTrDA", "PFDoDA", "FOSA", "PFHxS", "PFDS", "PFTeDA", "PFOA", "PFBA", "PFPeA", "PFHpA", "PFBS", "PFHxA")),
+  #           aes(x = ci.lb, label = "*"),
+  #           hjust = 1.2, vjust = 0.7, size = 6, color = "black") +
+  xlab("TMF") +
+  ylab("PFAS") +
+  ggtitle("B") +
+  theme_minimal() +  # Use a minimal theme
+  theme(legend.position = "none",
+        panel.border = element_rect(colour = "black", fill = NA, size = 0.5),
+         plot.title = element_text(face = "bold", size = 8),
+       legend.title = element_text(size = 7),
+        legend.text = element_text(size = 7),
+        axis.title.x = element_text(size = 8),
+        axis.title.y = element_text(size = 8),
+        axis.text.y = element_text(size = 6),
+       axis.text.x = element_text(size = 8)) +  
+   #scale_x_break(c(4, 6)) +
+   scale_x_continuous(breaks = seq(0, 4, by = 1), limits = c(-0.21, 4))
+  
+fig2B
+```
+
+```{r, eval=FALSE}
+# Combine plots with specified heights
+fig2 <- fig2A / fig2B + 
+  plot_layout(heights = c(1, 2))
+
+# Save the combined plot
+ggsave(here("figs", "fig2.pdf"), plot = fig2, width = 160, height = 120, units = "mm", dpi = 600)
+
+fig2B_data <- plot_data1 %>% 
+  select(PFAS_ID, k, n, estimate, std.error, statistic, p.value, ci.lb, ci.ub, pval)
+
+write_csv(fig2B_data, here("Rdata", "fig2B_data.csv"))
+```
+
+Now, we have a look to all chemicals regardless of the number of effect sizes.
+
+```{r}
+plot_data1_full <- res_tab1 %>%
+  as.data.frame() %>% 
+  arrange(estimate)
+
+# Create the flipped forest plot
+figS1 <- ggplot(plot_data1_full, aes(y = reorder(PFAS_ID, estimate), x = estimate)) +
+  geom_point(aes(size = k),  # Make point size proportional to k
+             color = ifelse(plot_data1_full$pval > 0.05, "grey", "black"),  # You can change the color if desired
+             alpha = 1) +  # Add transparency for better visibility 
+  scale_size(range = c(3, 7)) + # Set minimum size to 3 and maximum to 6
+  geom_errorbarh(aes(xmin = ci.lb, xmax = ci.ub), 
+                 height = 0.2,
+                 alpha = ifelse(plot_data1_full$pval > 0.05, 0.6, 1)) +  # Horizontal error bars
+  geom_vline(xintercept = 1, linetype = "dashed", color = "red") +  # Reference line at 1
+  geom_text(aes(label = paste0("k = ", k, " (", n, ")"), x = -1.7),
+            hjust = 0, size = 3.5, # Add k values as text next to the points
+            fontface = ifelse(plot_data1_full$pval < 0.05, "bold", "plain")) +  # Access pval outside aes()
+  xlab("TMF") +
+  ylab("PFAS") +
+  theme_minimal() +  # Use a minimal theme
+  theme(axis.text.y = element_text(size = 10),  # Adjust y-axis text size
+        axis.text.x = element_text(size = 10),  # Adjust x-axis text size
+        #axis.text.x.top = element_blank(),  # Remove x-axis labels from the top
+        axis.title = element_text(size = 11),
+        legend.position = "none",
+        panel.border = element_rect(colour = "black", fill = NA, size = 1)) +
+  scale_x_continuous(breaks = c(seq(0, 13, by = 1), seq(18, 19, by = 1), seq(23, 25, by = 1)),
+                     limits = c(-1.7, 25)) +  # Combine breaks
+  scale_x_break(c(13, 18)) +
+  scale_x_break(c(19.4, 23))
+```
+
+```{r, eval=FALSE}
+# Save the  plot
+ggsave(here("figs/supplements", "figS1.png"), plot = figS1, width = 9, height = 14, dpi = 300)
+```
+
+Let's run a few similar models to see what one has the lowest AICc value (better fit).
+
+## mod_chem2
+
+mod_chem2 is identical to mod_chem but with the addition of an independent random factor (i.e., ~ 1 | TMF_ID). 
+
+```{r, eval=FALSE}
+mod_chem2 <- rma.mv(ln_TMF ~ PFAS_ID - 1,
+                     V = VCV_chem,
+                     random = list(~ PFAS_ID | FW_ID, 
+                                   ~ 1 | TMF_ID), 
+                     struct = "DIAG",
+                     est = "t",
+                     sparse = T,
+                     data = TMF_data3,
+                     #verbose = TRUE, 
+                     control=list(iter.max=1000, 
+                                  rel.tol=1e-8))
+
+# Save the model
+save(mod_chem2, file = here("Rdata", "mod_chem2.RData"))
 ```
 
 ```{r, warning=FALSE, echo=FALSE}
-load(here("RData", "mod_chem.RData"))
-summary(mod_chem)
+load(here("Rmodels", "mod_chem2.RData"))
+summary(mod_chem2)
 
-res_tab2 <- broom::tidy(mod_chem)
-res_tab2$ci.lb <- mod_chem$ci.lb
-res_tab2$ci.ub <- mod_chem$ci.ub
-res_tab2$pval <-mod_chem$pval
+res_tab2 <- broom::tidy(mod_chem2)
+res_tab2$ci.lb <- mod_chem2$ci.lb
+res_tab2$ci.ub <- mod_chem2$ci.ub
+res_tab2$pval <-mod_chem2$pval
 res_tab2 <- res_tab2 %>% 
   mutate(
     PFAS_ID = str_remove(term, "^PFAS_ID"),  # Remove 'PFAS_ID1: ' prefix
@@ -806,7 +1504,7 @@ plot_data2 <- res_tab2 %>%
   arrange(estimate)
 
 # Create the flipped forest plot
-forest_plot2 <- ggplot(plot_data2, aes(y = reorder(PFAS_ID, estimate), x = estimate)) +
+forest_plot3 <- ggplot(plot_data2, aes(y = reorder(PFAS_ID, estimate), x = estimate)) +
   geom_point(aes(size = k),  # Make point size proportional to k
              color = ifelse(plot_data2$pval > 0.05, "grey", "black"),  # You can change the color if desired
              alpha = 1) +  # Add transparency for better visibility 
@@ -826,7 +1524,7 @@ forest_plot2 <- ggplot(plot_data2, aes(y = reorder(PFAS_ID, estimate), x = estim
   #           hjust = 1.2, vjust = 0.7, size = 6, color = "black") +
   xlab("TMF") +
   ylab("PFAS") +
-  ggtitle("B") +
+  #ggtitle("B") +
   theme_minimal() +  # Use a minimal theme
   theme(legend.position = "none",
         panel.border = element_rect(colour = "black", fill = NA, size = 1),
@@ -840,71 +1538,49 @@ forest_plot2 <- ggplot(plot_data2, aes(y = reorder(PFAS_ID, estimate), x = estim
    #scale_x_break(c(4, 6)) +
    scale_x_continuous(breaks = seq(0, 4, by = 1), limits = c(-0.21, 4))
   
-forest_plot2
-```
-
-```{r, eval=FALSE, echo=FALSE}
-# Combine plots with specified heights
-combined_plot <- ma1 / forest_plot2 + 
-  plot_layout(heights = c(1, 4))  # ma1 takes 1 part, forest_plot2 takes 2 parts
-
-# Save the combined plot
-ggsave(here("figs", "fig1.png"), plot = combined_plot, width = 16, height = 11, dpi = 300)
-
-```
-
-Now, we have a look to all chemicals regardless of the number of effect sizes.
-
-```{r}
-plot_data3 <- res_tab2 %>%
-  as.data.frame() %>% 
-  arrange(estimate)
-
-# Create the flipped forest plot
-forest_plot3 <- ggplot(plot_data3, aes(y = reorder(PFAS_ID, estimate), x = estimate)) +
-  geom_point(aes(size = k),  # Make point size proportional to k
-             color = ifelse(plot_data3$pval > 0.05, "grey", "black"),  # You can change the color if desired
-             alpha = 1) +  # Add transparency for better visibility 
-  scale_size(range = c(3, 7)) + # Set minimum size to 3 and maximum to 6
-  geom_errorbarh(aes(xmin = ci.lb, xmax = ci.ub), 
-                 height = 0.2,
-                 alpha = ifelse(plot_data3$pval > 0.05, 0.6, 1)) +  # Horizontal error bars
-  geom_vline(xintercept = 1, linetype = "dashed", color = "red") +  # Reference line at 1
-  geom_text(aes(label = paste0("k = ", k, " (", n, ")"), x = -1.7),
-            hjust = 0, size = 3.5, # Add k values as text next to the points
-            fontface = ifelse(plot_data3$pval < 0.05, "bold", "plain")) +  # Access pval outside aes()
-  xlab("TMF") +
-  ylab("PFAS") +
-  theme_minimal() +  # Use a minimal theme
-  theme(axis.text.y = element_text(size = 10),  # Adjust y-axis text size
-        axis.text.x = element_text(size = 10),  # Adjust x-axis text size
-        #axis.text.x.top = element_blank(),  # Remove x-axis labels from the top
-        axis.title = element_text(size = 11),
-        legend.position = "none",
-        panel.border = element_rect(colour = "black", fill = NA, size = 1)) +  
-  scale_x_break(c(13, 18)) +
-  scale_x_break(c(19.4, 23)) +
-  scale_x_continuous(breaks = c(seq(0, 13, by = 1), seq(18, 19, by = 1), seq(23, 25, by = 1)),
-                     limits = c(-1.7, 25))  # Combine breaks
-  
 forest_plot3
 ```
 
+Now, let's check the profile likelihood of model parameters for which we have at least 10 effect sizes.
+
 ```{r, eval=FALSE}
-# Save the  plot
-ggsave(here("figs/supplements", "forest_plot.png"), plot = forest_plot3, width = 9, height = 14, dpi = 300)
+# Identify the indices of the variance components for the parameters
+parameter_indices <- c(17, 47, 32, 51, 42, 33, 50, 20, 40, 34, 49, 46, 30, 36, 48, 31, 38)
+
+# Initialize a list to store the results for each parameter
+profile_results <- list()
+
+# Loop through each index
+for (i in parameter_indices) {
+  # Get the profile data for the current variance component
+  dat_ll <- profile(mod_chem2, tau2 = i)
+  
+  # Extract ll (log-likelihood) and sigma
+  ll_values <- dat_ll$ll
+  tau_values <- dat_ll$tau2
+  
+  # Store the results in the list
+  profile_results[[i]] <- data.frame(
+    parameter_index = i,
+    tau2 = tau_values,
+    log_likelihood = ll_values
+  )
+}
+
+# Combine all results into a single data frame
+mod_chem2_profile_results <- do.call(rbind, profile_results)
 ```
+## mod_chem3
 
-## Simpler model
-Let's run a few simpler models to see if what one has the lowest AICc value (better fit).
-In this model, Here, ~ 1 | PFAS_ID and ~ 1 | FW_ID specifies independent random intercepts for PFAS_ID and FW_ID. This structure does not allow for varying slopes but instead models each PFAS_ID and each FW_ID with separate random intercepts, treating them independently.
+In mod-chem3, ~ 1 | TMF_ID and ~ 1 | FW_ID specifies independent random intercepts for TMF_ID and FW_ID. This structure does not allow for varying slopes but instead models each TMF_ID and each FW_ID with separate random intercepts, treating them independently.
 
 ```{r, eval=FALSE}
-mod_chem2 <- rma.mv(ln_TMF ~ PFAS_ID - 1,
+mod_chem3 <- rma.mv(ln_TMF ~ PFAS_ID - 1,
                      V = VCV_chem,
-                     random = list(~ 1|PFAS_ID,
-                                   ~ 1|FW_ID), 
-                     struct = "DIAG",
+                     random = list(~ 1|FW_ID,
+                                   ~ 1|Study_ID,
+                                   ~ 1|TMF_ID), 
+                     #struct = "DIAG",
                      est = "t",
                      sparse = T,
                      data = TMF_data3,
@@ -913,20 +1589,81 @@ mod_chem2 <- rma.mv(ln_TMF ~ PFAS_ID - 1,
                                   rel.tol=1e-8))
 
 # Save the model
-save(mod_chem2, file = here("Rdata", "mod_chem2.RData"))
+save(mod_chem3, file = here("Rmodels", "mod_chem3.RData"))
 ```
 
-```{r}
-load(here("RData", "mod_chem2.RData"))
-summary(mod_chem2)
+```{r, warning=FALSE, echo=FALSE}
+load(here("Rmodels", "mod_chem3.RData"))
+summary(mod_chem3)
+
+res_tab3 <- broom::tidy(mod_chem3)
+res_tab3$ci.lb <- mod_chem3$ci.lb
+res_tab3$ci.ub <- mod_chem3$ci.ub
+res_tab3$pval <-mod_chem3$pval
+res_tab3 <- res_tab3 %>% 
+  mutate(
+    PFAS_ID = str_remove(term, "^PFAS_ID"),  # Remove 'PFAS_ID1: ' prefix
+    estimate = exp(estimate),  # Convert estimates back to original scale
+    ci.lb = exp(ci.lb),  # Convert lower CI back to original scale
+    ci.ub = exp(ci.ub)   # Convert upper CI back to original scale
+  ) %>% 
+  arrange(PFAS_ID)
+
+res_tab3 <- res_tab3 %>% 
+  mutate(k = k_n_data$k) %>% 
+  mutate(n = k_n_data$n)
+
+# Prepare the data for plotting and order PFAS_ID by estimate value
+plot_data3 <- res_tab3 %>%
+  as.data.frame() %>% 
+  filter(k > 10) %>% 
+  arrange(estimate)
+
+# Create the flipped forest plot
+forest_plot4 <- ggplot(plot_data3, aes(y = reorder(PFAS_ID, estimate), x = estimate)) +
+  geom_point(aes(size = k),  # Make point size proportional to k
+             color = ifelse(plot_data3$pval > 0.05, "grey", "black"),  # You can change the color if desired
+             alpha = 1) +  # Add transparency for better visibility 
+  scale_size(range = c(5, 13)) + # Set minimum size to 3 and maximum to 6
+  geom_errorbarh(aes(xmin = ci.lb, xmax = ci.ub), 
+                 height = 0.2,
+                 alpha = ifelse(plot_data3$pval > 0.05, 0.6, 1)) +  # Horizontal error bars
+  geom_vline(xintercept = 1, linetype = "dashed", color = "red") +  # Reference line at 1
+  geom_text(aes(label = paste0("k = ", k, " (", n, ")"), x = -0.18),
+            hjust = 0, size = 6, # Add k values as text next to the points
+            fontface = ifelse(plot_data3$pval < 0.05, "bold", "plain")) +  # Access pval outside aes()
+  # Add "*" next to PFUnDA and PFNA
+  # geom_text(data = subset(plot_data3, PFAS_ID %in% c("PFUnDA", "PFNA", "PFTrDA", "PFDoDA", "FOSA", "PFHxS", "PFDS", "PFTeDA", "PFOA", "PFBA", "PFPeA", "PFHpA", "PFBS", "PFHxA")),
+  #           aes(x = -0.21, label = "*"), size = 9, color = "black") +
+  # geom_text(data = subset(plot_data3, PFAS_ID %in% c("PFUnDA", "PFNA", "PFTrDA", "PFDoDA", "FOSA", "PFHxS", "PFDS", "PFTeDA", "PFOA", "PFBA", "PFPeA", "PFHpA", "PFBS", "PFHxA")),
+  #           aes(x = ci.lb, label = "*"),
+  #           hjust = 1.2, vjust = 0.7, size = 6, color = "black") +
+  xlab("TMF") +
+  ylab("PFAS") +
+  #ggtitle("B") +
+  theme_minimal() +  # Use a minimal theme
+  theme(legend.position = "none",
+        panel.border = element_rect(colour = "black", fill = NA, size = 1),
+         plot.title = element_text(face = "bold", size = 16),
+       legend.title = element_text(size = 15),
+        legend.text = element_text(size = 14),
+        axis.title.x = element_text(size = 17),
+        axis.title.y = element_text(size = 17),
+        axis.text.y = element_text(size = 16),
+       axis.text.x = element_text(size = 16)) +  
+   #scale_x_break(c(4, 6)) +
+   scale_x_continuous(breaks = seq(0, 4, by = 1), limits = c(-0.21, 4))
+  
+forest_plot4
 ```
 
 While mod_chem has more variance components and hence a greater risk of overfitting, the lower AICc (mod_chem = 4122 and mod_chem2 = 6731) suggests that the additional complexity is justified by the improved fit to the data. This indicates that mod_chem is likely capturing meaningful interaction variability between PFAS_ID and FW_ID that mod_chem2 does not account for, making it a better model for these data despite having more parameters.
 
+
 ## PFOS reference - Comparison model
 We are going to compare each compound against PFOS (the compound with the largest effect size and sample size). By doing so, we can assess what compounds have a mean estimate lower than PFOS.
 
-```{r}
+```{r, eval=FALSE}
 TMF_data3$PFAS_ID <- factor(TMF_data3$PFAS_ID)
 # Relevel PFAS_ID so that PFOS is the reference level
 TMF_data3$PFAS_ID <- relevel(TMF_data3$PFAS_ID, ref = "PFOS")
@@ -945,11 +1682,11 @@ mod_chem_contr <- rma.mv(ln_TMF ~ PFAS_ID,
                                   rel.tol = 1e-8))
 
 # Save the model
-save(mod_chem_contr, file = here("Rdata", "mod_chem_contr.RData"))
+save(mod_chem_contr, file = here("Rmodels", "mod_chem_contr.RData"))
 ```
 
-```{r}
-load(here("RData", "mod_chem_contr.RData"))
+```{r, eval=FALSE}
+load(here("Rmodels", "mod_chem_contr.RData"))
 summary(mod_chem_contr)
 ```
 
@@ -958,84 +1695,37 @@ summary(mod_chem_contr)
 ```{r}
 # Regulation levels
 lacking <- c("6:2ClPFESA", "PFDS", "PFBA", "PFPeA","PFHxA")
-regulated <- c("PFDA", "PFUnDA", "PFTrDA", "PFDoDA", "PFTeDA", "PFHpA", "PFBS")
-strong <- c("PFOS", "br-PFOS", "l-PFOS", "PFNA", "FOSA", "PFHxS", "PFOA")
+REACH <- c("PFDA", "PFUnDA", "PFTrDA", "PFDoDA", "PFTeDA", "PFHpA", "PFBS")
+SCPoPs <- c("PFOS", "br-PFOS", "l-PFOS", "PFNA", "FOSA", "PFHxS", "PFOA")
 
 plot_data4 <- TMF_data2
 
 # Add the regulation column based on PFAS_ID
-plot_data4$regulation <- ifelse(plot_data4$PFAS_ID %in% lacking, "unregulated",
-                          ifelse(plot_data4$PFAS_ID %in% regulated, "regulated",
-                          ifelse(plot_data4$PFAS_ID %in% strong, "strongly regulated", NA)))
+plot_data4$regulation <- ifelse(plot_data4$PFAS_ID %in% lacking, "none",
+                          ifelse(plot_data4$PFAS_ID %in% REACH, "REACH",
+                          ifelse(plot_data4$PFAS_ID %in% SCPoPs, "SCPoPs", NA)))
 
-plot_data4$regulation <- factor(plot_data4$regulation, levels = c("unregulated", "regulated", "strongly regulated"))
+plot_data4$regulation <- factor(plot_data4$regulation, levels = c("none", "REACH", "SCPoPs"))
 
 # Remove rows where the regulation column is NA
 plot_data4 <- plot_data4 %>% filter(!is.na(regulation))
 ```
 
 ```{r, eval=FALSE}
-regulation_model <- run_model(plot_data4, ~ regulation)
-save(regulation_model, file = here("Rdata", "regulation_model.RData"))
+regulation_model <- run_model(plot_data4, ~ regulation -1)
+save(regulation_model, file = here("Rmodels", "regulation_model.RData"))
 ```
 
 ```{r}
-load(here("RData", "regulation_model.RData"))
+load(here("Rmodels", "regulation_model.RData"))
 summary(regulation_model)
 r2_regulation <- r2_ml(regulation_model, plot_data4)
+predict.rma(regulation_model, newmods = c(1, 0, -1), transf = exp, addx = T)
+predict.rma(regulation_model, newmods = c(1, -1, 0), transf = exp, addx = T)
 ```
 
 ```{r}
-# k_n_data2 <- plot_data4 %>% 
-#   group_by(regulation) %>%
-#   arrange(regulation) %>% 
-#   summarise(k = n(), n = length(unique(Study_ID)))
-# 
-# res_tab3 <- broom::tidy(regulation_model)
-# res_tab3$ci.lb <- regulation_model$ci.lb
-# res_tab3$ci.ub <- regulation_model$ci.ub
-# res_tab3$pval <-regulation_model$pval
-# res_tab3 <- res_tab3 %>% 
-#   mutate(
-#     regulation = str_remove(term, "^regulation"),
-#     estimate = exp(estimate),  # Convert estimates back to original scale
-#     ci.lb = exp(ci.lb),  # Convert lower CI back to original scale
-#     ci.ub = exp(ci.ub)   # Convert upper CI back to original scale
-#   ) %>% 
-#   arrange(estimate) %>% 
-#   mutate(k = k_n_data2$k) %>% 
-#   mutate(n = k_n_data2$n)
-# 
-# 
-# forest_plot4 <- ggplot(res_tab3, aes(y = reorder(regulation, estimate), x = estimate)) +
-#   geom_point(aes(size = k),
-#              color = ifelse(res_tab3$pval > 0.05, "grey", "black"),  
-#              alpha = 1) +  
-#   scale_size(range = c(8, 16)) + 
-#   geom_errorbarh(aes(xmin = ci.lb, xmax = ci.ub), 
-#                  height = 0.2,
-#                  alpha = ifelse(res_tab3$pval > 0.05, 0.6, 1)) +  
-#   geom_vline(xintercept = 1, linetype = "dashed", color = "red") +  
-#   geom_text(aes(label = paste0("k = ", k, " (", n, ")"), x = 0),
-#             hjust = 0, size = 5, 
-#             fontface = ifelse(res_tab3$pval < 0.05, "bold", "plain")) +
-#   xlab("TMF") +
-#   ylab("PFAS") +
-#   #theme_minimal() +  
-#   theme(axis.text.y = element_text(size = 12),  
-#         axis.text.x = element_text(size = 12),  #
-#         #axis.text.x.top = element_blank(),  
-#         axis.title = element_text(size = 13),
-#         legend.position = "none",
-#         panel.border = element_rect(colour = "black", fill = NA, size = 1)) +  
-#   scale_x_continuous(breaks = c(seq(0, 4, by = 1)),
-#                      limits = c(0, 4))
-#   
-# forest_plot4
-```
-
-```{r}
-fig_regulation <- orchard_plot_new(regulation_model,
+figS14 <- orchard_plot_new(regulation_model,
              transfm = "percent",
              mod = "regulation",
              group = "Study_ID",
@@ -1064,18 +1754,17 @@ fig_regulation <- orchard_plot_new(regulation_model,
         axis.text.y = element_text(size = 13),
        axis.text.x = element_text(size = 13)) +
   #ggtitle("C") +
-  xlab("PFAS class") +
+  xlab("International regulation") +
   ylab("TMF") +
   #scale_y_break(c(11, 13)) +
   scale_y_continuous(limits = c(0, 11), breaks = seq(0, 11, by = 1))
 
-fig_regulation
+figS14
 ```
 
 ```{r, eval=FALSE}
-ggsave(here("figs/supplements", "regulation.png"), plot = fig_regulation, width = 14, height = 5, dpi = 300)
+ggsave(here("figs/supplements", "figS14.png"), plot = fig_regulation, width = 9, height = 5, dpi = 300)
 ```
-
 
 # World map location of food webs
 
@@ -1096,11 +1785,14 @@ coords <- fw_data %>%
   #   Latitude = Latitude_DD,
   #   Longitude = Longitude_DD
   # ) %>% 
-  mutate(
-    Ecosystem = fct_recode(Ecosystem,
-                           "estuarine/brackish/tidal" = "estuarine",
-                           "estuarine/brackish/tidal" = "brackish",
-                           "estuarine/brackish/tidal" = "tidal"))
+  # mutate(
+  #   Ecosystem = fct_recode(Ecosystem,
+  #                          "estuarine/brackish/tidal" = "estuarine",
+  #                          "estuarine/brackish/tidal" = "brackish",
+  #                          "estuarine/brackish/tidal" = "tidal")) %>% 
+  mutate(Ecosystem = ifelse(Ecosystem == "terrestrial", 
+                                  "Terrestrial", 
+                                  "Aquatic"))
 
 
 # Load the world map data
@@ -1108,24 +1800,26 @@ world <- ne_countries(scale = "medium", returnclass = "sf")
 
 # Plot the map with clusters and counts
 w_map <- ggplot(data = world) +
-  geom_sf(fill = "grey97") +  # Plot the world map
-  geom_jitter(data = coords, aes(x = Longitude, y = Latitude, color = Ecosystem, alpha = 0.7), size = 3, width = 1.2, height = 1.2) + 
+  geom_sf(fill = "grey80") +  # Plot the world map
+  geom_jitter(data = coords, aes(x = Longitude, y = Latitude, color = Ecosystem, alpha = 0.7), size = 2, width = 1.2, height = 1.2) + 
   theme(
     panel.background = element_rect(fill = "white"),  
     panel.grid.major = element_blank(),  
     panel.grid.minor = element_blank(),  
-    axis.title.x = element_text(size = 14), 
-    axis.title.y = element_text(size = 14),  
+    axis.title.x = element_text(size = 8), 
+    axis.title.y = element_text(size = 8),  
     panel.border = element_rect(colour = "black", fill = NA, size = 1),
     plot.margin = margin(t = 10, r = 10, b = 5, l = 5),
-    legend.position = "bottom",  # Move the legend to the bottom
+    legend.position = c(0.04, 0.15),  # adjust these numbers to fine-tune location
+    legend.justification = c(0, 0),
     legend.direction = "horizontal",  # Display the legend horizontally
     legend.background = element_rect(fill = "transparent", color = NA),
     legend.key = element_rect(fill = "transparent", color = NA),
-    legend.title = element_text(size = 14),
-    legend.text = element_text(size = 13)) +
-  guides(size = "none", alpha = "none", color = guide_legend(ncol = 6, override.aes = list(size = 4))) +
-  scale_color_manual(values = c("#114B5F", "#FB8B24", "#597802", "#66101F")) +
+    legend.key.size = unit(0.2, "cm"),
+    legend.title = element_text(size = 6),
+    legend.text = element_text(size = 6)) +
+  guides(size = "none", alpha = "none", color = guide_legend(nrow = 2, byrow = TRUE, override.aes = list(size = 2))) +
+  scale_color_manual(values = c("#114B5F", "#FB8B24")) +
   labs(color = "Ecosystem type:")
 
 w_map
@@ -1133,7 +1827,11 @@ w_map
 
 ```{r, echo=FALSE, eval=FALSE}
 # Save the  plot
-ggsave(here("figs", "world_map.png"), plot = w_map, width = 11, height = 6, dpi = 300)
+ggsave(here("figs", "fig1.pdf"), plot = w_map, width = 170, height = 110, dpi = 600, units = 'mm')
+
+fig1_data <- coords %>% 
+  select(FW_ID, Ecosystem, Location, Latitude_DD, Longitude_DD)
+write_csv(fig1_data, here("Rdata", "fig1_data.csv"))
 ```
 
 # Single-moderator meta-regression models
@@ -1143,36 +1841,34 @@ In our meta-analysis, we have 4 categories of predictors:
 -  Predictors belonging to the **research methods**.
 -  Predictors belonging to the **geographical location** of food webs.
 -  Predictors belonging to the **biological and ecological characteristics of food webs**.
--  **PFAS characteristics**.
+-  Predictors belonging to the **PFAS characteristics**.
 
 ## Research methods
 
-### **Sample type: whole-organism or organ/tissue-specific analysis**
+### Sample type: whole-organism or organ/tissue-specific analysis
 
-Whole-organism concentrations are usually measured at the base of food webs (plankton, lichens). For animals of higher trophic levels (seals, bears etc.) practical and ethical reasons mean sampling is done on specific organs or fluids instead. The sampling strategy also pertains to whether the data was initially gathered due to a study's focus on ecological risk (whole animals) or human health risk (emphasizing edible parts such as fillets, eggs, muscle tissue, etc.).
-
-We predict that PFAS biomagnification estimates based exclusively on whole-organism samples may differ from those on a mix of whole-organism and organ-specific.
 ```{r}
 TMF_data2 <- TMF_data2 %>% 
   mutate(Sample_type = recode(
     Sample_type,
-    "specific tissues and whole-organisms" = "mixed"
+    "specific tissues and whole-organisms" = "specific tissues \n and whole-organisms",
+    "whole-organisms only" = "whole-organisms \n only"
   ))
 ```
 
 ```{r, eval=FALSE}
 sum(is.na(TMF_data2$Sample_type)) #checking the amount of NAs
 #[1] 0
-sample_model <- run_model(TMF_data2, ~ Sample_type)
-save(sample_model, file = here("Rdata", "sample_model.RData"))
+sample_model <- run_model(TMF_data2, ~ Sample_type -1)
+save(sample_model, file = here("Rmodels", "sample_model.RData"))
 ```
 
 ```{r, echo=FALSE, warning=FALSE, fig.cap="Note: Maximum TMF value set to 10"}
-load(here("RData", "sample_model.RData"))
+load(here("Rmodels", "sample_model.RData"))
 summary(sample_model)
 r2_sample <- r2_ml(sample_model, TMF_data2)
 
-fig_sample <- orchard_plot_new(sample_model,
+fig3A <- orchard_plot_new2(sample_model,
                            transfm="percent",
              mod = "Sample_type",
              group = "Study_ID",
@@ -1180,49 +1876,91 @@ fig_sample <- orchard_plot_new(sample_model,
              legend.pos = "bottom.right",
              k.pos = "left",
              angle = 0,
-             alpha = 1,
+             alpha = 0.5,
              colour = "black",
              fill = FALSE,
-             trunk.size = 1,
-             branch.size = 3.1,
-             twig.size = 0.5) +
+             trunk.size = 0.5,
+             branch.size = 0.8,
+             twig.size = 0.3) +
   annotate(geom = "text",
            x = 3.4,
            y = 9, 
            label = paste0("italic(R)^{2} == ", round(r2_sample[1],4)),
            color ="black",
            parse = TRUE, 
-           size = 4) +
-  theme(plot.title = element_text(face = "bold", size  = 16),
-       legend.title = element_text(size = 13),
-        legend.text = element_text(size = 12),
-        #axis.title.x = element_text(size = 12),
-       axis.title.x = element_blank(),
-        axis.title.y = element_text(size = 14),
-        axis.text.y = element_text(size = 13),
+           size = 2) +
+  theme(plot.title = element_text(face = "bold", size  = 10),
+        legend.title = element_text(size = 6),
+        legend.text = element_text(size = 5),
+        legend.position = c(1, 0.18),
+        legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 8),
+        axis.text.y = element_text(size = 7),
        axis.text.x = element_blank()) +
+  scale_size(range = c(0.5, 3)) +
   xlab("Samples type") +
   #ylab("TMF") +
   ggtitle("A") +
-  scale_y_continuous(limits = c(0, 14), breaks = seq(0, 14, by = 1))
+  scale_y_continuous(limits = c(0, 14), breaks = seq(0, 14, by = 1)) +
+  scale_fill_manual(values = c("#597802", "#114B5F", "#FB8B24")) +
+  scale_color_manual(values = c("#597802", "#114B5F", "#FB8B24"))
 
-fig_sample
+fig3A
+
+predict.rma(sample_model, newmods = c(-1, 0, 1), transf = exp, addx = T)
 ```
 
 ```{r, echo=FALSE, eval=FALSE}
-ggsave(here("figs","sample.png"),
+figS7 <- orchard_plot_new2(sample_model,
+                           transfm="percent",
+             mod = "Sample_type",
+             group = "Study_ID",
+             xlab = "ln_TMF",
+             legend.pos = "bottom.right",
+             k.pos = "left",
+             angle = 0,
+             alpha = 0.5,
+             colour = "black",
+             fill = FALSE,
+             trunk.size = 0.5,
+             branch.size = 0.8,
+             twig.size = 0.3) +
+  annotate(geom = "text",
+           x = 3.4,
+           y = 9, 
+           label = paste0("italic(R)^{2} == ", round(r2_sample[1],4)),
+           color ="black",
+           parse = TRUE, 
+           size = 2) +
+  theme(plot.title = element_text(face = "bold", size  = 10),
+        legend.title = element_text(size = 6),
+        legend.text = element_text(size = 5),
+        legend.position = c(1, 0.18),
+        legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 8),
+        axis.text.y = element_text(size = 7),
+       axis.text.x = element_blank()) +
+  scale_size(range = c(0.5, 3)) +
+  xlab("Samples type") +
+  ylab("TMF") +
+  scale_fill_manual(values = c("#597802", "#114B5F", "#FB8B24")) +
+  scale_color_manual(values = c("#597802", "#114B5F", "#FB8B24"))
+
+ggsave(here("figs/supplements","figS7.png"),
        width = 8,
        height = 6)
+
+fig3A_data <- TMF_data2 %>% 
+  select(Study_ID, FW_ID, PFAS_ID, Sample_type, ln_TMF, ln_TMF_se)
+
+write_csv(fig3A_data, here("Rdata", "fig3A_data.csv"))
 ```
 
-Note: The maximum TMF value in the figure is capped at 10 to enhance the visual clarity of the results.
-
-TMFs estimated using both tissue-specific samples (e.g., liver, blood) and whole-organism samples are **significantly higher by 49%** (p = 0.0001; 95% CI: 21-84%) compared to those estimated using only whole-organism samples.
-
-### **Concentration determination method**
-
-Evaluation of biomagnification using TMFs based on protein- or lipid-normalized concentrations in food web organisms has been rarely suggested. However, it should be considered a source of variability in biomagnification estimates.
-We predict that the biomagnification estimates of TMFs based on protein- or lipid-normalized PFAS concentrations may differ from those based on concentrations non-normalised.
+### Concentration determination method
 
 ```{r, include=FALSE}
 sum(is.na(TMF_data2$Conc_determ_method))
@@ -1250,11 +1988,11 @@ TMF_data2_norm <- TMF_data2_norm %>%
 
 ```{r, eval=FALSE, warning=FALSE}
 norm_model <- run_model(TMF_data2_norm, ~ Conc_determ_method - 1)
-save(norm_model, file = here("Rdata", "norm_model.RData"))
+save(norm_model, file = here("Rmodels", "norm_model.RData"))
 ```
 
-```{r, echo=FALSE, fig.cap="Note: Maximum TMF value set to 12"}
-load(here("RData", "norm_model.RData"))
+```{r, eval=FALSE, fig.cap="Note: Maximum TMF value set to 12"}
+load(here("Rmodels", "norm_model.RData"))
 summary(norm_model)
 r2_norm <- r2_ml(norm_model, TMF_data2_norm)
    # R2_marginal R2_conditional 
@@ -1271,7 +2009,7 @@ fig_norm <- orchard_plot_new(norm_model,
              colour = "black",
              fill = FALSE,
              trunk.size = 1,
-             branch.size = 3.1,
+             branch.size = 1,
              twig.size = 0.5) +
   annotate(geom = "text",
            x = 4.4,
@@ -1279,11 +2017,12 @@ fig_norm <- orchard_plot_new(norm_model,
            label = paste0("italic(R)^{2} == ", round(r2_norm[1],4)),
            color ="black",
            parse = TRUE, 
-           size = 4) +
+           size = 2) +
   #ggtitle("c)")+
   theme(plot.title = element_text(size = 18),
        legend.title = element_text(size = 11),
         legend.text = element_text(size = 9),
+        legend.position = c(1, 0.15),
         axis.title.x = element_text(size = 16),
         axis.title.y = element_text(size = 16),
         axis.text.y = element_text(size = 14),
@@ -1294,16 +2033,7 @@ fig_norm <- orchard_plot_new(norm_model,
 fig_norm
 ```
 
-```{r, echo=FALSE, eval=FALSE}
-ggsave(here("figs","norm.png"),
-       width = 8,
-       height = 5)
-```
-
-Normalized concentrations have the lowest estimate (lw = 0.1659 and pw = 0.3846), compared to not normalized concentrations (dw = 0.4633 and ww = 0.7901).
-Let's merge these four categories into two categories (normalized and not normalized concentrations).
-
-```{r}
+```{r, include=FALSE}
 TMF_data2_norm <- TMF_data2_norm %>%
   mutate(Normalization = recode(
     Conc_determ_method,
@@ -1316,15 +2046,15 @@ TMF_data2_norm <- TMF_data2_norm %>%
 
 ```{r, eval=FALSE, warning=FALSE}
 norm_model2 <- run_model(TMF_data2_norm, ~ Normalization)
-save(norm_model2, file = here("Rdata", "norm_model2.RData"))
+save(norm_model2, file = here("Rmodels", "norm_model2.RData"))
 ```
 
 ```{r, echo=FALSE, fig.cap="Note: Maximum TMF value set to 10"}
-load(here("RData", "norm_model2.RData"))
+load(here("Rmodels", "norm_model2.RData"))
 summary(norm_model2)
 r2_norm2 <- r2_ml(norm_model2, TMF_data2_norm)
 
-fig_norm2 <- orchard_plot_new(norm_model2,
+fig3B <- orchard_plot_new2(norm_model2,
                                transfm="percent",
              mod = "Normalization",
              group = "Study_ID",
@@ -1332,47 +2062,90 @@ fig_norm2 <- orchard_plot_new(norm_model2,
              legend.pos = "bottom.right",
              k.pos = "left",
              angle = 0,
-             alpha = 1,
+             alpha = 0.5,
              colour = "black",
              fill = FALSE,
-             trunk.size = 1,
-             branch.size = 3.1,
-             twig.size = 0.5) +
+             trunk.size = 0.5,
+             branch.size = 0.8,
+             twig.size = 0.3) +
   annotate(geom = "text",
            x = 2.4,
            y = 9, 
            label = paste0("italic(R)^{2} == ", round(r2_norm2[1],4)),
            color ="black",
            parse = TRUE, 
-           size = 4) +
+           size = 2) +
   #ggtitle("c)")+
-  theme(plot.title = element_text(face = "bold", size  = 16),
-       legend.title = element_text(size = 13),
-        legend.text = element_text(size = 12),
-        #axis.title.x = element_text(size = 12),
-       axis.title.x = element_blank(),
-        axis.title.y = element_text(size = 14),
-        axis.text.y = element_text(size = 13),
+  theme(plot.title = element_text(face = "bold", size  = 10),
+        legend.title = element_text(size = 6),
+        legend.text = element_text(size = 5),
+        legend.position = c(1, 0.23),
+        legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 8),
+        axis.text.y = element_text(size = 7),
        axis.text.x = element_blank()) +
+  scale_size(range = c(0.5, 3)) +
   xlab("Determination method") +
   #ylab("TMF") +
   ggtitle("B") +
-  scale_y_continuous(limits = c(0, 14), breaks = seq(0, 14, by = 1))
+  scale_y_continuous(limits = c(0, 14), breaks = seq(0, 14, by = 1)) +
+  scale_fill_manual(values = c("#114B5F", "#FB8B24")) +
+  scale_color_manual(values = c("#114B5F", "#FB8B24"))
 
-fig_norm2
+fig3B
 ```
 
-```{r, echo=FALSE, eval=FALSE}
-ggsave(here("figs","norm2.png"),
+```{r, eval=FALSE}
+figS8 <- orchard_plot_new2(norm_model2,
+                               transfm="percent",
+             mod = "Normalization",
+             group = "Study_ID",
+             xlab = "ln_TMF",
+             legend.pos = "bottom.right",
+             k.pos = "left",
+             angle = 0,
+             alpha = 0.5,
+             colour = "black",
+             fill = FALSE,
+             trunk.size = 0.5,
+             branch.size = 0.8,
+             twig.size = 0.3) +
+  annotate(geom = "text",
+           x = 2.4,
+           y = 9, 
+           label = paste0("italic(R)^{2} == ", round(r2_norm2[1],4)),
+           color ="black",
+           parse = TRUE, 
+           size = 2) +
+  theme(plot.title = element_text(face = "bold", size  = 10),
+        legend.title = element_text(size = 6),
+        legend.text = element_text(size = 5),
+        legend.position = c(1, 0.23),
+        legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 8),
+        axis.text.y = element_text(size = 7),
+       axis.text.x = element_blank()) +
+  scale_size(range = c(0.5, 3)) +
+  xlab("Determination method") +
+  ylab("TMF") +
+  scale_fill_manual(values = c("#114B5F", "#FB8B24")) +
+  scale_color_manual(values = c("#114B5F", "#FB8B24"))
+
+ggsave(here("figs/supplements","figS8.png"),
        width = 8,
        height = 4)
+
+fig3B_data <- TMF_data2_norm %>% 
+  select(Study_ID, FW_ID, PFAS_ID, Normalization, ln_TMF, ln_TMF_se)
+
+write_csv(fig3B_data, here("Rdata", "fig3B_data.csv"))
 ```
 
-TMFs estimated using non-normalized PFAS concentrations (i.e., not adjusted for protein or lipid content) are **significantly higher by 43%** (p < .0001; 95% CI: 21-70%) compared to those estimated using normalized PFS concentrations.
-
 ### Undetected strategy - Limit of Detection (LOD)
-
-The included studies exibited a highly variable choice of strategy on how to treat censored data (data under limit of detection or quantification) so that we could not perform a meta-regression analysis.
 
 ```{r, include=FALSE}
 TMF_data2_undetected_strategy <- TMF_data2 %>%
@@ -1404,19 +2177,19 @@ print(doc, target = "Rdata/undetected_strategy_table.docx")
 ```
 
 Table for meta-regression analysis:
-```{r, eval = FALSE}
+```{r}
 # Recode the 'Censored_data_strategy' column
 TMF_data2_undetected_strategy2 <- TMF_data2 %>%
   mutate(Censored_data_strategy = recode(Censored_data_strategy,
          
     # The limit value divided by two or squared root of two group
-    "The LOQ value divided by two" = "Division by two or √2",
-    "The MDL value divided by two" = "Division by two or √2",
-    "The LOD value divided by two" = "Division by two or √2",
-    "The LOD value divided by two or detection frequency multiplied by LOD value or imputation" = "Division by two or √2",
-    "The LOD value divided by the square root of two" = "Division by two or √2",
-    "The LOD value divided by the square root of two for values < LOD. The LOQ value divided by two for values < LOQ." = "Division by two or √2",
-    "The LOQ value divided by the square root of two" = "Division by two or √2",
+    "The LOQ value divided by two" = "Division by two or sqrt of two",
+    "The MDL value divided by two" = "Division by two or sqrt of two",
+    "The LOD value divided by two" = "Division by two or sqrt of two",
+    "The LOD value divided by two or detection frequency multiplied by LOD value or imputation" = "Division by two or sqrt of two",
+    "The LOD value divided by the square root of two" = "Division by two or sqrt of two",
+    "The LOD value divided by the square root of two for values < LOD. The LOQ value divided by two for values < LOQ." = "Division by two or sqrt of two",
+    "The LOQ value divided by the square root of two" = "Division by two or sqrt of two",
     
     # Substitution with zero group
     "Zero for values < LOD" = "Substitution with zero",
@@ -1444,7 +2217,7 @@ TMF_data2_undetected_strategy2 <- TMF_data2 %>%
     
   )) %>% 
   mutate(Censored_data_strategy = fct_relevel(Censored_data_strategy, 
-                                              "Division by two or √2")) %>% 
+                                              "Division by two or sqrt of two")) %>% 
   filter(Censored_data_strategy != "Not provided") %>% 
   group_by(Censored_data_strategy) %>%
   mutate(
@@ -1452,58 +2225,122 @@ TMF_data2_undetected_strategy2 <- TMF_data2 %>%
     n_study = n_distinct(Study_ID) 
   ) %>% 
   arrange(desc(n_study))
+
+TMF_data2_undetected_strategy2$Censored_data_strategy <- factor(
+  TMF_data2_undetected_strategy2$Censored_data_strategy, 
+  levels = c("Others", "Exclusion of data", "Not provided", 
+             "Division by two or sqrt of two", "Random numbers", "Substitution with zero"))
+
+TMF_data2_undetected_strategy2 <- TMF_data2_undetected_strategy2 %>% 
+mutate(Censored_data_strategy = recode(
+    Censored_data_strategy,
+    "Division by two or sqrt of two" = "Division by two \n or sqrt of two",
+    "Substitution with zero" = "Substitution with \n zero"
+  ))
 ```
 
 ```{r, eval=FALSE}
-undetected_model <- run_model(TMF_data2_undetected_strategy2, ~ Censored_data_strategy)
-save(undetected_model, file = here("Rdata", "undetected_model.RData"))
+undetected_model <- run_model(TMF_data2_undetected_strategy2, ~ Censored_data_strategy -1)
+save(undetected_model, file = here("Rmodels", "undetected_model.RData"))
 ```
 
 ```{r, echo=FALSE, fig.cap="Note: Maximum TMF value set to 10"}
-load(here("RData", "undetected_model.RData"))
+load(here("Rmodels", "undetected_model.RData"))
 summary(undetected_model)
 r2_lod <- r2_ml(undetected_model, TMF_data2_undetected_strategy2)
 
-fig_lod <- orchard_plot_new(undetected_model,
-             transfm="percent",
+fig3D <- orchard_plot_new2(undetected_model,
+             transfm = "percent",
              mod = "Censored_data_strategy",
              group = "Study_ID",
              xlab = "ln_TMF",
              legend.pos = "bottom.right",
              k.pos = "left",
              angle = 0,
+             alpha = 0.5,
              colour = "black",
              fill = FALSE,
-             trunk.size = 1,
-             branch.size = 3.1,
-             twig.size = 0.5) +
+             trunk.size = 0.5,
+             branch.size = 0.8,
+             twig.size = 0.3) +
   annotate(geom = "text",
            x = 5.4,
            y = 9,
            label = paste0("italic(R)^{2} == ", round(r2_lod[1],4)),
            color ="black",
            parse = TRUE,
-           size = 4) +
+           size = 2) +
   #ggtitle("c)")+
-  theme(plot.title = element_text(face = "bold", size  = 16),
-       legend.title = element_text(size = 13),
-        legend.text = element_text(size = 12),
-        axis.title.x = element_text(size = 14),
-        axis.title.y = element_text(size = 14),
-        axis.text.y = element_text(size = 13),
-       axis.text.x = element_text(size = 13)) +
+  theme(plot.title = element_text(face = "bold", size  = 10),
+       legend.title = element_text(size = 6),
+        legend.text = element_text(size = 5),
+        legend.position = c(1, 0.1),
+       legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_text(size = 9),
+        axis.title.y = element_text(size = 8),
+        axis.text.y = element_text(size = 7),
+       axis.text.x = element_text(size = 8)) +
+  scale_size(range = c(0.5, 3)) +
   xlab("Treatment of undetected values") +
   ylab("TMF") +
   ggtitle("D") +
-  scale_y_continuous(limits = c(0, 14), breaks = seq(0, 14, by = 1))
-
-fig_lod
+  scale_y_continuous(limits = c(0, 14), breaks = seq(0, 14, by = 1)) +
+  scale_fill_manual(values = c("#F28482", "#66101F", "#597802", "#114B5F", "#FB8B24")) +
+  scale_color_manual(values = c("#F28482", "#66101F", "#597802", "#114B5F", "#FB8B24"))
 ```
 
-### N-isotope trophic enrichment factor (TEF)
+```{r, eval=FALSE}
+figS10 <- orchard_plot_new2(undetected_model,
+             transfm = "percent",
+             mod = "Censored_data_strategy",
+             group = "Study_ID",
+             xlab = "ln_TMF",
+             legend.pos = "bottom.right",
+             k.pos = "left",
+             angle = 0,
+             alpha = 0.5,
+             colour = "black",
+             fill = FALSE,
+             trunk.size = 0.5,
+             branch.size = 0.8,
+             twig.size = 0.3) +
+  annotate(geom = "text",
+           x = 5.4,
+           y = 9,
+           label = paste0("italic(R)^{2} == ", round(r2_lod[1],4)),
+           color ="black",
+           parse = TRUE,
+           size = 2) +
+  #ggtitle("c)")+
+  theme(plot.title = element_text(face = "bold", size  = 10),
+       legend.title = element_text(size = 6),
+        legend.text = element_text(size = 5),
+        legend.position = c(1, 0.1),
+       legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_text(size = 9),
+        axis.title.y = element_text(size = 8),
+        axis.text.y = element_text(size = 7),
+       axis.text.x = element_text(size = 8)) +
+  scale_size(range = c(0.5, 3)) +
+  xlab("Treatment of undetected values") +
+  ylab("TMF") +
+  scale_fill_manual(values = c("#F28482", "#66101F", "#597802", "#114B5F", "#FB8B24")) +
+  scale_color_manual(values = c("#F28482", "#66101F", "#597802", "#114B5F", "#FB8B24"))
 
-Different studies use different N-isotope TEF to calculate the trophic level of species. The choice of TEF can affect the resulting TMF.
-We predict that different TEF choices can result in under- or overestimation of PFAS biomagnification.
+ggsave(here("figs/supplements","figS10.png"),
+       width = 8,
+       height = 6)
+
+fig3D_data <- TMF_data2_undetected_strategy2 %>% 
+  select(Study_ID, FW_ID, PFAS_ID, Censored_data_strategy, ln_TMF, ln_TMF_se)
+
+write_csv(fig3D_data, here("Rdata", "fig3D_data.csv"))
+```
+
+
+### N-isotope trophic enrichment factor (TEF)
 
 ```{r, include=FALSE}
 sum(is.na(TMF_data2$TEF))
@@ -1521,18 +2358,18 @@ sum(is.na(TMF_data2_tef$TEF))
 ```
 
 ```{r, eval=FALSE}
-tef_model <- run_model(TMF_data2_tef, ~ TEF)
-save(tef_model, file = here("Rdata", "tef_model.RData"))
+tef_model <- run_model(TMF_data2_tef, ~ TEF-1)
+save(tef_model, file = here("Rmodels", "tef_model.RData"))
 ```
 
 ```{r, echo=FALSE, fig.cap="Note: Maximum TMF value set to 12"}
-load(here("RData", "tef_model.RData"))
+load(here("Rmodels", "tef_model.RData"))
 summary(tef_model)
 r2_tef <- r2_ml(tef_model, TMF_data2_tef)
    # R2_marginal R2_conditional 
    #  0.04538842     0.88832187 
 
-fig_tef <- orchard_plot_new(tef_model,
+fig3C <- orchard_plot_new2(tef_model,
                             transfm="percent",
              mod = "TEF",
              group = "Study_ID",
@@ -1540,54 +2377,99 @@ fig_tef <- orchard_plot_new(tef_model,
              legend.pos = "bottom.right",
              k.pos = "left",
              angle = 0,
+             alpha = 0.5,
              colour = "black",
              fill = FALSE,
-             trunk.size = 1,
-             branch.size = 3.1,
-             twig.size = 0.5) +
+             trunk.size = 0.5,
+             branch.size = 0.8,
+             twig.size = 0.3) +
   annotate(geom = "text",
            x = 4.4,
            y = 9, 
            label = paste0("italic(R)^{2} == ", round(r2_tef[1],4)),
            color ="black",
            parse = TRUE, 
-           size = 4) +
+           size = 2) +
   #ggtitle("c)")+
-  theme(plot.title = element_text(face = "bold", size  = 16),
-        legend.title = element_text(size = 13),
-        legend.text = element_text(size = 12),
+  theme(plot.title = element_text(face = "bold", size  = 10),
+        legend.title = element_text(size = 6),
+        legend.text = element_text(size = 5),
+        legend.position = c(1, 0.15),
+        legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
         axis.title.x = element_blank(),
-        axis.title.y = element_text(size = 14),
-        axis.text.y = element_text(size = 13),
+        axis.title.y = element_text(size = 8),
+        axis.text.y = element_text(size = 7),
        axis.text.x = element_blank()) +
+  scale_size(range = c(0.5, 3)) +
   xlab("Trophic Enrichment Factor") +
   ylab("TMF") +
   ggtitle("C") +
-  scale_y_continuous(limits = c(0, 14), breaks = seq(0, 14, by = 1))
-
-fig_tef
+  scale_y_continuous(limits = c(0, 14), breaks = seq(0, 14, by = 1)) +
+  scale_fill_manual(values = c("#66101F", "#597802", "#114B5F", "#FB8B24")) +
+  scale_color_manual(values = c("#66101F", "#597802", "#114B5F", "#FB8B24"))
 ```
 
 ```{r, eval=FALSE, echo=FALSE}
-ggsave(here("figs","tef.png"),
+figS9 <- orchard_plot_new2(tef_model,
+                            transfm="percent",
+             mod = "TEF",
+             group = "Study_ID",
+             xlab = "ln_TMF",
+             legend.pos = "bottom.right",
+             k.pos = "left",
+             angle = 0,
+             alpha = 0.5,
+             colour = "black",
+             fill = FALSE,
+             trunk.size = 0.5,
+             branch.size = 0.8,
+             twig.size = 0.3) +
+  annotate(geom = "text",
+           x = 4.4,
+           y = 9, 
+           label = paste0("italic(R)^{2} == ", round(r2_tef[1],4)),
+           color ="black",
+           parse = TRUE, 
+           size = 2) +
+  #ggtitle("c)")+
+  theme(plot.title = element_text(face = "bold", size  = 10),
+        legend.title = element_text(size = 6),
+        legend.text = element_text(size = 5),
+        legend.position = c(1, 0.15),
+        legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 8),
+        axis.text.y = element_text(size = 7),
+       axis.text.x = element_blank()) +
+  scale_size(range = c(0.5, 3)) +
+  xlab("Trophic Enrichment Factor") +
+  ylab("TMF") +
+  scale_fill_manual(values = c("#66101F", "#597802", "#114B5F", "#FB8B24")) +
+  scale_color_manual(values = c("#66101F", "#597802", "#114B5F", "#FB8B24"))
+
+ggsave(here("figs/supplements","figS9.png"),
        width = 8,
        height = 5)
+
+fig3C_data <- TMF_data2_tef %>% 
+  select(Study_ID, FW_ID, PFAS_ID, TEF, ln_TMF, ln_TMF_se)
+
+write_csv(fig3C_data, here("Rdata", "fig3C_data.csv"))
 ```
 
 ```{r, eval=FALSE, echo=FALSE}
 # Combine plots with specified heights
-figX <- (fig_sample / fig_norm2) + fig_tef + fig_lod +
+fig3 <- (fig3A / fig3B) + fig3C + fig3D +
   plot_layout(heights = c(1.5, 1, 1.8, 2))
 
 # Save the combined plot
-ggsave(here("figs", "figX.png"), plot = figX, width = 16, height = 12, dpi = 300)
+ggsave(here("figs", "fig3.pdf"), plot = fig3, width = 180, height = 185, dpi = 600, units = 'mm')
 
 ```
 
-We did not find significant differences between groups. According to the single-moderator regression, the choice of TEF does not significantly impact the differences between TMFs of different studies.
-
-
-### **TL vs δ15N**
+### TL vs δ15N
 
 ```{r, include=FALSE}
 sum(is.na(TMF_data2$Regression_variable)) #checking the amount of NAs
@@ -1600,11 +2482,11 @@ sum(is.na(TMF_data2_rv$Regression_variable))
 
 ```{r, eval=FALSE}
 rv_model <- run_model(TMF_data2_rv, ~ Regression_variable)
-save(rv_model, file = here("Rdata", "rv_model.RData"))
+save(rv_model, file = here("Rmodels", "rv_model.RData"))
 ```
 
 ```{r, echo=FALSE, fig.cap="Note: Maximum TMF value set to 10"}
-load(here("RData", "rv_model.RData"))
+load(here("Rmodels", "rv_model.RData"))
 summary(rv_model)
 r2_rv <- r2_ml(rv_model, TMF_data2_rv)
 
@@ -1648,16 +2530,9 @@ ggsave(here("figs","regr_variab.png"),
        height = 4)
 ```
 
-
-TMFs estimated by regressing stable nitrogen isotopes (δ¹⁵N) against PFAS concentrations are **significantly lower by 47%** (p = 0.123; 95% CI: 26-85%) compared to those obtained by regressing trophic levels against PFAS concentrations.
-
-
 ## Geography
 
 ### Latitude
-
-Tropical food webs are more intricate due to higher biodiversity, enabling more diverse consumer diets (Paine, 1966). Greater biomass and tissue turnover may dilute pollutants across networks. The latitude may incorporate the synergic effect of several factors, such as food web length and nature of top predator and food web baseline organism.
-We predict that PFAS biomagnification estimates on food webs closer to the equator may be lower than those at higher latitudes.
 
 ```{r, include=FALSE}
 TMF_data2$Latitude_abs <- abs(TMF_data2$Latitude_DD)
@@ -1667,11 +2542,11 @@ TMF_data2$Latitude_abs <- abs(TMF_data2$Latitude_DD)
 sum(is.na(TMF_data2$Latitude_abs)) #checking the amount of NAs
 #[1] 0
 lat_model <- run_model(TMF_data2, ~ scale(Latitude_abs))
-save(lat_model, file = here("Rdata", "lat_model.RData"))
+save(lat_model, file = here("Rmodels", "lat_model.RData"))
 ```
 
 ```{r, echo=FALSE}
-load(here("RData", "lat_model.RData"))
+load(here("Rmodels", "lat_model.RData"))
 summary(lat_model)
 r2_lat <- r2_ml(lat_model, TMF_data2)
    # R2_marginal R2_conditional 
@@ -1683,7 +2558,7 @@ lat_bubble <- orchaRd::mod_results(lat_model,
                                    group = "Study_ID")
                                    
   
-fig_lat <- bubble_plot(lat_bubble,
+fig5A <- bubble_plot_new(lat_bubble,
             mod = "Latitude_abs",
             group = "Study_ID",
             x = "Latitude_abs",
@@ -1695,38 +2570,99 @@ fig_lat <- bubble_plot(lat_bubble,
             pi.col = "black",
             est.col = "black",
             g = TRUE) +
+  geom_point(data = TMF_data2, aes(x = Latitude_abs,
+                                   y = ln_TMF,
+                                   size = 1/ln_TMF_se),
+             color = "#597802",
+             alpha = 0.2) +       
   annotate(geom ="text",
            x = 57,
            y = 3.1,
            label = paste0("italic(R)^{2} == ", round(r2_lat[1],4)),
            color = "black",
            parse = TRUE,
-           size = 4) +
+           size = 2) +
   #ggtitle("a)") +
-  theme(plot.title = element_text(face = "bold", size = 16),
-        legend.title = element_text(size = 10),
-        legend.text = element_text(size = 8),
-        axis.title.x = element_text(size = 14),
-        axis.title.y = element_text(size = 14),
-        axis.text.y = element_text(size = 12),
-        axis.text.x = element_text(size = 12)) +
+  theme(plot.title = element_text(face = "bold", size = 9),
+        legend.title = element_text(size = 6),
+        legend.text = element_text(size = 6),
+        legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_text(size = 8),
+        axis.title.y = element_text(size = 8),
+        axis.text.y = element_text(size = 7),
+        axis.text.x = element_text(size = 7)) +
+  scale_size(range = c(0.5, 3)) +
   ggtitle("A") +
   xlab("Latitude (absolute value)") +
   ylab("ln TMF")
-
-fig_lat
 ```
 
-```{r, echo=FALSE, eval=FALSE}
-ggsave(here("figs","latitude.png"),
-       width = 8,
-       height = 4)
+```{r, eval=FALSE}
+fig5A_data <- TMF_data2 %>% 
+  select(Study_ID, FW_ID, PFAS_ID, Latitude_abs, ln_TMF, ln_TMF_se)
+
+write_csv(fig5A_data, here("Rdata", "fig5A_data.csv"))
 ```
-
-TMFs do not show a direct relationship with latitude.
-
 
 ### Geographic location
+
+```{r}
+# Generate a table with counts and percentages for each PFAS_ID and Location
+combined_table <- TMF_data2 %>%
+  mutate(
+    PFAS_ID = case_when(
+      PFAS_ID %in% c("6:2 Cl-PFESA", "8:2 Cl-PFESA") ~ "F-53B",
+      TRUE ~ PFAS_ID  # Keep other PFAS_ID values unchanged
+    )
+  ) %>% 
+  # Group by both PFAS_ID and Location
+  count(PFAS_ID, Location) %>%
+  # Calculate percentages within each PFAS_ID group
+  group_by(PFAS_ID) %>%
+  mutate(percentage = n / sum(n) * 100) %>%
+  ungroup()  # Remove grouping for cleaner output
+
+# View the result
+combined_table
+
+combined_table_wide <- combined_table %>%
+  pivot_wider(
+    names_from = Location,
+    values_from = c(n, percentage),
+    names_glue = "{Location}{ifelse(.value == 'n', '', paste0('_', .value))}"
+  )
+
+combined_table_wide
+```
+
+Counting the number of TMFs from different world regions for PFAS showing a statistically significant TMF above 1
+
+```{r}
+combined_table_wide2 <- combined_table_wide %>%
+  filter(PFAS_ID %in% c("F-53B", "PFOS", "PFDA", "br-PFOS", "PFUnDA", "l-PFOS", "PFNA", "PFTrDA", "PFDoDA", "FOSA", "PFHxS", "PFDS", "PFTeDA", "PFOA", "PFBA", "PFPeA", "PFHpA", "PFBS", "PFHxA"))
+
+# Define the desired PFAS_ID order
+pfas_order <- c("F-53B", "PFOS", "PFDA", "br-PFOS", "PFUnDA", "l-PFOS", "PFNA", 
+                        "PFTrDA", "PFDoDA", "FOSA", "PFHxS", "PFDS", "PFTeDA", "PFOA", 
+                        "PFBA", "PFPeA", "PFHpA", "PFBS", "PFHxA")
+
+# Reorder the factor levels in the PFAS_ID column
+combined_table_wide2$PFAS_ID <- factor(combined_table_wide2$PFAS_ID, levels = pfas_order)
+
+# Reorder the rows based on the new PFAS_ID order
+combined_table_wide2 <- combined_table_wide2[order(combined_table_wide2$PFAS_ID), ]
+
+# Define the desired column order
+column_order <- c("PFAS_ID", "Antarctic Region", "Arctic Region", "East Asia", 
+                          "West Asia", "Europe", "Mediterranean Region", "North America", "South America")
+
+# Reorder columns
+combined_table_wide2 <- combined_table_wide2[, column_order]
+
+combined_table_wide2
+```
+
 
 ```{r, include=FALSE}
 sum(is.na(TMF_data2$Location)) #checking the amount of NAs
@@ -1734,9 +2670,8 @@ sum(is.na(TMF_data2$Location)) #checking the amount of NAs
 TMF_data2_loc <- TMF_data2 %>%
   mutate(Location = recode(
     Location,
-    "West Asia" = "Asia",
-    "East Asia" = "Asia",
-    "Mediterranean Region" = "Europe")) %>% 
+    "Arctic Region" = "Polar regions",
+    "Antarctic Region" = "Polar regions")) %>%
   group_by(Location) %>%
   filter(n_distinct(Study_ID) > 1) %>%
   ungroup()
@@ -1744,16 +2679,16 @@ TMF_data2_loc <- TMF_data2 %>%
 
 ```{r, eval=FALSE}
 location_model <- run_model(TMF_data2_loc, ~ Location - 1)
-save(location_model, file = here("Rdata", "location_model.RData"))
+save(location_model, file = here("Rmodels", "location_model.RData"))
 ```
 
 ```{r, echo=FALSE, fig.cap="Note: Maximum TMF value set to 12"}
-load(here("RData", "location_model.RData"))
+load(here("Rmodels", "location_model.RData"))
 summary(location_model)
 r2_location <- r2_ml(location_model, TMF_data2_loc)
 
 
-fig_loc <- orchard_plot_new(location_model,
+figS2 <- orchard_plot_new(location_model,
                         transfm="percent",
              mod = "Location",
              group = "Study_ID",
@@ -1767,7 +2702,7 @@ fig_loc <- orchard_plot_new(location_model,
              branch.size = 3.1,
              twig.size = 0.5) +
   annotate(geom = "text",
-           x = 2.4,
+           x = 4.4,
            y = 10, 
            label = paste0("italic(R)^{2} == ", round(r2_location[1],4)),
            color ="black",
@@ -1777,32 +2712,28 @@ fig_loc <- orchard_plot_new(location_model,
   theme(plot.title = element_text(size = 18),
        legend.title = element_text(size = 11),
         legend.text = element_text(size = 9),
-        axis.title.x = element_text(size = 16),
-        axis.title.y = element_text(size = 16),
-        axis.text.y = element_text(size = 10),
-       axis.text.x = element_text(size = 14)) +
+        axis.title.x = element_text(size = 15),
+        axis.title.y = element_text(size = 15),
+        axis.text.y = element_text(size = 11),
+       axis.text.x = element_text(size = 11)) +
   ylab("TMF") +
   ylim(NA, 12)
 
-fig_loc
+figS2
+
+#predict.rma(location_model, newmods = c(-1, 0, 1, 0), transf = exp, addx = T)
+#predict.rma(location_model, newmods = c(0, -1, 1, 0), transf = exp, addx = T)
 ```
 
 ```{r, eval=FALSE, echo=FALSE}
-ggsave(here("figs","location.png"),
-       width = 8,
-       height = 6)
+ggsave(here("figs/supplements","figS2.png"),
+       width = 9,
+       height = 8)
 ```
-
-
-TMFs estimated in food webs from different geographical regions are not statistically different.
-
 
 ## Bio/Ecological characteristics
 
-### **Type of breathing - top predator**
-
-Biomagnification of PFAS in food webs dominated by poikilotherms (e.g., aquatic ecosystem) is lower than in food webs dominated by air breathers (e.g., terrestrial ecosystems) because of differences in metabolic rates and lipid content between these two types of organisms.
-We predict that PFAS biomagnification estimates tend to be higher in food webs that include solely air-breathing organisms or a combination of air-breathing and water-breathing organisms, compared to those consisting exclusively of water-breathing organisms.
+### Type of breathing - top predator
 
 ```{r, include=FALSE}
 sum(is.na(TMF_data2$Breathing_type)) #checking the amount of NAs
@@ -1819,18 +2750,126 @@ sum(is.na(TMF_data2_bt$Breathing_type))
 
 ```{r, eval=FALSE}
 breath_model <- run_model(TMF_data2_bt, ~ Breathing_type)
-save(breath_model, file = here("Rdata", "breath_model.RData"))
+save(breath_model, file = here("Rmodels", "breath_model.RData"))
 ```
 
 ```{r, echo=FALSE,fig.cap="Note: Maximum TMF value set to 12"}
-load(here("RData", "breath_model.RData"))
+load(here("Rmodels", "breath_model.RData"))
 summary(breath_model)
 r2_breath <- r2_ml(breath_model, TMF_data2_bt)
 
 
-fig_breath <- orchard_plot_new(breath_model,
+fig4A <- orchard_plot_new2(breath_model,
                                transfm="percent",
              mod = "Breathing_type",
+             group = "Study_ID",
+             xlab = "ln_TMF",
+             legend.pos = "bottom.right",
+             k.pos = "left",
+             angle = 0,
+             alpha = 0.4,
+             colour = "black",
+             fill = FALSE,
+             trunk.size = 0.4,
+             branch.size = 0.7,
+             twig.size = 0.2) +
+  annotate(geom = "text",
+           x = 2.4,
+           y = 9, 
+           label = paste0("italic(R)^{2} == ", round(r2_breath[1],4)),
+           color ="black",
+           parse = TRUE, 
+           size = 1.8) +
+  #ggtitle("c)")+
+  theme(plot.title = element_text(face = "bold", size  = 8),
+        legend.title = element_text(size = 5),
+        legend.text = element_text(size = 5),
+        legend.position = c(1, 0.3),
+        legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 7),
+        axis.text.y = element_text(size = 6),
+       axis.text.x = element_blank()) +
+  scale_size(range = c(0.5, 3)) +
+  xlab("Top predator") +
+  ylab("TMF") +
+  ggtitle("B") +
+  #scale_y_break(c(11, 13)) +
+  scale_y_continuous(limits = c(0, 14), breaks = seq(0, 14, by = 1)) +
+  scale_fill_manual(values = c("#F28482", "#66101F", "#597802", "#114B5F", "#FB8B24")) +
+  scale_color_manual(values = c("#F28482", "#66101F", "#597802", "#114B5F", "#FB8B24"))
+```
+
+```{r, eval=FALSE, echo=FALSE}
+figS12 <- orchard_plot_new2(breath_model,
+                               transfm="percent",
+             mod = "Breathing_type",
+             group = "Study_ID",
+             xlab = "ln_TMF",
+             legend.pos = "bottom.right",
+             k.pos = "left",
+             angle = 0,
+             alpha = 0.4,
+             colour = "black",
+             fill = FALSE,
+             trunk.size = 0.4,
+             branch.size = 0.7,
+             twig.size = 0.2) +
+  annotate(geom = "text",
+           x = 2.4,
+           y = 9, 
+           label = paste0("italic(R)^{2} == ", round(r2_breath[1],4)),
+           color ="black",
+           parse = TRUE, 
+           size = 1.8) +
+  #ggtitle("c)")+
+  theme(plot.title = element_text(face = "bold", size  = 8),
+        legend.title = element_text(size = 5),
+        legend.text = element_text(size = 5),
+        legend.position = c(1, 0.3),
+        legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 7),
+        axis.text.y = element_text(size = 6),
+       axis.text.x = element_blank()) +
+  scale_size(range = c(0.5, 3)) +
+  xlab("Top predator") +
+  ylab("TMF") +
+  scale_fill_manual(values = c("#F28482", "#66101F", "#597802", "#114B5F", "#FB8B24")) +
+  scale_color_manual(values = c("#F28482", "#66101F", "#597802", "#114B5F", "#FB8B24"))
+
+ggsave(here("figs","figS12.png"),
+       width = 8,
+       height = 4)
+
+fig4B_data <- TMF_data2_bt %>% 
+  select(Study_ID, FW_ID, PFAS_ID, Breathing_type, ln_TMF, ln_TMF_se)
+
+write_csv(fig4B_data, here("Rdata", "fig4B_data.csv"))
+```
+
+```{r, eval=FALSE}
+TMF_data2_bt <- TMF_data2_bt %>% 
+  mutate(int = interaction(Breathing_type,Sample_type, drop = T))
+```
+
+```{r, eval=FALSE}
+breath_model_int <- run_model(TMF_data2_bt, ~ int)
+save(breath_model_int, file = here("Rmodels", "breath_model_int.RData"))
+```
+
+```{r, echo=FALSE,fig.cap="Note: Maximum TMF value set to 12"}
+load(here("Rmodels", "breath_model_int.RData"))
+summary(breath_model_int)
+r2_breath_int <- r2_ml(breath_model_int, TMF_data2_bt)
+
+
+
+fig_breath_int <- orchard_plot_new(breath_model_int,
+                               transfm="percent",
+             mod = "int",
              group = "Study_ID",
              xlab = "ln_TMF",
              legend.pos = "bottom.right",
@@ -1842,38 +2881,34 @@ fig_breath <- orchard_plot_new(breath_model,
              branch.size = 3.1,
              twig.size = 0.5) +
   annotate(geom = "text",
-           x = 2.4,
+           x = 6.4,
            y = 8, 
-           label = paste0("italic(R)^{2} == ", round(r2_breath[1],4)),
+           label = paste0("italic(R)^{2} == ", round(r2_breath_int[1],4)),
            color ="black",
            parse = TRUE, 
-           size = 4) +
+           size = 5) +
   #ggtitle("c)")+
-  theme(plot.title = element_text(face = "bold", size = 16),
-       legend.title = element_text(size = 13),
+  theme(legend.title = element_text(size = 13),
         legend.text = element_text(size = 12),
-        #axis.title.x = element_text(size = 12),
-       axis.title.x = element_blank(),
-        axis.title.y = element_text(size = 14),
-        axis.text.y = element_text(size = 13),
-       axis.text.x = element_blank()) +
-  xlab("Top predator") +
+        axis.title.x = element_text(size = 15),
+        axis.title.y = element_text(size = 15),
+        axis.text.y = element_text(size = 14),
+       axis.text.x = element_text(size = 14)) +
+  xlab("Interaction") +
   ylab("TMF") +
-  ggtitle("B") +
   #scale_y_break(c(11, 13)) +
-  scale_y_continuous(limits = c(0, 14), breaks = seq(0, 14, by = 1))
+  scale_y_continuous(limits = c(0, 14), breaks = seq(0, 14, by = 1)) +
+  scale_fill_manual(values = c("#F28482", "#66101F", "#597802", "#114B5F", "#FB8B24", "#E2EF70")) +
+  scale_color_manual(values = c("#F28482", "#66101F", "#597802", "#114B5F", "#FB8B24", "#E2EF70"))
 
-fig_breath
+fig_breath_int
 ```
 
 ```{r, eval=FALSE, echo=FALSE}
-ggsave(here("figs","breathing_type_tp.png"),
-       width = 8,
-       height = 4)
+ggsave(here("figs/supplements","breathing_type_tp_int.png"),
+       width = 15,
+       height = 7)
 ```
-
-TMFs estimated in food webs with a water-breathing top predator are **significantly lower by 60%** (p = 0.0104; 95% CI: 41-89%) compared to those in food webs with an air-breathing top predator.
-
 
 ### Ecosystem type
 
@@ -1889,12 +2924,12 @@ TMF_data2 <- TMF_data2 %>%
 ```{r, eval=FALSE}
 sum(is.na(TMF_data2$Ecosystem)) #checking the amount of NAs
 #[1] 0
-eco_model <- run_model(TMF_data2, ~ Ecosystem)
-save(eco_model, file = here("Rdata", "eco_model.RData"))
+eco_model <- run_model(TMF_data2, ~ Ecosystem -1)
+save(eco_model, file = here("Rmodels", "eco_model.RData"))
 ```
 
 ```{r, echo=FALSE, warning=FALSE, fig.cap="Note: Maximum TMF value set to 12"}
-load(here("RData", "eco_model.RData"))
+load(here("Rmodels", "eco_model.RData"))
 summary(eco_model)
 r2_eco <- r2_ml(eco_model, TMF_data2)
 
@@ -1938,21 +2973,90 @@ ggsave(here("figs","ecosystem.png"),
        height = 5)
 ```
 
-### **Type of breathing - food web**
+### Marine vs freshwater
+
+```{r}
+TMF_data2_aquatic <- TMF_data2 %>%
+  filter(Ecosystem == "marine" | Ecosystem == "freshwater")
+```
 
 ```{r, eval=FALSE}
-sum(is.na(TMF_data2$Breathing_type_fw))
-# [1] 0
-bt_fw_model <- run_model(TMF_data2, ~ Breathing_type_fw)
-save(bt_fw_model, file = here("Rdata", "bt_fw_model.RData"))
+sum(is.na(TMF_data2_aquatic$Ecosystem)) #checking the amount of NAs
+#[1] 0
+eco_aq_model <- run_model(TMF_data2_aquatic, ~ Ecosystem)
+save(eco_aq_model, file = here("Rmodels", "eco_aq_model.RData"))
 ```
 
 ```{r, echo=FALSE, warning=FALSE, fig.cap="Note: Maximum TMF value set to 12"}
-load(here("RData", "bt_fw_model.RData"))
+load(here("Rmodels", "eco_aq_model.RData"))
+summary(eco_aq_model)
+r2_eco_aq <- r2_ml(eco_aq_model, TMF_data2_aquatic)
+
+figS5 <- orchard_plot_new(eco_aq_model,
+                            transfm="percent",
+                            mod = "Ecosystem",
+                            group = "Study_ID",
+                            xlab = "ln_TMF",
+                            legend.pos = "bottom.right",
+                            k.pos = "left",
+                            angle = 45,
+                            colour = "black",
+                            fill = FALSE,
+                            trunk.size = 0.6,
+                            branch.size = 3.1,
+                            twig.size = 0.5) +
+  annotate(geom = "text",
+           x = 2.4,
+           y = 10, 
+           label = paste0("italic(R)^{2} == ", round(r2_eco_aq[1],4)),
+           color ="black",
+           parse = TRUE, 
+           size = 4) +
+  #ggtitle("c)")+
+  theme(plot.title = element_text(size = 18),
+       legend.title = element_text(size = 11),
+        legend.text = element_text(size = 9),
+        axis.title.x = element_text(size = 16),
+        axis.title.y = element_text(size = 16),
+        axis.text.y = element_text(size = 10),
+       axis.text.x = element_text(size = 14)) +
+  ylab("TMF") +
+  ylim(NA, 12.5)
+
+figS5
+```
+
+```{r, eval=FALSE, echo=FALSE}
+ggsave(here("figs/supplements","figS5.png"),
+       width = 8,
+       height = 5)
+```
+
+### Type of breathing - food web
+
+```{r, include=FALSE}
+sum(is.na(TMF_data2$Breathing_type_fw))
+# [1] 0
+
+TMF_data2 <- TMF_data2 %>% 
+  mutate(Breathing_type_fw = recode(
+    Breathing_type_fw,
+    "not water-breathing only" = "water and \n air breathing",
+    "water-breathing only" = "water breathing \n only"
+  ))
+```
+
+```{r, eval=FALSE}
+bt_fw_model <- run_model(TMF_data2, ~ Breathing_type_fw)
+save(bt_fw_model, file = here("Rmodels", "bt_fw_model.RData"))
+```
+
+```{r, echo=FALSE, warning=FALSE, fig.cap="Note: Maximum TMF value set to 12"}
+load(here("Rmodels", "bt_fw_model.RData"))
 summary(bt_fw_model)
 r2_bt_fw <- r2_ml(bt_fw_model, TMF_data2)
 
-fig_bt_fw <- orchard_plot_new(bt_fw_model,
+fig4B <- orchard_plot_new2(bt_fw_model,
             transfm="percent",
              mod = "Breathing_type_fw",
              group = "Study_ID",
@@ -1960,50 +3064,92 @@ fig_bt_fw <- orchard_plot_new(bt_fw_model,
              legend.pos = "bottom.right",
              k.pos = "left",
              angle = 0,
+            alpha = 0.4,
              colour = "black",
              fill = FALSE,
-             trunk.size = 1,
-             branch.size = 3.1,
-             twig.size = 0.5) +
+             trunk.size = 0.4,
+             branch.size = 0.7,
+             twig.size = 0.2) +
   annotate(geom = "text",
            x = 2.4,
-           y = 8, 
+           y = 9, 
            label = paste0("italic(R)^{2} == ", round(r2_bt_fw[1],4)),
            color ="black",
            parse = TRUE, 
-           size = 4) +
+           size = 1.8) +
   #ggtitle("c)")+
-  theme(plot.title = element_text(face = "bold", size = 16),
-       legend.title = element_text(size = 13),
-        legend.text = element_text(size = 12),
-        #axis.title.x = element_text(size = 12),
-       axis.title.x = element_blank(),
-        axis.title.y = element_text(size = 14),
-        axis.text.y = element_text(size = 13),
+  theme(plot.title = element_text(face = "bold", size  = 8),
+        legend.title = element_text(size = 5),
+        legend.text = element_text(size = 5),
+        legend.position = c(1, 0.3),
+        legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 7),
+        axis.text.y = element_text(size = 6),
        axis.text.x = element_blank()) +
+  scale_size(range = c(0.5, 3)) +
   xlab("Organisms") +
   ylab("TMF") +
   ggtitle("A") +
   #scale_y_break(c(11, 13)) +
-  scale_y_continuous(limits = c(0, 14), breaks = seq(0, 14, by = 1)) #+
+  scale_y_continuous(limits = c(0, 14), breaks = seq(0, 14, by = 1)) +
+  scale_fill_manual(values = c("#114B5F", "#FB8B24")) +
+  scale_color_manual(values = c("#114B5F", "#FB8B24")) #+
  # scale_y_break(c(11, 13))
-
-fig_bt_fw
 ```
 
 ```{r, eval=FALSE, echo=FALSE}
-ggsave(here("figs","breathing_type_fw.png"),
+figS11 <- orchard_plot_new2(bt_fw_model,
+            transfm="percent",
+             mod = "Breathing_type_fw",
+             group = "Study_ID",
+             xlab = "ln_TMF",
+             legend.pos = "bottom.right",
+             k.pos = "left",
+             angle = 0,
+            alpha = 0.4,
+             colour = "black",
+             fill = FALSE,
+             trunk.size = 0.4,
+             branch.size = 0.7,
+             twig.size = 0.2) +
+  annotate(geom = "text",
+           x = 2.4,
+           y = 9, 
+           label = paste0("italic(R)^{2} == ", round(r2_bt_fw[1],4)),
+           color ="black",
+           parse = TRUE, 
+           size = 1.8) +
+  #ggtitle("c)")+
+  theme(plot.title = element_text(face = "bold", size  = 8),
+        legend.title = element_text(size = 5),
+        legend.text = element_text(size = 5),
+        legend.position = c(1, 0.3),
+        legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 7),
+        axis.text.y = element_text(size = 6),
+       axis.text.x = element_blank()) +
+  scale_size(range = c(0.5, 3)) +
+  xlab("Organisms") +
+  ylab("TMF") +
+  scale_fill_manual(values = c("#114B5F", "#FB8B24")) +
+  scale_color_manual(values = c("#114B5F", "#FB8B24")) 
+
+ggsave(here("figs","figS11.png"),
        width = 8,
        height = 4)
+
+fig4A_data <- TMF_data2 %>% 
+  select(Study_ID, FW_ID, PFAS_ID, Breathing_type_fw, ln_TMF, ln_TMF_se)
+
+write_csv(fig4A_data, here("Rdata", "fig4A_data.csv"))
 ```
 
-TMFs estimated in food webs consisting exclusively of water-breathing organisms are **significantly lower by 51%** (p = 0.0125, 95% CI: 30-86%) compared to those in food webs that include both water- and air-breathing organisms.
+### Trophic position of the food web baseline
 
-
-### **Trophic position of the food web baseline**
-
-Studies where a primary producer was used as the base of the food web are likely to have different biomagnification estimates compared to those with a primary consumer.
-We predict that an extension of the food web towards the lowest trophic level will likely affect the biomagnification estimates.
 ```{r, include=FALSE}
 sum(is.na(TMF_data2$TL_lowest)) #checking the amount of NAs
 #[1] 149
@@ -2014,11 +3160,11 @@ sum(is.na(TMF_data2_TL_lowest$TL_lowest))
 
 ```{r, eval=FALSE}
 TL_lowest_model <- run_model(TMF_data2_TL_lowest, ~scale(TL_lowest))
-save(TL_lowest_model, file = here("Rdata", "TL_lowest_model.RData"))
+save(TL_lowest_model, file = here("Rmodels", "TL_lowest_model.RData"))
 ```
 
 ```{r, echo=FALSE}
-load(here("RData", "TL_lowest_model.RData"))
+load(here("Rmodels", "TL_lowest_model.RData"))
 summary(TL_lowest_model)
 r2_TL_lowest <- r2_ml(TL_lowest_model, TMF_data2_TL_lowest)
    # R2_marginal R2_conditional 
@@ -2030,7 +3176,7 @@ TL_lowest_bubble <- orchaRd::mod_results(TL_lowest_model,
                                    group = "Study_ID")
                                    
   
-fig_TL_lowest <- bubble_plot(TL_lowest_bubble,
+fig5B <- bubble_plot_new(TL_lowest_bubble,
             mod = "TL_lowest",
             group = "Study_ID",
             x = "TL_lowest",
@@ -2042,42 +3188,43 @@ fig_TL_lowest <- bubble_plot(TL_lowest_bubble,
             pi.col = "black",
             est.col = "black",
             g = TRUE) +
+  geom_point(data = TMF_data2, aes(x = TL_lowest,
+                                   y = ln_TMF,
+                                   size = 1/ln_TMF_se),
+             color = "#114B5F",
+             alpha = 0.2) +   
   annotate(geom ="text",
            x = 3.1,
            y = 3.1,
            label = paste0("italic(R)^{2} == ", round(r2_TL_lowest[1],4)),
            color = "black",
            parse = TRUE,
-           size = 4) +
+           size = 2) +
   #ggtitle("a)") +
-  theme(plot.title = element_text(face = "bold", size = 16),
-        legend.title = element_text(size = 10),
-        legend.text = element_text(size = 8),
-        axis.title.x = element_text(size = 14),
+  theme(plot.title = element_text(face = "bold", size = 9),
+        legend.title = element_text(size = 6),
+        legend.text = element_text(size = 6),
+        legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_text(size = 8),
         axis.title.y = element_blank(),
         axis.text.y = element_blank(),
-        axis.text.x = element_text(size = 12)) +
+        axis.text.x = element_text(size = 7)) +
+  scale_size(range = c(0.5, 3)) +
   ggtitle("B") +
   xlab("Trophic level of the baseline organism") +
   ylab("ln TMF")
-
-fig_TL_lowest
 ```
 
 ```{r, eval=FALSE, echo=FALSE}
-ggsave(here("figs","tl_lowest.png"),
-       width = 8,
-       height = 6)
+fig5B_data <- TMF_data2_TL_lowest %>% 
+  select(Study_ID, FW_ID, PFAS_ID, TL_lowest, ln_TMF, ln_TMF_se)
+
+write_csv(fig5B_data, here("Rdata", "fig5B_data.csv"))
 ```
-
-
-The model shows a significant negative relationship (**0.86** factors for each trophic level; p = 0.0056) between TMF and the trophic level of the baseline organism in food webs.
-
 
 ### Trophic position of the top predator
 
-Higher trophic-level organisms typically have higher lipid contents and longer lifespans. These allow more bioaccumulation over time, leading to higher concentrations in the top predators.
-We predict that an extension of the food web towards the highest trophic level will likely affect the biomagnification estimates.
 ```{r, include=FALSE}
 sum(is.na(TMF_data2$TL_highest)) #checking the amount of NAs
 #[1] 149
@@ -2088,11 +3235,11 @@ sum(is.na(TMF_data2_TL_highest$TL_highest))
 
 ```{r, eval=FALSE}
 TL_highest_model <- run_model(TMF_data2_TL_highest, ~scale(TL_highest))
-save(TL_highest_model, file = here("Rdata", "TL_highest_model.RData"))
+save(TL_highest_model, file = here("Rmodels", "TL_highest_model.RData"))
 ```
 
 ```{r, echo=FALSE}
-load(here("RData", "TL_highest_model.RData"))
+load(here("Rmodels", "TL_highest_model.RData"))
 summary(TL_highest_model)
 r2_TL_highest <- r2_ml(TL_highest_model, TMF_data2_TL_highest)
 
@@ -2100,7 +3247,7 @@ TL_highest_bubble <- orchaRd::mod_results(TL_highest_model,
                                    mod = "TL_highest", 
                                    group = "Study_ID")
                                    
-fig_TL_highest <- bubble_plot(TL_highest_bubble,
+fig5C <- bubble_plot_new(TL_highest_bubble,
             mod = "TL_highest",
             group = "Study_ID",
             x = "TL_highest",
@@ -2112,41 +3259,44 @@ fig_TL_highest <- bubble_plot(TL_highest_bubble,
             pi.col = "black",
             est.col = "black",
             g = TRUE) +
+  geom_point(data = TMF_data2, aes(x = TL_highest,
+                                   y = ln_TMF,
+                                   size = 1/ln_TMF_se),
+             color = "#66101F",
+             alpha = 0.2) +  
   annotate(geom ="text",
            x = 5,
            y = 3.1,
            label = paste0("italic(R)^{2} == ", round(r2_TL_highest[1],4)),
            color = "black",
            parse = TRUE,
-           size = 4) +
+           size = 2) +
   #ggtitle("a)") +
-  theme(plot.title = element_text(face = "bold", size = 16),
-        legend.title = element_text(size = 10),
-        legend.text = element_text(size = 8),
-        axis.title.x = element_text(size = 14),
-        axis.title.y = element_text(size = 14),
-        axis.text.y = element_text(size = 12),
-        axis.text.x = element_text(size = 12)) +
+  theme(plot.title = element_text(face = "bold", size = 9),
+        legend.title = element_text(size = 6),
+        legend.text = element_text(size = 6),
+        legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_text(size = 8),
+        axis.title.y = element_text(size = 8),
+        axis.text.y = element_text(size = 7),
+        axis.text.x = element_text(size = 7)) +
+  scale_size(range = c(0.5, 3)) +
   ggtitle("C") +
   xlab("Trophic level of the top predator") +
   ylab("ln TMF")
-
-fig_TL_highest
 ```
 
 
 ```{r, eval=FALSE, echo=FALSE}
-ggsave(here("figs","tl_highest.png"),
-       width = 8,
-       height = 6)
-```
+fig5C_data <- TMF_data2_TL_highest %>% 
+  select(Study_ID, FW_ID, PFAS_ID, TL_highest, ln_TMF, ln_TMF_se)
 
-The model does not show a direct linear relationship.
+write_csv(fig5C_data, here("Rdata", "fig5C_data.csv"))
+```
 
 ### Food web length
 
-Bioaccumulation occurs at each trophic transfer. With more trophic levels, contaminants accumulate to higher concentrations at the top predators.
-We predict that a broader range in trophic levels will likely increase the biomagnification estimate.
 ```{r, include=FALSE}
 sum(is.na(TMF_data2$fw_length)) #checking the amount of NAs
 #[1] 149
@@ -2156,12 +3306,12 @@ sum(is.na(TMF_data2_fw_length$fw_length))
 ```
 
 ```{r, eval=FALSE}
-fw_length_model <- run_model(TMF_data2_fw_length, ~scale(fw_length))
-save(fw_length_model, file = here("Rdata", "fw_length_model.RData"))
+fw_length_model <- run_model(TMF_data2_fw_length, ~scale(fw_length)-1)
+save(fw_length_model, file = here("Rmodels", "fw_length_model.RData"))
 ```
 
 ```{r, echo=FALSE}
-load(here("RData", "fw_length_model.RData"))
+load(here("Rmodels", "fw_length_model.RData"))
 summary(fw_length_model)
 r2_fw_length <- r2_ml(fw_length_model, TMF_data2_fw_length)
    # R2_marginal R2_conditional 
@@ -2173,7 +3323,7 @@ fw_length_bubble <- orchaRd::mod_results(fw_length_model,
                                    group = "Study_ID")
                                    
   
-fig_fw_length <- bubble_plot(fw_length_bubble,
+fig5D <- bubble_plot_new(fw_length_bubble,
             mod = "fw_length",
             group = "Study_ID",
             x = "fw_length",
@@ -2185,36 +3335,40 @@ fig_fw_length <- bubble_plot(fw_length_bubble,
             pi.col = "black",
             est.col = "black",
             g = TRUE) +
+  geom_point(data = TMF_data2, aes(x = fw_length,
+                                   y = ln_TMF,
+                                   size = 1/ln_TMF_se),
+             color = "#F28482",
+             alpha = 0.2) +  
   annotate(geom ="text",
            x = 3.5,
            y = 3.1,
            label = paste0("italic(R)^{2} == ", round(r2_fw_length[1],4)),
            color = "black",
            parse = TRUE,
-           size = 4) +
+           size = 2) +
   #ggtitle("a)") +
-  theme(plot.title = element_text(face = "bold", size = 16),
-        legend.title = element_text(size = 10),
-        legend.text = element_text(size = 8),
-        axis.title.x = element_text(size = 14),
+  theme(plot.title = element_text(face = "bold", size = 9),
+        legend.title = element_text(size = 6),
+        legend.text = element_text(size = 6),
+        legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_text(size = 8),
         axis.title.y = element_blank(),
         axis.text.y = element_blank(),
-        axis.text.x = element_text(size = 12)) +
+        axis.text.x = element_text(size = 7)) +
+  scale_size(range = c(0.5, 3)) +
   ggtitle("D") +
   xlab("Number of trophic levels") +
   ylab("ln TMF")
-
-fig_fw_length
 ```
 
 ```{r, eval=FALSE, echo=FALSE}
-ggsave(here("figs","fw_length.png"),
-       width = 8,
-       height = 4)
+fig5D_data <- TMF_data2_fw_length %>% 
+  select(Study_ID, FW_ID, PFAS_ID, fw_length, ln_TMF, ln_TMF_se)
+
+write_csv(fig5D_data, here("Rdata", "fig5D_data.csv"))
 ```
-
-The model does not show a direct linear relationship.
-
 
 ### Number of species
 
@@ -2222,11 +3376,11 @@ The model does not show a direct linear relationship.
 sum(is.na(TMF_data2$n_species)) #checking the amount of NAs
 #[1] 0
 n_species_model <- run_model(TMF_data2, ~scale(n_species))
-save(n_species_model, file = here("Rdata", "n_species_model.RData"))
+save(n_species_model, file = here("Rmodels", "n_species_model.RData"))
 ```
 
 ```{r, echo=FALSE}
-load(here("RData", "n_species_model.RData"))
+load(here("Rmodels", "n_species_model.RData"))
 summary(n_species_model)
 
 r2_n_species <- r2_ml(n_species_model, TMF_data2)
@@ -2274,15 +3428,10 @@ ggsave(here("figs","n_species.png"),
        height = 5)
 ```
 
-
-The model does not show a direct linear relationship.
-
 ## PFAS properties
 
 ### carbon chain length
 
-Laboratory studies in which fish are exposed to contaminants solely through diet observed a direct positive relation between biomagnification factors and the number of carbon atoms.
-We predict that an increase in the chain length increases the biomagnification estimate.
 ```{r, include=FALSE}
 sum(is.na(TMF_data2$ccl)) #checking the amount of NAs
 #[1] 23
@@ -2293,11 +3442,11 @@ sum(is.na(TMF_data2_ccl$ccl))
 
 ```{r, eval=FALSE}
 ccl_model <- run_model(TMF_data2_ccl, ~scale(ccl))
-save(ccl_model, file = here("Rdata", "ccl_model.RData"))
+save(ccl_model, file = here("Rmodels", "ccl_model.RData"))
 ```
 
 ```{r, echo=FALSE}
-load(here("RData", "ccl_model.RData"))
+load(here("Rmodels", "ccl_model.RData"))
 summary(ccl_model)
 r2_ccl <- r2_ml(ccl_model, TMF_data2_ccl)
 
@@ -2306,7 +3455,7 @@ ccl_bubble <- orchaRd::mod_results(ccl_model,
                                    group = "Study_ID")
                                    
   
-fig_ccl <- bubble_plot(ccl_bubble,
+fig5E <- bubble_plot_new(ccl_bubble,
             mod = "ccl",
             group = "Study_ID",
             x = "ccl",
@@ -2318,139 +3467,112 @@ fig_ccl <- bubble_plot(ccl_bubble,
             pi.col = "black",
             est.col = "black",
             g = TRUE) +
+  geom_point(data = TMF_data2, aes(x = ccl,
+                                   y = ln_TMF,
+                                   size = 1/ln_TMF_se),
+             color = "#DDC9B4",
+             alpha = 0.2) +  
   annotate(geom ="text",
            x = 12,
            y = 3,
            label = paste0("italic(R)^{2} == ", round(r2_ccl[1],4)),
            color = "black",
            parse = TRUE,
-           size = 4) +
+           size = 2) +
   ggtitle("E") +
-  theme(plot.title = element_text(face = "bold", size  = 16),
-        legend.title = element_text(size = 10),
-        legend.text = element_text(size = 8),
-        axis.title.x = element_text(size = 14),
-        axis.title.y = element_text(size = 14),
-        axis.text.y = element_text(size = 12),
-        axis.text.x = element_text(size = 12)) +
+  theme(plot.title = element_text(face = "bold", size = 9),
+        legend.title = element_text(size = 6),
+        legend.text = element_text(size = 6),
+        legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_text(size = 8),
+        axis.title.y = element_text(size = 8),
+        axis.text.y = element_text(size = 7),
+        axis.text.x = element_text(size = 7)) +
+  scale_size(range = c(0.5, 3)) +
   xlab("Carbon chain length") +
-  ylab("ln TMF")
-
-fig_ccl
+  ylab("ln TMF") +
+  scale_x_continuous(limits = c(3, 15), breaks = seq(3, 15, by = 3))
 ```
 
 ```{r, eval=FALSE, echo=FALSE}
-ggsave(here("figs","ccl.png"),
+fig5E_data <- TMF_data2_ccl %>% 
+  select(Study_ID, FW_ID, PFAS_ID, ccl, ln_TMF, ln_TMF_se)
+
+write_csv(fig5E_data, here("Rdata", "fig5E_data.csv"))
+```
+
+### perfluoroalkyl chain length
+
+```{r, include=FALSE}
+sum(is.na(TMF_data2$perfluoroalkyl_ccl)) #checking the amount of NAs
+#[1] 30
+TMF_data2_p_ccl <- TMF_data2[complete.cases(TMF_data2[ , "perfluoroalkyl_ccl"]),]
+sum(is.na(TMF_data2_p_ccl$perfluoroalkyl_ccl))
+#[1] 0
+```
+
+```{r, eval=FALSE}
+p_ccl_model <- run_model(TMF_data2_p_ccl, ~scale(perfluoroalkyl_ccl))
+save(p_ccl_model, file = here("Rmodels", "p_ccl_model.RData"))
+```
+
+```{r, echo=FALSE}
+load(here("Rmodels", "p_ccl_model.RData"))
+summary(p_ccl_model)
+r2_p_ccl <- r2_ml(p_ccl_model, TMF_data2_p_ccl)
+
+p_ccl_bubble <- orchaRd::mod_results(p_ccl_model, 
+                                   mod = "perfluoroalkyl_ccl", 
+                                   group = "Study_ID")
+                                   
+  
+figS3 <- bubble_plot(p_ccl_bubble,
+            mod = "perfluoroalkyl_ccl",
+            group = "Study_ID",
+            x = "perfluoroalkyl_ccl",
+            y = "ln_TMF",
+            est.lwd = 1,
+            legend.pos = "bottom.right",
+            k.pos = "bottom.left",
+            ci.col = "red",
+            pi.col = "black",
+            est.col = "black",
+            g = TRUE) +
+  geom_point(data = TMF_data2_p_ccl, aes(x = perfluoroalkyl_ccl,
+                                   y = ln_TMF,
+                                   size = 1/ln_TMF_se),
+             color = "#DDC9B4",
+             alpha = 0.2) +  
+  annotate(geom ="text",
+           x = 14,
+           y = 3,
+           label = paste0("italic(R)^{2} == ", round(r2_p_ccl[1],4)),
+           color = "black",
+           parse = TRUE,
+           size = 5) +
+  #ggtitle("E") +
+  theme(plot.title = element_text(face = "bold", size = 18),
+        legend.title = element_text(size = 15),
+        legend.text = element_text(size = 14),
+        axis.title.x = element_text(size = 17),
+        axis.title.y = element_text(size = 17),
+        axis.text.y = element_text(size = 16),
+        axis.text.x = element_text(size = 16)) +
+  xlab("Perfluoroalkyl chain length") +
+  ylab("ln TMF") +
+  scale_x_continuous(limits = c(3, 15), breaks = seq(3, 15, by = 3))
+
+figS3
+```
+
+```{r, eval=FALSE}
+ggsave(here("figs/supplements","figS3.png"),
        width = 8,
        height = 4)
 ```
 
-The model does not show a direct linear relationship.
-
-```{r, echo=FALSE, eval=FALSE}
-ccl_model_quadratic <- run_model(TMF_data2_ccl, ~ ccl + I(ccl^2))
-save(ccl_model_quadratic, file = here("Rdata", "ccl_model_quadratic.RData"))
-```
-
-```{r, echo=FALSE, eval=FALSE}
-load(here("RData", "ccl_model_quadratic.RData"))
-summary(ccl_model_quadratic)
-
-ccl_bubble_quadratic <- orchaRd::mod_results(ccl_model_quadratic, 
-                                   mod = "ccl", 
-                                   group = "Study_ID")
-                                   
-  
-fig_ccl2 <- bubble_plot(ccl_bubble_quadratic,
-            mod = "ccl",
-            group = "Study_ID",
-            x = "ccl",
-            y = "ln_TMF",
-            est.lwd = 1,
-            legend.pos = "bottom.right",
-            k.pos = "bottom.left",
-            ci.col = "red",
-            pi.col = "black",
-            est.col = "black",
-            g = TRUE) +
-  # annotate(geom ="text",
-  #          x = 7,
-  #          y = 6.2,
-  #          label = paste0("italic(R)^{2} == ", round(r2_ccl_quadratic[1],4)),
-  #          color = "black",
-  #          parse = TRUE,
-  #          size = 4) +
-  #ggtitle("a)") +
-  theme(plot.title = element_text(size = 12),
-        legend.title = element_text(size = 8),
-        legend.text = element_text(size = 6),
-        axis.title.x = element_text(size = 10),
-        axis.title.y = element_text(size = 10),
-        axis.text.y = element_text(size = 8),
-        axis.text.x = element_text(size = 8)) +
-  xlab("Carbon chain length") +
-  ylab("ln TMF")
-
-fig_ccl2
-
-# ggsave(here("figs","ccl2.png"),
-#        width = 8,
-#        height = 6)
-```
-
-```{r, eval=FALSE}
-TMF_data3 <- TMF_data3 %>%
-  filter(PFAS_ID %in% plot_data2$PFAS_ID)
-
-TMF_data3_ccl <- TMF_data3[complete.cases(TMF_data3[ , "ccl"]),]
-
-ccl_model2 <- run_model(TMF_data3_ccl, ~scale(ccl))
-
-summary(ccl_model2)
-r2_ccl <- r2_ml(ccl_model2, TMF_data2_ccl)
-
-ccl_bubble2 <- orchaRd::mod_results(ccl_model2, 
-                                   mod = "ccl", 
-                                   group = "Study_ID")
-                                   
-  
-fig_ccl2 <- bubble_plot(ccl_bubble2,
-            mod = "ccl",
-            group = "Study_ID",
-            x = "ccl",
-            y = "ln_TMF",
-            est.lwd = 1,
-            legend.pos = "bottom.right",
-            k.pos = "bottom.left",
-            ci.col = "red",
-            pi.col = "black",
-            est.col = "black",
-            g = TRUE) +
-  annotate(geom ="text",
-           x = 12,
-           y = 3,
-           label = paste0("italic(R)^{2} == ", round(r2_ccl[1],4)),
-           color = "black",
-           parse = TRUE,
-           size = 4) +
-  ggtitle("E") +
-  theme(plot.title = element_text(face = "bold", size  = 16),
-        legend.title = element_text(size = 10),
-        legend.text = element_text(size = 8),
-        axis.title.x = element_text(size = 14),
-        axis.title.y = element_text(size = 14),
-        axis.text.y = element_text(size = 12),
-        axis.text.x = element_text(size = 12)) +
-  xlab("Carbon chain length") +
-  ylab("ln TMF")
-
-fig_ccl2
-```
-
 ### PFAS class
-
-There is no clear mechanistic explanation for the greater bioaccumulation potential of acids containing a sulfonyl functional group. Nevertheless, Jones et al. (2003) showed that sulfonic acids bind strongly to proteins.
-We predict that perfluoroalkyl sulfonates (PFSA) are more bioaccumulative in the food web than perfluoroalkyl carboxylic acids (PFCAs) of the same fluorinated carbon chain length.
 
 ```{r, include=FALSE}
 sum(is.na(TMF_data2$Class))
@@ -2462,22 +3584,25 @@ sum(is.na(TMF_data2_class$Class))
 TMF_data2_class <- TMF_data2_class %>% 
   mutate(Class = recode(
     Class,
-    "Precursor and/or intermediate" = "Precursor/intermediate"
+    "Precursor and/or intermediate" = "Precursors",
+    "PFSA" = "PFSAs",
+    "PFCA" = "PFCAs",
+    "Emerging PFAS" = "Emerging"
   ))
 ```
 
 ```{r, eval=FALSE}
-class_model <- run_model(TMF_data2_class, ~ Class)
+class_model <- run_model(TMF_data2_class, ~ Class-1)
 
-save(class_model, file = here("Rdata", "class_model.RData"))
+save(class_model, file = here("Rmodels", "class_model.RData"))
 ```
 
 ```{r, echo=FALSE}
-load(here("RData", "class_model.RData"))
+load(here("Rmodels", "class_model.RData"))
 summary(class_model)
 r2_class <- r2_ml(class_model, TMF_data2_class)
 
-fig_class <- orchard_plot_new(class_model,
+fig4C <- orchard_plot_new2(class_model,
              transfm="percent",
              mod = "Class",
              group = "Study_ID",
@@ -2485,60 +3610,122 @@ fig_class <- orchard_plot_new(class_model,
              legend.pos = "bottom.right",
              k.pos = "left",
              angle = 0,
+             alpha = 0.4,
              colour = "black",
              fill = FALSE,
-             trunk.size = 1,
-             branch.size = 3.1,
-             twig.size = 0.5) +
+             trunk.size = 0.4,
+             branch.size = 0.7,
+             twig.size = 0.2) +
   annotate(geom = "text",
            x = 4.4,
-           y = 8, 
+           y = 9, 
            label = paste0("italic(R)^{2} == ", round(r2_class[1],4)),
            color ="black",
            parse = TRUE, 
-           size = 4) +
+           size = 1.8) +
   #ggtitle("c)")+
-  theme(plot.title = element_text(face = "bold", size = 16),
-       legend.title = element_text(size = 13),
-        legend.text = element_text(size = 12),
-        #axis.title.x = element_text(size = 12),
-       axis.title.x = element_blank(),
-        axis.title.y = element_text(size = 14),
-        axis.text.y = element_text(size = 13),
-       axis.text.x = element_text(size = 13)) +
+  theme(plot.title = element_text(face = "bold", size = 8),
+       legend.title = element_text(size = 5),
+        legend.text = element_text(size = 5),
+       legend.position = c(1, 0.18),
+       legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_text(size = 7),
+       #axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 7),
+        axis.text.y = element_text(size = 6),
+       axis.text.x = element_text(size = 6)) +
+  scale_size(range = c(0.5, 3)) +
   ggtitle("C") +
   xlab("PFAS class") +
   ylab("TMF") +
   #scale_y_break(c(11, 13)) +
-  scale_y_continuous(limits = c(0, 14), breaks = seq(0, 14, by = 1))
-
-fig_class
+  scale_y_continuous(limits = c(0, 14), breaks = seq(0, 14, by = 1)) +
+  scale_fill_manual(values = c("#66101F", "#597802", "#114B5F", "#FB8B24")) +
+  scale_color_manual(values = c("#66101F", "#597802", "#114B5F", "#FB8B24"))
 ```
 
-```{r, eval=FALSE, echo=FALSE}
-ggsave(here("figs","class.png"),
+```{r, eval=FALSE}
+figS13 <- orchard_plot_new2(class_model,
+             transfm="percent",
+             mod = "Class",
+             group = "Study_ID",
+             xlab = "ln_TMF",
+             legend.pos = "bottom.right",
+             k.pos = "left",
+             angle = 0,
+             alpha = 0.4,
+             colour = "black",
+             fill = FALSE,
+             trunk.size = 0.4,
+             branch.size = 0.7,
+             twig.size = 0.2) +
+  annotate(geom = "text",
+           x = 4.4,
+           y = 9, 
+           label = paste0("italic(R)^{2} == ", round(r2_class[1],4)),
+           color ="black",
+           parse = TRUE, 
+           size = 1.8) +
+  #ggtitle("c)")+
+  theme(plot.title = element_text(face = "bold", size = 8),
+       legend.title = element_text(size = 5),
+        legend.text = element_text(size = 5),
+       legend.position = c(1, 0.18),
+       legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_text(size = 7),
+       #axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 7),
+        axis.text.y = element_text(size = 6),
+       axis.text.x = element_text(size = 6)) +
+  scale_size(range = c(0.5, 3)) +
+  xlab("PFAS class") +
+  ylab("TMF") +
+  scale_y_continuous(limits = c(0, 14), breaks = seq(0, 14, by = 1)) +
+  scale_fill_manual(values = c("#66101F", "#597802", "#114B5F", "#FB8B24")) +
+  scale_color_manual(values = c("#66101F", "#597802", "#114B5F", "#FB8B24"))
+
+ggsave(here("figs","figS13.png"),
        width = 8,
        height = 5)
+
+fig4C_data <- TMF_data2_class %>% 
+  select(Study_ID, FW_ID, PFAS_ID, Class, ln_TMF, ln_TMF_se)
+
+write_csv(fig4C_data, here("Rdata", "fig4C_data.csv"))
 ```
 
 ```{r, eval=FALSE, echo=FALSE}
 # Combine plots with specified heights
-figX2 <- (fig_bt_fw / fig_breath) + fig_class +
+fig4 <- (fig4A / fig4B) + fig4C +
   plot_layout(heights = c(1, 1, 2))
 
 # Save the combined plot
-ggsave(here("figs", "figX2.png"), plot = figX2, width = 16, height = 7, dpi = 300)
+ggsave(here("figs", "fig4.pdf"), plot = fig4, width = 180, height = 140, dpi = 600, units = 'mm')
 
 ```
 
 # Correlation assessment
 
-The following alluvial plot provides a visual assessment of the potential correlations between categorical variables.
 ```{r, include=FALSE}
 TMF_data2_corr <- TMF_data2 %>%
   mutate(Breathing_type = recode(
     Breathing_type,
-    "Water breathing through skin" = "Water breathing",
+    "Water breathing through skin" = "Water \n breathing",
+    "Water breathing" = "Water \n breathing",
+    "Air breathing" = "Air \n breathing",
+    )) %>% 
+  mutate(Breathing_type_fw = recode(
+    Breathing_type_fw,
+    "not water-breathing only" = "not water \n breathing only",
+    "water-breathing only" = "water \n breathing only",
+    )) %>% 
+  mutate(Sample_type = recode(
+    Sample_type,
+    "whole-organisms only" = "whole \n organisms only",
+    "specific tissues" = "specific \n tissues",
+    "specific tissues and whole-organisms" = "specific tissues \n and whole-organisms",
     )) %>% 
   filter(!is.na(Breathing_type) & Breathing_type != "") %>%
   group_by(Sample_type, Breathing_type_fw, Breathing_type) %>%
@@ -2559,7 +3746,7 @@ TMF_data2_corr <- TMF_data2 %>%
 
 ```{r, echo=FALSE}
 # Create the alluvial plot - Sample type and breathign type top predator
-ggplot(TMF_data2_corr,
+figS15 <- ggplot(TMF_data2_corr,
        aes(axis1 = Sample_type, axis2 = Breathing_type_fw, axis3 = Breathing_type, y = Frequency)) +
   geom_alluvium(aes(fill = Sample_type)) +
   geom_stratum() +
@@ -2569,15 +3756,15 @@ ggplot(TMF_data2_corr,
   labs(x = "Categorical variables", y = "TMF frequency") +
   theme_classic() +
   theme(legend.position = "none")
+
+figS15
 ```
 
-
-```{r, echo=FALSE, eval=FALSE}
-ggsave(here("figs","alluvial.png"),
+```{r, eval=FALSE}
+ggsave(here("figs/supplements","figS15.png"),
        width = 10,
-       height = 8)
+       height = 7)
 ```
-
 
 ```{r, include=FALSE}
 TMF_data2_loc_agg <- TMF_data2_loc %>%
@@ -2603,8 +3790,6 @@ cor.test(TMF_data2$fw_length, TMF_data2$n_species)
 ```
 
 # Full model
-
-Mixed-effects meta-regression model. Multivariate meta-analysis model with multiple covariates, using a multilevel random-effects approach.
 
 ```{r}
 TMF_data_fmodel <- TMF_data2 %>% 
@@ -2640,13 +3825,27 @@ VCV_fmodel <- vcalc(vi = TMF_data_fmodel$ln_TMF_se^2,
 
 
 ```{r, eval=FALSE}
+TMF_data_fmodel %>%
+  filter(Censored_data_strategy == "Not provided") %>%
+  tally()
+#     n
+# 1 281
+
+sum(is.na(TMF_data_fmodel$TEF))
+# [1] 83
+sum(is.na(TMF_data_fmodel$TL_lowest))
+# [1] 119
+sum(is.na(TMF_data_fmodel$TL_highest))
+# [1] 119
+sum(is.na(TMF_data_fmodel$fw_length))
+# [1] 119
 full_model <- rma.mv(yi = ln_TMF,
                      V = VCV_fmodel, 
                      mods = ~  1 + 
                        Sample_type +
                        Conc_determ_method +
                        #Censored_data_strategy +
-                       #TEF +
+                       TEF +
                        Breathing_type_fw +
                        Breathing_type +
                        Class +
@@ -2664,11 +3863,11 @@ full_model <- rma.mv(yi = ln_TMF,
                      data = TMF_data_fmodel,
                      sparse = TRUE)
 
-save(full_model, file = here("Rdata", "full_model.RData"))
+save(full_model, file = here("Rmodels", "full_model.RData"))
 ```
 
 ```{r, echo=FALSE}
-load(here("RData", "full_model.RData"))
+load(here("Rmodels", "full_model.RData"))
 summary(full_model)
 r2_ml(full_model, TMF_data_fmodel)
 ```
@@ -2680,12 +3879,12 @@ eval(metafor:::.MuMIn) # use eval() function to extract helper functions from Mu
 mod.candidate <- dredge(full_model, beta = "none", evaluate = TRUE, rank = "AICc", trace=2) # dredge to produce all possible candidate models
 
 # Save the candidate models
-save(mod.candidate, file = here("Rdata", "mod_candidate.RData"))
+save(mod.candidate, file = here("Rmodels", "mod_candidate.RData"))
 ```
 
 ```{r}
 # Next step, let’s select a sets of best models.
-load(here("RData", "mod_candidate.RData"))
+load(here("Rmodels", "mod_candidate.RData"))
 subset(mod.candidate, delta <= 4, recalc.weights = FALSE)
 # Sum of weights for each variable included in the mod.candidate
 sw(mod.candidate)
@@ -2700,14 +3899,14 @@ weights <- weights %>%
 weights$Predictor <- factor(weights$Predictor, levels = weights$Predictor[order(weights$weights_percentage, weights$R2_marginal)])
 
 
-AIC_weights <- ggplot(weights, aes(Predictor, Sum_of_weights)) +
+figS16 <- ggplot(weights, aes(Predictor, Sum_of_weights)) +
   geom_col(aes(fill = R2_marginal), width = 0.7) +  # Gradient fill based on R2_marginal
   geom_text(aes(label = paste0(weights_percentage, "%"), x = Predictor), 
             position = position_stack(vjust = 0.5), 
             size = 3) +
   geom_text(aes(label = paste("R2 =", sprintf("%.3f", R2_marginal)), x = Predictor, y = max(Sum_of_weights)), 
             position = position_stack(vjust = 1.07), 
-            size = 3, color = "black") +
+            size = 2.5, color = "black") +
   theme_light() +
   coord_flip() +
   scale_fill_gradient(low = "skyblue", high = "royalblue", name = "R2 Marginal") +  # Color gradient
@@ -2724,11 +3923,90 @@ AIC_weights <- ggplot(weights, aes(Predictor, Sum_of_weights)) +
         panel.grid.minor = element_line(color = "grey", 
                                         linewidth = 0.2, 
                                         linetype = "dotted"))
-AIC_weights
+figS16
+```
 
-# ggsave(here("figs","aic_weights.png"),
-#        width = 10,
-#        height = 5)
+
+```{r, eval=FALSE}
+ggsave(here("figs/supplements","figS16.png"),
+       width = 9,
+       height = 4)
+```
+
+# Risk of Bias assessment
+
+```{r}
+TMF_data2_RoB <- TMF_data2 %>%
+  filter(!if_any(c(Selection_bias, Measurement_bias, Reporting_bias, Funding_bias), ~ . == "High risk"))
+
+VCV_RoB <- vcalc(vi = TMF_data2_RoB$ln_TMF_se^2, 
+             cluster = TMF_data2_RoB$FW_ID,
+             obs = TMF_data2_RoB$TMF_ID, 
+             rho = 0.5)
+```
+
+```{r, eval=FALSE}
+mod_RoB <- rma.mv(yi = ln_TMF, # Natural logarithm of the Trophic Magnification Factor
+              V = VCV_RoB, # Variance co-variance matrix
+              random = list(~1|Study_ID, 
+                            ~1|FW_ID, 
+                            ~1|PFAS_ID, 
+                            ~1|TMF_ID 
+                            ),
+              test = "t", 
+              sparse = T,
+              data = TMF_data2_RoB)
+
+save(mod_RoB, file = here("Rmodels", "mod_RoB.RData"))
+```
+
+```{r, warning=FALSE, echo=FALSE}
+load(here("Rmodels", "mod_RoB.RData"))
+summary(mod_RoB)
+i2_ml(mod_RoB)
+
+I2_mod_RoB <- orchaRd::i2_ml(mod_RoB)
+figS21 <- orchard_plot_new(mod_RoB,
+                        transfm = "percent",
+                        mod = "1",
+                        group = "Study_ID", 
+                        xlab = "ln_TMF",
+                        k.pos = "left",
+                        alpha = 0.6,
+                        trunk.size = 1.5,
+                        branch.size = 2.7,
+                        twig.size = 0.4,
+                        colour = FALSE,
+                        fill = FALSE) +  
+  annotate(geom = "text",
+           x = 1.3,
+           y = 7.5, 
+           label = paste0("italic(I)^{2} == ", round(I2_mod_RoB[1],4)),
+           size = 6,
+           color ="black",
+           parse = TRUE) +
+  scale_size_continuous(range = c(1, 10)) + # change point scaling
+  theme(panel.border = element_rect(colour = "black", 
+                                    fill = NA,
+                                    size = 1.3), 
+       legend.title = element_text(size = 16),
+        legend.text = element_text(size = 15),
+        axis.title.x = element_text(size = 18),
+        axis.title.y = element_text(size = 18),
+        axis.text.y = element_blank(),
+       axis.text.x = element_text(size = 17)) +
+  #ylim(NA, 10) +
+  xlab("Intercept") +
+  ylab("TMF") +
+  scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 1))
+
+figS21
+```
+
+```{r, eval=FALSE}
+ggsave(here("figs/supplements","figS21.png"),
+       width = 10,
+       height = 6)
 ```
 
 # Publication bias
@@ -2742,7 +4020,7 @@ par(cex.axis = 1.5)
 # Increase label size for x and y axes
 par(cex.lab = 1.5)
 
-funnel(
+figS17 <- funnel(
   full_model, 
   yaxis = "seinv", # Inverse of standard error (precision) as the y axis
   level = c(90, 95),  # levels of statistical significance highlighted 
@@ -2756,6 +4034,68 @@ funnel(
   )
 ```
 
+## Small study effect
+
+```{r, eval=FALSE}
+mod_se <- rma.mv(ln_TMF,
+                     VCV,
+                     mods = ~ ln_TMF_se,
+                     random = list(~1|Study_ID,
+                                   ~1|FW_ID,
+                                   ~1|PFAS_ID,
+                                   ~1|TMF_ID
+                                   ),
+                     method = "REML", 
+                     test = "t", 
+                     data = TMF_data2
+                     )
+
+save(mod_se, file = here("Rmodels", "mod_se.RData"))
+summary(mod_se)
+mod_pb <- rma.mv(ln_TMF,
+                 VCV,
+                     method = "REML", 
+                     test = "t", 
+                     data = TMF_data2
+                     )
+
+
+robust(mod_pb, cluster = FW_ID, clubSandwich = T)
+```
+
+```{r}
+load(here("Rmodels", "mod_se.RData"))
+summary(mod_se)
+sse_bubble <- orchaRd::mod_results(mod_se,
+                                  mod = "ln_TMF_se",
+                                  group = "Study_ID",
+                                  data = TMF_data2)
+
+figS18 <- orchaRd::bubble_plot(sse_bubble,
+                     group = "Study_ID",
+                     mod = "ln_TMF_se",
+            legend.pos = "bottom.right",
+            k.pos = "top.right",
+            ci.col = "red",
+            pi.col = "black",
+            est.col = "black") +
+  ggtitle("") +
+  theme(plot.title = element_text(size = 18),
+        axis.title.x = element_text(size = 16),
+        axis.title.y = element_text(size = 16),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_text(size = 14)) +
+  xlab("lnSE") +
+  ylab("lnTMF")
+
+figS18
+```
+
+```{r, eval=FALSE}
+ggsave(here("figs/supplements","figS18.png"),
+       width = 10,
+       height = 6)
+```
 
 ## Time-lag bias
 
@@ -2764,16 +4104,19 @@ MLMR_mod_year.c <- metafor::rma.mv(ln_TMF,
                             VCV,
                             mods = ~ scale(year_publication),
                             random = list(~1|Study_ID,
-                                              ~1|FW_ID,
-                                              ~1|PFAS_ID,
-                                              ~1|TMF_ID
-                                              ),
+                                          ~1|FW_ID,
+                                          ~1|PFAS_ID,
+                                          ~1|TMF_ID
+                                          ),
+                            test = "t", 
+                            sparse = T,
                             data = TMF_data2)
-save(MLMR_mod_year.c, file = here("Rdata", "MLMR_mod_year.c.RData"))
+
+save(MLMR_mod_year.c, file = here("Rmodels", "MLMR_mod_year.c.RData"))
 ```
 
 ```{r, echo=FALSE}
-load(here("RData", "MLMR_mod_year.c.RData"))
+load(here("Rmodels", "MLMR_mod_year.c.RData"))
 summary(MLMR_mod_year.c)
 r2_pbias <- r2_ml(MLMR_mod_year.c, TMF_data2)
 pb_bubble <- orchaRd::mod_results(MLMR_mod_year.c,
@@ -2781,42 +4124,126 @@ pb_bubble <- orchaRd::mod_results(MLMR_mod_year.c,
                                   group = "Study_ID",
                                   data = dat)
 
-bias2 <- orchaRd::bubble_plot(pb_bubble,
+fig5F <- bubble_plot_new(pb_bubble,
                      group = "Study_ID",
                      mod = "year_publication",
             legend.pos = "bottom.right",
             k.pos = "bottom.left",
             ci.col = "red",
             pi.col = "black",
-            est.col = "black") +
+            est.col = "black",
+            g = TRUE) +
   annotate(geom ="text",
            x = 2017,
            y = 3,
            label = paste0("italic(R)^{2} == ", round(r2_pbias[1],4)),
            color = "black",
            parse = TRUE,
-           size = 4) +
+           size = 2) +
   ggtitle("F") +
-  theme(plot.title = element_text(face = "bold", size  = 16),
-        axis.title.x = element_text(size = 16),
+  theme(plot.title = element_text(face = "bold", size = 9),
+        legend.title = element_text(size = 6),
+        legend.text = element_text(size = 6),
+        legend.key = element_blank(),
+        legend.key.size = unit(0.3, "cm"),
+        axis.title.x = element_text(size = 8),
         axis.title.y = element_blank(),
         axis.text.y = element_blank(),
-        axis.text.x = element_text(size = 14)) +
+        axis.text.x = element_text(size = 7)) +
+  scale_size(range = c(0.5, 3)) +
   xlab("Publication year") +
   ylab("ln TMF") +
   scale_x_continuous(breaks = seq(2003, 2024, by = 5), limits = c(2003, 2024))
-bias2
 ```
 
 ```{r, eval=FALSE, echo=FALSE}
 # Combine plots with specified heights
-figX3 <- (fig_lat + fig_TL_lowest) / (fig_TL_highest  + fig_fw_length) / (fig_ccl + bias2)
+fig5 <- (fig5A + fig5B) / (fig5C  + fig5D) / (fig5E + fig5F)
 
 # Save the combined plot
-ggsave(here("figs", "figX3.png"), plot = figX3, width = 16, height = 10, dpi = 300)
+ggsave(here("figs", "fig5.pdf"), plot = fig5, width = 180, height = 175, dpi = 300, units = 'mm')
 
+fig5F_data <- TMF_data2 %>% 
+  select(Study_ID, FW_ID, PFAS_ID, TMF_ID, year_publication, ln_TMF, ln_TMF_se)
+
+write_csv(fig5F_data, here("Rdata", "fig5F_data.csv"))
 ```
 
-::: info
-There is no evidence of publication time bias.
-:::
+## Leave-one-out-analysis
+```{r, eval=FALSE}
+TMF_data2 <- TMF_data2 %>%
+  mutate(leave_out = Study_ID)
+
+TMF_data2$leave_out <- as.factor(TMF_data2$leave_out)
+
+
+LeaveOneOut_effectsize <- list()
+for (i in 1:length(levels(TMF_data2$leave_out))) {
+  temp_dat <- TMF_data2 %>%
+    filter(leave_out != levels(TMF_data2$leave_out)[i])
+  
+  VCV_leaveout <- vcalc(vi = temp_dat$ln_TMF_se^2,
+                        cluster = temp_dat$FW_ID, 
+                        rho = 0.5)
+  
+  LeaveOneOut_effectsize[[i]] <-  rma.mv(yi = ln_TMF, # Natural logarithm of the Trophic Magnification Factor
+              V = VCV_leaveout, # Variance co-variance matrix
+              random = list(~1|Study_ID, # Between-study effect
+                            ~1|FW_ID, # Between food webs effect
+                            ~1|PFAS_ID, # Between type of PFAS effect
+                            ~1|TMF_ID # Within-study effect
+                            ),
+              test = "t", 
+              sparse = T,
+              data = temp_dat[temp_dat$leave_out != levels(temp_dat$leave_out)[i], ])
+                                         
+}
+
+# writing function for extracting est, ci.lb, and ci.ub from all models
+est.func <- function(model) {
+  df <- data.frame(est = model$b, lower = model$ci.lb, upper = model$ci.ub)
+  return(df)
+}
+
+# using dplyr to form data frame
+MA_oneout <- lapply(LeaveOneOut_effectsize,function(x) est.func(x)) %>%
+  bind_rows %>%
+  mutate(left_out = levels(TMF_data2$leave_out))
+
+
+# telling ggplot to stop reordering factors
+MA_oneout$left_out <- as.factor(MA_oneout$left_out)
+MA_oneout$left_out <- factor(MA_oneout$left_out, levels = MA_oneout$left_out)
+
+# saving the runs
+#saveRDS(MA_oneout, here("Rdata", "MA_oneout.RDS"))
+```
+
+```{r}
+MA_oneout <- readRDS(here("Rdata", "MA_oneout.RDS"))
+
+# plotting
+figS19 <- ggplot(MA_oneout) + geom_hline(yintercept = 0, lty = 2, lwd = 1) +
+
+  geom_hline(yintercept = mod$ci.lb, lty = 3, lwd = 0.75, colour = "black") +
+  geom_hline(yintercept = mod$b, lty = 1, lwd = 0.75, colour = "black") + 
+  geom_hline(yintercept = mod$ci.ub,
+             lty = 3, lwd = 0.75, colour = "black") + 
+  geom_pointrange(aes(x = left_out, y = est,
+                      ymin = lower, ymax = upper)) + 
+  xlab("Study left out") + 
+  ylab("lnTMF, 95% CI") +
+  coord_flip() + 
+  theme(panel.grid.minor = element_blank()) + theme_bw() + theme(panel.grid.major = element_blank()) +
+  theme(panel.grid.minor.x = element_blank()) + theme(axis.text.y = element_text(size = 6))
+
+figS19
+```
+
+
+```{r, eval=FALSE}
+#Save the plot
+ggsave(here("figs/supplements","figS19.png"),
+       width = 7,
+       height = 10)
+```

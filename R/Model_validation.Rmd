@@ -1,0 +1,242 @@
+---
+title: "Model validation"
+author: "Lorenzo Ricolfi"
+output:
+  html_document:
+    code_folding: show
+    toc: yes
+    toc_float: yes
+    toc_collapsed: yes
+    toc_depth: 3
+    number_sections: no
+    theme: cerulean
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
+---
+
+In this document, we construct the profile likelihood for each individual chemical within the candidate model for subgroup meta-regression analysis. We then validate the model by comparing these profile likelihoods to the sum of sigma-squared values for each chemical, calculated using a subset dataset where the meta-analytic model is applied only to the respective chemical's data. This comparison helps identify potential overparameterization in the model.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Packages
+
+```{r}
+pacman::p_load(tidyr,       
+              dplyr,
+              here,
+              readr,
+              ggplot2,
+              metafor)
+
+dat <- read.csv(here("Rdata/TMF_data3.csv"))
+```
+
+```{r}
+k_n_data <- dat %>% 
+  group_by(PFAS_ID) %>%
+  arrange(PFAS_ID) %>% 
+  summarise(k = n(), n = length(unique(Study_ID)))
+
+VCV_chem <- vcalc(vi = ln_TMF_se^2,
+                  cluster = FW_ID, 
+                  obs = TMF_ID,
+                  subgroup = PFAS_ID, 
+                  rho = 0.5,
+                  data = dat)
+```
+
+# Profile likelihood
+
+## mod_chem2
+```{r, eval=FALSE}
+mod_chem2 <- rma.mv(ln_TMF ~ PFAS_ID - 1,
+                   V = VCV_chem,
+                   random = list(~ PFAS_ID | FW_ID,
+                                 ~ 1 | TMF_ID),
+                   struct = "DIAG",
+                   test = "t",
+                   sparse = T,
+                   data = dat,
+                   #verbose = TRUE, 
+                   control=list(iter.max=1000, 
+                                rel.tol=1e-8))
+
+# Save the model
+save(mod_chem2, file = here("Rmodels", "mod_chem2.RData"))
+```
+
+```{r, eval=FALSE}
+load(here("Rmodels", "mod_chem2.RData"))
+summary(mod_chem2)
+# Identify the indices of the variance components for the parameters with klvl > 10
+parameter_indices2 <- c(17, 47, 32, 51, 42, 33, 50, 20, 40, 34, 49, 46, 30, 36, 48, 31, 38)
+
+# Initialize a list to store the results for each parameter
+profile_results2 <- list()
+
+# Loop through each index
+for (i in parameter_indices2) {
+  # Get the profile data for the current variance component
+  dat_ll <- profile(mod_chem2, tau2 = i)
+  
+  # Extract ll (log-likelihood) and sigma
+  ll_values <- dat_ll$ll
+  tau_values <- dat_ll$tau2
+  
+  # Store the results in the list
+  profile_results2[[i]] <- data.frame(
+    parameter_index = i,
+    tau2 = tau_values,
+    log_likelihood = ll_values
+  )
+}
+
+# Combine all results into a single data frame
+mod_chem2_profile_results <- do.call(rbind, profile_results2)
+
+# Save the table
+write.csv(mod_chem2_profile_results, here("Rdata/mod_chem2_profile_results.csv"), row.names = FALSE)
+```
+
+# Model validation
+
+To validate the model, we are going to run the meta-analytic model on a subset dataset for each PFAS chemical which has more than 10 effect sizes and then extract the estimate and sum(sigma-squared) values.
+
+```{r, eval=FALSE}
+# List of PFAS to loop through
+PFAS_list <- c("F-53B", "FOSA", "PFBA", "PFBS", "PFDA", "PFDoDA", 
+               "PFDS", "PFHpA", "PFHxA", "PFHxS", "PFNA", "PFOA", 
+               "PFOS", "PFPeA", "PFTeDA", "PFTrDA", "PFUnDA")
+
+# Create an empty list to store models
+models <- list()
+
+# Loop through each PFAS_ID
+for (PFAS in PFAS_list) {
+  # Subset the data for the current PFAS
+  dat_subset <- dat %>% filter(PFAS_ID == PFAS)
+  
+  # Create a VCV tailored to the current PFAS
+  VCV_subset <- vcalc(vi = ln_TMF_se^2,
+                       cluster = FW_ID, 
+                       obs = TMF_ID,
+                       rho = 0.5,
+                       data = dat_subset)
+  
+  # Run the model for the current PFAS
+  mod <- rma.mv(ln_TMF ~ 1,
+                V = VCV_subset,
+                random = list(~1|Study_ID, 
+                            ~1|FW_ID, 
+                            ~1|TMF_ID 
+                            ),
+                #struct = "DIAG",
+                test = "t",
+                sparse = TRUE,
+                data = dat_subset,
+                control = list(iter.max = 1000, 
+                               rel.tol = 1e-8))
+  
+  # Save the model
+  save(mod, file = here("Rmodels", paste0("mod_chem1_", PFAS, ".RData")))
+  
+  # Store the model in the list
+  models[[PFAS]] <- mod
+}
+
+# Initialize an empty data frame to store results
+PFAS_sigma2 <- data.frame(
+  Chemical = character(),
+  Sigma2 = numeric(),
+  Estimate = numeric(),
+  stringsAsFactors = FALSE
+)
+
+# Loop through the models to extract sigma squared values and exponentiated estimates
+for (PFAS in PFAS_list) {
+  # Access the model
+  mod <- models[[PFAS]]
+  
+  # Check if sigma2 exists and has values
+  if (!is.null(mod$sigma2) && length(mod$sigma2) > 0) {
+    # Extract sigma squared value
+    sigma2_value <- sum(mod$sigma2)  # Extract the sum sigma2 value if there are multiple
+  } else {
+    # Assign NA if sigma2 is missing or empty
+    sigma2_value <- NA
+  }
+  
+  # Extract the fixed-effect estimate and compute exp(estimate)
+  if (!is.null(mod$b) && length(mod$b) > 0) {
+    estimate_value <- exp(mod$b[1])  # Exponentiate the first (intercept) fixed effect
+  } else {
+    # Assign NA if the estimate is missing or empty
+    estimate_value <- NA
+  }
+  
+  # Append to the data frame
+  PFAS_sigma2 <- rbind(
+    PFAS_sigma2,
+    data.frame(
+      Chemical = PFAS, 
+      Sigma2 = format(sigma2_value, scientific = FALSE), 
+      Estimate = format(estimate_value, scientific = FALSE)
+    )
+  )
+}
+
+# Convert Sigma2 and Estimate columns to numeric for further processing if needed
+PFAS_sigma2$Sigma2 <- as.numeric(PFAS_sigma2$Sigma2)
+PFAS_sigma2$Estimate <- as.numeric(PFAS_sigma2$Estimate)
+
+# View the resulting data table
+print(PFAS_sigma2)
+
+# Save the table
+write.csv(PFAS_sigma2, here("Rdata/PFAS_sigma2.csv"), row.names = FALSE)
+```
+
+```{r}
+PFAS_sigma2 <- read.csv(here("Rdata", "PFAS_sigma2.csv"))
+```
+
+## mod_chem2
+```{r}
+mod_chem2_profile_results <- read.csv(here("Rdata/mod_chem2_profile_results.csv"))
+
+param_names <- c(
+  `17` = "F-53B", `47` = "PFOS", `32` = "PFDA", `51` = "PFUnDA",
+  `42` = "PFNA", `33` = "PFDoDA", `50` = "PFTrDA", `20` = "FOSA",
+  `40` = "PFHxS", `34` = "PFDS", `49` = "PFTeDA", `46` = "PFOA",
+  `30` = "PFBA", `36` = "PFHpA", `48` = "PFPeA", `31` = "PFBS",
+  `38` = "PFHxDA"
+)
+
+mod_chem2_profile_results <- mod_chem2_profile_results %>%
+  mutate(parameter_index = param_names[as.character(parameter_index)])
+
+mod_chem2_profile_results <- mod_chem2_profile_results %>%
+  left_join(PFAS_sigma2, by = c("parameter_index" = "Chemical"))
+
+ggplot(mod_chem2_profile_results, aes(x = tau2, y = log_likelihood, color = parameter_index)) +
+  geom_line() +  # Add lines to connect points for each parameter_index
+  geom_point(size=1) + # Add points to show individual data points
+  facet_wrap(~ parameter_index, scales = "free") + # Separate plots for each parameter_index
+  geom_vline(aes(xintercept = Sigma2), color = "red", linetype = "dashed") +
+  labs(
+    title = "mod_chem2 Likelihood Profile",
+    x = expression(tau^2),
+    y = "Log-likelihood",
+    color = "Parameter Index"
+  ) +
+  theme(legend.position = "none")
+```
+
+```{r, eval=FALSE, echo=FALSE}
+ggsave(here("figs/supplements","mod_chem2_likelihoodprofile.png"),
+       width = 10,
+       height = 8)
+```
