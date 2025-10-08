@@ -1,12 +1,10 @@
 # PFAS Trophic Magnification: A Meta-Analysis 
 ## Study Overview
-This repository contains all data, code, and analysis materials for the research study: "*A meta-analysis reveals PFAS concentrations double with each trophic level*".
-
-Our research demonstrates significant biomagnification of per- and polyfluoroalkyl substances (PFAS) through food webs, with concentrations doubling at each trophic level.
+This repository contains all data, code, and analysis materials for the research study: "*Unravelling the magnitude and drivers of PFAS trophic magnification*".
 
 You can find the Preprint at the following link: [EcoEvoRxiv](https://ecoevorxiv.org/repository/view/8548/)
 
-Repository curated by *Lorenzo Ricolfi*
+Repository created and curated by *Lorenzo Ricolfi*
 
 ## Repository Structure
 ### Analysis scripts (`/R`)
@@ -37,9 +35,61 @@ Houses all datasets in CSV format used in the analysis.
 
 ### R-generated data (`/Rdata`)
 Includes all data generated through analysis.
+-  `/Rdata/fig1_data.csv`: Source data for figure 1
+-  `/Rdata/fig2A_data.csv`: Source data for figure 2 panel A
+-  `/Rdata/fig2B_data.csv`: Source data for figure 2 panel B
+-  `/Rdata/fig3A_data.csv`: Source data for figure 3 panel A
+-  `/Rdata/fig3B_data.csv`: Source data for figure 3 panel B
+-  `/Rdata/fig3C_data.csv`: Source data for figure 3 panel C
+-  `/Rdata/fig3D_data.csv`: Source data for figure 3 panel D
+-  `/Rdata/fig4A_data.csv`: Source data for figure 4 panel A
+-  `/Rdata/fig4B_data.csv`: Source data for figure 4 panel B
+-  `/Rdata/fig4C_data.csv`: Source data for figure 4 panel C
+-  `/Rdata/fig5A_data.csv`: Source data for figure 5 panel A
+-  `/Rdata/fig5B_data.csv`: Source data for figure 5 panel B
+-  `/Rdata/fig5C_data.csv`: Source data for figure 5 panel C
+-  `/Rdata/fig5D_data.csv`: Source data for figure 5 panel D
+-  `/Rdata/fig5E_data.csv`: Source data for figure 5 panel E
+-  `/Rdata/fig5F_data.csv`: Source data for figure 5 panel F
+-  `/Rdata/aic_weights.csv`: Model-selection summaries
+-  `/Rdata/TMF_data2.csv`: Modified dataset (see analysis code)
+-  `/Rdata/TMF_data3.csv`: Modified dataset (see analysis code)
 
 ### Statistical models (`/Rmodels`)
-Contains saved model objects (`.RData` files) from statistical analyses, allowing for reproducibility and further exploration without recomputation.
+Contains saved meta-analytic mixed-effects model objects (`.RData` files) from statistical analyses, allowing for reproducibility and further exploration without recomputation. 
+- `/Rmodels/breath_model.RData`
+- `/Rmodels/breath_model_int.RData`
+- `/Rmodels/bt_fw_model.RData`
+- `/Rmodels/ccl_model.RData`
+- `/Rmodels/class_model.RData`
+- `/Rmodels/eco_aq_model.RData`
+- `/Rmodels/eco_model.RData`
+- `/Rmodels/full_model.RData`
+- `/Rmodels/fw_length_model.RData`
+- `/Rmodels/lat_model.RData`
+- `/Rmodels/location_model.RData`
+- `/Rmodels/MLMR_mod_year.c.RData`
+- `/Rmodels/mod.RData`
+- `/Rmodels/mod_candidate.RData`
+- `/Rmodels/mod_chem.RData`
+- `/Rmodels/mod_chem_contr.RData`
+- `/Rmodels/mod_chem1.RData`
+- `/Rmodels/mod_chem2.RData`
+- `/Rmodels/mod_chem3.RData`
+- `/Rmodels/mod_ecogroup.RData`
+- `/Rmodels/mod_RoB.RData`
+- `/Rmodels/mod_se.RData`
+- `/Rmodels/n_species_model.RData`
+- `/Rmodels/norm_model.RData`
+- `/Rmodels/norm_model2.RData`
+- `/Rmodels/p_ccl_model.RData`
+- `/Rmodels/regulation_model.RData`
+- `/Rmodels/rv_model.RData`
+- `/Rmodels/sample_model.RData`
+- `/Rmodels/tef_model.RData`
+- `/Rmodels/TL_highest_model.RData`
+- `/Rmodels/TL_lowest_model.RData`
+- `/Rmodels/undetected_model.RData`
 
 ### Visualisations (`/figs`)
 Includes all main and supplementary figures.
@@ -73,7 +123,10 @@ Includes all main and supplementary figures.
 - `/figs/supplements/figS23.pdf`: Diagram illustrating the structure of the relational database of the extracted data.
   
 ### Data extraction from plots (`/metaDigitise/Raw_data.csv`)
-Contains data extracted from published literature using the metaDigitise software.
+Contains data extracted from plots of published literature using the metaDigitise software.
+- `/metaDigitise/Raw_data.csv`: Contains data extracted from plots of published literature using the metaDigitise software.
+- `/metaDigitise/caldat`: Software-related files.
+- `/metaDigitise/figures`: Figures from the literature which were used to extract data using the metaDigitise software.
 
 ### Project file
 `PFAS_Trophic_Magnification.Rproj` - RStudio project file for convenient access to the complete analysis environment.
