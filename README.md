@@ -26,8 +26,8 @@ Houses all datasets in CSV format used in the analysis.
 -  `/data/splitting/split6.bib`: One sixth of the bibliographic records assigned to the sixth of the six authors conducting literature screening.
 
 ### Analysis scripts (`/R`)
-Contains R markdown files (`.Rmd`) with corresponding HTML outputs documenting the analysis.
--  `/R/Analysis_code.Rmd`: General analysis code. It hosts the analyses conducted to generate model results and plots.
+Contains R markdown files (`.Rmd`) with corresponding HTML outputs (`.html`) documenting the analysis.
+-  `/R/Analysis_code.Rmd`: General analysis code. It hosts the analyses conducted to generate model results and plots. A user-friendly and easy-to-read version of this file is available at `/R/Analysis_code.html`.
 -  `/R/random_splitting.Rmd`: We utilised this code to evenly split the bibliographic records among reviewers during the literature search.
 -  `/R/deduplication.Rmd`: We utilised this code to remove duplicates from the bibliographic records extracted from Rayyan.
 -  `/R/Slope_calculations.Rmd`: The file contains trophic magnification slope calculations using data manually extracted from plots (see *Data extraction from plots*). A user-friendly and easy-to-read version of this file is available at `/R/Slope_calculations.html`.
